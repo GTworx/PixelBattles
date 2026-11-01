@@ -98,3 +98,39 @@ export function buildBattleUserTurn(message: string, state: unknown): string {
     message,
   ].join('\n');
 }
+
+export interface ChatTurn {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+/**
+ * The /api/chat body sent to Ollama — shared by the standalone server and the
+ * static site (which talks to the user's local Ollama straight from the
+ * browser), so both ask the model exactly the same way.
+ */
+export function ollamaChatBody(opts: {
+  model: string;
+  system: string;
+  history: ChatTurn[];
+  userTurn: string;
+  /** Context window. Without it Ollama reserves the model's full window
+   *  (256k tokens for Qwen = a 16 GB KV cache), which makes loading crawl. */
+  numCtx: number;
+  /** How long the model stays loaded after answering (e.g. "30m"). */
+  keepAlive: string;
+}): Record<string, unknown> {
+  return {
+    model: opts.model,
+    stream: false,
+    think: false,
+    keep_alive: opts.keepAlive,
+    format: CHAT_RESPONSE_SCHEMA,
+    options: { temperature: 0.4, num_ctx: opts.numCtx },
+    messages: [
+      { role: 'system', content: opts.system },
+      ...opts.history,
+      { role: 'user', content: opts.userTurn },
+    ],
+  };
+}

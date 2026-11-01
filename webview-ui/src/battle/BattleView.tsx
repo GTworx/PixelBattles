@@ -1,8 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { BATTLE_SPEEDS, BATTLE_VIEW_Z_INDEX } from '../constants.js';
+import { isStaticSite } from '../runtime.js';
 import type { ChatTurn } from './battleApi.js';
-import { chatAvailable, fetchBattle, fetchBattles, sendBattleChat } from './battleApi.js';
+import {
+  chatAvailable,
+  fetchBattle,
+  fetchBattles,
+  loadOllamaSettings,
+  saveOllamaSettings,
+  sendBattleChat,
+} from './battleApi.js';
 import { BattleAudio } from './battleAudio.js';
 import { BattleCanvas } from './BattleCanvas.js';
 import { BattleChat, type FeedItem } from './BattleChat.js';
@@ -23,8 +31,8 @@ import type { BattleSummary, Scenario } from './battleTypes.js';
 import { FlagIcon } from './FlagIcon.js';
 
 interface BattleViewProps {
-  /** Switch to the agent office. */
-  onOpenOffice: () => void;
+  /** Switch to the agent office; absent where there is none (static site). */
+  onOpenOffice?: () => void;
   /** Office assets (character sprites, floors, walls) have loaded. */
   assetsReady: boolean;
 }
@@ -38,6 +46,8 @@ export function BattleView({ onOpenOffice, assetsReady }: BattleViewProps) {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [selectorOpen, setSelectorOpen] = useState(false);
   const [scenario, setScenario] = useState<Scenario | null>(null);
+  /** The battle's wiki page: grounds the chat when the browser asks Ollama itself. */
+  const wikiRef = useRef('');
   const [playing, setPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
@@ -113,7 +123,8 @@ export function BattleView({ onOpenOffice, assetsReady }: BattleViewProps) {
     (id: string) => {
       setSelectorOpen(false);
       fetchBattle(id)
-        .then(({ scenario: s }) => {
+        .then(({ scenario: s, wiki }) => {
+          wikiRef.current = wiki;
           setScenario(s);
           start(s);
         })
@@ -185,13 +196,14 @@ export function BattleView({ onOpenOffice, assetsReady }: BattleViewProps) {
       const controller = new AbortController();
       abortRef.current = controller;
       try {
-        const res = await sendBattleChat(
-          scenario.id,
-          text,
-          history.current,
-          snapshotForChat(state),
-          controller.signal,
-        );
+        const res = await sendBattleChat({
+          scenario,
+          wiki: wikiRef.current,
+          message: text,
+          history: history.current,
+          state: snapshotForChat(state),
+          signal: controller.signal,
+        });
         if (stateRef.current !== state) return; // battle changed meanwhile
         history.current.push(
           { role: 'user', content: text },
@@ -309,13 +321,15 @@ export function BattleView({ onOpenOffice, assetsReady }: BattleViewProps) {
           </>
         )}
         <span className="flex-1" />
-        <button
-          className="border-2 border-transparent bg-btn-bg px-10 py-2 text-sm cursor-pointer hover:bg-btn-hover"
-          onClick={onOpenOffice}
-          title="Open the Claude agent office"
-        >
-          Agent office
-        </button>
+        {onOpenOffice && (
+          <button
+            className="border-2 border-transparent bg-btn-bg px-10 py-2 text-sm cursor-pointer hover:bg-btn-hover"
+            onClick={onOpenOffice}
+            title="Open the Claude agent office"
+          >
+            Agent office
+          </button>
+        )}
       </div>
 
       {/* ── Body ── */}
@@ -395,6 +409,11 @@ export function BattleView({ onOpenOffice, assetsReady }: BattleViewProps) {
             draft={draft}
             onDraft={setDraft}
             onSend={(t) => void sendChat(t)}
+            ollama={
+              isStaticSite
+                ? { initial: loadOllamaSettings(), onSave: saveOllamaSettings }
+                : undefined
+            }
             disabled={!scenario || !chatAvailable}
             disabledReason={
               !chatAvailable

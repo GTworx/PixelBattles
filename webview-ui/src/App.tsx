@@ -41,7 +41,7 @@ import { migrateLayoutColors } from './office/layout/layoutSerializer.js';
 import { overlayProjection } from './office/projection.js';
 import { getPetCount } from './office/sprites/petSpriteData.js';
 import { EditTool, type OfficeLayout, TILE_SIZE } from './office/types.js';
-import { isBrowserRuntime, isE2E } from './runtime.js';
+import { isBrowserRuntime, isE2E, isStaticSite } from './runtime.js';
 import { installTestHooks } from './testHooks.js';
 import { transport } from './transport/index.js';
 
@@ -68,7 +68,7 @@ function App() {
     // browserMock is for Vite dev mode only (UI prototyping without a server).
     // In standalone server mode, the server sends all state over WebSocket.
     // In VS Code mode, the extension sends all state via postMessage.
-    if (isBrowserRuntime && import.meta.env.DEV) {
+    if (isBrowserRuntime && (import.meta.env.DEV || isStaticSite)) {
       void import('./browserMock.js').then(({ dispatchMockMessages }) => dispatchMockMessages());
     }
   }, []);
@@ -467,7 +467,12 @@ function App() {
 
   if (!layoutReady) {
     if (showBattles) {
-      return <BattleView assetsReady={false} onOpenOffice={() => setShowBattles(false)} />;
+      return (
+        <BattleView
+          assetsReady={false}
+          onOpenOffice={isStaticSite ? undefined : () => setShowBattles(false)}
+        />
+      );
     }
     return <div className="w-full h-full flex items-center justify-center ">Loading...</div>;
   }
@@ -889,7 +894,13 @@ function App() {
           ⚔ Battle Simulator
         </button>
       )}
-      {showBattles && <BattleView assetsReady onOpenOffice={() => setShowBattles(false)} />}
+      {showBattles && (
+        <BattleView
+          assetsReady
+          // A static site has no server, so no agents: the office stays hidden.
+          onOpenOffice={isStaticSite ? undefined : () => setShowBattles(false)}
+        />
+      )}
     </div>
   );
 }

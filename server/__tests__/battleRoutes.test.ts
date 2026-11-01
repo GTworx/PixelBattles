@@ -8,7 +8,7 @@ import {
   buildBattleSystemPrompt,
   buildBattleUserTurn,
   parseChatReply,
-} from '../src/battles/battlePrompt.js';
+} from '../../core/src/battlePrompt.js';
 import { registerBattleRoutes, resolveBattlesDir } from '../src/battles/battleRoutes.js';
 
 const TOKEN = 'test-token';

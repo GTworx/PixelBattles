@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import type { OllamaSettings } from './battleApi.js';
 import type { BattleEventKind } from './battleEngine.js';
 import type { SideId } from './battleTypes.js';
 
@@ -23,6 +24,8 @@ interface BattleChatProps {
   disabled: boolean;
   disabledReason?: string;
   suggestions: string[];
+  /** Static site only: which local Ollama + model the browser should ask. */
+  ollama?: { initial: OllamaSettings; onSave: (s: OllamaSettings) => void };
 }
 
 export function BattleChat({
@@ -34,6 +37,7 @@ export function BattleChat({
   disabled,
   disabledReason,
   suggestions,
+  ollama,
 }: BattleChatProps) {
   const listRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -43,7 +47,10 @@ export function BattleChat({
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
-      <div className="px-10 pt-6 text-xs text-text-muted">Chronicle &amp; war-room chat</div>
+      <div className="flex items-center px-10 pt-6 text-xs text-text-muted">
+        <span className="flex-1">Chronicle &amp; war-room chat</span>
+        {ollama && <OllamaSettingsButton {...ollama} />}
+      </div>
       <div ref={listRef} className="flex-1 overflow-y-auto px-10 py-6 flex flex-col gap-6 text-xs">
         {feed.map((item) => (
           <FeedLine key={item.id} item={item} />
@@ -146,4 +153,64 @@ function FeedLine({ item }: { item: FeedItem }) {
     case 'error':
       return <div style={{ color: 'var(--color-danger)' }}>⚠ {item.text}</div>;
   }
+}
+
+/** Where the static site's chat finds the model: the visitor's own Ollama. */
+function OllamaSettingsButton({
+  initial,
+  onSave,
+}: {
+  initial: OllamaSettings;
+  onSave: (s: OllamaSettings) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState(initial.url);
+  const [model, setModel] = useState(initial.model);
+  return (
+    <span className="relative">
+      <button
+        className="bg-transparent border-0 text-text-muted cursor-pointer text-xs p-0 hover:text-text"
+        onClick={() => setOpen((o) => !o)}
+        title="Which Ollama the chat asks"
+      >
+        ⚙ {model}
+      </button>
+      {open && (
+        <form
+          className="absolute right-0 top-20 z-10 w-[300px] bg-bg border-2 border-border p-8 flex flex-col gap-6 shadow-pixel"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSave({ url: url.trim(), model: model.trim() });
+            setOpen(false);
+          }}
+        >
+          <label className="flex flex-col gap-2 text-2xs">
+            Ollama URL (on this computer)
+            <input
+              className="bg-bg-dark border-2 border-border text-text px-4 py-2 text-xs font-pixel"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+          </label>
+          <label className="flex flex-col gap-2 text-2xs">
+            Model
+            <input
+              className="bg-bg-dark border-2 border-border text-text px-4 py-2 text-xs font-pixel"
+              value={model}
+              onChange={(e) => setModel(e.target.value)}
+            />
+          </label>
+          <div className="text-2xs text-text-muted">
+            Ollama must allow this site: set OLLAMA_ORIGINS={window.location.origin} and restart it.
+          </div>
+          <button
+            type="submit"
+            className="border-2 border-accent bg-active-bg px-8 py-2 text-xs cursor-pointer self-end"
+          >
+            Save
+          </button>
+        </form>
+      )}
+    </span>
+  );
 }

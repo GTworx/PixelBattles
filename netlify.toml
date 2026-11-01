@@ -1,0 +1,18 @@
+# Netlify deploys the Battle Simulator as a static site: the SPA, its sprites
+# and the battle wiki/scenarios as plain files. There is no PixelBattles server
+# on Netlify (no agent office, no terminals); the war-room chat runs from the
+# visitor's browser against their own local Ollama — see README "Netlify".
+[build]
+  command = "npm run build:static"
+  publish = "dist/webview"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Git hooks are a development tool; skip installing them on the build image.
+  HUSKY = "0"
+
+# Battle data changes with each deploy; let browsers revalidate it.
+[[headers]]
+  for = "/battles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

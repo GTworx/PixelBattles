@@ -123,6 +123,26 @@ The extension and standalone CLI can run at the same time. Each server registers
 
 Stop a standalone server with **Ctrl+C**. It removes only its own registration.
 
+### Netlify (Battle Simulator as a static site)
+
+The repository deploys to Netlify as-is: `netlify.toml` runs `npm run build:static` and publishes `dist/webview`. Netlify serves files only, so the hosted site is the Battle Simulator alone — battle selector, maps, simulation, sound and flags. The Claude agent office, terminals and hooks need the PixelBattles server and are not part of it.
+
+The war-room chat still uses **your own Ollama**: the page in your browser talks to `http://localhost:11434` on your computer (Netlify's servers can't reach it, your browser can). To allow it once:
+
+1. Let Ollama accept requests from your site. Set the environment variable `OLLAMA_ORIGINS` to your site's address and restart Ollama. On Windows (PowerShell):
+
+   ```powershell
+   setx OLLAMA_ORIGINS "https://your-site.netlify.app"
+   ```
+
+   Then quit Ollama from the tray and start it again. On macOS: `launchctl setenv OLLAMA_ORIGINS "https://your-site.netlify.app"`, then restart Ollama.
+
+2. If the browser asks whether the site may access devices on your local network, allow it.
+
+The ⚙ button in the chat panel sets the Ollama address and model (default `qwen3.8:latest`). Chrome, Edge and Firefox allow an `https` page to call `http://localhost`; Safari does not.
+
+To try the static build locally: `npm run build:static`, then serve `dist/webview` with any static file server.
+
 ## Customizing the Office
 
 Click **Layout** to edit the office:

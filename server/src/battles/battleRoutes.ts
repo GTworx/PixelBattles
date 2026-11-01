@@ -2,6 +2,13 @@ import type { FastifyInstance } from 'fastify';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import type { ChatTurn } from '../../../core/src/battlePrompt.js';
+import {
+  buildBattleSystemPrompt,
+  buildBattleUserTurn,
+  ollamaChatBody,
+  parseChatReply,
+} from '../../../core/src/battlePrompt.js';
 import {
   BATTLE_CHAT_HISTORY_MAX,
   BATTLE_CHAT_MESSAGE_MAX_CHARS,
@@ -13,12 +20,6 @@ import {
   DEFAULT_OLLAMA_URL,
 } from '../constants.js';
 import { bearerTokenValid } from '../wsAuth.js';
-import {
-  buildBattleSystemPrompt,
-  buildBattleUserTurn,
-  CHAT_RESPONSE_SCHEMA,
-  parseChatReply,
-} from './battlePrompt.js';
 
 /** Where the battle wiki lives. The repo checkout's `battles/` wins over the
  *  copy bundled into dist/, so wiki edits show up without a rebuild. */
@@ -30,11 +31,6 @@ export function resolveBattlesDir(staticDir: string | undefined): string | null 
 }
 
 const SLUG_PATTERN = /^[a-z0-9-]+$/;
-
-interface ChatTurn {
-  role: 'user' | 'assistant';
-  content: string;
-}
 
 interface ChatBody {
   battleId: string;
@@ -133,24 +129,18 @@ export function registerBattleRoutes(
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         signal: AbortSignal.timeout(BATTLE_CHAT_TIMEOUT_MS),
-        body: JSON.stringify({
-          model,
-          stream: false,
-          think: false,
-          // Keep the model resident between questions: reloading a 27B model
-          // costs ~15 s on every chat after Ollama's default 5 min idle unload.
-          keep_alive: BATTLE_OLLAMA_KEEP_ALIVE,
-          format: CHAT_RESPONSE_SCHEMA,
-          // Without num_ctx Ollama reserves the model's full window (256k tokens
-          // for Qwen = a 16 GB KV cache), which makes loading crawl or spill
-          // off the GPU. The war-room prompt needs ~10k.
-          options: { temperature: 0.4, num_ctx: BATTLE_OLLAMA_NUM_CTX },
-          messages: [
-            { role: 'system', content: system },
-            ...history,
-            { role: 'user', content: buildBattleUserTurn(message, body.state) },
-          ],
-        }),
+        body: JSON.stringify(
+          ollamaChatBody({
+            model,
+            system,
+            history,
+            userTurn: buildBattleUserTurn(message, body.state),
+            numCtx: BATTLE_OLLAMA_NUM_CTX,
+            // Keep the model resident between questions: reloading a 27B model
+            // costs ~15 s on every chat after Ollama's default 5 min idle unload.
+            keepAlive: BATTLE_OLLAMA_KEEP_ALIVE,
+          }),
+        ),
       });
       if (!res.ok) {
         const text = await res.text();

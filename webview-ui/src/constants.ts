@@ -660,3 +660,15 @@ export const BATTLE_CRACKLE_RATE_PER_FIRE = 2.5;
 export const BATTLE_CRACKLE_MAX_PER_SEC = 18;
 /** localStorage key for the battle mute toggle. */
 export const BATTLE_MUTED_STORAGE_KEY = 'pixelBattles.battleMuted';
+
+// ── Battle chat, static site (browser → the user's own Ollama) ──
+// Mirror server/src/constants.ts (the server can't share webview constants):
+// the static site asks the model the same way the standalone server does.
+export const BATTLE_OLLAMA_DEFAULT_URL = 'http://localhost:11434';
+export const BATTLE_OLLAMA_DEFAULT_MODEL = 'qwen3.8:latest';
+export const BATTLE_OLLAMA_NUM_CTX = 16_384;
+export const BATTLE_OLLAMA_KEEP_ALIVE = '30m';
+export const BATTLE_WIKI_PROMPT_MAX_CHARS = 16_000;
+export const BATTLE_CHAT_HISTORY_MAX = 12;
+/** localStorage key for the Ollama URL + model chosen on the static site. */
+export const BATTLE_OLLAMA_SETTINGS_KEY = 'pixelBattles.ollama';

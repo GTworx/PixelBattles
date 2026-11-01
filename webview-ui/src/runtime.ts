@@ -25,3 +25,11 @@ export const isBrowserRuntime = runtime === 'browser';
 export const isE2E: boolean =
   typeof window !== 'undefined' &&
   (window as unknown as { __PIXEL_BATTLES_E2E?: boolean }).__PIXEL_BATTLES_E2E === true;
+
+/**
+ * Static-site build (`npm run build:static`, used for Netlify): the SPA is
+ * served as plain files with no PixelBattles server behind it. Sprites are
+ * decoded in the browser (browserMock), battles are fetched as static JSON,
+ * and the battle chat talks to the user's own local Ollama directly.
+ */
+export const isStaticSite: boolean = import.meta.env.VITE_STATIC_SITE === '1';
