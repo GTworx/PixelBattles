@@ -1,0 +1,836 @@
+{
+  "id": "gaugamela",
+  "title": "Battle of Gaugamela",
+  "year": "331 BCE",
+  "date": "1 October 331 BCE",
+  "location": "Gaugamela, near Arbela (modern Erbil), Nineveh Plains, Iraq",
+  "wiki": "wiki/battles/gaugamela.md",
+  "summary": "Alexander the Great's roughly 47,000 Macedonians and Greeks met Darius III's far larger Persian host on a plain levelled for scythed chariots. By drawing the Persian left aside with an oblique advance and striking through the gap he opened, Alexander drove Darius from the field and ended the Achaemenid Empire's ability to resist.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 150 m",
+    "north": "up",
+    "terrain": [
+      "b..........b.......~~~~~~~~~~....b..........b...",
+      "~~~...b......~~~~~~~~~~~~~~~~~~~~~~....b.....~~~",
+      "~~~~~~~~~~~~~~~~~~~....b.....~~~~~~~~~~~~~~~~~~~",
+      "...~~~~~~~~~~.....b..........b.....~~~~~~~~~~.:.",
+      "^^^^.........b..........b..........b.....^^^..:.",
+      "^^^^....b..........b..........b..........^^^..:.",
+      "^^^^..........b..........b..........b........:.b",
+      "^^^^.....b..........b..........b..........b..:..",
+      "^^^^b..........b..........b..........b.......:..",
+      "^^^^......b..........b..........b..........b:...",
+      "^^^^.b..........b..........b..........b.....:...",
+      "^^.........b..........b..........b......,.^,b.,.",
+      "^^....b..........b..........b..........b..,..,..",
+      "^^..........b..........b..........b......,^.,b.,",
+      ".......b..........b..........b..........,^^,^^,^",
+      "..b..........b..........b..........b......,..,b.",
+      "........b..........b..........b..........,^.,..,",
+      "...b..........b..........b..........b...,.^,..,b",
+      ".........b..........b..........b..........,..,..",
+      "....b..........b..........b..........b...,^.,..,",
+      "..........b..........b..........b.......,.^,..,.",
+      ".....b..........b..........b..........b.^^,^^,^^",
+      "b..........b..........b..........b.......,^.,..,",
+      "......b..........b..........b..........b,.^,..,.",
+      ".b..........b..........b..........b.......,..,..",
+      ".......b..........b..........b..........b,^.,..,",
+      "..b......ccccccc........b..........b....,.^,..,.",
+      "........bccccccc...b..........b..........b......",
+      "...b..........b..........b..........b..........b",
+      ".........b..........b..........b..........b....."
+    ],
+    "labels": [
+      {
+        "text": "Bumodus river",
+        "col": 18,
+        "row": 0
+      },
+      {
+        "text": "Tell Gomel",
+        "col": 40,
+        "row": 6
+      },
+      {
+        "text": "Jebel Maqlub hills",
+        "col": 0,
+        "row": 2
+      },
+      {
+        "text": "Levelled plain (chariot ground)",
+        "col": 16,
+        "row": 13
+      },
+      {
+        "text": "Uneven ground",
+        "col": 42,
+        "row": 18
+      },
+      {
+        "text": "Macedonian camp",
+        "col": 8,
+        "row": 28
+      },
+      {
+        "text": "Road to Arbela",
+        "col": 38,
+        "row": 1
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Macedonia & Hellenic League",
+      "commander": "Alexander the Great",
+      "color": "#8e44ad",
+      "flag": "macedon"
+    },
+    {
+      "id": "B",
+      "name": "Achaemenid Empire",
+      "commander": "Darius III",
+      "color": "#d4a017",
+      "flag": "persia"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "mac-left-cav",
+      "side": "A",
+      "name": "Thessalian, allied Greek & Thracian cavalry (Parmenion's left)",
+      "type": "cavalry",
+      "strength": 3000,
+      "col": 15,
+      "row": 19,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Parmenion"
+    },
+    {
+      "id": "mac-left-inf",
+      "side": "A",
+      "name": "Achaean, Cretan & allied infantry (left)",
+      "type": "infantry",
+      "strength": 5000,
+      "col": 11,
+      "row": 22,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Parmenion"
+    },
+    {
+      "id": "mac-phalanx",
+      "side": "A",
+      "name": "Pezhetairoi phalanx (taxeis)",
+      "type": "heavy_infantry",
+      "strength": 13000,
+      "col": 25,
+      "row": 22,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Simmias, Coenus & others"
+    },
+    {
+      "id": "mac-hypaspists",
+      "side": "A",
+      "name": "Hypaspists (royal guard infantry)",
+      "type": "heavy_infantry",
+      "strength": 3000,
+      "col": 31,
+      "row": 22,
+      "facing": "up",
+      "morale": 90,
+      "commander": "Nicanor"
+    },
+    {
+      "id": "mac-second-line",
+      "side": "A",
+      "name": "Second line: allied & mercenary infantry",
+      "type": "heavy_infantry",
+      "strength": 10000,
+      "col": 25,
+      "row": 25,
+      "facing": "down",
+      "morale": 65,
+      "commander": "Cleander, Menidas et al."
+    },
+    {
+      "id": "mac-companions",
+      "side": "A",
+      "name": "Companion cavalry (royal wedge)",
+      "type": "heavy_cavalry",
+      "strength": 2000,
+      "col": 35,
+      "row": 21,
+      "facing": "up",
+      "morale": 95,
+      "commander": "Alexander the Great"
+    },
+    {
+      "id": "mac-right-cav",
+      "side": "A",
+      "name": "Paionian, Prodromoi & mercenary cavalry (right)",
+      "type": "cavalry",
+      "strength": 2000,
+      "col": 40,
+      "row": 21,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Aretes, Menidas, Ariston"
+    },
+    {
+      "id": "mac-light-right",
+      "side": "A",
+      "name": "Agrianians, javelin-men & archers (right)",
+      "type": "light_infantry",
+      "strength": 4000,
+      "col": 38,
+      "row": 23,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Attalus & Balacrus"
+    },
+    {
+      "id": "per-right-cav",
+      "side": "B",
+      "name": "Mazaeus's right-wing cavalry (Syrian, Mede, Parthian, Mesopotamian)",
+      "type": "cavalry",
+      "strength": 15000,
+      "col": 12,
+      "row": 9,
+      "facing": "down",
+      "morale": 65,
+      "commander": "Mazaeus"
+    },
+    {
+      "id": "per-flank-cav",
+      "side": "B",
+      "name": "Cappadocian & Armenian cavalry (outflanking right)",
+      "type": "cavalry",
+      "strength": 4000,
+      "col": 4,
+      "row": 8,
+      "facing": "down",
+      "morale": 60,
+      "commander": "Mazaeus"
+    },
+    {
+      "id": "per-greeks",
+      "side": "B",
+      "name": "Greek mercenary hoplites",
+      "type": "heavy_infantry",
+      "strength": 2000,
+      "col": 21,
+      "row": 10,
+      "facing": "down",
+      "morale": 80,
+      "commander": "Darius III"
+    },
+    {
+      "id": "per-levies",
+      "side": "B",
+      "name": "Massed levy infantry of the satrapies (centre)",
+      "type": "infantry",
+      "strength": 30000,
+      "col": 25,
+      "row": 7,
+      "facing": "down",
+      "morale": 45,
+      "commander": "Darius III"
+    },
+    {
+      "id": "per-darius-guard",
+      "side": "B",
+      "name": "Darius III with Royal Kinsmen & household cavalry",
+      "type": "heavy_cavalry",
+      "strength": 3000,
+      "col": 25,
+      "row": 9,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Darius III"
+    },
+    {
+      "id": "per-immortals",
+      "side": "B",
+      "name": "Immortals (Persian foot guard)",
+      "type": "heavy_infantry",
+      "strength": 10000,
+      "col": 29,
+      "row": 10,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Darius III"
+    },
+    {
+      "id": "per-indian-cav",
+      "side": "B",
+      "name": "Indian & Persian cavalry with Mardian archers (left-centre)",
+      "type": "cavalry",
+      "strength": 3000,
+      "col": 32,
+      "row": 10,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Darius III"
+    },
+    {
+      "id": "per-chariots",
+      "side": "B",
+      "name": "200 scythed chariots",
+      "type": "chariots",
+      "strength": 400,
+      "col": 36,
+      "row": 14,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Bessus"
+    },
+    {
+      "id": "per-left-cav",
+      "side": "B",
+      "name": "Bessus's left-wing cavalry (Bactrian, Scythian, Dahae, Arachosian, Susian)",
+      "type": "cavalry",
+      "strength": 12000,
+      "col": 40,
+      "row": 9,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Bessus"
+    },
+    {
+      "id": "per-elephants",
+      "side": "B",
+      "name": "15 Indian war elephants (left with the camp, never engaged; captured afterwards)",
+      "type": "elephants",
+      "strength": 60,
+      "col": 26,
+      "row": 3,
+      "facing": "down",
+      "morale": 50,
+      "commander": "Darius III"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Deployment on the levelled plain",
+      "time": "dawn, 1 October 331 BCE",
+      "durationSec": 8,
+      "narration": "Darius had had the ground levelled and the Persian host stands drawn up in the open: Bessus's Bactrians and Scythians on the left, Darius with his Kinsmen, Greeks and Immortals in the centre, Mazaeus on the right. Alexander, vastly outnumbered in cavalry, forms a double-fronted oblong with flank guards angled back and a reserve line facing the rear.",
+      "orders": [
+        {
+          "unit": "mac-phalanx",
+          "action": "hold"
+        },
+        {
+          "unit": "per-darius-guard",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "Oblique advance to the right",
+      "time": "morning",
+      "durationSec": 10,
+      "narration": "Alexander leads the army forward and edges steadily to the right, towards ground the Persians had not levelled. Bessus and the Scythians shadow the movement to prevent being outflanked, stretching the Persian left away from the centre.",
+      "orders": [
+        {
+          "unit": "mac-companions",
+          "action": "move",
+          "to": [
+            42,
+            18
+          ]
+        },
+        {
+          "unit": "mac-right-cav",
+          "action": "move",
+          "to": [
+            45,
+            19
+          ]
+        },
+        {
+          "unit": "mac-light-right",
+          "action": "move",
+          "to": [
+            41,
+            20
+          ]
+        },
+        {
+          "unit": "mac-hypaspists",
+          "action": "move",
+          "to": [
+            34,
+            20
+          ]
+        },
+        {
+          "unit": "mac-phalanx",
+          "action": "move",
+          "to": [
+            27,
+            20
+          ]
+        },
+        {
+          "unit": "mac-left-inf",
+          "action": "move",
+          "to": [
+            14,
+            21
+          ]
+        },
+        {
+          "unit": "mac-left-cav",
+          "action": "move",
+          "to": [
+            17,
+            20
+          ]
+        },
+        {
+          "unit": "per-left-cav",
+          "action": "move",
+          "to": [
+            43,
+            13
+          ]
+        },
+        {
+          "unit": "per-chariots",
+          "action": "move",
+          "to": [
+            37,
+            15
+          ]
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p3",
+      "title": "Cavalry clash and the chariot charge",
+      "time": "late morning",
+      "durationSec": 10,
+      "narration": "Scythian and Bactrian cavalry engage the Macedonian right in a long, hard fight while Darius looses the scythed chariots. Agrianian javelin-men shoot down the teams, the ranks open to let survivors through, and grooms and hypaspists finish them off; the chariot attack, Darius's great hope, is neutralised at small cost.",
+      "orders": [
+        {
+          "unit": "per-left-cav",
+          "action": "attack",
+          "target": "mac-right-cav"
+        },
+        {
+          "unit": "per-chariots",
+          "action": "charge",
+          "target": "mac-light-right"
+        },
+        {
+          "unit": "mac-light-right",
+          "action": "attack",
+          "target": "per-chariots"
+        },
+        {
+          "unit": "mac-right-cav",
+          "action": "attack",
+          "target": "per-left-cav"
+        },
+        {
+          "unit": "per-right-cav",
+          "action": "charge",
+          "target": "mac-left-cav"
+        },
+        {
+          "unit": "per-flank-cav",
+          "action": "flank",
+          "target": "mac-left-inf",
+          "to": [
+            9,
+            18
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-chariots",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "mac-right-cav",
+          "strength": 1800,
+          "morale": 70
+        },
+        {
+          "unit": "per-left-cav",
+          "strength": 10500,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "A gap opens in the Persian line",
+      "time": "midday",
+      "durationSec": 10,
+      "narration": "Darius feeds more cavalry into the fight on his left to stop the Macedonian drift. Each reinforcement pulls horsemen out of the line between the centre and the left, and a gap forms opposite Alexander. Persian horse also press hard on Parmenion's left, and the Macedonian line itself bends where Simmias's phalanx lags behind.",
+      "orders": [
+        {
+          "unit": "per-left-cav",
+          "action": "attack",
+          "target": "mac-right-cav"
+        },
+        {
+          "unit": "per-indian-cav",
+          "action": "move",
+          "to": [
+            38,
+            12
+          ]
+        },
+        {
+          "unit": "mac-companions",
+          "action": "move",
+          "to": [
+            37,
+            15
+          ]
+        },
+        {
+          "unit": "per-right-cav",
+          "action": "attack",
+          "target": "mac-left-cav"
+        },
+        {
+          "unit": "mac-left-cav",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-left-cav",
+          "strength": 9000,
+          "morale": 50
+        },
+        {
+          "unit": "mac-left-cav",
+          "strength": 2700,
+          "morale": 55
+        },
+        {
+          "unit": "mac-right-cav",
+          "strength": 1700,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "The Companion wedge drives at Darius",
+      "time": "early afternoon",
+      "durationSec": 10,
+      "narration": "Alexander wheels the Companions into a wedge, the phalanx lowers its sarissas, and the whole force hurls itself into the gap towards Darius. The Royal Kinsmen and the Greek mercenaries are driven back after fierce fighting, and the Persian centre begins to buckle.",
+      "orders": [
+        {
+          "unit": "mac-companions",
+          "action": "charge",
+          "target": "per-darius-guard"
+        },
+        {
+          "unit": "mac-hypaspists",
+          "action": "attack",
+          "target": "per-immortals"
+        },
+        {
+          "unit": "mac-phalanx",
+          "action": "attack",
+          "target": "per-greeks"
+        },
+        {
+          "unit": "per-greeks",
+          "action": "hold"
+        },
+        {
+          "unit": "per-darius-guard",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-greeks",
+          "strength": 1200,
+          "morale": 45
+        },
+        {
+          "unit": "per-darius-guard",
+          "strength": 2300,
+          "morale": 40
+        },
+        {
+          "unit": "mac-companions",
+          "strength": 1750,
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Darius flees",
+      "time": "afternoon",
+      "durationSec": 9,
+      "narration": "With Alexander's wedge almost upon him, Darius turns his chariot and flees; the centre and left follow, and the Persian army disintegrates in dust. The elephants, left with the baggage, are never used, and Bessus's Bactrians retire with the king's flight.",
+      "orders": [
+        {
+          "unit": "per-darius-guard",
+          "action": "rout"
+        },
+        {
+          "unit": "per-levies",
+          "action": "rout"
+        },
+        {
+          "unit": "per-left-cav",
+          "action": "retreat",
+          "to": [
+            44,
+            2
+          ]
+        },
+        {
+          "unit": "per-immortals",
+          "action": "rout"
+        },
+        {
+          "unit": "mac-companions",
+          "action": "attack",
+          "target": "per-levies"
+        },
+        {
+          "unit": "mac-hypaspists",
+          "action": "attack",
+          "target": "per-immortals"
+        },
+        {
+          "unit": "mac-right-cav",
+          "action": "attack",
+          "target": "per-left-cav"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-darius-guard",
+          "strength": 1000,
+          "status": "routed"
+        },
+        {
+          "unit": "per-levies",
+          "strength": 14000,
+          "status": "routed",
+          "morale": 10
+        },
+        {
+          "unit": "per-immortals",
+          "strength": 4500,
+          "status": "routed",
+          "morale": 15
+        },
+        {
+          "unit": "per-left-cav",
+          "strength": 8500,
+          "status": "routed",
+          "morale": 25
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Parmenion's left under pressure; the camp raid",
+      "time": "afternoon",
+      "durationSec": 12,
+      "narration": "On the left Parmenion is almost overwhelmed by Mazaeus's cavalry. Persian and Indian horsemen (with Cadusian and Scythian squadrons sent round the flank, in some accounts) break through the gap left behind Simmias and ride on to the Macedonian camp, but stop to plunder rather than turn on the phalanx; the second line, facing the rear, destroys many of the raiders. Parmenion sends to Alexander for help.",
+      "orders": [
+        {
+          "unit": "per-right-cav",
+          "action": "charge",
+          "target": "mac-left-cav"
+        },
+        {
+          "unit": "per-indian-cav",
+          "action": "move",
+          "to": [
+            13,
+            26
+          ]
+        },
+        {
+          "unit": "mac-second-line",
+          "action": "attack",
+          "target": "per-indian-cav"
+        },
+        {
+          "unit": "per-flank-cav",
+          "action": "attack",
+          "target": "mac-left-inf"
+        },
+        {
+          "unit": "mac-left-cav",
+          "action": "hold"
+        },
+        {
+          "unit": "mac-left-inf",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "mac-left-cav",
+          "strength": 2650,
+          "morale": 40
+        },
+        {
+          "unit": "per-indian-cav",
+          "strength": 1500,
+          "morale": 35
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Alexander turns back; Mazaeus breaks",
+      "time": "late afternoon",
+      "durationSec": 12,
+      "narration": "Alexander abandons the pursuit of Darius and rides back with the Companions. He meets fleeing Parthians, Indians and Persian cavalry and fights the bloodiest cavalry action of the day; some sixty Companions fall. Seeing the centre and left gone, Mazaeus eases off, and the Thessalians on the left charge his tiring squadrons. The Persian right collapses; Parmenion's men take the camp, baggage and elephants, and the pursuit lasts into the night.",
+      "orders": [
+        {
+          "unit": "mac-companions",
+          "action": "flank",
+          "target": "per-right-cav",
+          "to": [
+            22,
+            16
+          ]
+        },
+        {
+          "unit": "mac-left-cav",
+          "action": "charge",
+          "target": "per-right-cav"
+        },
+        {
+          "unit": "per-right-cav",
+          "action": "rout"
+        },
+        {
+          "unit": "per-flank-cav",
+          "action": "rout"
+        },
+        {
+          "unit": "per-indian-cav",
+          "action": "rout"
+        },
+        {
+          "unit": "per-greeks",
+          "action": "rout"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-right-cav",
+          "strength": 9000,
+          "status": "routed",
+          "morale": 15
+        },
+        {
+          "unit": "per-flank-cav",
+          "strength": 3000,
+          "status": "routed"
+        },
+        {
+          "unit": "per-indian-cav",
+          "strength": 1500,
+          "status": "routed"
+        },
+        {
+          "unit": "per-greeks",
+          "strength": 500,
+          "status": "routed"
+        },
+        {
+          "unit": "per-elephants",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "mac-companions",
+          "strength": 1650,
+          "morale": 75
+        },
+        {
+          "unit": "mac-right-cav",
+          "strength": 1700
+        },
+        {
+          "unit": "mac-left-cav",
+          "strength": 2650
+        },
+        {
+          "unit": "mac-phalanx",
+          "strength": 12940
+        },
+        {
+          "unit": "mac-hypaspists",
+          "strength": 2980
+        },
+        {
+          "unit": "mac-left-inf",
+          "strength": 4980
+        },
+        {
+          "unit": "mac-light-right",
+          "strength": 3950
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Macedonians won decisively. Darius escaped toward Media but his army dissolved, Babylon surrendered, and he was murdered by Bessus in 330 BCE, ending the Achaemenid dynasty.",
+    "casualties": {
+      "A": "~1,000–1,500 killed by most modern estimates (Arrian: ~100 men and over 1,000 horses; others ~1,000 cavalry and 100–500 infantry)",
+      "B": "~40,000–90,000 killed (Curtius ~40,000, Diodorus ~90,000; Arrian ~300,000 and not credible; modern estimates ~40,000)"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Gaugamela — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela"
+    },
+    {
+      "title": "Battle of Gaugamela — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Gaugamela/"
+    },
+    {
+      "title": "Arrian, Anabasis III.7-16 — Iran Chamber Society",
+      "url": "https://iranchamber.com/history/achaemenids/arrian_battle_of_gaugamela.php"
+    },
+    {
+      "title": "The Battle of Gaugamela: Alexander’s Triumph — Warfare History Network",
+      "url": "https://warfarehistorynetwork.com/article/the-battle-of-gaugamela-alexanders-triumph/"
+    },
+    {
+      "title": "Battle of Gaugamela (331 BCE) — TheCollector",
+      "url": "https://www.thecollector.com/battle-of-gaugamela-alexander-the-great/"
+    },
+    {
+      "title": "The Battle of Gaugamela — History Hit",
+      "url": "https://www.historyhit.com/the-battle-of-gaugamela/"
+    }
+  ]
+}

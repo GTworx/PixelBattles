@@ -6,6 +6,7 @@ import Fastify from 'fastify';
 
 import type { AgentRuntime } from './agentRuntime.js';
 import type { AgentStateStore } from './agentStateStore.js';
+import { registerBattleRoutes, resolveBattlesDir } from './battles/battleRoutes.js';
 import type {
   AssetCache,
   ReloadAssetsSideEffect,
@@ -114,6 +115,10 @@ export async function createHttpServer(options: HttpServerOptions): Promise<Http
     allowedHostnames,
     ptyManager: options.ptyManager,
   });
+  if (!options.embedded) {
+    const battlesDir = resolveBattlesDir(options.staticDir);
+    if (battlesDir) registerBattleRoutes(app, { battlesDir, token: options.token });
+  }
 
   // ── Listen ──────────────────────────────────────────────────
 

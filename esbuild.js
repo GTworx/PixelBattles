@@ -32,6 +32,15 @@ function copyAssets() {
   } else {
     console.log('ℹ️  assets/ folder not found (optional)');
   }
+
+  // Battle wiki + scenarios for the Battle Simulator (served by /api/battles)
+  const battlesSrc = path.join(__dirname, 'battles');
+  const battlesDst = path.join(__dirname, 'dist', 'battles');
+  if (fs.existsSync(battlesSrc)) {
+    if (fs.existsSync(battlesDst)) fs.rmSync(battlesDst, { recursive: true });
+    fs.cpSync(battlesSrc, battlesDst, { recursive: true });
+    console.log('✓ Copied battles/ → dist/battles/');
+  }
 }
 
 /**

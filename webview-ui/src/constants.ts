@@ -560,3 +560,103 @@ export const VISUAL_VIEWPORT_FULL_EPSILON_PX = 1;
  *  (with an editable focused) = the software keyboard is up. Well above an
  *  address bar collapsing (~56 px), well below any on-screen keyboard. */
 export const KEYBOARD_MIN_HEIGHT_PX = 150;
+
+// ── Battle Simulator ────────────────────────────────────────────
+/** Close-combat reach between unit centres, in tiles. */
+export const BATTLE_MELEE_RANGE_TILES = 1.3;
+/** Losses per second per effective attacker in close combat (combat-rules mode). */
+export const BATTLE_MELEE_RATE = 0.012;
+/** Losses per second per effective shooter at range (combat-rules mode). */
+export const BATTLE_RANGED_RATE = 0.006;
+/** An attacker counts at most this many times the defender's strength (frontage). */
+export const BATTLE_MAX_OUTNUMBER = 1.5;
+/** Morale lost per fraction of strength lost (0.1 lost → 10 morale). */
+export const BATTLE_MORALE_PER_LOSS = 100;
+/** Each extra enemy in close combat with a unit adds this much to the damage it takes. */
+export const BATTLE_SURROUNDED_DAMAGE_BONUS = 0.35;
+/** Morale bleed per second per enemy pressing a unit (doubled from the rear). */
+export const BATTLE_MORALE_STRESS_PER_SEC = 0.5;
+/** Morale regained per second when out of contact (up to the starting value). */
+export const BATTLE_MORALE_RECOVERY_PER_SEC = 1;
+/** Morale at or below which a unit breaks and flees. */
+export const BATTLE_ROUT_MORALE = 15;
+/** A unit below this fraction of its starting strength is destroyed. */
+export const BATTLE_DESTROYED_FRACTION = 0.05;
+/** Seconds a charge's impact bonus lasts after contact. */
+export const BATTLE_CHARGE_BONUS_SEC = 3;
+/** Damage multipliers for hitting a unit in the flank / rear. */
+export const BATTLE_FLANK_MULTIPLIER = 1.5;
+export const BATTLE_REAR_MULTIPLIER = 2;
+/** Friendly command units steady troops within this many tiles. */
+export const BATTLE_COMMAND_AURA_TILES = 5;
+/** Morale every friendly unit loses when a command unit breaks. */
+export const BATTLE_COMMAND_LOSS_MORALE = 15;
+/** Seconds between path recomputations while chasing a moving target. */
+export const BATTLE_REPATH_SEC = 1;
+/** Historical playback: a move must finish within this fraction of its phase. */
+export const BATTLE_HISTORICAL_ARRIVAL_FRACTION = 0.8;
+/** Seconds the battle runs on after its last phase once history has diverged. */
+export const BATTLE_OVERTIME_SEC = 60;
+/** At the overtime limit, a side wins only with this much more fighting power. */
+export const BATTLE_DECISIVE_RATIO = 1.3;
+/** Fleeing units move this much faster than their normal pace. */
+export const BATTLE_FLEE_SPEED_MULTIPLIER = 1.3;
+/** Seconds between visible volleys from a firing unit. */
+export const BATTLE_VOLLEY_INTERVAL_SEC = 0.7;
+/** Seconds a projectile is in flight on screen. */
+export const BATTLE_PROJECTILE_FLIGHT_SEC = 0.45;
+/** Max soldiers drawn per unit; the largest unit on the field gets this many. */
+export const BATTLE_MAX_SOLDIERS_PER_UNIT = 7;
+export const BATTLE_MIN_SOLDIERS_PER_UNIT = 2;
+/** Playback speeds offered in the toolbar. */
+export const BATTLE_SPEEDS = [0.5, 1, 2, 4] as const;
+/** Max entries kept in the battle log. */
+export const BATTLE_LOG_MAX = 200;
+/** Battle walls reuse the office wall tiles, tinted weathered stone. */
+export const BATTLE_WALL_COLOR = { h: 35, s: 25, b: -60, c: -30 };
+export const BATTLE_SELECTION_COLOR = '#ffffff';
+export const BATTLE_BANNER_TEXT_COLOR = '#ffffff';
+export const BATTLE_LABEL_COLOR = '#f4ead2';
+export const BATTLE_LABEL_SHADOW_COLOR = 'rgba(0, 0, 0, 0.75)';
+export const BATTLE_CLASH_COLOR = '#ffe28a';
+/** Battle display zoom bounds (device px per sprite px; fractional is fine). */
+export const BATTLE_MIN_ZOOM = 0.5;
+export const BATTLE_MAX_ZOOM = 10;
+/** The battle is drawn at a whole zoom up to this, then scaled to the display zoom. */
+export const BATTLE_RENDER_MAX_ZOOM = 4;
+/** Wheel zoom factor per notch. */
+export const BATTLE_ZOOM_STEP = 1.2;
+/** Fitting a new map leaves this fraction of the canvas used. */
+export const BATTLE_FIT_MARGIN = 0.98;
+/** The battle view covers the whole office (above its modals, z-100). */
+export const BATTLE_VIEW_Z_INDEX = 200;
+export const BATTLE_SELECTOR_Z_INDEX = 210;
+
+// ── Battle effects & sound ──────────────────────────────────────
+/** Muzzle flash / smoke / dust lifetimes. */
+export const BATTLE_FLASH_TTL_SEC = 0.12;
+export const BATTLE_SMOKE_TTL_SEC = 1.6;
+/** Fires: cap, burn time, and how readily shells and wrecks start them. */
+export const BATTLE_FIRE_MAX = 40;
+export const BATTLE_FIRE_TTL_MIN_SEC = 18;
+export const BATTLE_FIRE_TTL_MAX_SEC = 40;
+export const BATTLE_FIRE_FROM_IMPACT_CHANCE = 0.25;
+export const BATTLE_FIRE_FROM_DESTROYED_CHANCE = 0.5;
+/** Master volume of the battle soundscape (0–1). */
+export const BATTLE_MASTER_VOLUME = 0.55;
+/** A side's bugle call won't repeat sooner than this (routs cascade). */
+export const BATTLE_CALL_COOLDOWN_SEC = 4;
+/** Volley sounds per second cap (a dozen archer units would be a wall of noise). */
+export const BATTLE_SHOT_SOUNDS_PER_SEC = 6;
+/** Melee clashes per second per engaged pair, and the overall cap. */
+export const BATTLE_CLASH_RATE_PER_PAIR = 1.4;
+export const BATTLE_CLASH_MAX_PER_SEC = 9;
+/** Seconds between hoofbeat gallops while cavalry moves. */
+export const BATTLE_GALLOP_INTERVAL_SEC = 0.42;
+/** Seconds between marching drum beats while infantry moves. */
+export const BATTLE_DRUM_INTERVAL_SEC = 0.5;
+/** Fire crackles per second per burning tile, and the cap. */
+export const BATTLE_CRACKLE_RATE_PER_FIRE = 2.5;
+export const BATTLE_CRACKLE_MAX_PER_SEC = 18;
+/** localStorage key for the battle mute toggle. */
+export const BATTLE_MUTED_STORAGE_KEY = 'pixelBattles.battleMuted';

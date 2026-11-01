@@ -1,0 +1,823 @@
+{
+  "id": "manzikert",
+  "title": "Battle of Manzikert",
+  "year": "1071",
+  "date": "26 August 1071",
+  "location": "Near Manzikert (Malazgirt, Muş), Eastern Anatolia",
+  "wiki": "wiki/battles/manzikert.md",
+  "summary": "Sultan Alp Arslan's mobile Seljuk horse archers drew Emperor Romanos IV's Byzantine army across the plain all afternoon without being brought to battle. When Romanos ordered a return to camp at dusk the order was misread, the rearguard under Andronikos Doukas withdrew, and the Seljuks encircled the army and captured the emperor.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 150 m (approximate; exact ground uncertain)",
+    "north": "up",
+    "terrain": [
+      "...~............^^^^^^^^^^^^^^^^^^^^^^MMMMMMMMMM",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^MMMMMMMMMM",
+      "...~~...........^^^^^^^^^^^^^^^^^^^^^^MMMMMMMMMM",
+      "..~~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~~...........................................",
+      ",,,~,,,,,.......................................",
+      ",,,~,,,,,.......................................",
+      ",,~~,,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~,,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~~,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~,cc,,.............bbbbbbbbbbbbbbb....cc.....",
+      ":::::cc,,.............bbbbbbbbbbbbbbb....cc.....",
+      ",,,~,cc,,.............bbbbbbbbbbbbbbb....cc.....",
+      ",,,~,,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,~~~,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~,,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~,,,,,.............bbbbbbbbbbbbbbb...........",
+      ",,,~,,,,,.......................................",
+      "...~............................................",
+      "...~~...........................................",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "..~~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "...~~...........^^^^^^^^^^^^^^^^^^^^^^^^MMMMMMMM",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^MMMMMMMM",
+      "...~............^^^^^^^^^^^^^^^^^^^^^^^^MMMMMMMM"
+    ],
+    "labels": [
+      {
+        "text": "Manzikert (Malazgirt)",
+        "col": 5,
+        "row": 11
+      },
+      {
+        "text": "Byzantine camp",
+        "col": 8,
+        "row": 16
+      },
+      {
+        "text": "Stream",
+        "col": 0,
+        "row": 4
+      },
+      {
+        "text": "Hills (Seljuk wings hide here)",
+        "col": 17,
+        "row": 4
+      },
+      {
+        "text": "Hills",
+        "col": 20,
+        "row": 25
+      },
+      {
+        "text": "Plain of Malazgirt",
+        "col": 22,
+        "row": 14
+      },
+      {
+        "text": "Seljuk camp",
+        "col": 41,
+        "row": 16
+      },
+      {
+        "text": "Road from Theodosiopolis",
+        "col": 0,
+        "row": 13
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Seljuk Empire",
+      "commander": "Sultan Alp Arslan",
+      "color": "#1f9d6e",
+      "flag": "seljuk"
+    },
+    {
+      "id": "B",
+      "name": "Byzantine Empire",
+      "commander": "Emperor Romanos IV Diogenes",
+      "color": "#8e44ad",
+      "flag": "byzantine-labarum"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "sel-centre",
+      "side": "A",
+      "name": "Seljuk horse archers (centre of the crescent)",
+      "type": "horse_archers",
+      "strength": 10000,
+      "col": 30,
+      "row": 14,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Alp Arslan"
+    },
+    {
+      "id": "sel-north",
+      "side": "A",
+      "name": "Seljuk horse archers (northern horn, in the hills)",
+      "type": "horse_archers",
+      "strength": 7000,
+      "col": 28,
+      "row": 5,
+      "facing": "left",
+      "morale": 75
+    },
+    {
+      "id": "sel-south",
+      "side": "A",
+      "name": "Seljuk horse archers (southern horn, in the hills)",
+      "type": "horse_archers",
+      "strength": 7000,
+      "col": 28,
+      "row": 24,
+      "facing": "left",
+      "morale": 75
+    },
+    {
+      "id": "sel-ghulams",
+      "side": "A",
+      "name": "Alp Arslan's ghulams and household cavalry",
+      "type": "heavy_cavalry",
+      "strength": 4000,
+      "col": 36,
+      "row": 14,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Alp Arslan"
+    },
+    {
+      "id": "sel-reserve",
+      "side": "A",
+      "name": "Seljuk reserve horse (concealed behind the northern hills)",
+      "type": "horse_archers",
+      "strength": 5000,
+      "col": 38,
+      "row": 8,
+      "facing": "left",
+      "morale": 75
+    },
+    {
+      "id": "sel-camp",
+      "side": "A",
+      "name": "Kurdish and Turkmen camp guard",
+      "type": "light_infantry",
+      "strength": 4000,
+      "col": 41,
+      "row": 18,
+      "facing": "left",
+      "morale": 65
+    },
+    {
+      "id": "byz-centre",
+      "side": "B",
+      "name": "Emperor Romanos's centre (tagmata infantry and household)",
+      "type": "heavy_infantry",
+      "strength": 7000,
+      "col": 14,
+      "row": 14,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Romanos IV Diogenes"
+    },
+    {
+      "id": "byz-varangians",
+      "side": "B",
+      "name": "Varangian Guard and imperial bodyguard",
+      "type": "heavy_infantry",
+      "strength": 800,
+      "col": 13,
+      "row": 15,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Romanos IV Diogenes"
+    },
+    {
+      "id": "byz-archers",
+      "side": "B",
+      "name": "Byzantine archers and light foot",
+      "type": "archers",
+      "strength": 2000,
+      "col": 16,
+      "row": 14,
+      "facing": "right",
+      "morale": 60
+    },
+    {
+      "id": "byz-left",
+      "side": "B",
+      "name": "Left wing cavalry (Nikephoros Bryennios)",
+      "type": "cavalry",
+      "strength": 4000,
+      "col": 14,
+      "row": 8,
+      "facing": "right",
+      "morale": 65,
+      "commander": "Nikephoros Bryennios"
+    },
+    {
+      "id": "byz-right",
+      "side": "B",
+      "name": "Right wing cavalry (Theodore Alyates)",
+      "type": "cavalry",
+      "strength": 4000,
+      "col": 14,
+      "row": 21,
+      "facing": "right",
+      "morale": 65,
+      "commander": "Theodore Alyates"
+    },
+    {
+      "id": "byz-rearguard",
+      "side": "B",
+      "name": "Rearguard and reserve (Andronikos Doukas)",
+      "type": "heavy_cavalry",
+      "strength": 5000,
+      "col": 9,
+      "row": 14,
+      "facing": "right",
+      "morale": 55,
+      "commander": "Andronikos Doukas"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The Byzantines leave camp",
+      "time": "26 August 1071, morning",
+      "durationSec": 8,
+      "narration": "After rejecting Alp Arslan's peace overture, Romanos marches out of his camp at Manzikert in battle order: Bryennius on the left, Alyates on the right, the emperor in the centre with the Varangians, and Andronikos Doukas commanding the rearguard behind. The Seljuks form a wide crescent several kilometres away, wings tucked in the hills.",
+      "orders": [
+        {
+          "unit": "byz-centre",
+          "action": "move",
+          "to": [
+            17,
+            14
+          ]
+        },
+        {
+          "unit": "byz-varangians",
+          "action": "move",
+          "to": [
+            16,
+            15
+          ]
+        },
+        {
+          "unit": "byz-archers",
+          "action": "move",
+          "to": [
+            19,
+            14
+          ]
+        },
+        {
+          "unit": "byz-left",
+          "action": "move",
+          "to": [
+            17,
+            9
+          ]
+        },
+        {
+          "unit": "byz-right",
+          "action": "move",
+          "to": [
+            17,
+            20
+          ]
+        },
+        {
+          "unit": "byz-rearguard",
+          "action": "move",
+          "to": [
+            10,
+            14
+          ]
+        },
+        {
+          "unit": "sel-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "sel-north",
+          "action": "hold"
+        },
+        {
+          "unit": "sel-south",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "The advance across the plain",
+      "time": "midday to early afternoon",
+      "durationSec": 10,
+      "narration": "The Byzantine line advances steadily. The Seljuk centre gives ground rather than fight, loosing volleys of arrows as it falls back; the horns of the crescent shower the flanks of the Byzantine wings. The Byzantines cannot bring the mobile enemy to close combat.",
+      "orders": [
+        {
+          "unit": "byz-centre",
+          "action": "move",
+          "to": [
+            22,
+            14
+          ]
+        },
+        {
+          "unit": "byz-varangians",
+          "action": "move",
+          "to": [
+            21,
+            15
+          ]
+        },
+        {
+          "unit": "byz-archers",
+          "action": "move",
+          "to": [
+            24,
+            14
+          ]
+        },
+        {
+          "unit": "byz-left",
+          "action": "move",
+          "to": [
+            22,
+            10
+          ]
+        },
+        {
+          "unit": "byz-right",
+          "action": "move",
+          "to": [
+            22,
+            19
+          ]
+        },
+        {
+          "unit": "sel-centre",
+          "action": "retreat",
+          "to": [
+            32,
+            14
+          ]
+        },
+        {
+          "unit": "sel-centre",
+          "action": "bombard",
+          "target": "byz-centre"
+        },
+        {
+          "unit": "sel-north",
+          "action": "bombard",
+          "target": "byz-left"
+        },
+        {
+          "unit": "sel-south",
+          "action": "bombard",
+          "target": "byz-right"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-left",
+          "strength": 3900,
+          "morale": 62
+        },
+        {
+          "unit": "byz-right",
+          "strength": 3900,
+          "morale": 62
+        },
+        {
+          "unit": "byz-centre",
+          "strength": 6950,
+          "morale": 68
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Harassment and the stretched wings",
+      "time": "afternoon",
+      "durationSec": 11,
+      "narration": "Hour after hour the Seljuks withdraw and harry. The Byzantine wings, trying to envelop the retreating crescent, are drawn apart from the centre and from Doukas's rearguard, which trails far behind. Men and horses tire and the day wears on.",
+      "orders": [
+        {
+          "unit": "byz-centre",
+          "action": "move",
+          "to": [
+            27,
+            14
+          ]
+        },
+        {
+          "unit": "byz-archers",
+          "action": "move",
+          "to": [
+            28,
+            14
+          ]
+        },
+        {
+          "unit": "byz-left",
+          "action": "move",
+          "to": [
+            26,
+            9
+          ]
+        },
+        {
+          "unit": "byz-right",
+          "action": "move",
+          "to": [
+            26,
+            20
+          ]
+        },
+        {
+          "unit": "byz-rearguard",
+          "action": "move",
+          "to": [
+            13,
+            14
+          ]
+        },
+        {
+          "unit": "sel-centre",
+          "action": "retreat",
+          "to": [
+            36,
+            14
+          ]
+        },
+        {
+          "unit": "sel-north",
+          "action": "bombard",
+          "target": "byz-left"
+        },
+        {
+          "unit": "sel-south",
+          "action": "bombard",
+          "target": "byz-right"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-left",
+          "strength": 3800,
+          "morale": 55
+        },
+        {
+          "unit": "byz-right",
+          "strength": 3800,
+          "morale": 55
+        },
+        {
+          "unit": "byz-archers",
+          "strength": 1900,
+          "morale": 52
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Alp Arslan's empty camp",
+      "time": "late afternoon",
+      "durationSec": 10,
+      "narration": "By late afternoon the Byzantine centre reaches the ground where the Seljuk camp stood, but the sultan's army has not been brought to battle and his men have simply melted away from every advance. Romanos, far from his own camp with night approaching, realises the position is untenable.",
+      "orders": [
+        {
+          "unit": "byz-centre",
+          "action": "move",
+          "to": [
+            31,
+            14
+          ]
+        },
+        {
+          "unit": "byz-varangians",
+          "action": "move",
+          "to": [
+            30,
+            15
+          ]
+        },
+        {
+          "unit": "sel-camp",
+          "action": "retreat",
+          "to": [
+            44,
+            20
+          ]
+        },
+        {
+          "unit": "sel-ghulams",
+          "action": "hold"
+        },
+        {
+          "unit": "sel-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "sel-reserve",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-centre",
+          "strength": 6900,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Romanos orders the return to camp",
+      "time": "around dusk",
+      "durationSec": 10,
+      "narration": "Romanos orders the standard turned and the army to withdraw to its camp. In the stretched line the order is misread, or the wheel is carried out raggedly, so that it looks like flight. The Seljuks, who have been waiting for exactly this, close in on the turning wings.",
+      "orders": [
+        {
+          "unit": "byz-centre",
+          "action": "retreat",
+          "to": [
+            20,
+            14
+          ]
+        },
+        {
+          "unit": "byz-varangians",
+          "action": "retreat",
+          "to": [
+            20,
+            15
+          ]
+        },
+        {
+          "unit": "byz-archers",
+          "action": "retreat",
+          "to": [
+            21,
+            14
+          ]
+        },
+        {
+          "unit": "byz-left",
+          "action": "retreat",
+          "to": [
+            20,
+            10
+          ]
+        },
+        {
+          "unit": "byz-right",
+          "action": "retreat",
+          "to": [
+            20,
+            19
+          ]
+        },
+        {
+          "unit": "sel-centre",
+          "action": "charge",
+          "target": "byz-centre"
+        },
+        {
+          "unit": "sel-north",
+          "action": "flank",
+          "target": "byz-left",
+          "to": [
+            28,
+            9
+          ]
+        },
+        {
+          "unit": "sel-south",
+          "action": "flank",
+          "target": "byz-right",
+          "to": [
+            28,
+            19
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-centre",
+          "strength": 6800,
+          "morale": 45
+        },
+        {
+          "unit": "byz-left",
+          "strength": 3700,
+          "morale": 40
+        },
+        {
+          "unit": "byz-right",
+          "strength": 3700,
+          "morale": 40
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Doukas withdraws the rearguard",
+      "time": "dusk",
+      "durationSec": 10,
+      "narration": "Andronikos Doukas, commanding the rearguard, sees the Seljuks swarming in and the line collapsing. Rather than cover the retreat he marches his men back toward the camp, announcing in some accounts that the emperor is lost. The centre and the Varangians are left with no support behind them.",
+      "orders": [
+        {
+          "unit": "byz-rearguard",
+          "action": "retreat",
+          "to": [
+            4,
+            14
+          ]
+        },
+        {
+          "unit": "sel-reserve",
+          "action": "charge",
+          "target": "byz-left"
+        },
+        {
+          "unit": "sel-ghulams",
+          "action": "charge",
+          "target": "byz-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-rearguard",
+          "strength": 5000,
+          "morale": 40,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "byz-centre",
+          "strength": 6000,
+          "morale": 30
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "The Seljuk counter-attack",
+      "time": "twilight",
+      "durationSec": 11,
+      "narration": "The Seljuk horse archers close the crescent. The right wing under Alyates is broken first and the left wing under Bryennius follows. The Byzantine army, spread across the plain, dissolves into fleeing groups hunted down in the dusk.",
+      "orders": [
+        {
+          "unit": "byz-right",
+          "action": "rout"
+        },
+        {
+          "unit": "byz-left",
+          "action": "rout"
+        },
+        {
+          "unit": "byz-archers",
+          "action": "rout"
+        },
+        {
+          "unit": "sel-north",
+          "action": "charge",
+          "target": "byz-left"
+        },
+        {
+          "unit": "sel-south",
+          "action": "charge",
+          "target": "byz-right"
+        },
+        {
+          "unit": "sel-centre",
+          "action": "attack",
+          "target": "byz-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-right",
+          "strength": 3200,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "byz-left",
+          "strength": 3300,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "byz-archers",
+          "strength": 1500,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "byz-centre",
+          "strength": 3500,
+          "morale": 20
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Romanos is captured",
+      "time": "night of 26 August",
+      "durationSec": 11,
+      "narration": "The emperor's centre, with the Varangians around him, is surrounded and fights on until nightfall. Romanos's horse is killed and he is wounded and taken prisoner, the first Byzantine emperor ever captured by a Muslim commander. Pursuit continues through the night.",
+      "orders": [
+        {
+          "unit": "byz-varangians",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "sel-ghulams",
+          "action": "attack",
+          "target": "byz-varangians"
+        },
+        {
+          "unit": "sel-centre",
+          "action": "attack",
+          "target": "byz-centre"
+        },
+        {
+          "unit": "sel-reserve",
+          "action": "attack",
+          "target": "byz-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-varangians",
+          "strength": 0,
+          "morale": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "byz-centre",
+          "strength": 2500,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "sel-centre",
+          "strength": 9800,
+          "morale": 90
+        },
+        {
+          "unit": "sel-ghulams",
+          "strength": 3900,
+          "morale": 90
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Byzantine field army was broken and Romanos was captured, then released after about a week for a treaty and ransom. Doukas-faction intrigue deposed him; the civil wars that followed left Anatolia open to Turkish settlement. Modern historians stress the battle's political more than its material consequences.",
+    "casualties": {
+      "A": "Not recorded; probably light",
+      "B": "Sources give ~2,000-8,000 killed and ~4,000 captured, with many more scattering; modern scholars think losses were lower than older accounts claimed"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Manzikert - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Manzikert"
+    },
+    {
+      "title": "Battle of Manzikert - World History Encyclopedia",
+      "url": "https://www.worldhistory.org/article/1189/battle-of-manzikert/"
+    },
+    {
+      "title": "Romanos IV Diogenes - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Romanos_IV_Diogenes"
+    },
+    {
+      "title": "Alp Arslan - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alp_Arslan"
+    },
+    {
+      "title": "Betrayal or mistake? Rethinking the defeat at Manzikert - Medievalists.net",
+      "url": "https://www.medievalists.net/2026/03/betrayal-or-mistake-rethinking-the-defeat-at-manzikert/"
+    },
+    {
+      "title": "Battle of Manzikert (1071 A.D.) - The Latin Library",
+      "url": "https://www.thelatinlibrary.com/imperialism/notes/manzikert.html"
+    }
+  ]
+}

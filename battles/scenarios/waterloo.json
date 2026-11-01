@@ -1,0 +1,896 @@
+{
+  "id": "waterloo",
+  "title": "Battle of Waterloo",
+  "year": "1815 CE",
+  "date": "18 June 1815",
+  "location": "Near Waterloo, Wallonia, modern Belgium",
+  "wiki": "wiki/battles/waterloo.md",
+  "summary": "Napoleon's last battle. Wellington's Anglo-allied army held the Mont-Saint-Jean ridge for the day against repeated French assaults, until Blücher's Prussians arriving on the French right and the repulse of the Imperial Guard broke the Armée du Nord and ended the Hundred Days.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 140 m",
+    "north": "up",
+    "terrain": [
+      "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTT............ccc..........TTTTTTTTTTTT",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,cc,,,,,,,,,,,,,,,,,,,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,,,,",
+      ",,^^c^^^^^^^^^^^^^^^^^^^:^^^^^^^^^^^^^^^^^^^^^,,",
+      ",,::::::::::::::::::::::::::::::::::::::::::::,,",
+      ",,^^^^^^^^^^^^^^TT^^^^^^:^^^^^^^^^^^^^^^c^^^^^c,",
+      ",,,,,,,,,,,,,,ccTT,,,,,,:,,,,,,,,,,cc,,,,,,,,,,,",
+      ",,,,,,,,,,,,TTTTT,,,,,,c:,,,,,,,,,,,,,,,,,,,,,c,",
+      ",,,,cc,,,,,,TTTTT,,,,,,,:,,,,,,,,,,,,,c,,,,,,,,,",
+      ",,,,,,,,,,,,TTTTT,,,,,,,:,,,,,,,,,,,,,TTTTTTT,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,TTTTTTT,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,TTTTTTT,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,TTTTTTT,,,",
+      ",,,,,,^^^^^^^^^^^^^^^^^^:^^^^^^^^^^^^^TTTTTTT,,,",
+      ",,,,,,^^^^^^^^^^^^^^^^^^cc^^^^^^^^^^^^^^^^^,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,cc,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,c....,,,,,,,,c,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:....,,,,,,,,,,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,c,,,,,,,,,,,,,,,,,,,,~~~",
+      ",,,,,,,,,,,,,,,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,~~~",
+      "........................:....................~~~",
+      ".......................ccc...................~~~"
+    ],
+    "labels": [
+      {
+        "text": "Forêt de Soignes",
+        "col": 4,
+        "row": 0
+      },
+      {
+        "text": "Waterloo",
+        "col": 26,
+        "row": 2
+      },
+      {
+        "text": "Mont-Saint-Jean",
+        "col": 26,
+        "row": 5
+      },
+      {
+        "text": "Ohain road / ridge",
+        "col": 2,
+        "row": 7
+      },
+      {
+        "text": "Hougoumont",
+        "col": 6,
+        "row": 11
+      },
+      {
+        "text": "La Haye Sainte",
+        "col": 25,
+        "row": 12
+      },
+      {
+        "text": "Papelotte",
+        "col": 36,
+        "row": 12
+      },
+      {
+        "text": "Braine-l'Alleud",
+        "col": 2,
+        "row": 14
+      },
+      {
+        "text": "La Belle Alliance",
+        "col": 26,
+        "row": 20
+      },
+      {
+        "text": "Rossomme",
+        "col": 26,
+        "row": 22
+      },
+      {
+        "text": "Plancenoit",
+        "col": 32,
+        "row": 21
+      },
+      {
+        "text": "Bois de Paris",
+        "col": 38,
+        "row": 19
+      },
+      {
+        "text": "Lasne",
+        "col": 43,
+        "row": 10
+      },
+      {
+        "text": "to Wavre",
+        "col": 41,
+        "row": 6
+      },
+      {
+        "text": "Le Caillou",
+        "col": 26,
+        "row": 26
+      },
+      {
+        "text": "Genappe",
+        "col": 26,
+        "row": 29
+      },
+      {
+        "text": "To Brussels",
+        "col": 25,
+        "row": 0
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "First French Empire",
+      "commander": "Napoleon Bonaparte",
+      "color": "#2e64c8",
+      "flag": "france-tricolor"
+    },
+    {
+      "id": "B",
+      "name": "Seventh Coalition (Anglo-Allied & Prussian)",
+      "commander": "Duke of Wellington & Gebhard von Blücher",
+      "color": "#c0392b",
+      "flag": "union-flag"
+    }
+  ],
+  "victor": "B",
+  "units": [
+    {
+      "id": "fr-reille",
+      "side": "A",
+      "name": "II Corps (Reille) incl. Prince Jérôme's division",
+      "type": "infantry",
+      "strength": 13000,
+      "col": 14,
+      "row": 18,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Honoré Reille"
+    },
+    {
+      "id": "fr-derlon",
+      "side": "A",
+      "name": "I Corps (d'Erlon)",
+      "type": "infantry",
+      "strength": 16000,
+      "col": 32,
+      "row": 18,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Jean-Baptiste Drouet d'Erlon"
+    },
+    {
+      "id": "fr-guard",
+      "side": "A",
+      "name": "Old & Middle Guard (Imperial Guard)",
+      "type": "heavy_infantry",
+      "strength": 9000,
+      "col": 24,
+      "row": 23,
+      "facing": "up",
+      "morale": 95,
+      "commander": "Napoleon Bonaparte"
+    },
+    {
+      "id": "fr-lobau",
+      "side": "A",
+      "name": "VI Corps (Lobau)",
+      "type": "infantry",
+      "strength": 10000,
+      "col": 30,
+      "row": 22,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Lobau"
+    },
+    {
+      "id": "fr-cav",
+      "side": "A",
+      "name": "Reserve cavalry (Milhaud, Kellermann and others)",
+      "type": "heavy_cavalry",
+      "strength": 12000,
+      "col": 20,
+      "row": 20,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Michel Ney"
+    },
+    {
+      "id": "fr-arty",
+      "side": "A",
+      "name": "Grande Batterie & Guard artillery",
+      "type": "artillery",
+      "strength": 3000,
+      "col": 26,
+      "row": 17,
+      "facing": "up",
+      "morale": 85
+    },
+    {
+      "id": "fr-young-guard",
+      "side": "A",
+      "name": "Young Guard",
+      "type": "infantry",
+      "strength": 4000,
+      "col": 32,
+      "row": 23,
+      "facing": "up",
+      "morale": 85
+    },
+    {
+      "id": "al-left",
+      "side": "B",
+      "name": "Left-centre: Picton's 5th Div., Bylandt's Dutch-Belgians, Kempt's and Pack's brigades",
+      "type": "infantry",
+      "strength": 10000,
+      "col": 31,
+      "row": 10,
+      "facing": "down",
+      "morale": 65,
+      "commander": "Thomas Picton"
+    },
+    {
+      "id": "al-centre",
+      "side": "B",
+      "name": "Centre infantry (British, KGL, Hanoverian)",
+      "type": "infantry",
+      "strength": 11000,
+      "col": 26,
+      "row": 10,
+      "facing": "down",
+      "morale": 70
+    },
+    {
+      "id": "al-right",
+      "side": "B",
+      "name": "Right: Guards (Maitland), Colborne's 52nd, Chassé's Dutch-Belgian division",
+      "type": "infantry",
+      "strength": 12000,
+      "col": 18,
+      "row": 9,
+      "facing": "down",
+      "morale": 75
+    },
+    {
+      "id": "al-kgl",
+      "side": "B",
+      "name": "La Haye Sainte garrison (2nd Light Bn, King's German Legion)",
+      "type": "light_infantry",
+      "strength": 400,
+      "col": 23,
+      "row": 12,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Georg Baring"
+    },
+    {
+      "id": "al-hougoumont",
+      "side": "B",
+      "name": "Hougoumont garrison (Coldstream, Third Guards and First Guards light companies, Nassau, Hanoverians)",
+      "type": "infantry",
+      "strength": 3500,
+      "col": 14,
+      "row": 11,
+      "facing": "down",
+      "morale": 85,
+      "commander": "James Macdonell"
+    },
+    {
+      "id": "al-cav",
+      "side": "B",
+      "name": "Uxbridge's cavalry (Household, Union, light brigades)",
+      "type": "heavy_cavalry",
+      "strength": 7500,
+      "col": 26,
+      "row": 7,
+      "facing": "down",
+      "morale": 80,
+      "commander": "Earl of Uxbridge"
+    },
+    {
+      "id": "al-arty",
+      "side": "B",
+      "name": "Allied artillery along the ridge (Wellington's 156 guns)",
+      "type": "artillery",
+      "strength": 5000,
+      "col": 29,
+      "row": 9,
+      "facing": "down",
+      "morale": 75
+    },
+    {
+      "id": "pr-bulow",
+      "side": "B",
+      "name": "IV Prussian Corps (Bülow)",
+      "type": "infantry",
+      "strength": 29000,
+      "col": 46,
+      "row": 14,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Bülow",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "pr-zieten",
+      "side": "B",
+      "name": "I Prussian Corps (Zieten)",
+      "type": "infantry",
+      "strength": 13000,
+      "col": 46,
+      "row": 8,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Zieten",
+      "enterPhase": "p7"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Deployment on rain-soaked ground",
+      "time": "~06:00–11:00, 18 June 1815",
+      "durationSec": 8,
+      "narration": "After a night of heavy rain, Wellington's army lies along the Mont-Saint-Jean ridge, most of it behind the crest, with Hougoumont, La Haye Sainte and Papelotte as fortified outposts. Napoleon, waiting for the ground to dry, delays his main attack from 09:00 to about noon. Grouchy's 33,000 men are away chasing the Prussians.",
+      "orders": [
+        {
+          "unit": "fr-derlon",
+          "action": "move",
+          "to": [
+            32,
+            16
+          ]
+        },
+        {
+          "unit": "fr-reille",
+          "action": "move",
+          "to": [
+            14,
+            16
+          ]
+        },
+        {
+          "unit": "fr-arty",
+          "action": "move",
+          "to": [
+            26,
+            16
+          ]
+        },
+        {
+          "unit": "al-left",
+          "action": "hold"
+        },
+        {
+          "unit": "al-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "al-right",
+          "action": "hold"
+        },
+        {
+          "unit": "al-kgl",
+          "action": "hold"
+        },
+        {
+          "unit": "al-hougoumont",
+          "action": "hold"
+        },
+        {
+          "unit": "al-cav",
+          "action": "hold"
+        },
+        {
+          "unit": "al-arty",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "Hougoumont diversion",
+      "time": "~11:30",
+      "durationSec": 9,
+      "narration": "Reille's II Corps, led by Prince Jérôme's division, attacks the walled chateau of Hougoumont as a diversion meant to draw Wellington's reserves to his right. The garrison closes the north gate on the French who break in and holds all day; Napoleon will eventually order the buildings shelled, but the position never falls, and the fight swallows far more French troops than intended.",
+      "orders": [
+        {
+          "unit": "fr-reille",
+          "action": "attack",
+          "target": "al-hougoumont"
+        },
+        {
+          "unit": "al-hougoumont",
+          "action": "hold"
+        },
+        {
+          "unit": "al-right",
+          "action": "move",
+          "to": [
+            16,
+            9
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-reille",
+          "strength": 12000,
+          "morale": 70
+        },
+        {
+          "unit": "al-hougoumont",
+          "strength": 3200,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Grande Batterie and d'Erlon's attack",
+      "time": "~13:00–13:30",
+      "durationSec": 9,
+      "narration": "The 80-gun grande batterie pounds Wellington's left-centre, then d'Erlon's four divisions advance in dense columns on either side of La Haye Sainte. Bylandt's Dutch-Belgians break; Kempt's and Pack's brigades and Picton, who is killed, meet the columns on the ridge. Allied infantry fire and bayonets stop the head of the attack.",
+      "orders": [
+        {
+          "unit": "fr-arty",
+          "action": "bombard",
+          "target": "al-left"
+        },
+        {
+          "unit": "fr-derlon",
+          "action": "attack",
+          "target": "al-left"
+        },
+        {
+          "unit": "al-left",
+          "action": "hold"
+        },
+        {
+          "unit": "al-kgl",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-reille",
+          "action": "attack",
+          "target": "al-hougoumont"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "al-left",
+          "strength": 8500,
+          "morale": 60
+        },
+        {
+          "unit": "fr-derlon",
+          "strength": 15000,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Household and Union cavalry charge",
+      "time": "~14:00",
+      "durationSec": 9,
+      "narration": "Uxbridge sends the Household and Union Brigades down the slope into d'Erlon's disordered columns; the Scots Greys, Sergeant Ewart among them, capture the eagle of the 45th Line, and the brigades ride on toward the grande batterie. Out of control and blown, they are caught by French lancers and cuirassiers. About 3,000 of d'Erlon's men are lost and his corps needs until about 16:00 to re-form, but the heavy cavalry is badly mauled and the Union Brigade loses its commander, Ponsonby.",
+      "orders": [
+        {
+          "unit": "al-cav",
+          "action": "charge",
+          "target": "fr-derlon"
+        },
+        {
+          "unit": "al-left",
+          "action": "attack",
+          "target": "fr-derlon"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-derlon",
+          "strength": 12500,
+          "morale": 35
+        },
+        {
+          "unit": "al-cav",
+          "strength": 5500,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Ney's massed cavalry against the squares",
+      "time": "~15:30–16:00",
+      "durationSec": 10,
+      "narration": "Napoleon orders Ney to take La Haye Sainte, but Ney, seeing Allied wounded and baggage moving to the rear and taking it for a retreat, throws the cavalry reserve at the ridge instead: some 9,000 horse in all by the end. Allied infantry form squares between the batteries; gunners fire on the horsemen and shelter in the squares as they recede. Repeated charges fail to break a square, and the French cavalry, unsupported by infantry or guns, is bled white.",
+      "orders": [
+        {
+          "unit": "al-cav",
+          "action": "retreat",
+          "to": [
+            26,
+            6
+          ]
+        },
+        {
+          "unit": "fr-cav",
+          "action": "charge",
+          "target": "al-centre"
+        },
+        {
+          "unit": "fr-arty",
+          "action": "bombard",
+          "target": "al-centre"
+        },
+        {
+          "unit": "al-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-derlon",
+          "action": "attack",
+          "target": "al-kgl"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-cav",
+          "strength": 8000,
+          "morale": 45
+        },
+        {
+          "unit": "al-centre",
+          "strength": 9500,
+          "morale": 60
+        },
+        {
+          "unit": "al-arty",
+          "strength": 4500,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Prussians reach Plancenoit",
+      "time": "~16:30–18:00",
+      "durationSec": 10,
+      "narration": "Bülow's IV Corps debouches from the Bois de Paris and attacks Lobau's flank and the village of Plancenoit. Napoleon sends the Young Guard, then Old Guard battalions to hold his right rear, committing infantry that could have exploited the centre. Plancenoit changes hands repeatedly; the French line is bent back toward a horseshoe.",
+      "orders": [
+        {
+          "unit": "pr-bulow",
+          "action": "attack",
+          "target": "fr-lobau"
+        },
+        {
+          "unit": "fr-lobau",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-young-guard",
+          "action": "move",
+          "to": [
+            36,
+            22
+          ]
+        },
+        {
+          "unit": "fr-cav",
+          "action": "retreat",
+          "to": [
+            24,
+            18
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-lobau",
+          "strength": 8500,
+          "morale": 55
+        },
+        {
+          "unit": "fr-young-guard",
+          "strength": 3000,
+          "morale": 60
+        },
+        {
+          "unit": "pr-bulow",
+          "strength": 28000,
+          "morale": 80
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "La Haye Sainte falls",
+      "time": "~18:00",
+      "durationSec": 9,
+      "narration": "Out of rifle ammunition, the King's German Legion garrison is overwhelmed and La Haye Sainte falls to d'Erlon's men. French skirmishers and horse artillery now open fire at close range on Wellington's centre, which is badly thinned. Wellington is reorganising and waits for Zieten, whose I Corps arrives on his far left after Müffling persuades him to support the Allied line.",
+      "orders": [
+        {
+          "unit": "fr-derlon",
+          "action": "attack",
+          "target": "al-kgl"
+        },
+        {
+          "unit": "fr-arty",
+          "action": "bombard",
+          "target": "al-centre"
+        },
+        {
+          "unit": "pr-zieten",
+          "action": "move",
+          "to": [
+            37,
+            10
+          ]
+        },
+        {
+          "unit": "al-centre",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "al-kgl",
+          "strength": 40,
+          "morale": 20,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "al-centre",
+          "strength": 7500,
+          "morale": 45
+        },
+        {
+          "unit": "fr-derlon",
+          "strength": 10500,
+          "morale": 45
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Attack of the Imperial Guard",
+      "time": "~19:00–19:30",
+      "durationSec": 10,
+      "narration": "Napoleon sends the Imperial Guard up the slope against the Allied right-centre (one source counts about 14 battalions in two columns, others fewer). Maitland's Guards, Colborne's 52nd and Chassé's Dutch division break the attack at close range. The cry of \"La Garde recule!\" runs through the French army; as the French right wing gives way under Zieten's attack, Wellington signals a general advance.",
+      "orders": [
+        {
+          "unit": "fr-guard",
+          "action": "attack",
+          "target": "al-right"
+        },
+        {
+          "unit": "al-right",
+          "action": "attack",
+          "target": "fr-guard"
+        },
+        {
+          "unit": "pr-zieten",
+          "action": "attack",
+          "target": "fr-derlon"
+        },
+        {
+          "unit": "pr-bulow",
+          "action": "attack",
+          "target": "fr-young-guard"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-guard",
+          "strength": 6000,
+          "morale": 15
+        },
+        {
+          "unit": "al-right",
+          "strength": 10000,
+          "morale": 85
+        },
+        {
+          "unit": "fr-derlon",
+          "strength": 8500,
+          "morale": 15
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "General advance and the French rout",
+      "time": "~20:00–21:30",
+      "durationSec": 12,
+      "narration": "The Allied army sweeps down the slope; the Prussians take Plancenoit for the last time. Old Guard squares south of La Haye Sainte cover the French retreat until they run out of ammunition. The Prussians pursue through the night and the Armée du Nord dissolves.",
+      "orders": [
+        {
+          "unit": "fr-reille",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-derlon",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-cav",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-lobau",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-young-guard",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-arty",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-guard",
+          "action": "retreat",
+          "to": [
+            24,
+            28
+          ]
+        },
+        {
+          "unit": "al-left",
+          "action": "attack",
+          "target": "fr-derlon"
+        },
+        {
+          "unit": "al-centre",
+          "action": "attack",
+          "target": "fr-reille"
+        },
+        {
+          "unit": "al-right",
+          "action": "attack",
+          "target": "fr-guard"
+        },
+        {
+          "unit": "pr-zieten",
+          "action": "move",
+          "to": [
+            24,
+            22
+          ]
+        },
+        {
+          "unit": "pr-bulow",
+          "action": "move",
+          "to": [
+            26,
+            20
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-reille",
+          "strength": 9500,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-derlon",
+          "strength": 9000,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-cav",
+          "strength": 6500,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-lobau",
+          "strength": 7500,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-young-guard",
+          "strength": 2000,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-arty",
+          "strength": 1500,
+          "status": "destroyed"
+        },
+        {
+          "unit": "fr-guard",
+          "strength": 5000,
+          "status": "routed"
+        },
+        {
+          "unit": "al-left",
+          "strength": 6500
+        },
+        {
+          "unit": "al-centre",
+          "strength": 6000
+        },
+        {
+          "unit": "al-right",
+          "strength": 9500
+        },
+        {
+          "unit": "al-hougoumont",
+          "strength": 2200
+        },
+        {
+          "unit": "al-cav",
+          "strength": 5000
+        },
+        {
+          "unit": "al-arty",
+          "strength": 4200
+        },
+        {
+          "unit": "pr-bulow",
+          "strength": 27000
+        },
+        {
+          "unit": "pr-zieten",
+          "strength": 12000
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "Wellington's army held the ridge until Prussian pressure on Napoleon's right and the failure of the Imperial Guard's attack turned the day; the French army disintegrated, Napoleon abdicated four days later and was exiled to Saint Helena. Casualty figures differ by source.",
+    "casualties": {
+      "A": "~25,000–33,000 killed or wounded depending on source, plus ~7,000–8,000 captured; ~220 guns lost",
+      "B": "~17,000 Anglo-allied (some sources ~24,000 incl. Prussians) and ~7,000 Prussian killed, wounded or missing"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Waterloo — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo"
+    },
+    {
+      "title": "The Battle of Waterloo — National Army Museum",
+      "url": "https://www.nam.ac.uk/explore/battle-waterloo"
+    },
+    {
+      "title": "Battle of Waterloo — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/article/2303/battle-of-waterloo/"
+    },
+    {
+      "title": "Battle of Waterloo — HistoryNet",
+      "url": "https://www.historynet.com/battle-of-waterloo/"
+    },
+    {
+      "title": "Hougoumont — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hougoumont"
+    },
+    {
+      "title": "La Haye Sainte — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/La_Haye_Sainte"
+    },
+    {
+      "title": "Charles Ewart — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Charles_Ewart"
+    }
+  ]
+}

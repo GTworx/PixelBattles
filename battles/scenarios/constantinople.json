@@ -1,0 +1,835 @@
+{
+  "id": "constantinople",
+  "title": "Fall of Constantinople",
+  "year": "1453",
+  "date": "6 April - 29 May 1453",
+  "location": "Constantinople (modern Istanbul, Turkey)",
+  "wiki": "wiki/battles/constantinople.md",
+  "summary": "Sultan Mehmed II besieged the last Byzantine stronghold for 53 days with a vast army, a huge gun and a fleet. Defended by perhaps 7,000-8,000 men behind the Theodosian Walls, the city fell on 29 May after a night assault in waves, ending the Byzantine Empire.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ~ 130 m",
+    "north": "up",
+    "terrain": [
+      ",.....,.^^^^^^^...,.....,.....,.....,....=======",
+      ".....,..^^^^^^^..,.....,..^^^^^^^^^^^^^^^=======",
+      "....,...^^^^^^^.,.....,...^^^^^^^^^^^^^^^=======",
+      "...,.....,.....,.....,....^^^^^^^^^^^^^^^=======",
+      "..,.....,.....,.....,.....^^^^^^^^^^^^^^^=======",
+      ".,.....,.....,.....,.....,^^^^^cccccccc^^=======",
+      ",.....,.....,.....,.....,.....,cccccccc..=======",
+      ".....,.....,.....,.....,.....,.cccccccc..=======",
+      ".........=======================================",
+      ".........=======================================",
+      "............############g################=======",
+      "....,....,~ggccccc......................#=======",
+      "...,....,.~##ccccc..cccc................#=======",
+      "..,....,..~ggc^^^^..cccc................#=======",
+      ".,^^^^,...~##.^^^^..cccc.......cccccccc.#=======",
+      ",.^^^^....~##...........ccccc..cccccccc.#=======",
+      "..^^^^...,~gg::::::::::::::::::cccccccc.#=======",
+      "..^^^^..,.~rr...........ccccc..cccccccc.#=======",
+      "..^^^^.,..~rr..................cccccccc.#=======",
+      ".,^^^^,...~##..................cccccccc.#=======",
+      ",.^^^^....~##..................cccccccc.#=======",
+      "....,....,~gg..................cccccccc.#=======",
+      "...,....,.~##..................cccccccc.#=======",
+      "..,....,..~##...........................#=======",
+      ".,....,...~gg...........................#=======",
+      ",....,....~##...........................#=======",
+      "============#############################=======",
+      "================================================",
+      "================================================",
+      "================================================"
+    ],
+    "labels": [
+      {
+        "text": "Sea of Marmara",
+        "col": 20,
+        "row": 28
+      },
+      {
+        "text": "Bosporus",
+        "col": 42,
+        "row": 18
+      },
+      {
+        "text": "Golden Horn",
+        "col": 14,
+        "row": 8
+      },
+      {
+        "text": "Galata (Genoese)",
+        "col": 31,
+        "row": 4
+      },
+      {
+        "text": "Chain boom",
+        "col": 36,
+        "row": 9
+      },
+      {
+        "text": "Ships hauled overland",
+        "col": 30,
+        "row": 2
+      },
+      {
+        "text": "Blachernae",
+        "col": 13,
+        "row": 12
+      },
+      {
+        "text": "Kerkoporta",
+        "col": 8,
+        "row": 10
+      },
+      {
+        "text": "Charisian Gate",
+        "col": 5,
+        "row": 12
+      },
+      {
+        "text": "St Romanus Gate / Mesoteichion",
+        "col": 0,
+        "row": 16
+      },
+      {
+        "text": "Lycus valley breach",
+        "col": 0,
+        "row": 19
+      },
+      {
+        "text": "Pegae Gate",
+        "col": 3,
+        "row": 22
+      },
+      {
+        "text": "Golden Gate",
+        "col": 2,
+        "row": 24
+      },
+      {
+        "text": "Sultan's tent",
+        "col": 1,
+        "row": 14
+      },
+      {
+        "text": "Hagia Sophia",
+        "col": 33,
+        "row": 18
+      },
+      {
+        "text": "Theodosian Walls",
+        "col": 13,
+        "row": 19
+      },
+      {
+        "text": "Ottoman camp",
+        "col": 0,
+        "row": 6
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Ottoman Empire",
+      "commander": "Sultan Mehmed II",
+      "color": "#2e8b57",
+      "flag": "ottoman"
+    },
+    {
+      "id": "B",
+      "name": "Byzantine Empire",
+      "commander": "Emperor Constantine XI Palaiologos",
+      "color": "#6a2c91",
+      "flag": "palaiologan"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "ott-rumelian",
+      "side": "A",
+      "name": "Rumelian regulars (Karaca Pasha)",
+      "type": "infantry",
+      "strength": 18000,
+      "col": 7,
+      "row": 12,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Karaca Pasha"
+    },
+    {
+      "id": "ott-anatolian",
+      "side": "A",
+      "name": "Anatolian regulars (Ishak Pasha)",
+      "type": "infantry",
+      "strength": 15000,
+      "col": 7,
+      "row": 22,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Ishak Pasha"
+    },
+    {
+      "id": "ott-janissaries",
+      "side": "A",
+      "name": "Janissaries and the Sultan's household",
+      "type": "heavy_infantry",
+      "strength": 5000,
+      "col": 6,
+      "row": 17,
+      "facing": "right",
+      "morale": 90,
+      "commander": "Mehmed II"
+    },
+    {
+      "id": "ott-bombards",
+      "side": "A",
+      "name": "Orban's great bombard and the siege batteries",
+      "type": "artillery",
+      "strength": 1500,
+      "col": 8,
+      "row": 17,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Orban"
+    },
+    {
+      "id": "ott-bashibazouks",
+      "side": "A",
+      "name": "Bashi-bazouks, irregular levies",
+      "type": "light_infantry",
+      "strength": 15000,
+      "col": 5,
+      "row": 14,
+      "facing": "right",
+      "morale": 55
+    },
+    {
+      "id": "ott-azaps",
+      "side": "A",
+      "name": "Azaps and Anatolian Turkmen (Blachernae sector)",
+      "type": "light_infantry",
+      "strength": 8000,
+      "col": 6,
+      "row": 9,
+      "facing": "right",
+      "morale": 60
+    },
+    {
+      "id": "ott-zaganos",
+      "side": "A",
+      "name": "Zaganos Pasha's corps north of the Golden Horn",
+      "type": "infantry",
+      "strength": 5000,
+      "col": 20,
+      "row": 6,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Zaganos Pasha"
+    },
+    {
+      "id": "ott-fleet",
+      "side": "A",
+      "name": "Ottoman fleet (Baltoghlu), Bosporus anchorage",
+      "type": "ships",
+      "strength": 9000,
+      "col": 44,
+      "row": 14,
+      "facing": "left",
+      "morale": 65,
+      "commander": "Suleiman Baltoghlu"
+    },
+    {
+      "id": "ott-horn-flotilla",
+      "side": "A",
+      "name": "Ships hauled overland into the Golden Horn",
+      "type": "ships",
+      "strength": 3000,
+      "col": 33,
+      "row": 8,
+      "facing": "left",
+      "morale": 75,
+      "enterPhase": "p4"
+    },
+    {
+      "id": "byz-constantine",
+      "side": "B",
+      "name": "Greek garrison, Mesoteichion (Constantine XI)",
+      "type": "infantry",
+      "strength": 1800,
+      "col": 14,
+      "row": 17,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Constantine XI"
+    },
+    {
+      "id": "byz-giustiniani",
+      "side": "B",
+      "name": "Genoese professionals at the stockade (Giustiniani)",
+      "type": "heavy_infantry",
+      "strength": 700,
+      "col": 14,
+      "row": 18,
+      "facing": "left",
+      "morale": 90,
+      "commander": "Giovanni Giustiniani Longo"
+    },
+    {
+      "id": "byz-blachernae",
+      "side": "B",
+      "name": "Blachernae garrison (Minotto, Venetians and Greeks)",
+      "type": "infantry",
+      "strength": 1200,
+      "col": 14,
+      "row": 12,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Girolamo Minotto"
+    },
+    {
+      "id": "byz-south",
+      "side": "B",
+      "name": "Southern land walls, Pegae to Golden Gate (Contarini, Theophilus)",
+      "type": "infantry",
+      "strength": 1200,
+      "col": 14,
+      "row": 22,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Theophilus Palaiologos"
+    },
+    {
+      "id": "byz-notaras",
+      "side": "B",
+      "name": "Reserve at Petra (Loukas Notaras)",
+      "type": "infantry",
+      "strength": 600,
+      "col": 21,
+      "row": 13,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Loukas Notaras"
+    },
+    {
+      "id": "byz-seawall",
+      "side": "B",
+      "name": "Sea-wall garrisons (Venetians, Genoese, Catalans)",
+      "type": "infantry",
+      "strength": 1000,
+      "col": 36,
+      "row": 24,
+      "facing": "left",
+      "morale": 70
+    },
+    {
+      "id": "byz-fleet",
+      "side": "B",
+      "name": "Christian fleet behind the chain (Diedo)",
+      "type": "ships",
+      "strength": 1000,
+      "col": 30,
+      "row": 8,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Alviso Diedo"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The siege opens",
+      "time": "2-6 April 1453",
+      "durationSec": 8,
+      "narration": "Mehmed II encamps before the Theodosian Walls with perhaps 50,000-80,000 men; his tent stands opposite the Mesoteichion where the walls dip into the Lycus valley. Constantine XI posts his thin garrison along 5.7 km of walls, with Giustiniani's Genoese on the land walls and the Golden Horn closed by a chain.",
+      "orders": [
+        {
+          "unit": "ott-bombards",
+          "action": "bombard",
+          "target": "byz-constantine"
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-giustiniani",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-blachernae",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-south",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "The great bombardment and the first assault",
+      "time": "6-18 April",
+      "durationSec": 10,
+      "narration": "Orban's great bombard and the Ottoman batteries pound the Mesoteichion for weeks, but the defenders pad and rebuild the damage with timber, earth and rubble. The first Ottoman assault, on 18 April, is repulsed.",
+      "orders": [
+        {
+          "unit": "ott-bombards",
+          "action": "bombard",
+          "target": "byz-giustiniani"
+        },
+        {
+          "unit": "ott-rumelian",
+          "action": "attack",
+          "target": "byz-giustiniani"
+        },
+        {
+          "unit": "byz-giustiniani",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-rumelian",
+          "strength": 17000,
+          "morale": 70
+        },
+        {
+          "unit": "byz-giustiniani",
+          "strength": 690,
+          "morale": 90
+        },
+        {
+          "unit": "byz-constantine",
+          "strength": 1780
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Four ships break through",
+      "time": "20 April",
+      "durationSec": 9,
+      "narration": "Three Genoese ships and a grain ship fight their way through Baltoghlu's fleet and into the Golden Horn. Mehmed, furious, orders Baltoghlu executed but spares him, stripping him of wealth and titles; he is reportedly wounded in the eye.",
+      "orders": [
+        {
+          "unit": "ott-fleet",
+          "action": "attack",
+          "target": "byz-fleet"
+        },
+        {
+          "unit": "byz-fleet",
+          "action": "bombard",
+          "target": "ott-fleet"
+        },
+        {
+          "unit": "ott-zaganos",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-fleet",
+          "strength": 8500,
+          "morale": 45
+        },
+        {
+          "unit": "byz-fleet",
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Ships hauled over Galata",
+      "time": "22 April",
+      "durationSec": 10,
+      "narration": "In a single operation Mehmed has some seventy ships dragged on greased logs over the hill above Galata and launched into the Golden Horn, outflanking the chain. The thin garrison must now guard the harbour sea walls as well as the land walls; a Christian fire-ship attempt on the night of 28 April fails.",
+      "orders": [
+        {
+          "unit": "ott-horn-flotilla",
+          "action": "bombard",
+          "target": "byz-fleet"
+        },
+        {
+          "unit": "ott-zaganos",
+          "action": "attack",
+          "target": "byz-blachernae"
+        },
+        {
+          "unit": "byz-fleet",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-seawall",
+          "action": "move",
+          "to": [
+            26,
+            12
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-fleet",
+          "strength": 900,
+          "morale": 55
+        },
+        {
+          "unit": "byz-blachernae",
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Mines, towers and a last offer",
+      "time": "28 April - 27 May",
+      "durationSec": 12,
+      "narration": "From mid-May the Ottomans dig tunnels under the walls; Johannes Grant, a German serving with the Genoese, countermines, and tunnels are intercepted on 16, 21, 23 and 25 May. On 21 May Mehmed offers to lift the siege in exchange for the city, and Constantine refuses. On 27 May a Venetian scouting ship returns with the news that no relief fleet is coming.",
+      "orders": [
+        {
+          "unit": "ott-bombards",
+          "action": "bombard",
+          "target": "byz-constantine"
+        },
+        {
+          "unit": "ott-azaps",
+          "action": "move",
+          "to": [
+            8,
+            10
+          ]
+        },
+        {
+          "unit": "ott-bashibazouks",
+          "action": "move",
+          "to": [
+            8,
+            15
+          ]
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-constantine",
+          "strength": 1650,
+          "morale": 60
+        },
+        {
+          "unit": "byz-giustiniani",
+          "strength": 640,
+          "morale": 80
+        },
+        {
+          "unit": "ott-bombards",
+          "strength": 1400,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "The night assault: bashi-bazouks",
+      "time": "29 May, ~01:30",
+      "durationSec": 10,
+      "narration": "Three hours before dawn, to a roar of drums and trumpets, Mehmed throws his irregulars at the whole length of the walls, especially the Mesoteichion. The bashi-bazouks are fodder, meant to tire the defenders; after about two hours they are called back.",
+      "orders": [
+        {
+          "unit": "ott-bashibazouks",
+          "action": "attack",
+          "target": "byz-constantine"
+        },
+        {
+          "unit": "ott-rumelian",
+          "action": "attack",
+          "target": "byz-giustiniani"
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-giustiniani",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-bashibazouks",
+          "strength": 12000,
+          "morale": 25,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "byz-constantine",
+          "strength": 1550,
+          "morale": 55
+        },
+        {
+          "unit": "byz-giustiniani",
+          "strength": 620,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "The second wave: Anatolians and azaps at Blachernae",
+      "time": "29 May, ~03:30",
+      "durationSec": 10,
+      "narration": "Fresh Anatolian regulars and azaps follow, pressing the Blachernae sector and the Mesoteichion stockade; guns fire into the stockade and a stretch of the outer wall falls. A group is said to break into the city before being thrown out.",
+      "orders": [
+        {
+          "unit": "ott-azaps",
+          "action": "attack",
+          "target": "byz-blachernae"
+        },
+        {
+          "unit": "ott-anatolian",
+          "action": "attack",
+          "target": "byz-constantine"
+        },
+        {
+          "unit": "ott-bombards",
+          "action": "bombard",
+          "target": "byz-giustiniani"
+        },
+        {
+          "unit": "byz-blachernae",
+          "action": "hold"
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-azaps",
+          "strength": 6500,
+          "morale": 40
+        },
+        {
+          "unit": "ott-anatolian",
+          "strength": 13500,
+          "morale": 55
+        },
+        {
+          "unit": "byz-blachernae",
+          "strength": 1000,
+          "morale": 55
+        },
+        {
+          "unit": "byz-constantine",
+          "strength": 1300,
+          "morale": 50
+        },
+        {
+          "unit": "byz-giustiniani",
+          "strength": 550,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "The Janissaries; Giustiniani falls",
+      "time": "29 May, ~05:00",
+      "durationSec": 12,
+      "narration": "Mehmed commits his Janissaries against the stockade. Giustiniani is seriously wounded and withdrawn from the wall; Genoese retreat toward the harbour. Ulubatli Hasan is said to have been first onto the stockade, and according to Doukas about fifty Turks enter by the Kerkoporta, left open by accident, though that account is disputed.",
+      "orders": [
+        {
+          "unit": "ott-janissaries",
+          "action": "attack",
+          "target": "byz-giustiniani"
+        },
+        {
+          "unit": "ott-rumelian",
+          "action": "attack",
+          "target": "byz-constantine"
+        },
+        {
+          "unit": "byz-giustiniani",
+          "action": "retreat",
+          "to": [
+            26,
+            18
+          ]
+        },
+        {
+          "unit": "byz-constantine",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-giustiniani",
+          "strength": 250,
+          "morale": 20,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "ott-janissaries",
+          "strength": 4300,
+          "morale": 90
+        },
+        {
+          "unit": "byz-constantine",
+          "strength": 600,
+          "morale": 30
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "The city falls",
+      "time": "29 May, dawn - 1 June",
+      "durationSec": 14,
+      "narration": "Ottoman columns pour through the breach and the Kerkoporta; Constantine XI throws off his imperial insignia and dies fighting near the St Romanus Gate. Resistance collapses, the sea walls are abandoned and the troops sack the city for three days. About 30,000 people are enslaved; Mehmed makes Constantinople his capital.",
+      "orders": [
+        {
+          "unit": "ott-janissaries",
+          "action": "move",
+          "to": [
+            20,
+            16
+          ]
+        },
+        {
+          "unit": "ott-rumelian",
+          "action": "move",
+          "to": [
+            17,
+            12
+          ]
+        },
+        {
+          "unit": "ott-anatolian",
+          "action": "move",
+          "to": [
+            24,
+            22
+          ]
+        },
+        {
+          "unit": "ott-azaps",
+          "action": "move",
+          "to": [
+            18,
+            11
+          ]
+        },
+        {
+          "unit": "ott-zaganos",
+          "action": "attack",
+          "target": "byz-seawall"
+        },
+        {
+          "unit": "ott-horn-flotilla",
+          "action": "bombard",
+          "target": "byz-fleet"
+        },
+        {
+          "unit": "byz-fleet",
+          "action": "retreat",
+          "to": [
+            22,
+            8
+          ]
+        },
+        {
+          "unit": "byz-notaras",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "byz-constantine",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "byz-blachernae",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "byz-south",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "byz-notaras",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "byz-seawall",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "byz-giustiniani",
+          "strength": 150,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "byz-fleet",
+          "strength": 600,
+          "status": "withdrawn"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Ottomans took the city on 29 May 1453 after 53 days, ending the Byzantine Empire. Western accounts give inflated Ottoman numbers (160,000-300,000); modern estimates are 50,000-80,000 against 7,000-8,000 defenders. The walls, which had resisted sieges for a thousand years, were worn down by gunpowder artillery and finally stormed in a three-wave night assault after Giustiniani was wounded.",
+    "casualties": {
+      "A": "Unknown but heavy; likely several thousand dead over the siege",
+      "B": "~4,000 killed (Nicolle); ~30,000 enslaved (Crowley); Emperor Constantine XI killed"
+    }
+  },
+  "sources": [
+    {
+      "title": "Fall of Constantinople - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+    },
+    {
+      "title": "Theodosian Walls - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Theodosian_Walls"
+    },
+    {
+      "title": "1453: The Fall of Constantinople - World History Encyclopedia",
+      "url": "https://www.worldhistory.org/article/1180/1453-the-fall-of-constantinople/"
+    },
+    {
+      "title": "Suleiman Baltoghlu - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Suleiman_Baltoghlu"
+    },
+    {
+      "title": "Giovanni Giustiniani - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giovanni_Giustiniani"
+    },
+    {
+      "title": "Kerkoporta - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kerkoporta"
+    },
+    {
+      "title": "BMCR review of a scholarly study of the siege (2012.03.27)",
+      "url": "https://bmcr.brynmawr.edu/?p=38384"
+    }
+  ]
+}

@@ -1,0 +1,877 @@
+{
+  "id": "stalingrad",
+  "title": "Battle of Stalingrad",
+  "year": "1942–1943 CE",
+  "date": "23 August 1942 – 2 February 1943",
+  "location": "Stalingrad (modern Volgograd), USSR",
+  "wiki": "wiki/battles/stalingrad.md",
+  "summary": "For 162 days German, Romanian and other Axis troops fought the Red Army for the city on the Volga. After the 6th Army was drawn into street fighting, Operation Uranus broke the Romanian flanks, encircled about 250,000-290,000 Axis troops, defeated the Winter Storm relief and forced Paulus's surrender on 2 February 1943.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 5 km (city strip drawn schematically)",
+    "north": "up",
+    "terrain": [
+      ",,,,,,,,,~,,,.............:......==.............",
+      ",,,,,,,,,,~,,.............:......==.............",
+      ",,,,,,,,,,~,,.............:......==.............",
+      ",,,,,,,,,,,~,.............:......==.............",
+      ",,,,,,,,,,,~,.............:.....cc==............",
+      ",,,,,,,,,,,,~.............:.....cc==............",
+      ",,,,,,,,,,,,~.............:....rcc==............",
+      ",,,,,,,,,,,,,~............:....rcc==............",
+      ",,,,,,,,,,,,,~............:.....rrr==bbbbbbbbbbb",
+      ",,,,,,,,,,,,,.~...........:....cccc==bbbbbbbbbbb",
+      ",,,,,,,,,,,,,.c~..........:....cccc==bbbbbbbbbbb",
+      "................~.........:.....ccc==bbbbbbbbbbb",
+      ".................~........:......^^c==bbbbbbbbbb",
+      "...................~......:.....^^cc==bbbbbbbbbb",
+      "....................~.....:.cc...^rr==bbbbbbbbbb",
+      "......................~.......c..rrr==bbbbbbbbbb",
+      ".......................~c:::::~~~~~rr==bbbbbbbbb",
+      ".......................~c.........rrr==bbbbbbbbb",
+      "bbbbbbbbbbbbbbbbbbbbbb~bbbbbbbbbbcccc==sTbbbbbbb",
+      "bbbbbbbbbbbbbbbbbbbbb~bbbbbbbbbbbcccc==sTbbbbbbb",
+      "bbbbbbbbbbbbbbbbbbb~bbbbbbbbbbbbbbcccc==sTbbbbbb",
+      "bbbbbbbbbbbbbbbbb~bbbbbbbbbbbbbbbbcccc==sTbbbbbb",
+      "bbbbbbbbbbbbbbb~bbbbbbbbbbbbbbbb:bbbbb==sTbbbbbb",
+      "bbbbbbbbbbbbb~bbbbbbbbbbbbbbbb::bbbbbb==sTbbbbbb",
+      "bbbbbbbbbbbbbbbbbbbbbbbbbbbb::bbbbb~bbb==sTbbbbb",
+      "bbbbbbbbbbb~bbbbbb~~~~~~~~~:~~~~bbb~~bb==sTbbbbb",
+      "bbbbbbbbbbbbbbbbbbbbbbbbb::bbbbbbbb~bbb==sTbbbbb",
+      "bbbbbbbbb~bbbbbbbbbbbbb::bcbbbbbbbbbbbb==sTbbbbb",
+      "bbbbbbbbbbbbbb:::::::::bbbbbbbbbbbbbbbbb==sTbbbb",
+      "bbbbbbbb~bbbbbcbbbbbbbbbbbbbbbbbbbbbbbbb==sTbbbb"
+    ],
+    "labels": [
+      {
+        "text": "VOLGA",
+        "col": 40,
+        "row": 3
+      },
+      {
+        "text": "Zavolzhye",
+        "col": 42,
+        "row": 11
+      },
+      {
+        "text": "Rynok",
+        "col": 30,
+        "row": 4
+      },
+      {
+        "text": "Tractor F.",
+        "col": 24,
+        "row": 9
+      },
+      {
+        "text": "Barrikady",
+        "col": 25,
+        "row": 11
+      },
+      {
+        "text": "Red Oct.",
+        "col": 26,
+        "row": 13
+      },
+      {
+        "text": "Mamayev K.",
+        "col": 26,
+        "row": 12
+      },
+      {
+        "text": "Zaritsa",
+        "col": 25,
+        "row": 17
+      },
+      {
+        "text": "Beketovka",
+        "col": 29,
+        "row": 21
+      },
+      {
+        "text": "Sarpa Lakes",
+        "col": 36,
+        "row": 27
+      },
+      {
+        "text": "Kalach",
+        "col": 25,
+        "row": 15
+      },
+      {
+        "text": "DON",
+        "col": 6,
+        "row": 3
+      },
+      {
+        "text": "Kletskaya",
+        "col": 15,
+        "row": 11
+      },
+      {
+        "text": "Pitomnik",
+        "col": 26,
+        "row": 14
+      },
+      {
+        "text": "Myshkova R.",
+        "col": 19,
+        "row": 24
+      },
+      {
+        "text": "Verkhne-Kumsky",
+        "col": 27,
+        "row": 27
+      },
+      {
+        "text": "Kotelnikovo",
+        "col": 9,
+        "row": 29
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Soviet Union",
+      "commander": "Zhukov, Vasilevsky, Chuikov, Yeryomenko, Rokossovsky",
+      "color": "#c0392b",
+      "flag": "soviet"
+    },
+    {
+      "id": "B",
+      "name": "Germany & Axis (Romania, Italy, Hungary)",
+      "commander": "Friedrich Paulus, Hoth, Manstein",
+      "color": "#555d6e",
+      "flag": "german-cross"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "sov-62nd",
+      "side": "A",
+      "name": "62nd Army (Chuikov) in the city",
+      "type": "infantry",
+      "strength": 54000,
+      "col": 34,
+      "row": 14,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Vasily Chuikov"
+    },
+    {
+      "id": "sov-64th",
+      "side": "A",
+      "name": "64th Army (Shumilov) at Beketovka",
+      "type": "infantry",
+      "strength": 40000,
+      "col": 36,
+      "row": 21,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Mikhail Shumilov"
+    },
+    {
+      "id": "sov-volga-arty",
+      "side": "A",
+      "name": "Volga artillery & Katyusha regiments on the east bank",
+      "type": "artillery",
+      "strength": 8000,
+      "col": 39,
+      "row": 14,
+      "facing": "left",
+      "morale": 85
+    },
+    {
+      "id": "sov-don-front",
+      "side": "A",
+      "name": "Don Front (Rokossovsky): 66th, 24th, 65th Armies",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 28,
+      "row": 5,
+      "facing": "down",
+      "morale": 80,
+      "commander": "Konstantin Rokossovsky"
+    },
+    {
+      "id": "sov-5th-tank",
+      "side": "A",
+      "name": "5th Tank Army, Southwestern Front (Vatutin)",
+      "type": "armor",
+      "strength": 60000,
+      "col": 14,
+      "row": 5,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Nikolai Vatutin (Southwestern Front)",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "sov-21st",
+      "side": "A",
+      "name": "21st Army, Southwestern Front",
+      "type": "infantry",
+      "strength": 60000,
+      "col": 15,
+      "row": 4,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Nikolai Vatutin (Southwestern Front)",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "sov-south",
+      "side": "A",
+      "name": "51st & 57th Armies with 4th & 13th Mechanized Corps (Stalingrad Front)",
+      "type": "armor",
+      "strength": 90000,
+      "col": 36,
+      "row": 23,
+      "facing": "left",
+      "morale": 90,
+      "commander": "Andrey Yeryomenko",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "sov-2nd-guards",
+      "side": "A",
+      "name": "2nd Guards Army (Malinovsky)",
+      "type": "infantry",
+      "strength": 90000,
+      "col": 27,
+      "row": 24,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Rodion Malinovsky",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "ax-6th-city",
+      "side": "B",
+      "name": "6th Army assault divisions in the city",
+      "type": "infantry",
+      "strength": 110000,
+      "col": 28,
+      "row": 15,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Friedrich Paulus"
+    },
+    {
+      "id": "ax-panzer-corps",
+      "side": "B",
+      "name": "Panzer divisions of 6th Army (incl. 14th and 24th Panzer) at Rynok and in the city",
+      "type": "armor",
+      "strength": 45000,
+      "col": 27,
+      "row": 10,
+      "facing": "right",
+      "morale": 75
+    },
+    {
+      "id": "ax-6th-flank",
+      "side": "B",
+      "name": "6th Army infantry corps on the northern and western flanks",
+      "type": "infantry",
+      "strength": 70000,
+      "col": 26,
+      "row": 7,
+      "facing": "right",
+      "morale": 70
+    },
+    {
+      "id": "ax-4th-panzer",
+      "side": "B",
+      "name": "4th Panzer Army, southern city and Beketovka (Hoth)",
+      "type": "armor",
+      "strength": 40000,
+      "col": 30,
+      "row": 22,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Hermann Hoth"
+    },
+    {
+      "id": "ax-luftwaffe",
+      "side": "B",
+      "name": "Luftflotte 4 bomber and transport wings (Pitomnik)",
+      "type": "artillery",
+      "strength": 10000,
+      "col": 28,
+      "row": 14,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Wolfram von Richthofen"
+    },
+    {
+      "id": "ax-rom-3rd",
+      "side": "B",
+      "name": "Romanian Third Army on the Don",
+      "type": "infantry",
+      "strength": 155000,
+      "col": 17,
+      "row": 9,
+      "facing": "down",
+      "morale": 55,
+      "commander": "Petre Dumitrescu"
+    },
+    {
+      "id": "ax-rom-4th",
+      "side": "B",
+      "name": "Romanian Fourth Army and VI Corps (south of the city)",
+      "type": "infantry",
+      "strength": 70000,
+      "col": 31,
+      "row": 25,
+      "facing": "right",
+      "morale": 50,
+      "commander": "Constantin Constantinescu-Claps"
+    },
+    {
+      "id": "ax-lvii",
+      "side": "B",
+      "name": "LVII Panzer Corps (Winter Storm relief force)",
+      "type": "armor",
+      "strength": 30000,
+      "col": 14,
+      "row": 29,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Friedrich Kirchner",
+      "enterPhase": "p7"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Drive to the Volga and the bombing",
+      "time": "23–26 August 1942",
+      "durationSec": 9,
+      "narration": "The German 6th Army and 4th Panzer Army attack toward Stalingrad on 23 August 1942, and about 600 Axis aircraft of Luftflotte 4 bomb the largely wooden city over 23–26 August, killing many civilians. Soviet artillery on the east bank and the 62nd and 64th Armies hold the outskirts; by 3 September Axis troops reach the city limits and by 12 September they enter the city proper.",
+      "orders": [
+        {
+          "unit": "ax-panzer-corps",
+          "action": "move",
+          "to": [
+            32,
+            6
+          ]
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "move",
+          "to": [
+            30,
+            14
+          ]
+        },
+        {
+          "unit": "ax-4th-panzer",
+          "action": "move",
+          "to": [
+            32,
+            20
+          ]
+        },
+        {
+          "unit": "ax-luftwaffe",
+          "action": "bombard",
+          "target": "sov-62nd"
+        },
+        {
+          "unit": "sov-volga-arty",
+          "action": "bombard",
+          "target": "ax-panzer-corps"
+        },
+        {
+          "unit": "sov-62nd",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-64th",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "sov-62nd",
+          "strength": 46000,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Street fighting: Mamayev Kurgan and the centre",
+      "time": "12 September – early October 1942",
+      "durationSec": 10,
+      "narration": "Chuikov's 62nd Army, formed in the city in mid-September (sources give 11–12 September), fights street by street. Mamayev Kurgan changes hands so often that attacker and defender are hard to tell apart; the grain elevator is held by about fifty men for five days, and Pavlov's House by a platoon for about two months.",
+      "orders": [
+        {
+          "unit": "ax-6th-city",
+          "action": "attack",
+          "target": "sov-62nd"
+        },
+        {
+          "unit": "ax-4th-panzer",
+          "action": "attack",
+          "target": "sov-64th"
+        },
+        {
+          "unit": "sov-62nd",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-volga-arty",
+          "action": "bombard",
+          "target": "ax-6th-city"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "sov-62nd",
+          "strength": 36000,
+          "morale": 70
+        },
+        {
+          "unit": "ax-6th-city",
+          "strength": 100000,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The factory district",
+      "time": "October 1942 (14 October offensive)",
+      "durationSec": 10,
+      "narration": "On 14 October the Germans launch a major offensive against the Tractor Factory, the Barrikady gun plant and Red October. Fighting in the Barrikady district continues until late October, and the Soviets cling to a strip along the river, supplied by night across the Volga.",
+      "orders": [
+        {
+          "unit": "ax-panzer-corps",
+          "action": "move",
+          "to": [
+            31,
+            10
+          ]
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "action": "attack",
+          "target": "sov-62nd"
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "attack",
+          "target": "sov-62nd"
+        },
+        {
+          "unit": "sov-62nd",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-volga-arty",
+          "action": "bombard",
+          "target": "ax-panzer-corps"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "sov-62nd",
+          "strength": 28000,
+          "morale": 60
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "strength": 40000,
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Last German push, 'Lyudnikov's Island'",
+      "time": "11–18 November 1942",
+      "durationSec": 9,
+      "narration": "By mid-November the Germans have pushed the defenders into narrow zones along the Volga's west bank; the fighting centres on \"Lyudnikov's Island\". The 6th Army is exhausted and its long flanks lie on the Don steppe, guarded by weaker Romanian, Italian and Hungarian armies.",
+      "orders": [
+        {
+          "unit": "ax-6th-city",
+          "action": "attack",
+          "target": "sov-62nd"
+        },
+        {
+          "unit": "sov-62nd",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-volga-arty",
+          "action": "bombard",
+          "target": "ax-6th-city"
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "sov-62nd",
+          "strength": 22000,
+          "morale": 55
+        },
+        {
+          "unit": "ax-6th-city",
+          "strength": 85000,
+          "morale": 60
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "strength": 36000,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Operation Uranus: the Romanian flanks collapse",
+      "time": "19–21 November 1942",
+      "durationSec": 12,
+      "narration": "On 19 November the Southwestern and Don Fronts attack from the north-west and overrun the weak, outnumbered Romanian Third Army; the 26th Tank Corps takes Perelazovsky, about 130 km north-west of Stalingrad, by the end of 20 November. On 20 November the Stalingrad Front strikes the Romanian Fourth Army from the south.",
+      "orders": [
+        {
+          "unit": "sov-5th-tank",
+          "action": "attack",
+          "target": "ax-rom-3rd"
+        },
+        {
+          "unit": "sov-21st",
+          "action": "attack",
+          "target": "ax-rom-3rd"
+        },
+        {
+          "unit": "sov-south",
+          "action": "charge",
+          "target": "ax-rom-4th"
+        },
+        {
+          "unit": "sov-don-front",
+          "action": "attack",
+          "target": "ax-6th-flank"
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ax-rom-3rd",
+          "strength": 40000,
+          "morale": 15,
+          "status": "routed"
+        },
+        {
+          "unit": "ax-rom-4th",
+          "strength": 35000,
+          "morale": 20,
+          "status": "routed"
+        },
+        {
+          "unit": "sov-5th-tank",
+          "strength": 58000,
+          "morale": 90
+        },
+        {
+          "unit": "sov-south",
+          "strength": 88000,
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "The ring closes at Kalach",
+      "time": "22–23 November 1942",
+      "durationSec": 9,
+      "narration": "On 22 November Soviet forces cross the Don and take Kalach, and on 23 November the northern force links up there with the 4th Mechanized Corps from the south, sealing the ring. Paulus estimates about 250,000 men inside the pocket. Hitler forbids a breakout and Göring promises an airlift of 300 tons a day; it delivers about 90.",
+      "orders": [
+        {
+          "unit": "sov-5th-tank",
+          "action": "move",
+          "to": [
+            25,
+            15
+          ]
+        },
+        {
+          "unit": "sov-south",
+          "action": "move",
+          "to": [
+            25,
+            17
+          ]
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "hold"
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ax-rom-3rd",
+          "strength": 20000,
+          "status": "destroyed"
+        },
+        {
+          "unit": "ax-rom-4th",
+          "strength": 20000,
+          "status": "destroyed"
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Winter Storm relief attempt",
+      "time": "12–23 December 1942",
+      "durationSec": 12,
+      "narration": "Manstein's Army Group Don sends the LVII Panzer Corps from Kotelnikovo with Hoth's 4th Panzer Army on 12 December; its 23rd Panzer Division has no more than thirty serviceable tanks at first. By 19 December it is about 48 km from the pocket, but the Soviet 2nd Guards Army (about 90,000 men) has been moved up, Operation Little Saturn threatens Manstein's flank, and the 6th Army, with fuel for only about 30 km, does not break out. Manstein abandons the attempt on 23 December.",
+      "orders": [
+        {
+          "unit": "ax-lvii",
+          "action": "move",
+          "to": [
+            26,
+            27
+          ]
+        },
+        {
+          "unit": "ax-lvii",
+          "action": "attack",
+          "target": "sov-2nd-guards"
+        },
+        {
+          "unit": "sov-2nd-guards",
+          "action": "attack",
+          "target": "ax-lvii"
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-5th-tank",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-south",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ax-lvii",
+          "strength": 20000,
+          "morale": 35,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "sov-2nd-guards",
+          "strength": 85000,
+          "morale": 90
+        },
+        {
+          "unit": "ax-6th-city",
+          "strength": 80000,
+          "morale": 50
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Operation Ring: the Kessel is squeezed",
+      "time": "24 December 1942 – 26 January 1943",
+      "durationSec": 12,
+      "narration": "The airlift never delivers more than a fraction of the 750–800 tons needed daily and the pocket starves. On 10 January the Don Front opens Operation Ring behind nearly 7,000 guns and mortars. Pitomnik airfield falls on 16 January and Gumrak about 22 January; on 26 January the 21st Army links up with the 13th Guards Division north of Mamayev Kurgan and splits the pocket in two. Soviet surrender terms (7–8 and 22–24 January, sources differ) are rejected by Hitler.",
+      "orders": [
+        {
+          "unit": "sov-don-front",
+          "action": "attack",
+          "target": "ax-6th-flank"
+        },
+        {
+          "unit": "sov-21st",
+          "action": "attack",
+          "target": "ax-6th-city"
+        },
+        {
+          "unit": "sov-62nd",
+          "action": "attack",
+          "target": "ax-6th-city"
+        },
+        {
+          "unit": "sov-64th",
+          "action": "attack",
+          "target": "ax-panzer-corps"
+        },
+        {
+          "unit": "ax-6th-city",
+          "action": "retreat",
+          "to": [
+            31,
+            15
+          ]
+        },
+        {
+          "unit": "ax-6th-flank",
+          "action": "retreat",
+          "to": [
+            30,
+            11
+          ]
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "action": "retreat",
+          "to": [
+            32,
+            18
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ax-6th-city",
+          "strength": 60000,
+          "morale": 25
+        },
+        {
+          "unit": "ax-6th-flank",
+          "strength": 45000,
+          "morale": 25
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "strength": 25000,
+          "morale": 25
+        },
+        {
+          "unit": "ax-luftwaffe",
+          "strength": 2000,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "ax-4th-panzer",
+          "strength": 20000,
+          "status": "withdrawn"
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Capitulation",
+      "time": "27 January – 2 February 1943",
+      "durationSec": 12,
+      "narration": "The pocket is split again. Hitler promotes Paulus to field marshal on 30 January; Paulus surrenders the southern pocket on 31 January, and General Strecker ends resistance in the northern pocket on 2 February. About 91,000 Axis soldiers go into captivity, including 22 generals; only about 5,000 will return.",
+      "orders": [
+        {
+          "unit": "sov-62nd",
+          "action": "attack",
+          "target": "ax-6th-city"
+        },
+        {
+          "unit": "sov-21st",
+          "action": "attack",
+          "target": "ax-6th-city"
+        },
+        {
+          "unit": "sov-don-front",
+          "action": "attack",
+          "target": "ax-6th-flank"
+        },
+        {
+          "unit": "sov-64th",
+          "action": "attack",
+          "target": "ax-panzer-corps"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ax-6th-city",
+          "strength": 40000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ax-6th-flank",
+          "strength": 30000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ax-panzer-corps",
+          "strength": 15000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "sov-62nd",
+          "strength": 25000
+        },
+        {
+          "unit": "sov-64th",
+          "strength": 30000
+        },
+        {
+          "unit": "sov-don-front",
+          "strength": 80000
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Soviet Union won the battle: the Axis lost the 6th Army, much of the 4th Panzer Army and four allied armies, and Germany lost the strategic initiative in the east. Estimates of losses vary widely.",
+    "casualties": {
+      "A": "~1.13 million total casualties in the archival count, of which ~479,000 killed or missing (later estimates up to ~1.35 million)",
+      "B": "~800,000–1.5 million Axis casualties by differing counts; 6th Army ~275,000–282,600 lost; ~91,000 surrendered incl. 22 generals"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Stalingrad — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad"
+    },
+    {
+      "title": "Operation Uranus — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Uranus"
+    },
+    {
+      "title": "Operation Winter Storm — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Winter_Storm"
+    },
+    {
+      "title": "Operation Koltso — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Koltso"
+    },
+    {
+      "title": "Battle of Stalingrad — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/article/2696/battle-of-stalingrad/"
+    },
+    {
+      "title": "62nd Army (Soviet Union) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/62nd_Army_(Soviet_Union)"
+    },
+    {
+      "title": "64th Army (Soviet Union) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/64th_Army_(Soviet_Union)"
+    },
+    {
+      "title": "Stalingrad Front — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stalingrad_Front"
+    }
+  ]
+}

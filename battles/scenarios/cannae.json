@@ -1,0 +1,740 @@
+{
+  "id": "cannae",
+  "title": "Battle of Cannae",
+  "year": "216 BCE",
+  "date": "2 August 216 BCE",
+  "location": "Cannae, Apulia, southeast Italy (left bank of the Aufidus)",
+  "wiki": "wiki/battles/cannae.md",
+  "summary": "Hannibal's 40,000–50,000 Carthaginians and allies annihilated a Roman and allied army of some 80,000 on the open plain beside the Aufidus. A crescent centre that gave ground, African infantry on the wings and a cavalry strike on the Roman rear produced the most famous double envelopment in history.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 80 m",
+    "north": "up",
+    "terrain": [
+      ",...~~.,......,......,......,......,....:.,.....",
+      "....~~......,......,......,......,......:......,",
+      "...,.~~...,......,......,......,cccccc,.:....,..",
+      ".,...~~.,......,......,......,..cccccc..:..,....",
+      ".....~~......,......,......,....cccccc..:,......",
+      "....,~~....,......,......,......,......,:.....,.",
+      "cc,..~~..,......,......,......,......,..:...,...",
+      "cc...~~,......,......,......,......,....:.,.....",
+      "cc...~~.....,......,......,......,......:......,",
+      "...,.~~...,......,......,......,......,.:....,..",
+      ".,...~~.,......,......,......,......,...:..,....",
+      ".....~~......,......,......,......,.....:,......",
+      "....,~~....,......,......,......,......,:.....,.",
+      "..,..~~..,......,......,......,......,..:...,...",
+      ",....~~,......,......,......,......,....:.,.....",
+      "....~~......,......,......,......,......:......,",
+      "...,~~....,......,......,......,......,.:....,..",
+      ".,..~~..,......,......,......,......,...:..,....",
+      "...~~.,......,......,......,......,.....:,......",
+      "...~~......,......,......,......,......,:.....,.",
+      "..,~~....,......,......,......,......,..:...,...",
+      ",..~~..,......,......,......,......,....:.,.....",
+      "...~~,......,......,......,......,......:......,",
+      "...~~.....,......,......,......,......,.:....,..",
+      ".,.~~...,......,......,......,......,...:..,....",
+      "...~~.,......,......,......,......,.....:,......",
+      "...~~......,......,...^^^^^^^...,......,:.....,.",
+      "..,~~....,......,.....^^ccc^^.,......,..:...,...",
+      ",..~~..,......,......,^^ccc^^......,....:.,.....",
+      "...~~,......,......,..^^^^^^^....,......:......,"
+    ],
+    "labels": [
+      {
+        "text": "River Aufidus",
+        "col": 6,
+        "row": 2
+      },
+      {
+        "text": "Cannae (hill & village)",
+        "col": 20,
+        "row": 25
+      },
+      {
+        "text": "Roman main camp",
+        "col": 30,
+        "row": 5
+      },
+      {
+        "text": "Roman small camp",
+        "col": 0,
+        "row": 9
+      },
+      {
+        "text": "Open plain of Apulia",
+        "col": 20,
+        "row": 8
+      },
+      {
+        "text": "Volturnus wind (reported, uncertain)",
+        "col": 30,
+        "row": 22
+      },
+      {
+        "text": "Escape route to Canusium",
+        "col": 42,
+        "row": 5
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Carthage",
+      "commander": "Hannibal Barca",
+      "color": "#c0392b",
+      "flag": "carthage"
+    },
+    {
+      "id": "B",
+      "name": "Roman Republic",
+      "commander": "Varro & Paullus",
+      "color": "#2e64c8",
+      "flag": "rome"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "car-hasdrubal-cav",
+      "side": "A",
+      "name": "Iberian & Gallic cavalry (left, on the Aufidus)",
+      "type": "heavy_cavalry",
+      "strength": 6500,
+      "col": 7,
+      "row": 18,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Hasdrubal"
+    },
+    {
+      "id": "car-libyans-left",
+      "side": "A",
+      "name": "Libyan heavy infantry (left wing of the crescent)",
+      "type": "heavy_infantry",
+      "strength": 5000,
+      "col": 15,
+      "row": 18,
+      "facing": "up",
+      "morale": 90,
+      "commander": "Hannibal"
+    },
+    {
+      "id": "car-gauls",
+      "side": "A",
+      "name": "Gallic infantry (centre, forward)",
+      "type": "infantry",
+      "strength": 8000,
+      "col": 21,
+      "row": 15,
+      "facing": "up",
+      "morale": 60,
+      "commander": "Hannibal"
+    },
+    {
+      "id": "car-iberians",
+      "side": "A",
+      "name": "Iberian infantry (centre, forward)",
+      "type": "infantry",
+      "strength": 8000,
+      "col": 27,
+      "row": 15,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Mago & Hannibal"
+    },
+    {
+      "id": "car-libyans-right",
+      "side": "A",
+      "name": "Libyan heavy infantry (right wing of the crescent)",
+      "type": "heavy_infantry",
+      "strength": 5000,
+      "col": 33,
+      "row": 18,
+      "facing": "up",
+      "morale": 90,
+      "commander": "Hannibal"
+    },
+    {
+      "id": "car-skirmishers",
+      "side": "A",
+      "name": "Balearic slingers & javelin skirmishers",
+      "type": "light_infantry",
+      "strength": 5000,
+      "col": 24,
+      "row": 13,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Hannibal"
+    },
+    {
+      "id": "car-numidians",
+      "side": "A",
+      "name": "Numidian light cavalry (right)",
+      "type": "cavalry",
+      "strength": 3500,
+      "col": 42,
+      "row": 18,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Hanno"
+    },
+    {
+      "id": "rom-cav-right",
+      "side": "B",
+      "name": "Roman citizen cavalry (right, on the Aufidus)",
+      "type": "heavy_cavalry",
+      "strength": 2400,
+      "col": 8,
+      "row": 11,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Lucius Aemilius Paullus"
+    },
+    {
+      "id": "rom-legions-right",
+      "side": "B",
+      "name": "Roman legions (right-centre)",
+      "type": "heavy_infantry",
+      "strength": 12000,
+      "col": 16,
+      "row": 11,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Lucius Aemilius Paullus"
+    },
+    {
+      "id": "rom-centre",
+      "side": "B",
+      "name": "Deep centre: massed legions & allies",
+      "type": "heavy_infantry",
+      "strength": 28000,
+      "col": 24,
+      "row": 11,
+      "facing": "down",
+      "morale": 80,
+      "commander": "Gnaeus Servilius Geminus"
+    },
+    {
+      "id": "rom-allies-left",
+      "side": "B",
+      "name": "Allied (socii) infantry (left)",
+      "type": "heavy_infantry",
+      "strength": 15000,
+      "col": 33,
+      "row": 11,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Gaius Terentius Varro"
+    },
+    {
+      "id": "rom-cav-left",
+      "side": "B",
+      "name": "Allied cavalry (left)",
+      "type": "cavalry",
+      "strength": 4000,
+      "col": 42,
+      "row": 11,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Gaius Terentius Varro"
+    },
+    {
+      "id": "rom-velites",
+      "side": "B",
+      "name": "Velites (skirmishers)",
+      "type": "light_infantry",
+      "strength": 10000,
+      "col": 24,
+      "row": 14,
+      "facing": "down",
+      "morale": 65,
+      "commander": "Marcus Minucius Rufus"
+    },
+    {
+      "id": "rom-camp-garrison",
+      "side": "B",
+      "name": "Camp garrison (allied troops left in both camps)",
+      "type": "infantry",
+      "strength": 10000,
+      "col": 34,
+      "row": 3,
+      "facing": "down",
+      "morale": 60,
+      "commander": "Gaius Lutatius"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Crescent deployment",
+      "time": "morning, 2 August 216 BCE",
+      "durationSec": 8,
+      "narration": "The Romans, facing south with the Aufidus at their right, mass their infantry deeper than usual to punch through the centre. Hannibal bows his Gallic and Iberian infantry forward in a crescent, holding the best African troops back at the wing tips and the cavalry beside the river and on the open flank.",
+      "orders": [
+        {
+          "unit": "car-gauls",
+          "action": "hold"
+        },
+        {
+          "unit": "rom-centre",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "Skirmishers and the cavalry clash at the river",
+      "time": "morning",
+      "durationSec": 10,
+      "narration": "Light troops skirmish in front of the lines without result. Then Hasdrubal's Iberian and Gallic horse crash into the Roman citizen cavalry, which is squeezed between the river and its own infantry. Polybius says both sides fought on foot at close quarters; the Roman right wing cavalry is destroyed.",
+      "orders": [
+        {
+          "unit": "car-hasdrubal-cav",
+          "action": "charge",
+          "target": "rom-cav-right"
+        },
+        {
+          "unit": "rom-cav-right",
+          "action": "attack",
+          "target": "car-hasdrubal-cav"
+        },
+        {
+          "unit": "car-skirmishers",
+          "action": "bombard",
+          "target": "rom-velites"
+        },
+        {
+          "unit": "rom-velites",
+          "action": "attack",
+          "target": "car-skirmishers"
+        },
+        {
+          "unit": "car-numidians",
+          "action": "attack",
+          "target": "rom-cav-left"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-cav-right",
+          "strength": 300,
+          "status": "routed",
+          "morale": 10
+        },
+        {
+          "unit": "rom-velites",
+          "strength": 9000,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The Roman centre pushes in",
+      "time": "late morning",
+      "durationSec": 10,
+      "narration": "The velites pull back through the ranks and the Roman heavy infantry advance against the Gallic and Iberian centre. Hannibal and Mago stand with the front line; as the legionaries press, the Celts and Iberians give ground step by step rather than breaking.",
+      "orders": [
+        {
+          "unit": "rom-centre",
+          "action": "attack",
+          "target": "car-gauls"
+        },
+        {
+          "unit": "rom-legions-right",
+          "action": "attack",
+          "target": "car-gauls"
+        },
+        {
+          "unit": "rom-allies-left",
+          "action": "attack",
+          "target": "car-iberians"
+        },
+        {
+          "unit": "car-gauls",
+          "action": "retreat",
+          "to": [
+            22,
+            19
+          ]
+        },
+        {
+          "unit": "car-iberians",
+          "action": "retreat",
+          "to": [
+            26,
+            19
+          ]
+        },
+        {
+          "unit": "car-skirmishers",
+          "action": "retreat",
+          "to": [
+            24,
+            22
+          ]
+        },
+        {
+          "unit": "car-numidians",
+          "action": "attack",
+          "target": "rom-cav-left"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "car-gauls",
+          "strength": 7000,
+          "morale": 55
+        },
+        {
+          "unit": "car-iberians",
+          "strength": 7600,
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "The crescent inverts",
+      "time": "midday",
+      "durationSec": 10,
+      "narration": "The Carthaginian centre retires until the crescent has become a hollow pocket, while the Roman mass, losing its frontage, funnels into the gap in a dense column. The Libyans stand untouched on either side of the Roman flanks, and the legionaries pay them no attention.",
+      "orders": [
+        {
+          "unit": "rom-centre",
+          "action": "move",
+          "to": [
+            24,
+            17
+          ]
+        },
+        {
+          "unit": "rom-legions-right",
+          "action": "move",
+          "to": [
+            20,
+            16
+          ]
+        },
+        {
+          "unit": "rom-allies-left",
+          "action": "move",
+          "to": [
+            28,
+            16
+          ]
+        },
+        {
+          "unit": "car-gauls",
+          "action": "hold"
+        },
+        {
+          "unit": "car-iberians",
+          "action": "hold"
+        },
+        {
+          "unit": "car-libyans-left",
+          "action": "move",
+          "to": [
+            17,
+            16
+          ]
+        },
+        {
+          "unit": "car-libyans-right",
+          "action": "move",
+          "to": [
+            31,
+            16
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "car-gauls",
+          "strength": 6000,
+          "morale": 50
+        },
+        {
+          "unit": "rom-centre",
+          "strength": 27000,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "The African infantry close the flanks",
+      "time": "early afternoon",
+      "durationSec": 10,
+      "narration": "On Hannibal's signal the Libyan heavy infantry wheel inward against both exposed Roman flanks, while the Gallic and Iberian centre halts and turns to fight. The Roman army, already unable to manoeuvre, now takes blows from three sides.",
+      "orders": [
+        {
+          "unit": "car-libyans-left",
+          "action": "attack",
+          "target": "rom-legions-right"
+        },
+        {
+          "unit": "car-libyans-right",
+          "action": "attack",
+          "target": "rom-allies-left"
+        },
+        {
+          "unit": "car-gauls",
+          "action": "attack",
+          "target": "rom-centre"
+        },
+        {
+          "unit": "car-iberians",
+          "action": "attack",
+          "target": "rom-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-legions-right",
+          "strength": 9000,
+          "morale": 50
+        },
+        {
+          "unit": "rom-allies-left",
+          "strength": 12000,
+          "morale": 55
+        },
+        {
+          "unit": "car-gauls",
+          "strength": 5500
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Hasdrubal sweeps round the Roman rear",
+      "time": "early afternoon",
+      "durationSec": 10,
+      "narration": "Hasdrubal leaves a screen against the broken river flank and rides behind the whole Roman army to the far wing. There he and the Numidians scatter the allied cavalry; Varro flees with a handful of horsemen (about 50 in Livy, 70 in Polybius) to Venusia, leaving the legions leaderless on the left.",
+      "orders": [
+        {
+          "unit": "car-hasdrubal-cav",
+          "action": "flank",
+          "target": "rom-cav-left",
+          "to": [
+            24,
+            5
+          ]
+        },
+        {
+          "unit": "car-numidians",
+          "action": "charge",
+          "target": "rom-cav-left"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-cav-left",
+          "strength": 70,
+          "status": "routed",
+          "morale": 5
+        },
+        {
+          "unit": "car-hasdrubal-cav",
+          "strength": 6400
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Encirclement",
+      "time": "mid-afternoon",
+      "durationSec": 10,
+      "narration": "Hasdrubal's horse hit the Roman rear and the Numidians chase down the fugitives, completing the ring. Packed so tightly that the front ranks cannot use their weapons freely, the legionaries are compressed into a mass, and the Carthaginians cut it to pieces from every side.",
+      "orders": [
+        {
+          "unit": "car-hasdrubal-cav",
+          "action": "attack",
+          "target": "rom-centre"
+        },
+        {
+          "unit": "car-numidians",
+          "action": "attack",
+          "target": "rom-allies-left"
+        },
+        {
+          "unit": "car-libyans-left",
+          "action": "attack",
+          "target": "rom-centre"
+        },
+        {
+          "unit": "car-libyans-right",
+          "action": "attack",
+          "target": "rom-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-centre",
+          "strength": 12000,
+          "morale": 20
+        },
+        {
+          "unit": "rom-legions-right",
+          "strength": 5000,
+          "morale": 25
+        },
+        {
+          "unit": "rom-allies-left",
+          "strength": 7000,
+          "morale": 25
+        },
+        {
+          "unit": "car-gauls",
+          "strength": 4500
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Annihilation",
+      "time": "evening",
+      "durationSec": 12,
+      "narration": "The slaughter goes on until dusk. Paullus, wounded early by a sling stone, is killed by fugitives who do not recognise him; so are Servilius Geminus, Minucius Rufus and about eighty senators or former magistrates. Polybius counts around 70,000 Romans dead; Livy about 48,000 killed. Only scattered groups, such as the 600 who reach Canusium, escape.",
+      "orders": [
+        {
+          "unit": "car-libyans-left",
+          "action": "attack",
+          "target": "rom-legions-right"
+        },
+        {
+          "unit": "car-libyans-right",
+          "action": "attack",
+          "target": "rom-allies-left"
+        },
+        {
+          "unit": "car-hasdrubal-cav",
+          "action": "attack",
+          "target": "rom-centre"
+        },
+        {
+          "unit": "car-numidians",
+          "action": "attack",
+          "target": "rom-velites"
+        },
+        {
+          "unit": "rom-velites",
+          "action": "rout"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-centre",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "rom-legions-right",
+          "strength": 1200,
+          "status": "routed"
+        },
+        {
+          "unit": "rom-allies-left",
+          "strength": 2000,
+          "status": "routed"
+        },
+        {
+          "unit": "rom-velites",
+          "strength": 1500,
+          "status": "routed"
+        },
+        {
+          "unit": "car-gauls",
+          "strength": 4000
+        },
+        {
+          "unit": "car-iberians",
+          "strength": 7500
+        },
+        {
+          "unit": "car-libyans-left",
+          "strength": 4900
+        },
+        {
+          "unit": "car-libyans-right",
+          "strength": 4900
+        },
+        {
+          "unit": "car-numidians",
+          "strength": 3450
+        },
+        {
+          "unit": "car-skirmishers",
+          "strength": 4950
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "The camps fall",
+      "time": "the following day",
+      "durationSec": 8,
+      "narration": "The 10,000 men Paullus left to guard his camp (meant, in Polybius, to raid Hannibal's camp during the battle) are shut in by Hannibal's relief force and captured. In Livy, Maharbal urges an immediate march on Rome and Hannibal declines (the anecdote is doubtful); southern Italian allies begin to defect.",
+      "orders": [
+        {
+          "unit": "car-numidians",
+          "action": "attack",
+          "target": "rom-camp-garrison"
+        },
+        {
+          "unit": "car-skirmishers",
+          "action": "attack",
+          "target": "rom-camp-garrison"
+        },
+        {
+          "unit": "rom-camp-garrison",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rom-camp-garrison",
+          "strength": 10000,
+          "status": "surrendered"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "Rome suffered the worst single-day defeat in its history. Capua, Tarentum and much of southern Italy defected to Hannibal, yet Rome refused terms, raised new legions and, avoiding pitched battle, eventually carried the war to Africa.",
+    "casualties": {
+      "A": "~5,700–8,000 killed (Polybius ~5,700 incl. ~4,000 Celts; Livy ~8,000)",
+      "B": "~48,000 killed (Livy) to ~70,000 killed (Polybius); 10,000–19,000 captured"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Cannae — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Cannae"
+    },
+    {
+      "title": "Battle of Cannae — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Cannae/"
+    },
+    {
+      "title": "Polybius, Histories III.110-118 (Cannae) — Fordham Ancient History Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/ancient/polybius-cannae.asp"
+    },
+    {
+      "title": "Livy, Book 22 (Cannae) — John Clare, Ancient History sources",
+      "url": "https://johndclare.net/AncientHistory/Hannibal_Sources6.html"
+    },
+    {
+      "title": "Maharbal — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Maharbal"
+    }
+  ]
+}

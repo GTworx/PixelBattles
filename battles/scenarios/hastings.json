@@ -1,0 +1,888 @@
+{
+  "id": "hastings",
+  "title": "Battle of Hastings",
+  "year": "1066",
+  "date": "14 October 1066",
+  "location": "Senlac Hill, near Hastings, East Sussex, England",
+  "wiki": "wiki/battles/hastings.md",
+  "summary": "William of Normandy's invasion army met King Harold II's English army on the Senlac ridge. The English shield wall held for most of a day until feigned retreats, combined archery and cavalry assaults and Harold's death broke it, opening the Norman Conquest of England.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 100 m (approximate)",
+    "north": "up",
+    "terrain": [
+      "TTTTTTTTTTTTTTTTTTTTTTTT:TTTTTTTTTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTTTTTTTTTT:TTTTTTTTTTTTTTTTTTTTTTT",
+      "....................^^^^:^^^^...................",
+      "TTTTTTTTT...........^^^^:^^^^.....TTTTTTTTTTTTTT",
+      "TTTTTTTTT...........^^^^:^^^^.....~~~~~TTTTTTTTT",
+      "TTTTTTTTT...........^^^^:^^^^..........TTTTTTTTT",
+      "TTTTTTTTT...........^^^^:^^^^..........TTTTTTTTT",
+      "TTTTTTTTT...............:..............TTTTTTTTT",
+      "TTTTTTTTT...............:..............TTTTTTTTT",
+      "TTTTTTTTT^^^^^^^^^^^^^^^:^^^^^^^^^^^^^^TTTTTTTTT",
+      "TTTTTTTTT^^^^^^^^^^^^^^^:^^^^^^^^^^^^^^TTTTTTTTT",
+      "TTTTTTTTT^^^^^^^^^^^^^^^:^^^^^^^^^^^^^^TTTTTTTTT",
+      "TTTTTTTTT^^^^^^^^^^^^^^^:^^^^^^^^^^^^^^TTTTTTTTT",
+      "TTTTTTTTT...............:..............TTTTTTTTT",
+      "TTTTTTTTT...............:..............TTTTTTTTT",
+      "...sssssssssss..........:.........sssssssssss...",
+      "...sssssssssss..........:.........sssssssssss...",
+      "~~~sssssssssss..........:.........sssssssssss...",
+      "...sssssssssss..........:.........sssssssssss...",
+      "...~~~~~~~~~~...........:..........~~~~~~~~~~...",
+      "........................:.......................",
+      "........................:.......................",
+      "........................:.......................",
+      "........................:.......................",
+      ",,,,,,,,,,,,............:.......................",
+      ",,,,,,,,,,,,......^^^^^^:^^^^^^^^...............",
+      ",,,,,,,,,,,,......^^^^^^:^^^^^^^^...............",
+      ",,,,,,,,,,,,......^^^^^^:^^^^^^^^...............",
+      ",,,,,,,,,,,,......^^^^^^:^^^^^^^^...............",
+      ",,,,,,,,,,,,......^^^^^^:^^^^^^^^..............."
+    ],
+    "labels": [
+      {
+        "text": "Caldbec Hill",
+        "col": 21,
+        "row": 3
+      },
+      {
+        "text": "Senlac Hill ridge",
+        "col": 12,
+        "row": 8
+      },
+      {
+        "text": "Marshy ground",
+        "col": 4,
+        "row": 15
+      },
+      {
+        "text": "Marsh & stream",
+        "col": 35,
+        "row": 15
+      },
+      {
+        "text": "Malfosse (site disputed)",
+        "col": 31,
+        "row": 5
+      },
+      {
+        "text": "Telham Hill",
+        "col": 25,
+        "row": 25
+      },
+      {
+        "text": "Road to Hastings",
+        "col": 26,
+        "row": 28
+      },
+      {
+        "text": "Road to London",
+        "col": 26,
+        "row": 0
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Anglo-Saxons (English)",
+      "commander": "King Harold II Godwinson",
+      "color": "#c0392b",
+      "flag": "wessex"
+    },
+    {
+      "id": "B",
+      "name": "Normans and allies",
+      "commander": "William, Duke of Normandy",
+      "color": "#2e64c8",
+      "flag": "normandy"
+    }
+  ],
+  "victor": "B",
+  "units": [
+    {
+      "id": "eng-housecarls",
+      "side": "A",
+      "name": "Harold's housecarls and household (royal standard)",
+      "type": "heavy_infantry",
+      "strength": 2000,
+      "col": 24,
+      "row": 10,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Harold II Godwinson"
+    },
+    {
+      "id": "eng-fyrd-west",
+      "side": "A",
+      "name": "Western fyrd (shield wall, left of English line)",
+      "type": "infantry",
+      "strength": 1800,
+      "col": 15,
+      "row": 10,
+      "facing": "down",
+      "morale": 65
+    },
+    {
+      "id": "eng-fyrd-east",
+      "side": "A",
+      "name": "Eastern fyrd (shield wall, right of English line)",
+      "type": "infantry",
+      "strength": 1800,
+      "col": 33,
+      "row": 10,
+      "facing": "down",
+      "morale": 65
+    },
+    {
+      "id": "eng-gyrth-leofwine",
+      "side": "A",
+      "name": "East Anglian and Kentish fyrd under Gyrth and Leofwine",
+      "type": "infantry",
+      "strength": 1000,
+      "col": 19,
+      "row": 10,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Gyrth & Leofwine Godwinson"
+    },
+    {
+      "id": "eng-skirmishers",
+      "side": "A",
+      "name": "English skirmishers (javelins, stones, few archers)",
+      "type": "light_infantry",
+      "strength": 600,
+      "col": 24,
+      "row": 12,
+      "facing": "down",
+      "morale": 60
+    },
+    {
+      "id": "eng-reserve",
+      "side": "A",
+      "name": "Rear reserve fyrd on the crest",
+      "type": "infantry",
+      "strength": 800,
+      "col": 24,
+      "row": 7,
+      "facing": "down",
+      "morale": 60
+    },
+    {
+      "id": "nor-archers",
+      "side": "B",
+      "name": "Norman archers and crossbowmen",
+      "type": "archers",
+      "strength": 1500,
+      "col": 24,
+      "row": 20,
+      "facing": "up",
+      "morale": 75
+    },
+    {
+      "id": "nor-bretons",
+      "side": "B",
+      "name": "Breton, Anjevin and Poitevin infantry (left wing)",
+      "type": "infantry",
+      "strength": 2000,
+      "col": 14,
+      "row": 20,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Alan the Red"
+    },
+    {
+      "id": "nor-normans",
+      "side": "B",
+      "name": "Norman infantry (centre)",
+      "type": "infantry",
+      "strength": 2200,
+      "col": 24,
+      "row": 22,
+      "facing": "up",
+      "morale": 75,
+      "commander": "William, Duke of Normandy"
+    },
+    {
+      "id": "nor-french",
+      "side": "B",
+      "name": "French, Picard, Flemish and Boulonnais infantry (right wing)",
+      "type": "infantry",
+      "strength": 1800,
+      "col": 34,
+      "row": 21,
+      "facing": "up",
+      "morale": 72,
+      "commander": "William FitzOsbern & Eustace of Boulogne"
+    },
+    {
+      "id": "nor-cav-william",
+      "side": "B",
+      "name": "Duke William's mounted knights (centre reserve)",
+      "type": "heavy_cavalry",
+      "strength": 1000,
+      "col": 24,
+      "row": 24,
+      "facing": "up",
+      "morale": 82,
+      "commander": "William, Duke of Normandy"
+    },
+    {
+      "id": "nor-cav-left",
+      "side": "B",
+      "name": "Breton cavalry (left)",
+      "type": "heavy_cavalry",
+      "strength": 700,
+      "col": 15,
+      "row": 23,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Alan the Red"
+    },
+    {
+      "id": "nor-cav-right",
+      "side": "B",
+      "name": "French and Boulonnais cavalry (right)",
+      "type": "heavy_cavalry",
+      "strength": 700,
+      "col": 34,
+      "row": 24,
+      "facing": "up",
+      "morale": 72,
+      "commander": "Eustace II of Boulogne"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Deployment on Senlac Hill",
+      "time": "Saturday 14 October 1066, dawn to ~09:00",
+      "durationSec": 8,
+      "narration": "Harold, arriving from London after the forced march from Stamford Bridge, holds the crest of the Senlac ridge with a dense shield wall, woods and marshy ground covering his flanks. William's army marches up from Hastings over Telham Hill and forms in three divisions: Bretons on the left, Normans in the centre, French and Flemings on the right, archers in front, infantry behind them and the cavalry in reserve.",
+      "orders": [
+        {
+          "unit": "nor-archers",
+          "action": "move",
+          "to": [
+            24,
+            16
+          ]
+        },
+        {
+          "unit": "nor-normans",
+          "action": "move",
+          "to": [
+            24,
+            18
+          ]
+        },
+        {
+          "unit": "nor-bretons",
+          "action": "move",
+          "to": [
+            14,
+            18
+          ]
+        },
+        {
+          "unit": "nor-french",
+          "action": "move",
+          "to": [
+            34,
+            18
+          ]
+        },
+        {
+          "unit": "nor-cav-william",
+          "action": "move",
+          "to": [
+            24,
+            21
+          ]
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "move",
+          "to": [
+            15,
+            21
+          ]
+        },
+        {
+          "unit": "nor-cav-right",
+          "action": "move",
+          "to": [
+            34,
+            21
+          ]
+        },
+        {
+          "unit": "eng-housecarls",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-fyrd-west",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-fyrd-east",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-gyrth-leofwine",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-skirmishers",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-reserve",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "Archers and infantry assault uphill",
+      "time": "~09:00 to mid-morning",
+      "durationSec": 10,
+      "narration": "Norman archers shoot uphill with little effect: arrows bounce off shields or fly over the crest. William then sends his spearmen forward, but they meet a hail of javelins, spears, axes and stones and cannot open the shield wall.",
+      "orders": [
+        {
+          "unit": "nor-archers",
+          "action": "bombard",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-normans",
+          "action": "attack",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-french",
+          "action": "attack",
+          "target": "eng-fyrd-east"
+        },
+        {
+          "unit": "nor-bretons",
+          "action": "attack",
+          "target": "eng-fyrd-west"
+        },
+        {
+          "unit": "eng-skirmishers",
+          "action": "bombard",
+          "target": "nor-normans"
+        },
+        {
+          "unit": "eng-housecarls",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "nor-normans",
+          "strength": 2100,
+          "morale": 70
+        },
+        {
+          "unit": "nor-bretons",
+          "strength": 1900,
+          "morale": 62
+        },
+        {
+          "unit": "nor-french",
+          "strength": 1750,
+          "morale": 68
+        },
+        {
+          "unit": "eng-housecarls",
+          "strength": 1950,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Cavalry repulsed; the Breton line breaks",
+      "time": "late morning",
+      "durationSec": 10,
+      "narration": "The cavalry advances in support but cannot break the wall either. On the left the Breton division gives way and flees downhill; a rumour runs through the army that Duke William has been killed. Panic spreads along the Norman line.",
+      "orders": [
+        {
+          "unit": "nor-cav-william",
+          "action": "charge",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "charge",
+          "target": "eng-fyrd-west"
+        },
+        {
+          "unit": "nor-bretons",
+          "action": "retreat",
+          "to": [
+            10,
+            22
+          ]
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "retreat",
+          "to": [
+            11,
+            24
+          ]
+        },
+        {
+          "unit": "nor-archers",
+          "action": "bombard",
+          "target": "eng-fyrd-east"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "nor-bretons",
+          "strength": 1700,
+          "morale": 15
+        },
+        {
+          "unit": "nor-cav-left",
+          "strength": 640,
+          "morale": 30
+        },
+        {
+          "unit": "nor-cav-william",
+          "strength": 940,
+          "morale": 70
+        },
+        {
+          "unit": "nor-normans",
+          "strength": 2000,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "William lifts his helm; the English pursuers are cut down",
+      "time": "around midday",
+      "durationSec": 11,
+      "narration": "Part of the English line breaks formation to chase the fleeing Bretons, possibly led by Gyrth and Leofwine. William rides bareheaded along his line to prove he lives, rallies his men and wheels his cavalry on the pursuers, who are isolated on open ground at the foot of the slope. Gyrth and Leofwine are killed.",
+      "orders": [
+        {
+          "unit": "eng-fyrd-west",
+          "action": "charge",
+          "target": "nor-bretons"
+        },
+        {
+          "unit": "eng-gyrth-leofwine",
+          "action": "charge",
+          "target": "nor-bretons"
+        },
+        {
+          "unit": "nor-cav-william",
+          "action": "charge",
+          "target": "eng-gyrth-leofwine"
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "charge",
+          "target": "eng-fyrd-west"
+        },
+        {
+          "unit": "nor-bretons",
+          "action": "attack",
+          "target": "eng-fyrd-west"
+        },
+        {
+          "unit": "eng-housecarls",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "eng-gyrth-leofwine",
+          "strength": 0,
+          "morale": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "eng-fyrd-west",
+          "strength": 1500,
+          "morale": 55
+        },
+        {
+          "unit": "nor-bretons",
+          "strength": 1650,
+          "morale": 50
+        },
+        {
+          "unit": "nor-cav-william",
+          "strength": 900,
+          "morale": 80
+        },
+        {
+          "unit": "nor-cav-left",
+          "strength": 600,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Afternoon lull and the first feigned retreat",
+      "time": "early afternoon",
+      "durationSec": 10,
+      "narration": "A pause, probably for rest and food. Then William tries the feigned flight: cavalry strike the wall, wheel away as if beaten and, when part of the English line chases them downhill, turn about and cut them down. The housecarls thin out and are replaced by fyrd levies, but the wall holds.",
+      "orders": [
+        {
+          "unit": "nor-cav-right",
+          "action": "charge",
+          "target": "eng-fyrd-east"
+        },
+        {
+          "unit": "nor-cav-right",
+          "action": "retreat",
+          "to": [
+            34,
+            24
+          ]
+        },
+        {
+          "unit": "eng-fyrd-east",
+          "action": "charge",
+          "target": "nor-cav-right"
+        },
+        {
+          "unit": "nor-french",
+          "action": "attack",
+          "target": "eng-fyrd-east"
+        },
+        {
+          "unit": "nor-cav-william",
+          "action": "flank",
+          "target": "eng-fyrd-east",
+          "to": [
+            30,
+            15
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "eng-fyrd-east",
+          "strength": 1550,
+          "morale": 55
+        },
+        {
+          "unit": "nor-cav-right",
+          "strength": 650,
+          "morale": 60
+        },
+        {
+          "unit": "nor-french",
+          "strength": 1650,
+          "morale": 62
+        },
+        {
+          "unit": "eng-reserve",
+          "strength": 800,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Arrows and cavalry wear the shield wall down",
+      "time": "mid to late afternoon",
+      "durationSec": 11,
+      "narration": "A second feigned flight draws out more levies, and William combines the arms: archers loose high so their arrows fall behind the shield wall, infantry and cavalry press the front in turns. English numbers shrink and the line contracts around the royal standard on the crest.",
+      "orders": [
+        {
+          "unit": "nor-archers",
+          "action": "bombard",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-normans",
+          "action": "attack",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "charge",
+          "target": "eng-skirmishers"
+        },
+        {
+          "unit": "nor-cav-right",
+          "action": "charge",
+          "target": "eng-fyrd-east"
+        },
+        {
+          "unit": "eng-reserve",
+          "action": "move",
+          "to": [
+            24,
+            9
+          ]
+        },
+        {
+          "unit": "eng-skirmishers",
+          "action": "retreat",
+          "to": [
+            24,
+            11
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "eng-housecarls",
+          "strength": 1400,
+          "morale": 75
+        },
+        {
+          "unit": "eng-fyrd-west",
+          "strength": 1350,
+          "morale": 45
+        },
+        {
+          "unit": "eng-fyrd-east",
+          "strength": 1400,
+          "morale": 45
+        },
+        {
+          "unit": "eng-skirmishers",
+          "strength": 450,
+          "morale": 40
+        },
+        {
+          "unit": "nor-archers",
+          "strength": 1400,
+          "morale": 70
+        },
+        {
+          "unit": "nor-normans",
+          "strength": 1800,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Harold is killed",
+      "time": "dusk, around 17:00",
+      "durationSec": 11,
+      "narration": "At dusk a concentrated assault reaches the royal standard. Harold is killed, but the accounts conflict: an arrow in the eye is the best-known version, with some sources adding that a knight cut him down as he fell. The household troops fight on around his body.",
+      "orders": [
+        {
+          "unit": "nor-cav-william",
+          "action": "charge",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-normans",
+          "action": "attack",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "nor-archers",
+          "action": "bombard",
+          "target": "eng-housecarls"
+        },
+        {
+          "unit": "eng-housecarls",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "eng-housecarls",
+          "strength": 300,
+          "morale": 20
+        },
+        {
+          "unit": "nor-cav-william",
+          "strength": 750,
+          "morale": 80
+        },
+        {
+          "unit": "nor-normans",
+          "strength": 1700,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "English collapse and the Malfosse",
+      "time": "dusk to nightfall",
+      "durationSec": 11,
+      "narration": "With the king dead the English army disintegrates. The household guard is cut down, the fyrd flees north into the woods, and the Normans pursue in the failing light. At the Malfosse (Evil Ditch) some English turn and fight, wounding Eustace of Boulogne, before they too are overrun.",
+      "orders": [
+        {
+          "unit": "eng-housecarls",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-fyrd-west",
+          "action": "rout"
+        },
+        {
+          "unit": "eng-fyrd-east",
+          "action": "rout"
+        },
+        {
+          "unit": "eng-skirmishers",
+          "action": "rout"
+        },
+        {
+          "unit": "eng-reserve",
+          "action": "rout"
+        },
+        {
+          "unit": "nor-cav-right",
+          "action": "charge",
+          "target": "eng-fyrd-east"
+        },
+        {
+          "unit": "nor-cav-left",
+          "action": "charge",
+          "target": "eng-fyrd-west"
+        },
+        {
+          "unit": "nor-cav-william",
+          "action": "charge",
+          "target": "eng-reserve"
+        },
+        {
+          "unit": "nor-french",
+          "action": "move",
+          "to": [
+            34,
+            9
+          ]
+        },
+        {
+          "unit": "nor-normans",
+          "action": "move",
+          "to": [
+            24,
+            10
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "eng-housecarls",
+          "strength": 0,
+          "morale": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "eng-fyrd-west",
+          "strength": 1300,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "eng-fyrd-east",
+          "strength": 1400,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "eng-skirmishers",
+          "strength": 400,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "eng-reserve",
+          "strength": 700,
+          "morale": 5,
+          "status": "routed"
+        },
+        {
+          "unit": "nor-archers",
+          "strength": 1300,
+          "morale": 80
+        },
+        {
+          "unit": "nor-bretons",
+          "strength": 1500,
+          "morale": 70
+        },
+        {
+          "unit": "nor-normans",
+          "strength": 1700,
+          "morale": 85
+        },
+        {
+          "unit": "nor-french",
+          "strength": 1500,
+          "morale": 75
+        },
+        {
+          "unit": "nor-cav-william",
+          "strength": 700,
+          "morale": 85
+        },
+        {
+          "unit": "nor-cav-left",
+          "strength": 500,
+          "morale": 70
+        },
+        {
+          "unit": "nor-cav-right",
+          "strength": 500,
+          "morale": 70
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "Harold, Gyrth and Leofwine were killed and the English army was destroyed or scattered. William marched on London, received the submission of the leading English and was crowned at Westminster on 25 December 1066.",
+    "casualties": {
+      "A": "~4,000 killed (uncertain; includes King Harold and his brothers Gyrth and Leofwine)",
+      "B": "~2,000 killed (uncertain)"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Hastings - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+    },
+    {
+      "title": "Harold Godwinson - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Harold_Godwinson"
+    },
+    {
+      "title": "William the Conqueror - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/William_the_Conqueror"
+    },
+    {
+      "title": "Odo of Bayeux - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Odo_of_Bayeux"
+    },
+    {
+      "title": "Housecarl - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Housecarl"
+    },
+    {
+      "title": "Battle of Hastings - World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Hastings/"
+    },
+    {
+      "title": "M. K. Lawson on the Battle of Hastings - De Re Militari",
+      "url": "https://deremilitari.org/?p=3303"
+    }
+  ]
+}

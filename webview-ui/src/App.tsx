@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 
+import { BattleView } from './battle/BattleView.js';
 import { toMajorMinor } from './changelogData.js';
 import { AgentCardBar } from './components/AgentCardBar.js';
 import { BottomToolbar } from './components/BottomToolbar.js';
@@ -133,6 +134,11 @@ function App() {
   const [isHooksInfoOpen, setIsHooksInfoOpen] = useState(false);
   const [hooksTooltipDismissed, setHooksTooltipDismissed] = useState(false);
   const [isDebugMode, setIsDebugMode] = useState(false);
+  // The Battle Simulator is the browser app's front page; the agent office is a
+  // click away. VS Code keeps the office (the battle API is standalone-only),
+  // and the e2e harness drives the office directly.
+  const battlesAvailable = isBrowserRuntime && !isE2E;
+  const [showBattles, setShowBattles] = useState(battlesAvailable);
   const [alwaysShowOverlay, setAlwaysShowOverlay] = useState(false);
 
   // Mobile shell (phones, touch tablets): office and terminal as sliding
@@ -460,6 +466,9 @@ function App() {
     })();
 
   if (!layoutReady) {
+    if (showBattles) {
+      return <BattleView assetsReady={false} onOpenOffice={() => setShowBattles(false)} />;
+    }
     return <div className="w-full h-full flex items-center justify-center ">Loading...</div>;
   }
 
@@ -871,6 +880,16 @@ function App() {
       {showMigrationNotice && (
         <MigrationNotice onDismiss={() => setMigrationNoticeDismissed(true)} />
       )}
+
+      {battlesAvailable && !showBattles && (
+        <button
+          className="absolute top-8 left-1/2 -translate-x-1/2 z-50 border-2 border-accent bg-active-bg px-12 py-4 text-sm cursor-pointer hover:bg-btn-hover shadow-pixel"
+          onClick={() => setShowBattles(true)}
+        >
+          ⚔ Battle Simulator
+        </button>
+      )}
+      {showBattles && <BattleView assetsReady onOpenOffice={() => setShowBattles(false)} />}
     </div>
   );
 }

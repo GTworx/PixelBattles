@@ -1,0 +1,735 @@
+{
+  "id": "agincourt",
+  "title": "Battle of Agincourt",
+  "year": "1415",
+  "date": "25 October 1415",
+  "location": "Azincourt, Pas-de-Calais, northern France",
+  "wiki": "wiki/battles/agincourt.md",
+  "summary": "On St Crispin's Day, Henry V's sick and outnumbered English army, mostly longbowmen, held a narrow ploughed field between two woods. Heavily armoured French men-at-arms, funnelled into rain-soaked mud, were shot down, crushed and slaughtered, costing France much of its nobility.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ~ 45 m",
+    "north": "up",
+    "terrain": [
+      "TTTTTTTTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TTTTTTTTTTT",
+      "TTTTTTTTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TTTTTTTTTTT",
+      "TTTTTTTTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TTTTTTTTTTT",
+      "TTTTTTTTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TccccTTTTTT",
+      "TTTTcccTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TccccTTTTTT",
+      "TTTTcccTTTT,,,,,,,,,,,,,:,,,,,,,,,,,,TccccTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTssssssssssssssssssssTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTssssssssssssssssssTTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTTsssssssssssssssssssTTTTTTTTTTTTTT",
+      "TTTTTTTTTTTTTTT,,,,,,,,,,,,,,,,,,TTTTTTTTTTTTTTT",
+      "TTTTTTTTTT.,....,....,..:.,....,....,.TTTTTTTTTT",
+      "TTTTTTTTTT,....,....,...:,....,....,..TTTTTTTTTT",
+      "TTTTTTTTTT....,....,..ccccc..,....,...TTTTTTTTTT",
+      "TTTTTTTTTT...,....,...ccccc.,....,....TTTTTTTTTT",
+      "TTTTTTTTTT..,....,....,.:..,....,....,TTTTTTTTTT",
+      "TTTTTTTTTT.,....,....,..:.,....,....,.TTTTTTTTTT"
+    ],
+    "labels": [
+      {
+        "text": "Woods of Tramecourt",
+        "col": 3,
+        "row": 12
+      },
+      {
+        "text": "Woods of Azincourt",
+        "col": 37,
+        "row": 12
+      },
+      {
+        "text": "Ploughed field (mud)",
+        "col": 19,
+        "row": 13
+      },
+      {
+        "text": "Azincourt",
+        "col": 38,
+        "row": 2
+      },
+      {
+        "text": "Tramecourt",
+        "col": 3,
+        "row": 2
+      },
+      {
+        "text": "Maisoncelles (English camp)",
+        "col": 18,
+        "row": 28
+      },
+      {
+        "text": "Road to Calais",
+        "col": 25,
+        "row": 24
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Kingdom of England",
+      "commander": "Henry V",
+      "color": "#c0392b",
+      "flag": "england-royal"
+    },
+    {
+      "id": "B",
+      "name": "Kingdom of France",
+      "commander": "Charles d'Albret & Boucicaut",
+      "color": "#2e64c8",
+      "flag": "france-ancient"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "eng-archers-left",
+      "side": "A",
+      "name": "Longbowmen, left wing (Erpingham)",
+      "type": "archers",
+      "strength": 2700,
+      "col": 17,
+      "row": 20,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Thomas Erpingham"
+    },
+    {
+      "id": "eng-archers-right",
+      "side": "A",
+      "name": "Longbowmen, right wing",
+      "type": "archers",
+      "strength": 2700,
+      "col": 30,
+      "row": 20,
+      "facing": "up",
+      "morale": 85
+    },
+    {
+      "id": "eng-camoys",
+      "side": "A",
+      "name": "Left battle, men-at-arms (Camoys)",
+      "type": "heavy_infantry",
+      "strength": 350,
+      "col": 19,
+      "row": 21,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Thomas Camoys"
+    },
+    {
+      "id": "eng-henry",
+      "side": "A",
+      "name": "King's battle, men-at-arms (Henry V)",
+      "type": "heavy_infantry",
+      "strength": 500,
+      "col": 24,
+      "row": 21,
+      "facing": "up",
+      "morale": 90,
+      "commander": "Henry V"
+    },
+    {
+      "id": "eng-york",
+      "side": "A",
+      "name": "Vanguard, men-at-arms (Edward of York)",
+      "type": "heavy_infantry",
+      "strength": 450,
+      "col": 29,
+      "row": 21,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Edward of York"
+    },
+    {
+      "id": "eng-baggage",
+      "side": "A",
+      "name": "Baggage train guard, Maisoncelles",
+      "type": "light_infantry",
+      "strength": 200,
+      "col": 24,
+      "row": 27,
+      "facing": "up",
+      "morale": 60
+    },
+    {
+      "id": "fr-vanguard",
+      "side": "B",
+      "name": "French vanguard, dismounted men-at-arms (d'Albret, Boucicaut)",
+      "type": "heavy_infantry",
+      "strength": 4800,
+      "col": 24,
+      "row": 9,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Charles d'Albret"
+    },
+    {
+      "id": "fr-main",
+      "side": "B",
+      "name": "French main battle (Alençon, Bar)",
+      "type": "heavy_infantry",
+      "strength": 3000,
+      "col": 24,
+      "row": 5,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Duke of Alençon"
+    },
+    {
+      "id": "fr-rear",
+      "side": "B",
+      "name": "French rearguard, mounted, leaderless",
+      "type": "cavalry",
+      "strength": 1500,
+      "col": 24,
+      "row": 2,
+      "facing": "down",
+      "morale": 50
+    },
+    {
+      "id": "fr-cav-left",
+      "side": "B",
+      "name": "Cavalry wing, left (Clignet de Brébant)",
+      "type": "heavy_cavalry",
+      "strength": 600,
+      "col": 17,
+      "row": 7,
+      "facing": "down",
+      "morale": 75
+    },
+    {
+      "id": "fr-cav-right",
+      "side": "B",
+      "name": "Cavalry wing, right (Vendôme)",
+      "type": "heavy_cavalry",
+      "strength": 600,
+      "col": 31,
+      "row": 7,
+      "facing": "down",
+      "morale": 75
+    },
+    {
+      "id": "fr-xbow",
+      "side": "B",
+      "name": "Crossbowmen and archers (stuck behind)",
+      "type": "archers",
+      "strength": 4500,
+      "col": 20,
+      "row": 4,
+      "facing": "down",
+      "morale": 55
+    },
+    {
+      "id": "fr-raiders",
+      "side": "B",
+      "name": "Raiders on the baggage (Ysembart d'Azincourt)",
+      "type": "light_infantry",
+      "strength": 600,
+      "col": 38,
+      "row": 4,
+      "facing": "down",
+      "morale": 60,
+      "commander": "Ysembart d'Azincourt"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Stand-off in the rain",
+      "time": "dawn to ~09:00, 25 October",
+      "durationSec": 8,
+      "narration": "After a night of rain, the French deploy in three lines in the narrow ploughed field north of Maisoncelles, expecting reinforcements, while the starving, dysentery-ridden English draw up four deep with archers on the flanks. For about three hours neither side moves.",
+      "orders": [
+        {
+          "unit": "eng-henry",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-york",
+          "action": "hold"
+        },
+        {
+          "unit": "eng-camoys",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-vanguard",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-main",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "The English advance and plant the stakes",
+      "time": "~10:30-11:00",
+      "durationSec": 9,
+      "narration": "Henry, who cannot afford to wait, orders the army forward to about 250-300 yards from the French. Archers hammer pointed stakes into the mud and loose the first volleys, provoking the French into attacking.",
+      "orders": [
+        {
+          "unit": "eng-archers-left",
+          "action": "move",
+          "to": [
+            17,
+            17
+          ]
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "move",
+          "to": [
+            30,
+            17
+          ]
+        },
+        {
+          "unit": "eng-camoys",
+          "action": "move",
+          "to": [
+            19,
+            18
+          ]
+        },
+        {
+          "unit": "eng-henry",
+          "action": "move",
+          "to": [
+            24,
+            18
+          ]
+        },
+        {
+          "unit": "eng-york",
+          "action": "move",
+          "to": [
+            29,
+            18
+          ]
+        },
+        {
+          "unit": "eng-archers-left",
+          "action": "bombard",
+          "target": "fr-cav-left"
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "bombard",
+          "target": "fr-cav-right"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-cav-left",
+          "morale": 65
+        },
+        {
+          "unit": "fr-cav-right",
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The French cavalry charge fails",
+      "time": "~11:00",
+      "durationSec": 9,
+      "narration": "The two French cavalry wings, well under strength, charge the archers across the mud. Stakes, woods and arrows break the charge; wounded horses wheel back and plough through the advancing French men-at-arms.",
+      "orders": [
+        {
+          "unit": "fr-cav-left",
+          "action": "charge",
+          "target": "eng-archers-left"
+        },
+        {
+          "unit": "fr-cav-right",
+          "action": "charge",
+          "target": "eng-archers-right"
+        },
+        {
+          "unit": "eng-archers-left",
+          "action": "bombard",
+          "target": "fr-cav-left"
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "bombard",
+          "target": "fr-cav-right"
+        },
+        {
+          "unit": "fr-vanguard",
+          "action": "move",
+          "to": [
+            24,
+            13
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-cav-left",
+          "strength": 250,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-cav-right",
+          "strength": 250,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-vanguard",
+          "strength": 4600,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "The vanguard wades through the mud",
+      "time": "~11:30",
+      "durationSec": 10,
+      "narration": "The dismounted French vanguard trudges across the ploughed field under arrow storms, heads down, exhausted by the weight of plate and the clinging clay. Funnelled by the woods, it bunches into a dense mass and slams into the English line.",
+      "orders": [
+        {
+          "unit": "fr-vanguard",
+          "action": "attack",
+          "target": "eng-henry"
+        },
+        {
+          "unit": "eng-archers-left",
+          "action": "bombard",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "bombard",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "eng-henry",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-main",
+          "action": "move",
+          "to": [
+            24,
+            10
+          ]
+        },
+        {
+          "unit": "fr-xbow",
+          "action": "move",
+          "to": [
+            22,
+            7
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-vanguard",
+          "strength": 3600,
+          "morale": 45
+        },
+        {
+          "unit": "eng-henry",
+          "strength": 470,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "The crush and the flank attack",
+      "time": "~12:00",
+      "durationSec": 12,
+      "narration": "The French drive the English line back a few paces, but the press of men is so tight that many cannot swing a weapon, fall in the mud and are trampled. The archers, out of arrows, drop their bows and fall on the exposed French flanks with hatchets, swords and mallets.",
+      "orders": [
+        {
+          "unit": "fr-vanguard",
+          "action": "attack",
+          "target": "eng-henry"
+        },
+        {
+          "unit": "eng-archers-left",
+          "action": "attack",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "attack",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "eng-camoys",
+          "action": "attack",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "eng-york",
+          "action": "attack",
+          "target": "fr-vanguard"
+        },
+        {
+          "unit": "fr-main",
+          "action": "move",
+          "to": [
+            24,
+            14
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-vanguard",
+          "strength": 1500,
+          "morale": 25
+        },
+        {
+          "unit": "eng-york",
+          "strength": 380,
+          "morale": 70
+        },
+        {
+          "unit": "eng-henry",
+          "strength": 430,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "The main battle joins; the Constable falls",
+      "time": "~12:30-13:00",
+      "durationSec": 11,
+      "narration": "The French second line wades in and is swallowed by the same press. Charles d'Albret is killed, as are Alençon and Bar; Henry fights hand to hand, protects his wounded brother Humphrey and takes a blow to the helmet. The Duke of York is killed on the English right.",
+      "orders": [
+        {
+          "unit": "fr-main",
+          "action": "attack",
+          "target": "eng-henry"
+        },
+        {
+          "unit": "eng-henry",
+          "action": "attack",
+          "target": "fr-main"
+        },
+        {
+          "unit": "eng-archers-left",
+          "action": "attack",
+          "target": "fr-main"
+        },
+        {
+          "unit": "eng-archers-right",
+          "action": "attack",
+          "target": "fr-main"
+        },
+        {
+          "unit": "fr-vanguard",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-vanguard",
+          "strength": 400,
+          "morale": 15
+        },
+        {
+          "unit": "fr-main",
+          "strength": 1300,
+          "morale": 25
+        },
+        {
+          "unit": "eng-york",
+          "strength": 300,
+          "morale": 60
+        },
+        {
+          "unit": "eng-henry",
+          "strength": 400,
+          "morale": 80
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Raid on the baggage; the prisoners are killed",
+      "time": "~13:00-13:30",
+      "durationSec": 9,
+      "narration": "A small French force of retainers and peasants under Ysembart d'Azincourt plunders the English baggage at Maisoncelles. Fearing the rearguard will return and that prisoners will rearm, Henry orders most captives killed; the order is rescinded when the French reserve breaks.",
+      "orders": [
+        {
+          "unit": "fr-raiders",
+          "action": "move",
+          "to": [
+            24,
+            26
+          ]
+        },
+        {
+          "unit": "fr-raiders",
+          "action": "attack",
+          "target": "eng-baggage"
+        },
+        {
+          "unit": "eng-henry",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-rear",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-vanguard",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "fr-main",
+          "strength": 500,
+          "morale": 15
+        },
+        {
+          "unit": "eng-baggage",
+          "strength": 150,
+          "morale": 50
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "The French rearguard flees",
+      "time": "~14:00",
+      "durationSec": 8,
+      "narration": "The mounted French rearguard, never committed, melts away, and the crossbowmen behind the men-at-arms scatter. The survivors of the main battle surrender. Perhaps 6,000 French lie dead and 1,500 or more are prisoners, among them Orléans, Bourbon and Boucicaut; English dead are a few hundred at most.",
+      "orders": [
+        {
+          "unit": "fr-rear",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-xbow",
+          "action": "rout"
+        },
+        {
+          "unit": "fr-raiders",
+          "action": "retreat",
+          "to": [
+            38,
+            3
+          ]
+        },
+        {
+          "unit": "eng-henry",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-rear",
+          "strength": 1450,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-xbow",
+          "strength": 4400,
+          "status": "routed"
+        },
+        {
+          "unit": "fr-main",
+          "strength": 0,
+          "status": "surrendered"
+        },
+        {
+          "unit": "fr-raiders",
+          "strength": 550,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "eng-archers-left",
+          "strength": 2640,
+          "morale": 90
+        },
+        {
+          "unit": "eng-archers-right",
+          "strength": 2640,
+          "morale": 90
+        },
+        {
+          "unit": "eng-henry",
+          "strength": 390,
+          "morale": 90
+        },
+        {
+          "unit": "eng-york",
+          "strength": 290,
+          "morale": 75
+        },
+        {
+          "unit": "eng-camoys",
+          "strength": 320,
+          "morale": 85
+        },
+        {
+          "unit": "eng-baggage",
+          "strength": 150,
+          "morale": 60
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "A crushing English victory against odds of perhaps three or four to one. The French lost roughly 6,000-10,000 men, including the Constable, three dukes and a great part of the nobility, with Orléans, Bourbon and Boucicaut taken prisoner; English losses were a few hundred (records name at least 112), among them Edward of York and the Earl of Suffolk.",
+    "casualties": {
+      "A": "~112 named dead, perhaps 500-600 in all (York, Suffolk, Dafydd Gam)",
+      "B": "~6,000-10,000 killed (Constable d'Albret, Alençon, Bar, Brabant); 700-2,200 captured"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Agincourt - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
+    },
+    {
+      "title": "Battle of Agincourt - World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Agincourt/"
+    },
+    {
+      "title": "Battle of Agincourt - EBSCO Research Starters",
+      "url": "https://ebsco.com/research-starters/history/battle-agincourt"
+    },
+    {
+      "title": "The Battle of Agincourt - History of Pas-de-Calais",
+      "url": "https://history-pas-de-calais.com/before-the-20th-century/the-battle-of-agincourt"
+    },
+    {
+      "title": "Agincourt 1415 - kkrva.se",
+      "url": "https://kkrva.se/agincourt-1415/"
+    }
+  ]
+}

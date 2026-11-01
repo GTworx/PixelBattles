@@ -174,3 +174,19 @@ export const PALETTE_COUNT = 6;
  *  clientMessageHandler to guard saveAgentSeats payloads from a remote or
  *  hand-edited source corrupting the stored values with out-of-range values. */
 export const HUE_SHIFT_MAX_DEG = 360;
+
+// ── Battle Simulator ────────────────────────────────────────
+/** Local Ollama endpoint for the battle chat (override: PIXEL_BATTLES_OLLAMA_URL). */
+export const DEFAULT_OLLAMA_URL = 'http://127.0.0.1:11434';
+/** Model the battle chat asks (override: PIXEL_BATTLES_OLLAMA_MODEL). */
+export const DEFAULT_OLLAMA_MODEL = 'qwen3.8:latest';
+/** A 27B model on a local GPU can take a while on a long prompt. */
+export const BATTLE_CHAT_TIMEOUT_MS = 180_000;
+export const BATTLE_CHAT_MESSAGE_MAX_CHARS = 2000;
+export const BATTLE_CHAT_HISTORY_MAX = 12;
+/** Cap on the wiki page pasted into the system prompt. */
+export const BATTLE_WIKI_PROMPT_MAX_CHARS = 16_000;
+/** How long Ollama keeps the chat model loaded after a question. */
+export const BATTLE_OLLAMA_KEEP_ALIVE = '30m';
+/** Context window requested from Ollama for the battle chat (prompt is ~10k tokens). */
+export const BATTLE_OLLAMA_NUM_CTX = 16_384;

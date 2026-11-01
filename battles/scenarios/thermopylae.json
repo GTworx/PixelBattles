@@ -1,0 +1,639 @@
+{
+  "id": "thermopylae",
+  "title": "Battle of Thermopylae",
+  "year": "480 BCE",
+  "date": "Three days of fighting in late summer 480 BCE (exact date disputed: July, August or September)",
+  "location": "Thermopylae Pass, Malis/Locris, Greece",
+  "wiki": "wiki/battles/thermopylae.md",
+  "summary": "A small Greek force under the Spartan king Leonidas held the coastal pass of Thermopylae against Xerxes' vast army for two days. A Trachinian, Ephialtes, then showed the Persians the Anopaea mountain track; Leonidas sent most allies away and died with the Spartans, Thespians and Thebans, buying time for the Greek fleet at Artemisium and for Greece.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 60 m (the Middle Gate is widened to two tiles for play; ~100 m historically)",
+    "north": "up",
+    "terrain": [
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "================================================",
+      "bbbbbbbbbbbbbbbsssss============================",
+      "...............sssss====sssssbbbbbbbbbbbbbbbbbbb",
+      "....................bbb#bbb...^^................",
+      ":::::::::::::::::::::::g::::::^^^:::::::::::::::",
+      "....................^^^#^^^.....................",
+      ",,,,,,,,,,,,,,......MMMMMMM.............^^^^^^^^",
+      ",,,,,,,,,,,,,,.^^^^^MMMMMMM^^^^^^^^^^^^^M^^MMMMM",
+      "........^^.....MMMMMMMMMMMMMMMMMMMMMMMMM^^^MMMMM",
+      "^^^^^^^^^T^^^^^MMMMMMMMMMMMMMMMMMMMMMT^T^^MMMMMM",
+      "MMMMMMMMM^^TMMMMMMMMMMMMMMMMMMMMMMMT^T^^^MMMMMMM",
+      "MMMMMMMMMM^^^MMMMMMMMMMMMMMMMMMMMT^T^^^MMMMMMMMM",
+      "MMMMMMMMMMM^^^^MMMMMMMMMMMMMMMMM^T^^^MMMMMMMMMMM",
+      "MMMMMMMMMMMM^^^^^MMMMMMMMMMMT^^T^^^MMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMM^^^^T^^T^^^^T^^^^^^MMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMM^^^^^^^^^^^^^MMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+    ],
+    "labels": [
+      {
+        "text": "Malian Gulf",
+        "col": 6,
+        "row": 3
+      },
+      {
+        "text": "Kallidromon massif",
+        "col": 18,
+        "row": 25
+      },
+      {
+        "text": "Persian camp (Trachis)",
+        "col": 1,
+        "row": 13
+      },
+      {
+        "text": "Phocian wall / Middle Gate",
+        "col": 19,
+        "row": 8
+      },
+      {
+        "text": "Hot springs",
+        "col": 25,
+        "row": 9
+      },
+      {
+        "text": "Anopaea mountain path",
+        "col": 16,
+        "row": 20
+      },
+      {
+        "text": "Kolonos hill",
+        "col": 29,
+        "row": 14
+      },
+      {
+        "text": "East Gate: road to Locris",
+        "col": 38,
+        "row": 7
+      },
+      {
+        "text": "Asopus gorge (path starts)",
+        "col": 2,
+        "row": 18
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Greek city-states",
+      "commander": "Leonidas I of Sparta",
+      "color": "#2e64c8",
+      "flag": "greek-lambda"
+    },
+    {
+      "id": "B",
+      "name": "Achaemenid Empire (Persia)",
+      "commander": "Xerxes I",
+      "color": "#c0392b",
+      "flag": "persia"
+    }
+  ],
+  "victor": "B",
+  "units": [
+    {
+      "id": "gr-spartans",
+      "side": "A",
+      "name": "Spartan royal bodyguard (300 hoplites)",
+      "type": "heavy_infantry",
+      "strength": 300,
+      "col": 24,
+      "row": 12,
+      "facing": "left",
+      "morale": 95,
+      "commander": "Leonidas I"
+    },
+    {
+      "id": "gr-thespians",
+      "side": "A",
+      "name": "Thespian hoplites",
+      "type": "heavy_infantry",
+      "strength": 700,
+      "col": 25,
+      "row": 11,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Demophilus"
+    },
+    {
+      "id": "gr-thebans",
+      "side": "A",
+      "name": "Theban hoplites (400)",
+      "type": "heavy_infantry",
+      "strength": 400,
+      "col": 25,
+      "row": 12,
+      "facing": "left",
+      "morale": 55,
+      "commander": "Leontiades"
+    },
+    {
+      "id": "gr-peloponnese",
+      "side": "A",
+      "name": "Peloponnesian allies (Tegea, Mantinea, Arcadia, Corinth, Phlius, Mycenae)",
+      "type": "heavy_infantry",
+      "strength": 3100,
+      "col": 27,
+      "row": 12,
+      "facing": "left",
+      "morale": 75
+    },
+    {
+      "id": "gr-locrians",
+      "side": "A",
+      "name": "Opuntian Locrians",
+      "type": "infantry",
+      "strength": 1000,
+      "col": 28,
+      "row": 11,
+      "facing": "left",
+      "morale": 65
+    },
+    {
+      "id": "gr-phocians",
+      "side": "A",
+      "name": "Phocian guards of the mountain path",
+      "type": "infantry",
+      "strength": 1000,
+      "col": 32,
+      "row": 20,
+      "facing": "left",
+      "morale": 60
+    },
+    {
+      "id": "per-archers",
+      "side": "B",
+      "name": "Persian and allied archers",
+      "type": "archers",
+      "strength": 5000,
+      "col": 14,
+      "row": 12,
+      "facing": "right",
+      "morale": 70
+    },
+    {
+      "id": "per-medes",
+      "side": "B",
+      "name": "Medes and Cissians",
+      "type": "infantry",
+      "strength": 10000,
+      "col": 11,
+      "row": 12,
+      "facing": "right",
+      "morale": 75
+    },
+    {
+      "id": "per-levies",
+      "side": "B",
+      "name": "Imperial levies (second assaults)",
+      "type": "light_infantry",
+      "strength": 60000,
+      "col": 6,
+      "row": 11,
+      "facing": "right",
+      "morale": 60
+    },
+    {
+      "id": "per-immortals",
+      "side": "B",
+      "name": "The Immortals (Hydarnes)",
+      "type": "heavy_infantry",
+      "strength": 10000,
+      "col": 9,
+      "row": 13,
+      "facing": "right",
+      "morale": 90,
+      "commander": "Hydarnes"
+    },
+    {
+      "id": "per-cavalry",
+      "side": "B",
+      "name": "Persian cavalry (idle in the narrow pass)",
+      "type": "cavalry",
+      "strength": 8000,
+      "col": 3,
+      "row": 12,
+      "facing": "right",
+      "morale": 70
+    },
+    {
+      "id": "per-royal",
+      "side": "B",
+      "name": "Xerxes and royal household",
+      "type": "command",
+      "strength": 1000,
+      "col": 2,
+      "row": 13,
+      "facing": "right",
+      "morale": 90,
+      "commander": "Xerxes I"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The pass is held; Xerxes waits",
+      "time": "Days before the battle (four days of waiting)",
+      "durationSec": 8,
+      "narration": "Leonidas occupies the Middle Gate, repairs the Phocian wall and posts the Phocians on the Anopaea path. Xerxes camps at Trachis, sends scouts, demands surrender (Molon labe) and waits four days for the Greeks to disperse.",
+      "orders": [
+        {
+          "unit": "gr-spartans",
+          "action": "hold"
+        },
+        {
+          "unit": "gr-peloponnese",
+          "action": "hold"
+        },
+        {
+          "unit": "gr-phocians",
+          "action": "hold"
+        },
+        {
+          "unit": "per-levies",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "Day 1 morning: Medes and Cissians",
+      "time": "Day 1, morning",
+      "durationSec": 9,
+      "narration": "Xerxes' archers open fire and the Medes and Cissians are sent in to take the Greeks alive. In the narrow front their numbers count for nothing against the longer spears of the hoplites, and they fall back after heavy losses.",
+      "orders": [
+        {
+          "unit": "per-archers",
+          "action": "bombard",
+          "target": "gr-spartans"
+        },
+        {
+          "unit": "per-medes",
+          "action": "attack",
+          "target": "gr-spartans"
+        },
+        {
+          "unit": "gr-spartans",
+          "action": "hold"
+        },
+        {
+          "unit": "gr-thespians",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-medes",
+          "strength": 8200,
+          "morale": 50
+        },
+        {
+          "unit": "gr-spartans",
+          "strength": 290,
+          "morale": 95
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Day 1 afternoon: the Immortals attack",
+      "time": "Day 1, afternoon",
+      "durationSec": 10,
+      "narration": "Xerxes commits the Immortals. Fighting in relays by city, the Greeks use feigned retreats, turn on pursuers, and again hold. Xerxes, watching, is said to have leapt from his throne three times.",
+      "orders": [
+        {
+          "unit": "per-immortals",
+          "action": "attack",
+          "target": "gr-spartans"
+        },
+        {
+          "unit": "gr-spartans",
+          "action": "attack",
+          "target": "per-immortals"
+        },
+        {
+          "unit": "gr-peloponnese",
+          "action": "hold"
+        },
+        {
+          "unit": "per-medes",
+          "action": "retreat",
+          "to": [
+            8,
+            12
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-immortals",
+          "strength": 9200,
+          "morale": 75
+        },
+        {
+          "unit": "gr-spartans",
+          "strength": 285
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Day 2: more assaults, then betrayal",
+      "time": "Day 2, all day and evening",
+      "durationSec": 11,
+      "narration": "Believing the defenders worn out, Xerxes sends the levies in by contingents; the Greeks rotate and again hold. At evening Ephialtes of Trachis reveals the Anopaea path to Xerxes for a reward.",
+      "orders": [
+        {
+          "unit": "per-levies",
+          "action": "attack",
+          "target": "gr-peloponnese"
+        },
+        {
+          "unit": "gr-peloponnese",
+          "action": "hold"
+        },
+        {
+          "unit": "gr-locrians",
+          "action": "hold"
+        },
+        {
+          "unit": "per-archers",
+          "action": "bombard",
+          "target": "gr-thespians"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-levies",
+          "strength": 56000,
+          "morale": 45
+        },
+        {
+          "unit": "gr-peloponnese",
+          "strength": 3050
+        },
+        {
+          "unit": "gr-spartans",
+          "strength": 270
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Night of Day 2: Hydarnes climbs the path",
+      "time": "Night, Day 2 to Day 3",
+      "durationSec": 9,
+      "narration": "At dusk Hydarnes leads the Immortals from the Asopus gorge up the mountain track through the oak woods, a night march of several hours, to come down behind the Greek position.",
+      "orders": [
+        {
+          "unit": "per-immortals",
+          "action": "move",
+          "to": [
+            34,
+            19
+          ]
+        },
+        {
+          "unit": "gr-phocians",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p6",
+      "title": "Day 3 dawn: Phocians scattered; council of war",
+      "time": "Day 3, dawn",
+      "durationSec": 10,
+      "narration": "At dawn the Immortals surprise the Phocians, who fall back to a hill to fight, but the Persians ignore them and hurry down. Scouts warn Leonidas. He holds a council and dismisses most of the allies; the Spartans, the Thespians and the Thebans remain, roughly 1,500-2,000 in all; the seer Megistias stays too.",
+      "orders": [
+        {
+          "unit": "per-immortals",
+          "action": "move",
+          "to": [
+            40,
+            15
+          ]
+        },
+        {
+          "unit": "gr-phocians",
+          "action": "retreat",
+          "to": [
+            34,
+            18
+          ]
+        },
+        {
+          "unit": "gr-peloponnese",
+          "action": "retreat",
+          "to": [
+            44,
+            12
+          ]
+        },
+        {
+          "unit": "gr-locrians",
+          "action": "retreat",
+          "to": [
+            45,
+            11
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "gr-peloponnese",
+          "status": "withdrawn",
+          "strength": 3050
+        },
+        {
+          "unit": "gr-locrians",
+          "status": "withdrawn",
+          "strength": 1000
+        },
+        {
+          "unit": "gr-phocians",
+          "strength": 1000
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Day 3 morning: Leonidas sallies and falls",
+      "time": "Day 3, mid-morning",
+      "durationSec": 12,
+      "narration": "When Xerxes resumes the attack the Greeks advance into the wide ground beyond the wall and kill many. Leonidas is killed; two brothers of Xerxes, Abrocomes and Hyperanthes, die fighting over his body, which the Greeks drag back.",
+      "orders": [
+        {
+          "unit": "gr-spartans",
+          "action": "charge",
+          "target": "per-levies"
+        },
+        {
+          "unit": "gr-thespians",
+          "action": "attack",
+          "target": "per-levies"
+        },
+        {
+          "unit": "gr-thebans",
+          "action": "attack",
+          "target": "per-levies"
+        },
+        {
+          "unit": "per-levies",
+          "action": "attack",
+          "target": "gr-spartans"
+        },
+        {
+          "unit": "per-medes",
+          "action": "attack",
+          "target": "gr-spartans"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "gr-spartans",
+          "strength": 110,
+          "morale": 70
+        },
+        {
+          "unit": "gr-thespians",
+          "strength": 450
+        },
+        {
+          "unit": "per-levies",
+          "strength": 52000
+        },
+        {
+          "unit": "per-medes",
+          "strength": 7500
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Day 3 afternoon: the last stand on Kolonos",
+      "time": "Day 3, afternoon",
+      "durationSec": 12,
+      "narration": "With the Immortals in the rear, the survivors withdraw behind the wall onto the mound of Kolonos and fight with swords, hands and teeth until shot down by arrows. The Thebans surrender; the Spartans and Thespians are annihilated.",
+      "orders": [
+        {
+          "unit": "gr-spartans",
+          "action": "retreat",
+          "to": [
+            31,
+            12
+          ]
+        },
+        {
+          "unit": "gr-thespians",
+          "action": "retreat",
+          "to": [
+            30,
+            12
+          ]
+        },
+        {
+          "unit": "gr-thebans",
+          "action": "retreat",
+          "to": [
+            30,
+            11
+          ]
+        },
+        {
+          "unit": "per-immortals",
+          "action": "attack",
+          "target": "gr-spartans"
+        },
+        {
+          "unit": "per-levies",
+          "action": "attack",
+          "target": "gr-thespians"
+        },
+        {
+          "unit": "per-archers",
+          "action": "bombard",
+          "target": "gr-spartans"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "gr-spartans",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "gr-thespians",
+          "strength": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "gr-thebans",
+          "strength": 400,
+          "status": "surrendered"
+        },
+        {
+          "unit": "per-immortals",
+          "strength": 7800
+        },
+        {
+          "unit": "per-levies",
+          "strength": 50000
+        },
+        {
+          "unit": "per-medes",
+          "strength": 7000
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "A Persian tactical victory and a Greek moral one. Xerxes forced the pass after the Anopaea path was betrayed, and the fleet withdrew from Artemisium; but the delay, the Persian losses and the example of the rearguard stiffened Greek resolve before Salamis and Plataea.",
+    "casualties": {
+      "A": "~1,500-2,000 killed in the rearguard (all 300 Spartans; ~700 Thespians); Thebans surrendered",
+      "B": "Herodotus: up to 20,000; modern scholars far lower; two brothers of Xerxes (Abrocomes and Hyperanthes) among the dead"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Thermopylae — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae"
+    },
+    {
+      "title": "Battle of Thermopylae — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Thermopylae/"
+    },
+    {
+      "title": "Battle of Thermopylae — Livius.org",
+      "url": "https://www.livius.org/articles/battle/thermopylae-480-bce/"
+    },
+    {
+      "title": "Megistias — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Megistias"
+    },
+    {
+      "title": "Ephialtes of Trachis — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ephialtes_of_Trachis"
+    }
+  ]
+}

@@ -1,0 +1,606 @@
+{
+  "id": "marathon",
+  "title": "Battle of Marathon",
+  "year": "490 BCE",
+  "date": "12 September 490 BCE (traditional date; some scholars argue for August)",
+  "location": "Marathon, Attica, Greece",
+  "wiki": "wiki/battles/marathon.md",
+  "summary": "A Persian expeditionary force under Datis and Artaphernes landed on the Bay of Marathon, 40 km from Athens. After days of stalemate the outnumbered Athenians, strengthened on the flanks and supported by Plataea, charged at the run, beat both Persian wings, wheeled in on the Persian centre and drove the invaders into the sea and the marsh.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 100 m (schematic)",
+    "north": "up",
+    "terrain": [
+      "MMMMMMMMMMMMMMMMMMMMMM:sssssssssssssssssssssbb==",
+      "MMMMMMMMMMMMMMMMMMMMMM:sssssssssssssssssssssbb==",
+      "MMMMMMMMMMMMMMMMMMMMMM:sssssssssssssssssssssbb==",
+      "MMMMMMMMMMMMMMMMMMMMMM:sssssssssssssssssssssbb==",
+      "MMMMMMMMMM^^^^^^^^^^^^:sssssssssssssssssssbb====",
+      "MMMMMMMMMM^^^.........:sssssssssssssssssssbb====",
+      "MMMMMMMMMM^^^.........:sssssssssssssssssssbb====",
+      "MMMMMMMMMM^^^.........:.......ssssssssssssbb====",
+      "MMMMMMMMMM^^^.........:.......sssssssssbb=======",
+      "MMMMMMMMMM^^^^:::::::::................bb=======",
+      "MMMMMMMMMM^T^^.........................bb=======",
+      "MMMMMMMMMM^T^^.....,..,..,.............bb=======",
+      "MMMMMMMMMM^T^^....,..,..,..............bb=======",
+      "MMMMMMMMMM^T^^......,..,..............cbb=======",
+      "MMMMMMMMMM^T^^.....,..,..,............cbb=======",
+      "MMMMMMMMMM^T^^....,..,..,.............cbb=======",
+      "MMMMMMMMMM^T^^......,..,..............cbb=======",
+      "MMMMMMMMMM^T^^.....,..,..,............cbb=======",
+      "MMMMMMMMMM^T^^....,..,..,..............bb=======",
+      "MMMMMMMMMM^T^^......,..,...............bb=======",
+      "MMMMMMMMMM^^^^.........................bb=======",
+      "MMMMMMMMMM^^^^.........................bb=======",
+      "MMMMMMMMMM^^^.:..........................bb=====",
+      "MMMMMMMMMM^^^:................sssssssssssbb=====",
+      "MMMMMMMMMM^^:.................sssssssssssbb=====",
+      "MMMMMMMMMM^:^.................sssssssssssbb=====",
+      "MMMMMMMMMM:^^^^^^^^^^^^^^^^^^^sssssssssssssbb===",
+      "MMMMMMMMMM:^^^^^^^^^^^^^^^^^^^sssssssssssssbb===",
+      "MMMMMMMMMM:MMMMMMMMMMMMMMMMM^^sssssssssssssbb===",
+      "MMMMMMMMMM:MMMMMMMMMMMMMMMMM^^.............bb==="
+    ],
+    "labels": [
+      {
+        "text": "Bay of Marathon",
+        "col": 43,
+        "row": 12
+      },
+      {
+        "text": "Great Marsh",
+        "col": 28,
+        "row": 3
+      },
+      {
+        "text": "Brexiza Marsh",
+        "col": 31,
+        "row": 26
+      },
+      {
+        "text": "Mt Agrieliki (Athenian camp)",
+        "col": 11,
+        "row": 7
+      },
+      {
+        "text": "Road to Athens",
+        "col": 5,
+        "row": 27
+      },
+      {
+        "text": "Persian camp & ships",
+        "col": 33,
+        "row": 19
+      },
+      {
+        "text": "Road north-east (to Rhamnus)",
+        "col": 23,
+        "row": 2
+      },
+      {
+        "text": "Plain of Marathon",
+        "col": 20,
+        "row": 15
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Athens & Plataea",
+      "commander": "Miltiades & Callimachus",
+      "color": "#2e64c8",
+      "flag": "athens"
+    },
+    {
+      "id": "B",
+      "name": "Achaemenid Empire (Persia)",
+      "commander": "Datis & Artaphernes",
+      "color": "#c0392b",
+      "flag": "persia"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "pla-hoplites",
+      "side": "A",
+      "name": "Plataean hoplites (left wing)",
+      "type": "heavy_infantry",
+      "strength": 1000,
+      "col": 15,
+      "row": 8,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Plataean contingent"
+    },
+    {
+      "id": "ath-left",
+      "side": "A",
+      "name": "Athenian left wing tribes (8 deep)",
+      "type": "heavy_infantry",
+      "strength": 3300,
+      "col": 15,
+      "row": 11,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Athenian strategoi"
+    },
+    {
+      "id": "ath-centre",
+      "side": "A",
+      "name": "Athenian centre: Leontis & Antiochis (4 deep)",
+      "type": "heavy_infantry",
+      "strength": 2400,
+      "col": 15,
+      "row": 14,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Themistocles & Aristides"
+    },
+    {
+      "id": "ath-right",
+      "side": "A",
+      "name": "Athenian right wing tribes (8 deep)",
+      "type": "heavy_infantry",
+      "strength": 3300,
+      "col": 15,
+      "row": 18,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Callimachus"
+    },
+    {
+      "id": "per-north",
+      "side": "B",
+      "name": "Persian right wing (Asiatic levies)",
+      "type": "infantry",
+      "strength": 7000,
+      "col": 28,
+      "row": 10,
+      "facing": "left",
+      "morale": 65
+    },
+    {
+      "id": "per-centre",
+      "side": "B",
+      "name": "Persian & Sakae centre (best troops)",
+      "type": "infantry",
+      "strength": 8000,
+      "col": 28,
+      "row": 14,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Datis"
+    },
+    {
+      "id": "per-south",
+      "side": "B",
+      "name": "Persian left wing (Asiatic levies)",
+      "type": "infantry",
+      "strength": 7000,
+      "col": 28,
+      "row": 18,
+      "facing": "left",
+      "morale": 65
+    },
+    {
+      "id": "per-archers",
+      "side": "B",
+      "name": "Persian archers (behind the line)",
+      "type": "archers",
+      "strength": 3000,
+      "col": 31,
+      "row": 14,
+      "facing": "left",
+      "morale": 70
+    },
+    {
+      "id": "per-cavalry",
+      "side": "B",
+      "name": "Persian cavalry (in camp / re-embarking; role disputed)",
+      "type": "cavalry",
+      "strength": 1000,
+      "col": 37,
+      "row": 16,
+      "facing": "left",
+      "morale": 70
+    },
+    {
+      "id": "per-fleet",
+      "side": "B",
+      "name": "Persian fleet and crews (~600 triremes per Herodotus)",
+      "type": "ships",
+      "strength": 20000,
+      "col": 44,
+      "row": 14,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Artaphernes"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Landing and stalemate",
+      "time": "Days 1-5 before the battle (early September 490 BCE)",
+      "durationSec": 8,
+      "narration": "On Hippias's advice the Persians land in the Bay of Marathon. The Athenians march out and block the plain's two exits from the slopes of Mt Agrieliki, and Pheidippides runs to Sparta, which delays for the Carneia. A thousand Plataeans arrive. For about five days neither side attacks.",
+      "orders": [
+        {
+          "unit": "per-fleet",
+          "action": "hold"
+        },
+        {
+          "unit": "per-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "ath-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "pla-hoplites",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p2",
+      "title": "The Athenian line forms",
+      "time": "Dawn, 12 September 490 BCE",
+      "durationSec": 8,
+      "narration": "Miltiades, with the polemarch Callimachus's casting vote, orders battle. The Athenian line is stretched to match the Persian front, thinned to four ranks in the centre and kept eight deep on the wings. The Plataeans anchor the left; Callimachus commands the right.",
+      "orders": [
+        {
+          "unit": "ath-left",
+          "action": "hold"
+        },
+        {
+          "unit": "ath-right",
+          "action": "hold"
+        },
+        {
+          "unit": "per-north",
+          "action": "hold"
+        },
+        {
+          "unit": "per-south",
+          "action": "hold"
+        },
+        {
+          "unit": "per-cavalry",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p3",
+      "title": "The run across the plain",
+      "time": "Morning, ~08:00",
+      "durationSec": 9,
+      "narration": "The Greeks advance in step until within bowshot (about eight stades by Herodotus), then break into a run to shorten the time under Persian arrows. The Persians, seeing an apparently suicidal charge, form up to receive it.",
+      "orders": [
+        {
+          "unit": "pla-hoplites",
+          "action": "move",
+          "to": [
+            22,
+            8
+          ]
+        },
+        {
+          "unit": "ath-left",
+          "action": "move",
+          "to": [
+            22,
+            11
+          ]
+        },
+        {
+          "unit": "ath-centre",
+          "action": "move",
+          "to": [
+            22,
+            14
+          ]
+        },
+        {
+          "unit": "ath-right",
+          "action": "move",
+          "to": [
+            22,
+            18
+          ]
+        },
+        {
+          "unit": "per-archers",
+          "action": "bombard",
+          "target": "ath-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ath-centre",
+          "strength": 2350
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Clash: the centre gives, the wings win",
+      "time": "Mid-morning",
+      "durationSec": 12,
+      "narration": "The lines collide. The thin Athenian centre is pushed back and pursued inland, while on both wings the Plataeans and the Athenian tribes break the Asiatic levies. Callimachus is killed on the right. The Persian wings flee, many toward the marshes.",
+      "orders": [
+        {
+          "unit": "ath-centre",
+          "action": "retreat",
+          "to": [
+            18,
+            14
+          ]
+        },
+        {
+          "unit": "per-centre",
+          "action": "attack",
+          "target": "ath-centre"
+        },
+        {
+          "unit": "pla-hoplites",
+          "action": "attack",
+          "target": "per-north"
+        },
+        {
+          "unit": "ath-left",
+          "action": "attack",
+          "target": "per-north"
+        },
+        {
+          "unit": "ath-right",
+          "action": "attack",
+          "target": "per-south"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-north",
+          "strength": 5700,
+          "morale": 25,
+          "status": "routed"
+        },
+        {
+          "unit": "per-south",
+          "strength": 5600,
+          "morale": 25,
+          "status": "routed"
+        },
+        {
+          "unit": "ath-right",
+          "strength": 3240,
+          "morale": 75
+        },
+        {
+          "unit": "ath-centre",
+          "strength": 2270,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "The wings wheel: double envelopment",
+      "time": "Late morning",
+      "durationSec": 10,
+      "narration": "Instead of chasing the beaten wings, the Greek wings turn inward and close on the Persian centre from both sides, while the retired Athenian centre turns again. The best Persian troops are caught in a pocket.",
+      "orders": [
+        {
+          "unit": "ath-left",
+          "action": "flank",
+          "target": "per-centre",
+          "to": [
+            27,
+            11
+          ]
+        },
+        {
+          "unit": "ath-right",
+          "action": "flank",
+          "target": "per-centre",
+          "to": [
+            27,
+            17
+          ]
+        },
+        {
+          "unit": "pla-hoplites",
+          "action": "attack",
+          "target": "per-centre"
+        },
+        {
+          "unit": "ath-centre",
+          "action": "attack",
+          "target": "per-centre"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-centre",
+          "strength": 6000,
+          "morale": 30
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Rout to the ships and the Great Marsh",
+      "time": "Midday",
+      "durationSec": 10,
+      "narration": "The Persian army breaks and flees to the beach and ships; some are driven into the Great Marsh and drown. At the shoreline Cynegeirus has his hand cut off seizing a ship and dies, and seven ships are captured. Herodotus counts 6,400 Persian and 192 Athenian dead.",
+      "orders": [
+        {
+          "unit": "per-centre",
+          "action": "rout"
+        },
+        {
+          "unit": "per-north",
+          "action": "rout"
+        },
+        {
+          "unit": "per-south",
+          "action": "rout"
+        },
+        {
+          "unit": "per-archers",
+          "action": "retreat",
+          "to": [
+            39,
+            14
+          ]
+        },
+        {
+          "unit": "ath-left",
+          "action": "attack",
+          "target": "per-north"
+        },
+        {
+          "unit": "ath-right",
+          "action": "attack",
+          "target": "per-south"
+        },
+        {
+          "unit": "ath-centre",
+          "action": "attack",
+          "target": "per-centre"
+        },
+        {
+          "unit": "per-cavalry",
+          "action": "retreat",
+          "to": [
+            39,
+            15
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-centre",
+          "strength": 5200,
+          "status": "routed"
+        },
+        {
+          "unit": "per-archers",
+          "strength": 2600,
+          "morale": 30
+        },
+        {
+          "unit": "per-north",
+          "strength": 5400,
+          "status": "routed"
+        },
+        {
+          "unit": "per-south",
+          "strength": 5400,
+          "status": "routed"
+        },
+        {
+          "unit": "ath-left",
+          "strength": 3270
+        },
+        {
+          "unit": "ath-right",
+          "strength": 3220
+        },
+        {
+          "unit": "ath-centre",
+          "strength": 2260
+        },
+        {
+          "unit": "pla-hoplites",
+          "strength": 980
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "The fleet sails for Athens; the Athenians march back",
+      "time": "Afternoon and evening",
+      "durationSec": 10,
+      "narration": "The Persian fleet sails round Cape Sounion toward undefended Athens (some sources say Phaleron; some moderns place this move before the battle). The Athenian army marches the ~40 km back at once, so that the Persians find it waiting and withdraw to Asia. The Spartans reach Marathon a day after the battle, too late to fight.",
+      "orders": [
+        {
+          "unit": "per-fleet",
+          "action": "move",
+          "to": [
+            46,
+            28
+          ]
+        },
+        {
+          "unit": "ath-left",
+          "action": "move",
+          "to": [
+            10,
+            28
+          ]
+        },
+        {
+          "unit": "ath-centre",
+          "action": "move",
+          "to": [
+            10,
+            28
+          ]
+        },
+        {
+          "unit": "ath-right",
+          "action": "move",
+          "to": [
+            10,
+            28
+          ]
+        },
+        {
+          "unit": "pla-hoplites",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "per-fleet",
+          "status": "withdrawn",
+          "strength": 19000
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "A decisive Greek victory: the Persian force abandoned the attack on Athens. Herodotus gives 6,400 Persian and 192 Athenian dead; moderns often accept those proportions while doubting the ancient Persian totals.",
+    "casualties": {
+      "A": "192 Athenians killed (Herodotus); Plataean losses unrecorded",
+      "B": "6,400 killed on the field (Herodotus), plus drowned in the marsh; seven ships captured"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Marathon — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon"
+    },
+    {
+      "title": "Battle of Marathon — World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Battle_of_Marathon/"
+    },
+    {
+      "title": "Battle of Marathon — Livius.org",
+      "url": "https://www.livius.org/articles/battle/marathon-490-bce/"
+    },
+    {
+      "title": "Cynaegirus — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cynaegirus"
+    }
+  ]
+}
