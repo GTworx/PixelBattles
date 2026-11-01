@@ -25,10 +25,10 @@ beforeEach(() => {
 
 describe('terminalLinkOpener', () => {
   it('opens http(s) links in a new tab with no opener and no referrer', () => {
-    openTerminalLink(event, 'https://github.com/pixel-agents-hq/pixel-agents');
+    openTerminalLink(event, 'https://github.com/GTworx/PixelBattles');
     openTerminalLink(event, 'http://localhost:5173/');
     expect(open.mock.calls).toEqual([
-      ['https://github.com/pixel-agents-hq/pixel-agents', '_blank', 'noopener,noreferrer'],
+      ['https://github.com/GTworx/PixelBattles', '_blank', 'noopener,noreferrer'],
       ['http://localhost:5173/', '_blank', 'noopener,noreferrer'],
     ]);
   });
@@ -80,7 +80,7 @@ function bufferOf(
 }
 
 describe('urlAtCell', () => {
-  const url = 'https://github.com/pixel-agents-hq/pixel-agents/pull/347';
+  const url = 'https://github.com/GTworx/PixelBattles/pull/347';
 
   it('finds the URL under the tapped cell, and nothing beside it', () => {
     const buffer = bufferOf([{ text: `see ${url} now` }]);

@@ -1,7 +1,7 @@
 /**
  * Optional native PTY module loader.
  *
- * node-pty is a native module, which is a real problem for `npx pixel-agents`.
+ * node-pty is a native module, which is a real problem for `npx pixel-battles`.
  * Two independent failure modes exist in the wild (both measured -- see
  * docs/design/standalone-terminal.md):
  *

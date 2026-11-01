@@ -61,7 +61,7 @@ export const DIRECTORY_SUGGESTION_FILES_PER_SESSION_DIR = 5;
  *  by when a session last ran there. */
 export const DIRECTORY_SUGGESTION_LIMIT = 10;
 
-// ── Display Truncation + Pixel Agents Server paths ──────────
+// ── Display Truncation + PixelBattles Server paths ──────────
 // Centralized in core/src/constants.ts; re-exported here for back-compat.
 export {
   BASH_COMMAND_DISPLAY_MAX_LENGTH,
@@ -151,14 +151,14 @@ export const TERMINAL_REQUIRES_TOKEN_REASON =
  *  save or delete failed. The detail (permissions, disk full, ...) is on the
  *  host's console, where writeConfig logged it. */
 export const DIRECTORY_WRITE_FAILED_REASON =
-  "Couldn't save the change: writing ~/.pixel-agents/config.json failed (see the host's log).";
+  "Couldn't save the change: writing ~/.pixel-battles/config.json failed (see the host's log).";
 /** Standalone persists its server token here (mode 0600, beside server.json) so
  *  the tokened URL a browser bookmarked keeps working across restarts. The
  *  embedded (VS Code) server still mints a fresh token per process. */
 export const STANDALONE_TOKEN_FILE_NAME = 'standalone-token';
 
 // ── Layout/Config Persistence ──────────────────────────────
-export const LAYOUT_FILE_DIR = '.pixel-agents';
+export const LAYOUT_FILE_DIR = '.pixel-battles';
 export const LAYOUT_FILE_NAME = 'layout.json';
 export const LAYOUT_FILE_POLL_INTERVAL_MS = 2000;
 export const LAYOUT_REVISION_KEY = 'layoutRevision';

@@ -15,7 +15,7 @@ export interface HookEventPayload {
 }
 
 function getServerJsonPath(tmpHome: string): string {
-  return path.join(tmpHome, '.pixel-agents', 'server.json');
+  return path.join(tmpHome, '.pixel-battles', 'server.json');
 }
 
 /** The events in a HOME's settings.json carrying one of our hook commands, sorted.
@@ -34,7 +34,7 @@ export function ourHookEvents(tmpHome: string): string[] {
     (command ?? '')
       .replace(/\\/g, '/')
       .toLowerCase()
-      .includes('.pixel-agents/hooks/claude-hook.js');
+      .includes('.pixel-battles/hooks/claude-hook.js');
   return Object.entries(settings.hooks ?? {})
     .filter(([, entries]) =>
       (entries ?? []).some((e) => (e.hooks ?? []).some((h) => ours(h.command))),

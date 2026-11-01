@@ -74,7 +74,7 @@ describe('flowTerminalCopy', () => {
   it('does not flatten short 2-space-indented structure (YAML, JSON, code)', () => {
     const yaml = 'foo:\n  bar: 1\n  baz:\n    - qux';
     expect(flowTerminalCopy(yaml, COLS)).toBe(yaml);
-    const json = '{\n  "name": "pixel-agents",\n  "private": true\n}';
+    const json = '{\n  "name": "pixel-battles",\n  "private": true\n}';
     expect(flowTerminalCopy(json, COLS)).toBe(json);
     const code = 'if (ready) {\n  start();\n}';
     expect(flowTerminalCopy(code, COLS)).toBe(code);

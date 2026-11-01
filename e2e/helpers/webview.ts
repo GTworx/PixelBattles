@@ -113,7 +113,7 @@ async function ensurePanelIsLarge(window: Page): Promise<void> {
 
   await expect
     .poll(() => getPanelHeight(window), {
-      message: 'Expected the bottom panel to be resized for the Pixel Agents webview',
+      message: 'Expected the bottom panel to be resized for the PixelBattles webview',
       timeout: PANEL_OPEN_TIMEOUT_MS,
       intervals: [250, 500, 1000],
     })
@@ -121,12 +121,12 @@ async function ensurePanelIsLarge(window: Page): Promise<void> {
 }
 
 /**
- * Open the Pixel Agents panel via the Command Palette and wait for the
- * "Pixel Agents: Show Panel" command to execute.
+ * Open the PixelBattles panel via the Command Palette and wait for the
+ * "PixelBattles: Show Panel" command to execute.
  */
 /**
  * Close the bottom panel. Triggers onDidChangeVisibility(false) on every
- * WebviewView hosted there; since PixelAgentsViewProvider does NOT set
+ * WebviewView hosted there; since PixelBattlesViewProvider does NOT set
  * retainContextWhenHidden, the webview is disposed and resolveWebviewView
  * is called fresh when the panel reopens. Used by the restored-agents test to exercise
  * the existingAgents restore path without a destructive iframe reload.
@@ -134,7 +134,7 @@ async function ensurePanelIsLarge(window: Page): Promise<void> {
  * Toggle (rather than Close) is used because the literal command name varies
  * by VS Code locale/version; "View: Toggle Panel" is stable. Caller must
  * ensure the panel is currently open before calling (it will be after a
- * preceding openPixelAgentsPanel + spawn flow).
+ * preceding openPixelBattlesPanel + spawn flow).
  */
 export async function closeBottomPanel(window: Page): Promise<void> {
   // Use the default Toggle Panel chord (⌘J / Ctrl+J) instead of the command
@@ -151,7 +151,7 @@ export async function closeBottomPanel(window: Page): Promise<void> {
     await window.mouse.click(statusBox.x + statusBox.width / 2, statusBox.y + statusBox.height / 2);
   }
   await window.keyboard.press(process.platform === 'darwin' ? 'Meta+J' : 'Control+J');
-  // Wait until the Pixel Agents webview is actually DESTROYED, not merely
+  // Wait until the PixelBattles webview is actually DESTROYED, not merely
   // hidden. VS Code disposes a hidden WebviewView lazily; returning on a
   // fixed sleep lets a quick reopen re-show the SAME webview context, which
   // breaks tests whose premise is a fresh webview (e.g. restored-agents reads
@@ -171,7 +171,7 @@ export async function closeBottomPanel(window: Page): Promise<void> {
         return false;
       },
       {
-        message: 'Expected the Pixel Agents webview to be disposed after closing the panel',
+        message: 'Expected the PixelBattles webview to be disposed after closing the panel',
         timeout: 15_000,
       },
     )
@@ -180,11 +180,11 @@ export async function closeBottomPanel(window: Page): Promise<void> {
 
 /**
  * Reopen the bottom panel with the same ⌘J/Ctrl+J toggle closeBottomPanel
- * used. Compared to openPixelAgentsPanel (palette "Show Panel" plus a
+ * used. Compared to openPixelBattlesPanel (palette "Show Panel" plus a
  * possible "Toggle Maximized Panel" resize), the chord restores the panel
  * exactly as it was — no command-palette overlays in the run video. Caller
  * must have closed the panel with closeBottomPanel first, and should follow
- * with getPixelAgentsFrame(window) to wait for the fresh webview.
+ * with getPixelBattlesFrame(window) to wait for the fresh webview.
  */
 export async function reopenBottomPanel(window: Page): Promise<void> {
   const statusBox = await window
@@ -198,7 +198,7 @@ export async function reopenBottomPanel(window: Page): Promise<void> {
 }
 
 /**
- * Single-shot (non-waiting) check for the Pixel Agents webview frame.
+ * Single-shot (non-waiting) check for the PixelBattles webview frame.
  *
  * The iframe must be VISIBLE, not merely attached: after the panel is hidden
  * (View: Toggle Panel), VS Code keeps the dying webview's iframe in the DOM
@@ -206,12 +206,12 @@ export async function reopenBottomPanel(window: Page): Promise<void> {
  * addAgentLog) belongs to the previous webview lifetime — the restored-agents
  * test reads a fresh webview's log and MUST NOT see the old one.
  */
-async function findPixelAgentsFrameOnce(window: Page): Promise<Frame | null> {
+async function findPixelBattlesFrameOnce(window: Page): Promise<Frame | null> {
   for (const frame of window.frames()) {
     if (!frame.url().startsWith('vscode-webview://')) continue;
     try {
       // count() resolves immediately (no waiting); a non-zero count means
-      // this is the Pixel Agents frame.
+      // this is the PixelBattles frame.
       const buttonCount = await frame.locator('button', { hasText: '+ Agent' }).count();
       if (buttonCount === 0) continue;
       const frameElement = await frame.frameElement();
@@ -227,7 +227,7 @@ async function findPixelAgentsFrameOnce(window: Page): Promise<Frame | null> {
   return null;
 }
 
-export async function openPixelAgentsPanel(
+export async function openPixelBattlesPanel(
   window: Page,
   opts: { autoShown?: boolean } = {},
 ): Promise<void> {
@@ -235,17 +235,17 @@ export async function openPixelAgentsPanel(
   // nothing to open — mid-test callers hit this when the view never got
   // hidden (terminals open as editor tabs now; see launch.ts).
   //
-  // autoShown: the seeded pixel-agents.autoShowPanel setting (see
+  // autoShown: the seeded pixel-battles.autoShowPanel setting (see
   // e2e/helpers/launch.ts) focuses the view on activation, so at fixture
   // setup the webview surfaces without any command-palette interaction. Poll
   // for it and fall back to the palette only if it never appears. Mid-test
   // callers reopening a deliberately closed panel skip the poll (the view
   // won't auto-show again) and go straight to the palette.
-  let shown = (await findPixelAgentsFrameOnce(window)) !== null;
+  let shown = (await findPixelBattlesFrameOnce(window)) !== null;
   if (!shown && opts.autoShown) {
     const deadline = Date.now() + PANEL_OPEN_TIMEOUT_MS;
     while (Date.now() < deadline) {
-      if (await findPixelAgentsFrameOnce(window)) {
+      if (await findPixelBattlesFrameOnce(window)) {
         shown = true;
         break;
       }
@@ -258,7 +258,7 @@ export async function openPixelAgentsPanel(
     }
   }
   if (!shown) {
-    await runCommand(window, 'Pixel Agents: Show Panel');
+    await runCommand(window, 'PixelBattles: Show Panel');
   }
 
   // Wait for the panel container to appear
@@ -296,10 +296,10 @@ async function getPanelRect(window: Page): Promise<PanelRect | null> {
 }
 
 /**
- * Arrange the workbench into the run-video layout: Pixel Agents panel (docked
+ * Arrange the workbench into the run-video layout: PixelBattles panel (docked
  * left via workbench.panel.defaultLocation, see launch.ts) at ~2/3 window
  * width, editor area (terminal tabs) in the remaining third, primary and
- * secondary side bars hidden. Called once per test by the pixelAgents fixture
+ * secondary side bars hidden. Called once per test by the pixelBattles fixture
  * right after the panel is shown.
  *
  * Side-bar visibility has no settings key, so hide-by-toggle with the default
@@ -365,7 +365,7 @@ export async function arrangeReviewLayout(window: Page): Promise<void> {
     let touched = false;
     // The hide chords need workbench (not webview) focus: webviews forward
     // only a whitelist of keybindings, and autoShowPanel leaves focus inside
-    // the Pixel Agents webview. Clicking the empty middle of the status bar
+    // the PixelBattles webview. Clicking the empty middle of the status bar
     // moves focus to workbench chrome without triggering any action.
     const statusBox = await window
       .locator('.part.statusbar')
@@ -395,24 +395,24 @@ export async function arrangeReviewLayout(window: Page): Promise<void> {
 }
 
 /**
- * Find and return the Pixel Agents webview frame.
+ * Find and return the PixelBattles webview frame.
  *
  * VS Code renders WebviewViewProvider content in an <iframe> whose URL
  * starts with "vscode-webview://". Because VS Code can have multiple
  * webviews, we wait until one frame exposes the "+ Agent" button before
  * returning it.
  */
-export async function getPixelAgentsFrame(window: Page): Promise<Frame> {
+export async function getPixelBattlesFrame(window: Page): Promise<Frame> {
   let foundFrame: Frame | null = null;
 
   await expect
     .poll(
       async () => {
-        foundFrame = await findPixelAgentsFrameOnce(window);
+        foundFrame = await findPixelBattlesFrameOnce(window);
         return foundFrame !== null;
       },
       {
-        message: 'Pixel Agents webview frame with "+ Agent" button not found',
+        message: 'PixelBattles webview frame with "+ Agent" button not found',
         timeout: WEBVIEW_TIMEOUT_MS,
         intervals: [250, 500, 1000],
       },

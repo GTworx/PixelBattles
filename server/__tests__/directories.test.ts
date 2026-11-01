@@ -49,7 +49,7 @@ describe('directories', () => {
   /** Make the next config write fail: the atomic write goes through a `.tmp`
    *  sibling, and a directory squatting on that name makes it throw. */
   function blockConfigWrites(): void {
-    const dir = path.join(tempHome, '.pixel-agents');
+    const dir = path.join(tempHome, '.pixel-battles');
     fs.mkdirSync(path.join(dir, 'config.json.tmp'), { recursive: true });
   }
 

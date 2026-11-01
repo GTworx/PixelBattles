@@ -56,7 +56,7 @@ export function launchStandaloneAgent(
   const { store, runtime, ptyManager, provider } = deps;
 
   if (!ptyManager.isAvailable()) {
-    console.error(`[Pixel Agents] Terminal: cannot launch -- ${ptyManager.unavailableReason()}`);
+    console.error(`[PixelBattles] Terminal: cannot launch -- ${ptyManager.unavailableReason()}`);
     return null;
   }
 
@@ -67,13 +67,13 @@ export function launchStandaloneAgent(
     bypassPermissions: options.bypassPermissions,
   });
   if (!launch) {
-    console.error('[Pixel Agents] Terminal: provider.buildLaunchCommand is not implemented');
+    console.error('[PixelBattles] Terminal: provider.buildLaunchCommand is not implemented');
     return null;
   }
 
   const dirs = provider.getSessionDirs?.(cwd) ?? [];
   if (dirs.length === 0) {
-    console.error('[Pixel Agents] Terminal: provider returned no session dirs');
+    console.error('[PixelBattles] Terminal: provider returned no session dirs');
     return null;
   }
   const projectDir = dirs[0];
@@ -94,7 +94,7 @@ export function launchStandaloneAgent(
   } catch (err) {
     // Roll the id back so a failed spawn doesn't burn an agent id.
     store.nextAgentId.current--;
-    console.error(`[Pixel Agents] Terminal: spawn failed: ${String(err)}`);
+    console.error(`[PixelBattles] Terminal: spawn failed: ${String(err)}`);
     return null;
   }
 
@@ -132,7 +132,7 @@ export function launchStandaloneAgent(
   store.persist();
 
   console.log(
-    `[Pixel Agents] Terminal: Agent ${id} - spawned ${launch.command} (pid ${session.pid}) in ${cwd}`,
+    `[PixelBattles] Terminal: Agent ${id} - spawned ${launch.command} (pid ${session.pid}) in ${cwd}`,
   );
 
   // Tell the UI a terminal exists for this agent, so the drawer opens a tab.
@@ -143,7 +143,7 @@ export function launchStandaloneAgent(
   // The terminal closing is this surface's equivalent of VS Code's
   // "terminal closed -> clean up orphan" pass in fileWatcher.
   session.onExit((exit) => {
-    console.log(`[Pixel Agents] Terminal: Agent ${id} - exited (code ${exit.exitCode})`);
+    console.log(`[PixelBattles] Terminal: Agent ${id} - exited (code ${exit.exitCode})`);
     store.broadcast({ type: 'terminalSessionClosed', agentId: id, exitCode: exit.exitCode });
     if (store.has(id)) {
       runtime.unregisterAgent(agent.sessionId);
@@ -174,7 +174,7 @@ function startJsonlPoll(deps: LaunchStandaloneAgentDeps, id: number, agent: Agen
       if (!fs.existsSync(agent.jsonlFile)) {
         if (pollCount === 10) {
           console.warn(
-            `[Pixel Agents] Terminal: Agent ${id} - JSONL not found after 10s. Expected: ${agent.jsonlFile}`,
+            `[PixelBattles] Terminal: Agent ${id} - JSONL not found after 10s. Expected: ${agent.jsonlFile}`,
           );
         }
         return;
@@ -184,7 +184,7 @@ function startJsonlPoll(deps: LaunchStandaloneAgentDeps, id: number, agent: Agen
       // The agent may have been closed while we waited.
       if (!store.has(id)) return;
       console.log(
-        `[Pixel Agents] Terminal: Agent ${id} - found JSONL ${path.basename(agent.jsonlFile)}`,
+        `[PixelBattles] Terminal: Agent ${id} - found JSONL ${path.basename(agent.jsonlFile)}`,
       );
       startFileWatching(
         id,

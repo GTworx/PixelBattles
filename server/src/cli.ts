@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Standalone CLI entry point: `npx pixel-agents`
+ * Standalone CLI entry point: `npx pixel-battles`
  *
  * Starts the Fastify server in standalone mode with SPA serving and WebSocket.
  * Loads all assets (PNGs -> SpriteData) on startup and caches in memory.
@@ -33,7 +33,7 @@ import {
 } from './constants.js';
 import { FileStateAdapter } from './fileStateAdapter.js';
 import { claudeProvider, copyHookScript, hookProviderById } from './providers/index.js';
-import { PixelAgentsServer } from './server.js';
+import { PixelBattlesServer } from './server.js';
 import { PtySessionManager } from './terminal/ptySessionManager.js';
 import { isLoopbackHost, normalizeHostname } from './wsAuth.js';
 
@@ -103,7 +103,7 @@ export function parseArgs(argv: string[]): CliArgs {
     } else if (argv[i] === '--no-terminal') {
       args.terminal = false;
     } else if (argv[i] === '--help') {
-      console.log(`Usage: pixel-agents [options]
+      console.log(`Usage: pixel-battles [options]
 
 Options:
   --port, -p <number>   Port to listen on (default: OS-assigned ephemeral port)
@@ -132,7 +132,7 @@ Options:
 // migration below (our hooks already installed by a pre-consent version).
 
 /**
- * Copy the bundled hook script into ~/.pixel-agents/hooks/, reporting failure.
+ * Copy the bundled hook script into ~/.pixel-battles/hooks/, reporting failure.
  *
  * Callers run this BEFORE installing the settings.json entries and abort when
  * it returns false: an entry whose command points at a missing script makes
@@ -141,7 +141,7 @@ Options:
  */
 function copyHookScriptOrReport(packageRoot: string, context = ''): boolean {
   if (copyHookScript(packageRoot)) return true;
-  console.error(`[Pixel Agents] Hooks NOT installed${context}: hook script missing.`);
+  console.error(`[PixelBattles] Hooks NOT installed${context}: hook script missing.`);
   return false;
 }
 
@@ -166,29 +166,29 @@ function reportTerminalStatus(
 ): void {
   if (!enabledByFlag) {
     console.log(
-      '[Pixel Agents] Terminal disabled (--no-terminal): agents can be watched but not launched from the browser.',
+      '[PixelBattles] Terminal disabled (--no-terminal): agents can be watched but not launched from the browser.',
     );
     return;
   }
 
   if (!ptyManager.isAvailable()) {
     console.warn(
-      `[Pixel Agents] Terminal disabled: ${ptyManager.unavailableReason()}\n` +
-        `[Pixel Agents] The office still works; you just can't launch agents from the browser.\n` +
-        `[Pixel Agents] To enable it, reinstall so the optional PTY module is present.`,
+      `[PixelBattles] Terminal disabled: ${ptyManager.unavailableReason()}\n` +
+        `[PixelBattles] The office still works; you just can't launch agents from the browser.\n` +
+        `[PixelBattles] To enable it, reinstall so the optional PTY module is present.`,
     );
     return;
   }
 
-  console.log(`[Pixel Agents] Terminal enabled (via ${ptyManager.moduleId()})`);
+  console.log(`[PixelBattles] Terminal enabled (via ${ptyManager.moduleId()})`);
 
   if (!isLoopbackHost(host)) {
     console.warn(
-      `[Pixel Agents] WARNING: bound to ${host}, not loopback. The terminal is a shell:\n` +
-        `[Pixel Agents] anyone who can reach this port AND has the auth token can run commands\n` +
-        `[Pixel Agents] as you, and plain HTTP sends that token unencrypted. Behind a reverse\n` +
-        `[Pixel Agents] proxy (e.g. Tailscale Serve), keep --host 127.0.0.1 and pass the proxy's\n` +
-        `[Pixel Agents] name with --allowed-host instead.`,
+      `[PixelBattles] WARNING: bound to ${host}, not loopback. The terminal is a shell:\n` +
+        `[PixelBattles] anyone who can reach this port AND has the auth token can run commands\n` +
+        `[PixelBattles] as you, and plain HTTP sends that token unencrypted. Behind a reverse\n` +
+        `[PixelBattles] proxy (e.g. Tailscale Serve), keep --host 127.0.0.1 and pass the proxy's\n` +
+        `[PixelBattles] name with --allowed-host instead.`,
     );
   }
 }
@@ -200,7 +200,7 @@ async function main(): Promise<void> {
   try {
     args = parseArgs(process.argv.slice(2));
   } catch (err) {
-    console.error(`[Pixel Agents] ${err instanceof Error ? err.message : String(err)}`);
+    console.error(`[PixelBattles] ${err instanceof Error ? err.message : String(err)}`);
     process.exit(1);
   }
 
@@ -213,7 +213,7 @@ async function main(): Promise<void> {
   // External asset directories are merged at startup too, so directories added
   // in a previous session survive a restart. buildAssetCache is the shared
   // loader used by both the standalone server and the VS Code adapter.
-  console.log('[Pixel Agents] Loading assets...');
+  console.log('[PixelBattles] Loading assets...');
   const assetCache: AssetCache = await buildAssetCache(
     distRoot,
     readConfig().externalAssetDirectories,
@@ -222,7 +222,7 @@ async function main(): Promise<void> {
   const petCount = assetCache.pets?.pets.length ?? 0;
   const furnitureCount = assetCache.furniture?.catalog.length ?? 0;
   console.log(
-    `[Pixel Agents] Assets loaded: ${charCount} characters, ${petCount} pets, ${furnitureCount} furniture items`,
+    `[PixelBattles] Assets loaded: ${charCount} characters, ${petCount} pets, ${furnitureCount} furniture items`,
   );
 
   // ── Store + adapter (shared settings + standalone-scoped agents/seats) ──
@@ -231,7 +231,7 @@ async function main(): Promise<void> {
   store.setAdapter(adapter);
 
   // ── Create server ──
-  const server = new PixelAgentsServer();
+  const server = new PixelBattlesServer();
 
   // Terminals for agents this server launches. Construction is cheap -- the
   // native module is resolved (and probed) lazily on first use, so a user who
@@ -277,16 +277,16 @@ async function main(): Promise<void> {
             currentConfig.token,
           );
         } catch (err) {
-          console.error(`[Pixel Agents] ${err instanceof Error ? err.message : String(err)}`);
+          console.error(`[PixelBattles] ${err instanceof Error ? err.message : String(err)}`);
           return;
         }
-        console.log('[Pixel Agents] Hooks installed (user toggle)');
+        console.log('[PixelBattles] Hooks installed (user toggle)');
       } else {
         try {
           await provider.uninstallHooks();
-          console.log('[Pixel Agents] Hooks uninstalled (user toggle)');
+          console.log('[PixelBattles] Hooks uninstalled (user toggle)');
         } catch (err) {
-          console.error(`[Pixel Agents] ${err instanceof Error ? err.message : String(err)}`);
+          console.error(`[PixelBattles] ${err instanceof Error ? err.message : String(err)}`);
         }
       }
     };
@@ -325,7 +325,7 @@ async function main(): Promise<void> {
           sprites: Object.fromEntries(furniture.sprites),
         });
       }
-      console.log('[Pixel Agents] Assets reloaded (external directory change)');
+      console.log('[PixelBattles] Assets reloaded (external directory change)');
     };
 
     const config = await server.start({
@@ -345,7 +345,7 @@ async function main(): Promise<void> {
     currentConfig = { port: config.port, token: config.token };
     if (args.rotateToken) {
       console.log(
-        '[Pixel Agents] Server token rotated: URLs carrying the old token no longer grant access. Open the new URL below on each device.',
+        '[PixelBattles] Server token rotated: URLs carrying the old token no longer grant access. Open the new URL below on each device.',
       );
     }
 
@@ -355,7 +355,7 @@ async function main(): Promise<void> {
     // runtime's single hooksEnabled ref follows the Claude provider until the
     // scanners grow per-provider awareness alongside the Settings UI.
     runtime.hooksEnabled.current = getHooksEnabled(claudeProvider.id);
-    runtime.watchAllSessions.current = adapter.getSetting('pixel-agents.watchAllSessions', false);
+    runtime.watchAllSessions.current = adapter.getSetting('pixel-battles.watchAllSessions', false);
 
     // Install hooks on startup if the persisted setting says so — gated on the
     // one-time consent to modify ~/.claude/settings.json.
@@ -375,21 +375,21 @@ async function main(): Promise<void> {
       }
       if (!consent) {
         console.log(
-          '[Pixel Agents] Hooks not installed: modifying ~/.claude/settings.json needs one-time approval — open the URL below to review and approve it.',
+          '[PixelBattles] Hooks not installed: modifying ~/.claude/settings.json needs one-time approval — open the URL below to review and approve it.',
         );
       } else if (copyHookScriptOrReport(packageRoot)) {
         try {
           await claudeProvider.installHooks(`http://127.0.0.1:${config.port}`, config.token);
-          console.log('[Pixel Agents] Hooks installed');
+          console.log('[PixelBattles] Hooks installed');
         } catch (err) {
-          console.error(`[Pixel Agents] ${err instanceof Error ? err.message : String(err)}`);
+          console.error(`[PixelBattles] ${err instanceof Error ? err.message : String(err)}`);
         }
       }
     } else {
       // Without this line, a persisted hooks-off makes startup skip the entire
       // consent/install flow with zero output — indistinguishable from a bug.
       console.log(
-        '[Pixel Agents] Hooks disabled — enable "Instant Detection (Hooks)" in the UI settings to install them.',
+        '[PixelBattles] Hooks disabled — enable "Instant Detection (Hooks)" in the UI settings to install them.',
       );
     }
 
@@ -398,7 +398,7 @@ async function main(): Promise<void> {
     const dirs = claudeProvider.getSessionDirs?.(cwd);
     if (dirs && dirs[0]) {
       const projectDir = dirs[0];
-      console.log(`[Pixel Agents] Scanning project dir: ${projectDir}`);
+      console.log(`[PixelBattles] Scanning project dir: ${projectDir}`);
       runtime.startProjectScan(projectDir);
       runtime.startExternalScanning(projectDir);
       runtime.startStaleCheck();
@@ -414,7 +414,7 @@ async function main(): Promise<void> {
     const displayHost =
       args.host === '0.0.0.0' || args.host === '::' || args.host === '' ? '127.0.0.1' : args.host;
     console.log(
-      `\n  Pixel Agents server running at http://${displayHost}:${config.port}/?token=${config.token}\n`,
+      `\n  PixelBattles server running at http://${displayHost}:${config.port}/?token=${config.token}\n`,
     );
 
     // ── Graceful shutdown ──

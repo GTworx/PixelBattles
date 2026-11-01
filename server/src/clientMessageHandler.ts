@@ -77,15 +77,15 @@ export interface ClientMessageContext {
 }
 
 // ── Setting key constants (mirror adapters/vscode/constants.ts) ──
-const KEY_SOUND_ENABLED = 'pixel-agents.soundEnabled';
-const KEY_LAST_SEEN_VERSION = 'pixel-agents.lastSeenVersion';
-const KEY_ALWAYS_SHOW_LABELS = 'pixel-agents.alwaysShowLabels';
-const KEY_GHOST_HEADLESS_AGENTS = 'pixel-agents.ghostHeadlessAgents';
-const KEY_WATCH_ALL_SESSIONS = 'pixel-agents.watchAllSessions';
-const KEY_HOOKS_INFO_SHOWN = 'pixel-agents.hooksInfoShown';
-const KEY_SHOW_AREAS = 'pixel-agents.showAreas';
-const KEY_BYPASS_PERMISSIONS = 'pixel-agents.bypassPermissions';
-const KEY_SHOW_HOST_DIRECTORIES = 'pixel-agents.showHostDirectories';
+const KEY_SOUND_ENABLED = 'pixel-battles.soundEnabled';
+const KEY_LAST_SEEN_VERSION = 'pixel-battles.lastSeenVersion';
+const KEY_ALWAYS_SHOW_LABELS = 'pixel-battles.alwaysShowLabels';
+const KEY_GHOST_HEADLESS_AGENTS = 'pixel-battles.ghostHeadlessAgents';
+const KEY_WATCH_ALL_SESSIONS = 'pixel-battles.watchAllSessions';
+const KEY_HOOKS_INFO_SHOWN = 'pixel-battles.hooksInfoShown';
+const KEY_SHOW_AREAS = 'pixel-battles.showAreas';
+const KEY_BYPASS_PERMISSIONS = 'pixel-battles.bypassPermissions';
+const KEY_SHOW_HOST_DIRECTORIES = 'pixel-battles.showHostDirectories';
 
 /**
  * This host's own Directory contribution: the directory the server was started
@@ -396,7 +396,7 @@ async function applyHooksPreference(
     // not outcome (the installer refuses to touch an unparseable file).
     send({ type: 'hooksStatus', providerId: provider.id, installed });
   } catch (err) {
-    console.error('[Pixel Agents] Applying the hooks preference failed:', err);
+    console.error('[PixelBattles] Applying the hooks preference failed:', err);
   }
 }
 
@@ -419,7 +419,7 @@ function standaloneConsentEffects(
       try {
         await ctx.onSetHooksEnabled?.(provider.id, false);
       } catch (err) {
-        console.error('[Pixel Agents] Hook uninstall failed:', err);
+        console.error('[PixelBattles] Hook uninstall failed:', err);
       }
     },
     areHooksInstalled: () => provider.areHooksInstalled(),
@@ -536,7 +536,7 @@ function handleWebviewReady(send: WsSend, ctx: ClientMessageContext): void {
     void provider
       .areHooksInstalled()
       .catch((err: unknown) => {
-        console.error(`[Pixel Agents] hooks status check failed for provider ${provider.id}:`, err);
+        console.error(`[PixelBattles] hooks status check failed for provider ${provider.id}:`, err);
         return false;
       })
       .then((installed) => {
@@ -651,7 +651,7 @@ function settingsSnapshot(adapter: StateAdapter | undefined) {
     type: 'settingsLoaded',
     soundEnabled: adapter?.getSetting(KEY_SOUND_ENABLED, true) ?? true,
     lastSeenVersion: adapter?.getSetting(KEY_LAST_SEEN_VERSION, '') ?? '',
-    extensionVersion: process.env.PIXEL_AGENTS_VERSION ?? '',
+    extensionVersion: process.env.PIXEL_BATTLES_VERSION ?? '',
     watchAllSessions: adapter?.getSetting(KEY_WATCH_ALL_SESSIONS, false) ?? false,
     alwaysShowLabels: adapter?.getSetting(KEY_ALWAYS_SHOW_LABELS, false) ?? false,
     ghostHeadlessAgents: adapter?.getSetting(KEY_GHOST_HEADLESS_AGENTS, false) ?? false,
@@ -686,7 +686,7 @@ function refuseReadOnly(
   if (!reportedRefusals.has(type)) {
     reportedRefusals.add(type);
     console.warn(
-      `[Pixel Agents] Ignoring ${type} from a read-only client. Changes need the tokened URL the CLI printed (at localhost or an --allowed-host name).`,
+      `[PixelBattles] Ignoring ${type} from a read-only client. Changes need the tokened URL the CLI printed (at localhost or an --allowed-host name).`,
     );
   }
   switch (msg.type) {

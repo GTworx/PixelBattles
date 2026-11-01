@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import type { Frame, Locator } from '@playwright/test';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import { ourHookEvents } from '../../../helpers/hooks';
 import { advanceIntroToConsentStep, finishIntro } from '../../../helpers/intro';
 import { getSettingChecked, setSettings } from '../../../helpers/webview';
@@ -38,7 +38,7 @@ type GreeterHooks = {
 /** Whether the consent greeter character is currently in the office. */
 function greeterPresent(frame: Frame): Promise<boolean> {
   return frame.evaluate(() => {
-    const hooks = (window as { __pixelAgentsTestHooks?: GreeterHooks }).__pixelAgentsTestHooks;
+    const hooks = (window as { __pixelBattlesTestHooks?: GreeterHooks }).__pixelBattlesTestHooks;
     return (hooks?.getCharacters?.() ?? []).some((c) => c.isGreeter === true);
   });
 }
@@ -67,7 +67,7 @@ function readSettings(tmpHome: string): {
 
 function readConsent(tmpHome: string): boolean {
   try {
-    const raw = fs.readFileSync(path.join(tmpHome, '.pixel-agents', 'config.json'), 'utf8');
+    const raw = fs.readFileSync(path.join(tmpHome, '.pixel-battles', 'config.json'), 'utf8');
     const consent = (JSON.parse(raw) as { hooksConsent?: Record<string, string> }).hooksConsent;
     return consent?.claude === 'granted';
   } catch {
@@ -77,7 +77,7 @@ function readConsent(tmpHome: string): boolean {
 
 function readHooksEnabled(tmpHome: string): boolean | undefined {
   try {
-    const raw = fs.readFileSync(path.join(tmpHome, '.pixel-agents', 'config.json'), 'utf8');
+    const raw = fs.readFileSync(path.join(tmpHome, '.pixel-battles', 'config.json'), 'utf8');
     return (JSON.parse(raw) as { hooksEnabled?: Record<string, boolean> }).hooksEnabled?.claude;
   } catch {
     return undefined;
@@ -86,12 +86,12 @@ function readHooksEnabled(tmpHome: string): boolean | undefined {
 
 /**
  * A pre-consent (legacy) settings.json: our command on 14 events, including the two we no longer collect, plus a
- * third-party hook sharing one entry. The command is matched by its `.pixel-agents/hooks/claude-hook.js` path SUFFIX
+ * third-party hook sharing one entry. The command is matched by its `.pixel-battles/hooks/claude-hook.js` path SUFFIX
  * rather than against the resolved homedir, so a literal `/home/legacy/...` reads as ours even though the test HOME
  * is a temp dir — which is what lets this be seeded at launch time, before that temp HOME has a name.
  */
 function legacyClaudeSettings(thirdPartyCommand: string): unknown {
-  const command = 'node "/home/legacy/.pixel-agents/hooks/claude-hook.js"';
+  const command = 'node "/home/legacy/.pixel-battles/hooks/claude-hook.js"';
   const events = [
     'SessionStart',
     'SessionEnd',
@@ -123,13 +123,13 @@ test.describe('Hooks consent gate', () => {
   test.use({ seedConfig: NO_CONSENT_CONFIG });
 
   test('fresh install: the Intro pages to the disclosure and Install writes the hooks @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     narrator.step('waiting for the first-run Intro');
     const dialog = await openConsentDialog(frame);
-    await expect(dialog).toContainText('Welcome to Pixel Agents!');
+    await expect(dialog).toContainText('Welcome to PixelBattles!');
 
     // Diegetic: the tour is a greeter character's speech bubble, and the camera
     // shifts so character + bubble are centered — the bubble ends up FULLY on
@@ -164,7 +164,7 @@ test.describe('Hooks consent gate', () => {
     expect(text).toContain('One more thing: hooks!');
     expect(text).toMatch(/adds hooks for 12 Claude Code events/);
     expect(text).toContain('~/.claude/settings.json');
-    expect(text).toContain('.pixel-agents.backup');
+    expect(text).toContain('.pixel-battles.backup');
     expect(text).toMatch(/tool inputs/);
     expect(text).toContain('127.0.0.1');
     // The LAST sentence of the disclosure — asserted at the tail so a clipped
@@ -215,9 +215,9 @@ test.describe('Hooks consent gate', () => {
   });
 
   test('Not Now writes nothing, continues the tour, and leaves consent ungranted @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
     await advanceIntroToConsentStep(dialog);
@@ -242,9 +242,9 @@ test.describe('Hooks consent gate', () => {
   });
 
   test("Don't Ask Again writes nothing and persists hooks off @area:cross-cutting", async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
     await advanceIntroToConsentStep(dialog);
@@ -267,9 +267,9 @@ test.describe('Hooks consent gate', () => {
   // persisted hooks-off would strand them with the gate skipped forever. The
   // whole Intro simply returns on the next open.
   test('the close x aborts the tour and writes nothing, exactly like Not Now @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
     // The x is on every step — here, mid-tour, one step before the disclosure.
@@ -296,9 +296,9 @@ test.describe('Hooks consent gate', () => {
   // entries is the historical stranding bug (entries firing, checkbox lying,
   // gate skipped forever), so this asserts the disk, not the buttons.
   test("Back from the closing step lets Don't Ask Again undo a landed install @area:cross-cutting", async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
     await advanceIntroToConsentStep(dialog);
@@ -332,9 +332,9 @@ test.describe('Hooks consent gate', () => {
   // nothing here would retire an ask whose FINAL answer was "ask me again".
   // The revision must take back the decline AND the preference it wrote.
   test("Back after Don't Ask Again lets Not Now bring the ask back @area:cross-cutting", async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
     await advanceIntroToConsentStep(dialog);
@@ -379,9 +379,9 @@ test.describe('Hooks consent gate', () => {
     test.use({ seedClaudeSettings: '{ "permissions": { "allow": [ "Bash(ls:*)" ]' });
 
     test('a failed install is reported, and Not Now brings the ask back @area:cross-cutting', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, tmpHome, narrator } = pixelAgents;
+      const { frame, tmpHome, narrator } = pixelBattles;
 
       const dialog = await openConsentDialog(frame);
       await advanceIntroToConsentStep(dialog);
@@ -425,9 +425,9 @@ test.describe('Hooks consent gate', () => {
   // the point of the diegetic bubble), so the most common accidental gesture —
   // clicking somewhere in the office — must leave the tour exactly where it was.
   test('clicking the office around the bubble neither answers nor dismisses @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     const dialog = await openConsentDialog(frame);
 
@@ -462,9 +462,9 @@ test.describe('Hooks consent gate / pre-consent install', () => {
   // do not already have. The removal route the disclosure promises is the
   // Settings toggle, exercised end-to-end by the next test.
   test('a pre-consent 14-event install migrates to 12 with no prompt @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     await expect.poll(() => ourHookEvents(tmpHome).length, { timeout: 30_000 }).toBe(12);
     expect(ourHookEvents(tmpHome)).not.toContain('UserPromptSubmit');
@@ -502,9 +502,9 @@ test.describe('Hooks consent gate / pre-consent install', () => {
   // their ONLY removal route, so it is asserted end-to-end — toggle off,
   // entries gone from disk — rather than assumed from the toggle existing.
   test('Settings toggle removes the migrated hooks and keeps third-party entries @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
 
     // The silent migration lands first, so the toggle below is a genuine state
     // change over live hooks rather than a no-op click.
@@ -553,9 +553,9 @@ test.describe('Hooks consent gate / toggle-off failure', () => {
   test.skip(process.platform === 'win32', 'chmod-based write failure is not meaningful on Windows');
 
   test('a failed uninstall does not persist hooks-off @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, narrator } = pixelAgents;
+    const { frame, tmpHome, narrator } = pixelBattles;
     const claudeDir = path.join(tmpHome, '.claude');
 
     // Startup installed for real (consent seeded), so the checkbox is ON and

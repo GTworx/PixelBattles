@@ -2,7 +2,7 @@ import type { Frame } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   clickTile,
   dragOnCanvas,
@@ -44,7 +44,7 @@ import { buildSeedLayout } from '../../../helpers/layout-seed';
  *     undo entry.
  *
  * Tiles and furniture render only on the canvas (no DOM), so assertions read
- * state through window.__pixelAgentsTestHooks.getTiles() / getFurniture() — the
+ * state through window.__pixelBattlesTestHooks.getTiles() / getFurniture() — the
  * same canvas-state approach the carpet and pets specs use.
  *
  * How much each test bypasses, from least to most:
@@ -99,9 +99,9 @@ test.describe('Layout editor — erase', () => {
   });
 
   test('erasing a tile deletes the furniture it passes through @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk at (3,3) to load');
     await waitForFurnitureCount(frame, 1);
@@ -121,8 +121,8 @@ test.describe('Layout editor — erase', () => {
     narrator.check('tile (3,3) is VOID — the tile itself was cleared too');
   });
 
-  test('erasing away from an item leaves it in place @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('erasing away from an item leaves it in place @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk at (3,3) to load');
     await waitForFurnitureCount(frame, 1);
@@ -144,9 +144,9 @@ test.describe('Layout editor — erase', () => {
   });
 
   test('one undo restores both the tiles and the furniture an erase stroke removed @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk at (3,3) to load');
     await waitForFurnitureCount(frame, 1);
@@ -181,8 +181,10 @@ test.describe('Layout editor — erase', () => {
     narrator.check('all three tiles restored — tile + furniture share one undo entry');
   });
 
-  test('a right-drag erase stroke is a single undo entry @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('a right-drag erase stroke is a single undo entry @area:editor', async ({
+    pixelBattles,
+  }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor and selecting the floor tool');
     await enterEditMode(frame);
@@ -220,8 +222,8 @@ test.describe('Layout editor — erase', () => {
 test.describe('Layout editor — stroke undo', () => {
   test.use({ seedLayout: buildSeedLayout({ cols: 12, rows: 12 }) });
 
-  test('a floor paint stroke is a single undo entry @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('a floor paint stroke is a single undo entry @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor → floor tool, pattern 2');
     await enterEditMode(frame);
@@ -258,8 +260,8 @@ test.describe('Layout editor — stroke undo', () => {
     narrator.check('all three revert together — the stroke is one undo entry');
   });
 
-  test('a wall paint stroke is a single undo entry @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('a wall paint stroke is a single undo entry @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor → wall tool');
     await enterEditMode(frame);
@@ -294,8 +296,8 @@ test.describe('Layout editor — stroke undo', () => {
     narrator.check('all three walls revert together — one undo entry');
   });
 
-  test('separate strokes stay separate undo entries @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('separate strokes stay separate undo entries @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor → floor tool, pattern 2');
     await enterEditMode(frame);
@@ -385,8 +387,8 @@ test.describe('Layout editor — desks carry what stands on them', () => {
     })(),
   });
 
-  test('dragging a desk moves the item standing on it @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('dragging a desk moves the item standing on it @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -410,8 +412,8 @@ test.describe('Layout editor — desks carry what stands on them', () => {
     narrator.check('desk (3,3)→(3,6) and the PC on it (4,3)→(4,6) — same delta, one drag');
   });
 
-  test('rotating a desk turns the item standing on it @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('rotating a desk turns the item standing on it @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -437,9 +439,9 @@ test.describe('Layout editor — desks carry what stands on them', () => {
   });
 
   test('alt-dragging a desk copies it with the item standing on it @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -469,9 +471,9 @@ test.describe('Layout editor — desks carry what stands on them', () => {
   });
 
   test('an alt-drag copy that overlaps the original is refused @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -493,8 +495,8 @@ test.describe('Layout editor — desks carry what stands on them', () => {
     narrator.check('the plain move lands there — only the copy is blocked by the original');
   });
 
-  test('one undo removes the whole copied group @area:editor', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('one undo removes the whole copied group @area:editor', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -512,9 +514,9 @@ test.describe('Layout editor — desks carry what stands on them', () => {
   });
 
   test('selecting a placed item closes the open tool panel, and R rotates it @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -563,9 +565,9 @@ test.describe('Layout editor — a desk group fits as a whole or not at all', ()
   });
 
   test('a drag that would push the item on the desk off the grid is refused @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('waiting for the seeded desk + overhanging PC to load');
     await waitForFurnitureCount(frame, 2);
@@ -617,9 +619,9 @@ test.describe('Layout editor — a rotation fits as a whole or not at all', () =
   });
 
   test('a rotation that would swing the item on the desk into a chair is refused @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     const group = async () => {
       const byUid = Object.fromEntries((await readFurniture(frame)).map((f) => [f.uid, f]));
       return ['seed-desk', 'seed-coffee', 'seed-chair'].map((uid) => {
@@ -671,9 +673,9 @@ test.describe('Layout editor — Furniture Copy', () => {
   });
 
   test('a copy of an uncoloured item stays uncoloured under a Colorize palette @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     const placedAt = async (col: number, row: number) =>
       (await readFurniture(frame)).find(
         (f) => f.uid !== 'seed-pc' && f.col === col && f.row === row,
@@ -734,9 +736,9 @@ test.describe('Layout editor — colour eyedropper', () => {
   });
 
   test('eyedropping the item on a desk copies its colour, as its own undo entry @area:editor', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     const deskColor = async () =>
       (await readFurniture(frame)).find((f) => f.uid === 'seed-desk')?.color;
 

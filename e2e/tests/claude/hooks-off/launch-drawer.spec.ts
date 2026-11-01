@@ -3,14 +3,14 @@ import path from 'node:path';
 
 import type { Frame, Page } from '@playwright/test';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import { addAgentForDirectory } from '../../../helpers/internal-agent';
 import { expectOverlayVisibleWithTexts } from '../../../helpers/office';
 import {
   addDirectory,
-  getPixelAgentsFrame,
+  getPixelBattlesFrame,
   openLaunchDrawer,
-  openPixelAgentsPanel,
+  openPixelBattlesPanel,
 } from '../../../helpers/webview';
 
 /**
@@ -30,17 +30,17 @@ const GAMMA = 'gamma';
 
 /** Re-open the panel (disposed by the spawned terminal) + return a fresh frame. */
 async function reacquireFrame(window: Page): Promise<Frame> {
-  await openPixelAgentsPanel(window);
-  return getPixelAgentsFrame(window);
+  await openPixelBattlesPanel(window);
+  return getPixelBattlesFrame(window);
 }
 
 test.describe('Launch drawer (multi-root)', () => {
   test.use({ workspaceFolders: [ALPHA, BETA] });
 
   test('hovering + Agent opens a drawer with a badged, read-only row per workspace folder @area:spawn', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     narrator.step('hovering "+ Agent" — the desktop secondary gesture');
     const drawer = await openLaunchDrawer(frame);
@@ -61,9 +61,9 @@ test.describe('Launch drawer (multi-root)', () => {
   });
 
   test('tapping a drawer row launches an agent labeled with that Directory @area:spawn', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     // Opens the drawer and clicks the "alpha" row, which sends launchAgent with
     // that Directory's path.
@@ -78,9 +78,9 @@ test.describe('Launch drawer (multi-root)', () => {
   });
 
   test('a Directory defined in the office joins the drawer, launches, and survives a panel reload @area:spawn', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     // A real directory outside every workspace folder: what this host could not
     // launch into before, and what the user-defined half of the union is for.

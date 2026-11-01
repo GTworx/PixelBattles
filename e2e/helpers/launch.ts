@@ -41,9 +41,9 @@ export interface LaunchOptions {
    * (single-folder default is unchanged).
    */
   workspaceFolders?: string[];
-  /** Pre-seed `~/.pixel-agents/config.json` (written before the server reads it). */
+  /** Pre-seed `~/.pixel-battles/config.json` (written before the server reads it). */
   seedConfig?: unknown;
-  /** Pre-seed `~/.pixel-agents/layout.json` (written before the panel loads). */
+  /** Pre-seed `~/.pixel-battles/layout.json` (written before the panel loads). */
   seedLayout?: unknown;
   /**
    * Pre-seed `~/.claude/settings.json` (written before the extension activates).
@@ -55,7 +55,7 @@ export interface LaunchOptions {
 }
 
 /**
- * Launch VS Code with the Pixel Agents extension loaded in development mode.
+ * Launch VS Code with the PixelBattles extension loaded in development mode.
  *
  * Uses an isolated temp HOME and injects the mock `claude` binary at the
  * front of PATH so no real Claude CLI is needed.
@@ -79,7 +79,7 @@ export async function launchVSCode(
   fs.mkdirSync(mockBinDir, { recursive: true });
 
   // Pre-seed user-level config/layout under the isolated HOME, BEFORE VS Code
-  // launches — the server reads ~/.pixel-agents/{config,layout}.json on startup,
+  // launches — the server reads ~/.pixel-battles/{config,layout}.json on startup,
   // so a test that needs specific areaMappings / showAreas / a known layout must
   // write them now. layout.json must carry a high layoutRevision to survive the
   // bundled-default reset gate (server/src/layoutPersistence.ts).
@@ -92,7 +92,7 @@ export async function launchVSCode(
   // workspace folder's drawer row. Missing keys are filled with product defaults
   // by server/src/configPersistence.ts. Tests override via opts.seedConfig
   // (buildSeedConfig in layout-seed.ts carries the same baseline).
-  const paDir = path.join(tmpHome, '.pixel-agents');
+  const paDir = path.join(tmpHome, '.pixel-battles');
   fs.mkdirSync(paDir, { recursive: true });
   // The granted hooksConsent entry is part of the baseline: without it the first-run consent
   // dialog pops up inside the webview on open, gating hook installation and
@@ -227,16 +227,16 @@ export async function launchVSCode(
 
   // VS Code user settings for the isolated profile. Together with
   // arrangeReviewLayout() (e2e/helpers/webview.ts) they produce the run-video
-  // layout: Pixel Agents panel docked LEFT at ~2/3 width, terminals opening
+  // layout: PixelBattles panel docked LEFT at ~2/3 width, terminals opening
   // as editor tabs in the remaining right third, all other chrome hidden.
   //
   // - workbench.panel.defaultLocation "left": the panel (which hosts the
-  //   Pixel Agents webview) docks left at full height, so ensurePanelIsLarge()
+  //   PixelBattles webview) docks left at full height, so ensurePanelIsLarge()
   //   no-ops instead of driving the flaky "View: Toggle Maximized Panel"
   //   command-palette interaction at the start of every test.
-  // - pixel-agents.autoShowPanel: the extension focuses the Pixel Agents view
-  //   on activation (onStartupFinished), so openPixelAgentsPanel({ autoShown })
-  //   skips the "Pixel Agents: Show Panel" palette interaction at setup.
+  // - pixel-battles.autoShowPanel: the extension focuses the PixelBattles view
+  //   on activation (onStartupFinished), so openPixelBattlesPanel({ autoShown })
+  //   skips the "PixelBattles: Show Panel" palette interaction at setup.
   // - terminal.integrated.defaultLocation "editor": mock-claude terminals open
   //   as editor tabs beside the office instead of stealing the panel (the
   //   webview has no retainContextWhenHidden, so a panel-hosted terminal.show()
@@ -252,7 +252,7 @@ export async function launchVSCode(
   fs.mkdirSync(userSettingsDir, { recursive: true });
   const userSettings: Record<string, unknown> = {
     'workbench.panel.defaultLocation': 'left',
-    'pixel-agents.autoShowPanel': true,
+    'pixel-battles.autoShowPanel': true,
     'terminal.integrated.defaultLocation': 'editor',
     'workbench.activityBar.location': 'hidden',
     'workbench.startupEditor': 'none',
@@ -268,22 +268,26 @@ export async function launchVSCode(
         env: {
           PATH: `${mockBinDir}:/usr/local/bin:/usr/bin:/bin`,
           HOME: tmpHome,
-          PIXEL_AGENTS_E2E_CLAUDE_BIN: mockClaudeBinaryPath,
-          PIXEL_AGENTS_NODE_BIN: process.execPath,
+          PIXEL_BATTLES_E2E_CLAUDE_BIN: mockClaudeBinaryPath,
+          PIXEL_BATTLES_NODE_BIN: process.execPath,
           ZDOTDIR: tmpHome,
           CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS: '1',
           // inheritEnv is false for this profile, so the diagnostic log
           // path must be set explicitly here or the mock-spawned
           // claude-hook.js (which runs in this terminal) can't write to
           // it. Path matches the `debugLogFile` const below.
-          PIXEL_AGENTS_DEBUG_LOG: path.join(tmpHome, '.pixel-agents', 'debug.log'),
+          PIXEL_BATTLES_DEBUG_LOG: path.join(tmpHome, '.pixel-battles', 'debug.log'),
           // Narration log paths for the mock-claude wrapper's background tail
           // (see e2e/fixtures/mock-claude). inheritEnv:false means these must
           // be set on the profile too, or internal mock tabs are silently
           // narration-less on macOS — which is where the review videos record.
           // Paths match the process-env block below.
-          PIXEL_AGENTS_TEST_NARRATION_LOG: path.join(tmpHome, '.claude-mock', 'test-narration.log'),
-          PIXEL_AGENTS_EXTERNAL_NARRATION_LOG: path.join(
+          PIXEL_BATTLES_TEST_NARRATION_LOG: path.join(
+            tmpHome,
+            '.claude-mock',
+            'test-narration.log',
+          ),
+          PIXEL_BATTLES_EXTERNAL_NARRATION_LOG: path.join(
             tmpHome,
             '.claude-mock',
             'external-narration.log',
@@ -325,27 +329,27 @@ export async function launchVSCode(
   // USERPROFILE (and clears HOMEDRIVE/HOMEPATH) on Windows, where os.homedir()
   // ignores $HOME — see its doc comment for why this is load-bearing.
   // Diagnostic log: server-side broadcasts + hook events go here. Fixture
-  // attaches it as `pixel-agents-debug-log` so CI failure analysis can read
+  // attaches it as `pixel-battles-debug-log` so CI failure analysis can read
   // the exact event timeline. Per-test isolated under tmpHome so parallel
   // workers don't interleave (though e2e uses workers=1 anyway).
-  const debugLogFile = path.join(tmpHome, '.pixel-agents', 'debug.log');
+  const debugLogFile = path.join(tmpHome, '.pixel-battles', 'debug.log');
   fs.mkdirSync(path.dirname(debugLogFile), { recursive: true });
 
   const env: Record<string, string> = {
     ...(applyMockHomeEnv(process.env, tmpHome) as Record<string, string>),
     // Prepend mock bin so 'claude' resolves to our mock
     PATH: `${mockBinDir}${PATH_SEP}${process.env['PATH'] ?? '/usr/local/bin:/usr/bin:/bin'}`,
-    PIXEL_AGENTS_E2E_CLAUDE_BIN: mockClaudeBinaryPath,
-    PIXEL_AGENTS_E2E_LAUNCH_LOG: launchLogFile,
-    PIXEL_AGENTS_NODE_BIN: process.execPath,
-    PIXEL_AGENTS_DEBUG_LOG: debugLogFile,
+    PIXEL_BATTLES_E2E_CLAUDE_BIN: mockClaudeBinaryPath,
+    PIXEL_BATTLES_E2E_LAUNCH_LOG: launchLogFile,
+    PIXEL_BATTLES_NODE_BIN: process.execPath,
+    PIXEL_BATTLES_DEBUG_LOG: debugLogFile,
     // Narration log paths, consumed by the mock-claude wrapper to background a
     // headerless tail into its own terminal tab (yellow [test] + magenta
     // [external] lines interleaved with the runner's cyan output). On Linux the
     // process env propagates to the integrated terminal; macOS also needs these
     // on the e2e terminal profile (inheritEnv:false) — see the block above.
-    PIXEL_AGENTS_TEST_NARRATION_LOG: path.join(tmpHome, '.claude-mock', 'test-narration.log'),
-    PIXEL_AGENTS_EXTERNAL_NARRATION_LOG: path.join(
+    PIXEL_BATTLES_TEST_NARRATION_LOG: path.join(tmpHome, '.claude-mock', 'test-narration.log'),
+    PIXEL_BATTLES_EXTERNAL_NARRATION_LOG: path.join(
       tmpHome,
       '.claude-mock',
       'external-narration.log',
@@ -419,7 +423,7 @@ export async function launchVSCode(
       cwd: resolvedWorkspaceDir,
       timeout: 60_000,
     };
-    if (!IS_WINDOWS && process.env['PIXEL_AGENTS_E2E_NO_VIDEO'] !== '1') {
+    if (!IS_WINDOWS && process.env['PIXEL_BATTLES_E2E_NO_VIDEO'] !== '1') {
       launchOptions.recordVideo = {
         dir: videoDir!,
         size: { width: 1280, height: 800 },
@@ -430,14 +434,14 @@ export async function launchVSCode(
 
     const window = await app.firstWindow();
 
-    // Mark this as the e2e harness BEFORE the Pixel Agents webview iframe loads.
+    // Mark this as the e2e harness BEFORE the PixelBattles webview iframe loads.
     // addInitScript runs in every frame on attach/navigate (including that
     // iframe, which opens later when the panel is shown), so the webview reads
-    // __PIXEL_AGENTS_E2E === true and installs its test-only observability hooks
-    // (window.__pixelAgentsTestHooks). In production the flag is absent, so
+    // __PIXEL_BATTLES_E2E === true and installs its test-only observability hooks
+    // (window.__pixelBattlesTestHooks). In production the flag is absent, so
     // those hooks (and their unbounded logs) never run.
     await window.addInitScript(() => {
-      (window as unknown as { __PIXEL_AGENTS_E2E?: boolean }).__PIXEL_AGENTS_E2E = true;
+      (window as unknown as { __PIXEL_BATTLES_E2E?: boolean }).__PIXEL_BATTLES_E2E = true;
     });
 
     // The Ozone headless backend ignores --window-size CLI flags, so VS Code

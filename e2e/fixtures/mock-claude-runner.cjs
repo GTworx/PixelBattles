@@ -86,12 +86,12 @@ const ANSI_YELLOW = '\u001b[33m';
 const ANSI_MAGENTA = '\u001b[35m';
 const ANSI_RESET = '\u001b[0m';
 
-// External sessions (spawned detached by the e2e harness so Pixel Agents
+// External sessions (spawned detached by the e2e harness so PixelBattles
 // ADOPTS them instead of launching them) narrate into a shared per-test log
 // that a monitor terminal tails. The magenta prefix keeps their lines
 // visually distinct from internal-terminal narration, and the short
 // per-session tag keeps interleaved external sessions tellable apart.
-const IS_EXTERNAL = process.env.PIXEL_AGENTS_MOCK_EXTERNAL === '1';
+const IS_EXTERNAL = process.env.PIXEL_BATTLES_MOCK_EXTERNAL === '1';
 let externalTag = '';
 
 function tinySessionTag(value) {
@@ -106,7 +106,7 @@ function shortId(value) {
 }
 
 /**
- * Human-readable narration to stdout. Pixel Agents never reads the terminal
+ * Human-readable narration to stdout. PixelBattles never reads the terminal
  * (its inputs are JSONL transcripts and hook POSTs), so this changes nothing
  * about what tests exercise — it exists purely so run recordings show WHAT
  * the mock is simulating and WHEN, where real claude would render its TUI.
@@ -205,14 +205,14 @@ function normalizePathForMatch(value) {
   return String(value).replace(/\\/g, '/');
 }
 
-function isPixelAgentsHookCommand(homeDir, command) {
+function isPixelBattlesHookCommand(homeDir, command) {
   if (typeof command !== 'string' || command.length === 0) {
     return false;
   }
 
   const normalizedCommand = normalizePathForMatch(command);
   const currentHookPath = normalizePathForMatch(
-    path.join(homeDir, '.pixel-agents', 'hooks', 'claude-hook.js'),
+    path.join(homeDir, '.pixel-battles', 'hooks', 'claude-hook.js'),
   );
 
   return (
@@ -325,7 +325,7 @@ function runHookCommand(command, payload, env, cwd) {
   // (mockBin:/usr/local/bin:/usr/bin:/bin) with inheritEnv:false, which on CI
   // runners does NOT include the toolcache node dir — so bare `node` exits 127
   // and the hook never POSTs. The mock itself survives because its wrapper uses
-  // the absolute PIXEL_AGENTS_NODE_BIN, but the spawned hook uses bare `node`.
+  // the absolute PIXEL_BATTLES_NODE_BIN, but the spawned hook uses bare `node`.
   // Prepend the running node's bin dir to PATH so the hook resolves it, on any
   // spawn path. (Real Claude Code spawns hooks with the user's real PATH, so
   // this is purely a test-harness fix.)
@@ -368,7 +368,7 @@ async function emitHook(homeDir, context, payload) {
       if (hook?.type !== 'command' || typeof hook.command !== 'string' || hook.command.length === 0) {
         continue;
       }
-      if (!isPixelAgentsHookCommand(homeDir, hook.command)) {
+      if (!isPixelBattlesHookCommand(homeDir, hook.command)) {
         continue;
       }
       matched += 1;
@@ -380,7 +380,7 @@ async function emitHook(homeDir, context, payload) {
       );
     }
   }
-  // Diagnostic: if no registered command matched the pixel-agents hook, the
+  // Diagnostic: if no registered command matched the pixel-battles hook, the
   // hook script was never spawned — log the computed path + the commands we
   // saw so a CI failure shows the mismatch instead of failing silently.
   if (matched === 0) {
@@ -508,7 +508,7 @@ async function main() {
   if (IS_EXTERNAL) {
     externalTag = tinySessionTag(sessionId);
     process.stdout.write(
-      `${ANSI_MAGENTA}══ EXTERNAL session ·${externalTag} — adopted by Pixel Agents, not launched ══${ANSI_RESET}\n`,
+      `${ANSI_MAGENTA}══ EXTERNAL session ·${externalTag} — adopted by PixelBattles, not launched ══${ANSI_RESET}\n`,
     );
   }
   echo(

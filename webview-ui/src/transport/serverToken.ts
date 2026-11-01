@@ -11,7 +11,7 @@
  * The token deliberately STAYS in the address bar: the server persists it so a
  * bookmarked or home-screen URL keeps working across restarts, and stripping it
  * would break exactly that. The cost is that it sits in history -- the URL is a
- * secret, and `pixel-agents --rotate-token` is how a leaked one is revoked.
+ * secret, and `pixel-battles --rotate-token` is how a leaked one is revoked.
  * index.html sets `referrer: no-referrer` so it never leaves as a Referer.
  * See server/src/wsAuth.ts (standaloneTokenValid).
  */

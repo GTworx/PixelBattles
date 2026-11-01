@@ -1,5 +1,5 @@
 {
-  "name": "pixel-agents",
+  "name": "pixel-battles",
   "private": true,
   "scripts": {
     "test": "vitest run",

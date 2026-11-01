@@ -5,7 +5,7 @@ import { carpetJunctionCase } from './office/sprites/carpetTiles.js';
 
 declare global {
   interface Window {
-    __pixelAgentsTestHooks?: {
+    __pixelBattlesTestHooks?: {
       playedSounds?: Array<{ kind: string; at: number }>;
       getCharacters?: () => Array<{
         id: number;
@@ -115,7 +115,7 @@ declare global {
 }
 
 /**
- * Install e2e test observables on window.__pixelAgentsTestHooks. Mostly
+ * Install e2e test observables on window.__pixelBattlesTestHooks. Mostly
  * read-only / append-only; the one action (selectAgent) only sets selection
  * state and changes no production logic. Called once at module-load from
  * App.tsx with the singleton officeStateRef.
@@ -135,8 +135,8 @@ declare global {
  */
 export function installTestHooks(officeStateRef: { current: OfficeState | null }): void {
   if (typeof window === 'undefined') return;
-  if (!window.__pixelAgentsTestHooks) window.__pixelAgentsTestHooks = {};
-  const hooks = window.__pixelAgentsTestHooks;
+  if (!window.__pixelBattlesTestHooks) window.__pixelBattlesTestHooks = {};
+  const hooks = window.__pixelBattlesTestHooks;
   if (!hooks.addAgentLog) hooks.addAgentLog = [];
 
   hooks.getCharacters = () => {

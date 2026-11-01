@@ -1,7 +1,7 @@
 /**
  * AgentRuntime: shared agent lifecycle core for VS Code and standalone modes.
  *
- * Owns all infrastructure that both PixelAgentsViewProvider (VS Code) and the
+ * Owns all infrastructure that both PixelBattlesViewProvider (VS Code) and the
  * standalone CLI need: timer Maps, file watchers, HookEventHandler, DismissalTracker,
  * session scanning, and agent removal. Adapters (VS Code, CLI) create an instance
  * and register platform-specific lifecycle callbacks.
@@ -166,7 +166,7 @@ export class AgentRuntime {
             for (const [leadId, lead] of this.store) {
               if (lead.teamName !== teamMeta.teamName || lead.leadAgentId !== undefined) continue;
               console.log(
-                `[Pixel Agents] Hook: session ${sessionId.slice(0, 8)}... is teammate "${teamMeta.agentName}" of Agent ${leadId}, attaching`,
+                `[PixelBattles] Hook: session ${sessionId.slice(0, 8)}... is teammate "${teamMeta.agentName}" of Agent ${leadId}, attaching`,
               );
               scanForTeammateFiles(
                 lead.projectDir,
@@ -194,7 +194,7 @@ export class AgentRuntime {
         }
         if (!isTrackedProjectDir(projectDir) && !this.watchAllSessions.current) {
           console.log(
-            `[Pixel Agents] Hook: external session ${sessionId.slice(0, 8)}... not adopted ` +
+            `[PixelBattles] Hook: external session ${sessionId.slice(0, 8)}... not adopted ` +
               `(project untracked, Watch All Sessions off)`,
           );
           return;
@@ -341,7 +341,7 @@ export class AgentRuntime {
   removeTeammate(teammateId: number, source: string): void {
     const agent = this.store.get(teammateId);
     if (!agent) return;
-    console.log(`[Pixel Agents] Removing teammate ${teammateId} (source: ${source})`);
+    console.log(`[PixelBattles] Removing teammate ${teammateId} (source: ${source})`);
     this.dismissalTracker.dismiss(agent.jsonlFile);
     // Background teammates (spawnToolUseId set) share the LEAD's session id;
     // unregistering it would knock the lead itself out of the session router.
@@ -402,7 +402,7 @@ export class AgentRuntime {
     for (const id of teammates) {
       const agent = this.store.get(id);
       if (agent) {
-        console.log(`[Pixel Agents] Removing teammate ${id} (lead ${leadId} closed)`);
+        console.log(`[PixelBattles] Removing teammate ${id} (lead ${leadId} closed)`);
         this.dismissalTracker.dismiss(agent.jsonlFile);
         if (!agent.spawnToolUseId) {
           this.unregisterAgent(agent.sessionId);
@@ -541,7 +541,7 @@ export class AgentRuntime {
 
       if (p.id > maxId) maxId = p.id;
       console.log(
-        `[Pixel Agents] Restored external agent ${p.id} -> ${path.basename(p.jsonlFile)}`,
+        `[PixelBattles] Restored external agent ${p.id} -> ${path.basename(p.jsonlFile)}`,
       );
     }
 

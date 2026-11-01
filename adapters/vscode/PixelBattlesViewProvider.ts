@@ -57,7 +57,7 @@ import {
   hookProviderById,
   hookProviders,
 } from '../../server/src/providers/index.js';
-import { PixelAgentsServer } from '../../server/src/server.js';
+import { PixelBattlesServer } from '../../server/src/server.js';
 import {
   getProjectDirPath,
   launchNewTerminal,
@@ -87,7 +87,7 @@ import { VscodeTerminalAdapter } from './vscodeTerminalAdapter.js';
  *  wrong (webviewReady never arriving) — log and drop the oldest. */
 const MAX_PENDING_BROADCASTS = 1_000;
 
-export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
+export class PixelBattlesViewProvider implements vscode.WebviewViewProvider {
   store = new AgentStateStore();
   webviewView: vscode.WebviewView | undefined;
 
@@ -115,8 +115,8 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
   // Cross-window layout sync
   layoutWatcher: LayoutWatcher | null = null;
 
-  // Pixel Agents Server (hook event reception)
-  private pixelAgentsServer: PixelAgentsServer | null = null;
+  // PixelBattles Server (hook event reception)
+  private pixelBattlesServer: PixelBattlesServer | null = null;
   private adapter: StateAdapter;
 
   // Auto-spawn guard: ensures the startup spawn fires at most once per VS Code
@@ -221,7 +221,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
     }
     if (this.pendingBroadcasts.length >= MAX_PENDING_BROADCASTS) {
       console.warn(
-        `[Pixel Agents] Webview buffer overflow (${MAX_PENDING_BROADCASTS}). webviewReady never arrived — dropping oldest message.`,
+        `[PixelBattles] Webview buffer overflow (${MAX_PENDING_BROADCASTS}). webviewReady never arrived — dropping oldest message.`,
       );
       this.pendingBroadcasts.shift();
     }
@@ -255,12 +255,12 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
   }
 
   private initServer(): void {
-    this.pixelAgentsServer = new PixelAgentsServer();
-    this.pixelAgentsServer.onHookEvent((providerId, event) => {
+    this.pixelBattlesServer = new PixelBattlesServer();
+    this.pixelBattlesServer.onHookEvent((providerId, event) => {
       this.runtime.handleHookEvent(providerId, event);
     });
 
-    this.pixelAgentsServer
+    this.pixelBattlesServer
       .start({ store: this.store, embedded: true })
       .then((config) => {
         // Server always starts regardless of hooks-enabled state.
@@ -273,10 +273,10 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
         if (hooksEnabled) {
           void this.installHooksIfConsented(config.port, config.token);
         }
-        console.log(`[Pixel Agents] Server: ready on port ${config.port}`);
+        console.log(`[PixelBattles] Server: ready on port ${config.port}`);
       })
       .catch((e) => {
-        console.error(`[Pixel Agents] Failed to start server: ${e}`);
+        console.error(`[PixelBattles] Failed to start server: ${e}`);
       });
   }
 
@@ -297,7 +297,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
     // another provider's install must neither copy it nor be blocked by it.
     if (provider.id === claudeProvider.id && !copyHookScript(this.context.extensionPath)) {
       vscode.window.showErrorMessage(
-        'Pixel Agents: could not install the hook script — hooks not installed.',
+        'PixelBattles: could not install the hook script — hooks not installed.',
       );
       await this.reportHooksStatus(provider);
       return;
@@ -309,7 +309,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
       );
     } catch (err: unknown) {
       vscode.window.showErrorMessage(
-        `Pixel Agents: ${err instanceof Error ? err.message : String(err)}`,
+        `PixelBattles: ${err instanceof Error ? err.message : String(err)}`,
       );
       await this.reportHooksStatus(provider);
       return;
@@ -334,14 +334,14 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
       // An explicit Settings toggle IS the consent to modify the provider's
       // settings file.
       grantHooksConsent(provider.id);
-      const serverConfig = this.pixelAgentsServer?.getConfig();
+      const serverConfig = this.pixelBattlesServer?.getConfig();
       await this.installHooksAndScript(provider, serverConfig?.port, serverConfig?.token);
     } else {
       try {
         await provider.uninstallHooks();
       } catch (err: unknown) {
         vscode.window.showErrorMessage(
-          `Pixel Agents: ${err instanceof Error ? err.message : String(err)}`,
+          `PixelBattles: ${err instanceof Error ? err.message : String(err)}`,
         );
       }
     }
@@ -360,7 +360,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
       // follows only the Claude provider until the scanners grow per-provider
       // awareness alongside the Settings UI.
       if (provider.id === claudeProvider.id) this.runtime.hooksEnabled.current = enabled;
-      console.log(`[Pixel Agents] Hooks ${enabled ? 'enabled' : 'disabled'} by user`);
+      console.log(`[PixelBattles] Hooks ${enabled ? 'enabled' : 'disabled'} by user`);
     }
     // Report the truth either way: on failure the entries are still on disk and
     // still firing, and a checkbox stuck "off" over live hooks offers no retry.
@@ -433,7 +433,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
           await provider.uninstallHooks();
         } catch (err: unknown) {
           vscode.window.showErrorMessage(
-            `Pixel Agents: ${err instanceof Error ? err.message : String(err)}`,
+            `PixelBattles: ${err instanceof Error ? err.message : String(err)}`,
           );
         }
       },
@@ -516,7 +516,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
         }
       } else if (message.type === 'saveAgentSeats') {
         // Store seat assignments in a separate key (never touched by persistAgents)
-        console.log(`[Pixel Agents] State: saveAgentSeats:`, JSON.stringify(message.seats));
+        console.log(`[PixelBattles] State: saveAgentSeats:`, JSON.stringify(message.seats));
         this.adapter.saveSeats(message.seats);
       } else if (message.type === 'saveLayout') {
         this.layoutWatcher?.markOwnWrite();
@@ -700,7 +700,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
           // blocking the other providers' statuses.
           const installed = await provider.areHooksInstalled().catch((err: unknown) => {
             console.error(
-              `[Pixel Agents] hooks status check failed for provider ${provider.id}:`,
+              `[PixelBattles] hooks status check failed for provider ${provider.id}:`,
               err,
             );
             return false;
@@ -756,9 +756,9 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
           this.store.size === 0
         ) {
           this.autoSpawnAttempted = true;
-          console.log('[Pixel Agents] Auto-spawning agent on startup');
+          console.log('[PixelBattles] Auto-spawning agent on startup');
           // When the user also opted into autoShowPanel, skip terminal.show()
-          // so the panel view stays on Pixel Agents. The terminal still runs;
+          // so the panel view stays on PixelBattles. The terminal still runs;
           // clicking the character focuses it via the focusAgent handler.
           const autoShowPanel = vscode.workspace
             .getConfiguration()
@@ -806,7 +806,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
         const wsFolders = vscode.workspace.workspaceFolders;
         const projectDir = getProjectDirPath();
         const workspaceRoot = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
-        console.log(`[Pixel Agents] Debug: Platform: ${process.platform}, arch: ${process.arch}`);
+        console.log(`[PixelBattles] Debug: Platform: ${process.platform}, arch: ${process.arch}`);
         console.log('[Extension] workspaceRoot:', workspaceRoot);
         console.log('[Extension] projectDir:', projectDir);
         this.runtime.startProjectScan(projectDir);
@@ -820,7 +820,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
           for (const folder of wsFolders) {
             const folderProjectDir = getProjectDirPath(folder.uri.fsPath);
             if (folderProjectDir && folderProjectDir !== projectDir) {
-              console.log(`[Pixel Agents] Registering additional project dir: ${folderProjectDir}`);
+              console.log(`[PixelBattles] Registering additional project dir: ${folderProjectDir}`);
               this.runtime.startProjectScan(folderProjectDir);
             }
           }
@@ -935,16 +935,16 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
       } else if (message.type === 'exportLayout') {
         const layout = readLayoutFromFile();
         if (!layout) {
-          vscode.window.showWarningMessage('Pixel Agents: No saved layout to export.');
+          vscode.window.showWarningMessage('PixelBattles: No saved layout to export.');
           return;
         }
         const uri = await vscode.window.showSaveDialog({
           filters: { 'JSON Files': ['json'] },
-          defaultUri: vscode.Uri.file(path.join(os.homedir(), 'pixel-agents-layout.json')),
+          defaultUri: vscode.Uri.file(path.join(os.homedir(), 'pixel-battles-layout.json')),
         });
         if (uri) {
           fs.writeFileSync(uri.fsPath, JSON.stringify(layout, null, 2), 'utf-8');
-          vscode.window.showInformationMessage('Pixel Agents: Layout exported successfully.');
+          vscode.window.showInformationMessage('PixelBattles: Layout exported successfully.');
         }
       } else if (message.type === 'addExternalAssetDirectory') {
         const uris = await vscode.window.showOpenDialog({
@@ -990,15 +990,15 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
           const raw = fs.readFileSync(uris[0].fsPath, 'utf-8');
           const imported = JSON.parse(raw) as Record<string, unknown>;
           if (imported.version !== 1 || !Array.isArray(imported.tiles)) {
-            vscode.window.showErrorMessage('Pixel Agents: Invalid layout file.');
+            vscode.window.showErrorMessage('PixelBattles: Invalid layout file.');
             return;
           }
           this.layoutWatcher?.markOwnWrite();
           writeLayoutToFile(imported);
           this.webview?.postMessage({ type: 'layoutLoaded', layout: imported });
-          vscode.window.showInformationMessage('Pixel Agents: Layout imported successfully.');
+          vscode.window.showInformationMessage('PixelBattles: Layout imported successfully.');
         } catch {
-          vscode.window.showErrorMessage('Pixel Agents: Failed to read or parse layout file.');
+          vscode.window.showErrorMessage('PixelBattles: Failed to read or parse layout file.');
         }
       }
     });
@@ -1038,12 +1038,12 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
   exportDefaultLayout(): void {
     const layout = readLayoutFromFile();
     if (!layout) {
-      vscode.window.showWarningMessage('Pixel Agents: No saved layout found.');
+      vscode.window.showWarningMessage('PixelBattles: No saved layout found.');
       return;
     }
     const workspaceRoot = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
     if (!workspaceRoot) {
-      vscode.window.showErrorMessage('Pixel Agents: No workspace folder found.');
+      vscode.window.showErrorMessage('PixelBattles: No workspace folder found.');
       return;
     }
     const assetsDir = path.join(workspaceRoot, 'webview-ui', 'public', 'assets');
@@ -1065,7 +1065,7 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
     const json = JSON.stringify(layout, null, 2);
     fs.writeFileSync(targetPath, json, 'utf-8');
     vscode.window.showInformationMessage(
-      `Pixel Agents: Default layout exported as revision ${nextRevision} to ${targetPath}`,
+      `PixelBattles: Default layout exported as revision ${nextRevision} to ${targetPath}`,
     );
   }
 
@@ -1123,14 +1123,14 @@ export class PixelAgentsViewProvider implements vscode.WebviewViewProvider {
   private startLayoutWatcher(): void {
     if (this.layoutWatcher) return;
     this.layoutWatcher = watchLayoutFile((layout) => {
-      console.log('[Pixel Agents] External layout change — pushing to webview');
+      console.log('[PixelBattles] External layout change — pushing to webview');
       this.webview?.postMessage({ type: 'layoutLoaded', layout });
     });
   }
 
   dispose() {
-    this.pixelAgentsServer?.stop();
-    this.pixelAgentsServer = null;
+    this.pixelBattlesServer?.stop();
+    this.pixelBattlesServer = null;
     this.runtime.dispose();
     this.layoutWatcher?.dispose();
     this.layoutWatcher = null;

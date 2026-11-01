@@ -163,7 +163,7 @@ export class PtySession {
       this.pty.resize(cols, rows);
     } catch (err) {
       // Resizing races process exit; a dead PTY throwing here is expected.
-      console.warn(`[Pixel Agents] Terminal: agent ${this.agentId} resize failed: ${String(err)}`);
+      console.warn(`[PixelBattles] Terminal: agent ${this.agentId} resize failed: ${String(err)}`);
     }
   }
 

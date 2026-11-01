@@ -62,10 +62,10 @@ export interface LaunchStandaloneOptions {
   /** Browser viewport (default 1280×800, the desktop shell). A phone-sized
    *  viewport renders the mobile shell instead. */
   viewport?: { width: number; height: number };
-  /** Pre-seed `~/.pixel-agents/layout.json` before the host starts (see
+  /** Pre-seed `~/.pixel-battles/layout.json` before the host starts (see
    *  helpers/layout-seed.ts — it must carry a high layoutRevision). */
   seedLayout?: unknown;
-  /** Extra top-level fields for the seeded `~/.pixel-agents/config.json`
+  /** Extra top-level fields for the seeded `~/.pixel-battles/config.json`
    *  (e.g. `directories`), merged over the baseline (consent, and the start
    *  directory shown in the drawer). Ignored when the file already exists (a
    *  shared HOME was seeded by its owner). */
@@ -162,10 +162,10 @@ function spawnStandaloneHost(args: {
   };
   if (args.mockClaude) {
     // The host's PTYs inherit its env, so a browser-launched `claude` resolves
-    // to the mock. PIXEL_AGENTS_NODE_BIN keeps the wrapper on this exact node.
+    // to the mock. PIXEL_BATTLES_NODE_BIN keeps the wrapper on this exact node.
     const binDir = installMockClaudeBin(args.homeDir);
     env.PATH = `${binDir}${path.delimiter}${process.env.PATH ?? ''}`;
-    env.PIXEL_AGENTS_NODE_BIN = process.execPath;
+    env.PIXEL_BATTLES_NODE_BIN = process.execPath;
   }
   return spawn(
     process.execPath,
@@ -206,7 +206,7 @@ async function stopProcess(child: ChildProcessWithoutNullStreams): Promise<void>
 /**
  * Install a WebSocket recorder BEFORE page navigation. Proxies window.WebSocket
  * so every incoming message frame is JSON-parsed and pushed to
- * window.__pixelAgentsMessages, which drainMessages() reads from.
+ * window.__pixelBattlesMessages, which drainMessages() reads from.
  */
 async function installMessageRecorder(page: Page): Promise<void> {
   await page.addInitScript(() => {
@@ -229,14 +229,15 @@ async function installMessageRecorder(page: Page): Promise<void> {
       },
     });
     window.WebSocket = RecordingWebSocket as typeof WebSocket;
-    (window as Window & { __pixelAgentsMessages?: unknown[] }).__pixelAgentsMessages =
+    (window as Window & { __pixelBattlesMessages?: unknown[] }).__pixelBattlesMessages =
       recordedMessages;
   });
 }
 
 async function drainRecordedMessages(page: Page): Promise<RecordedServerMessage[]> {
   return await page.evaluate(() => {
-    const store = (window as Window & { __pixelAgentsMessages?: unknown[] }).__pixelAgentsMessages;
+    const store = (window as Window & { __pixelBattlesMessages?: unknown[] })
+      .__pixelBattlesMessages;
     if (!Array.isArray(store)) {
       return [];
     }
@@ -249,7 +250,7 @@ async function drainRecordedMessages(page: Page): Promise<RecordedServerMessage[
 /** The trailing `\s` is load-bearing: stdout arrives in chunks, and without a
  *  terminator a half-delivered line would match and yield a truncated URL that
  *  still parses (`http://127.0.0.1:501`). */
-const PRINTED_URL_PATTERN = /Pixel Agents server running at (\S+)\s/;
+const PRINTED_URL_PATTERN = /PixelBattles server running at (\S+)\s/;
 
 /**
  * Wait for the URL line the CLI prints on its own stdout, and hand back exactly
@@ -259,7 +260,7 @@ const PRINTED_URL_PATTERN = /Pixel Agents server running at (\S+)\s/;
  * obtains the server token — the token is what makes the session privileged
  * enough to approve a hook install (the SPA forwards it on the /ws handshake,
  * server/src/httpServer.ts standaloneTokenValid). Reading the token out of
- * `~/.pixel-agents/server.json` and synthesizing an equivalent URL, which this
+ * `~/.pixel-battles/server.json` and synthesizing an equivalent URL, which this
  * fixture used to do, is the fixture handing ITSELF a capability no browser can
  * reach: the whole standalone suite then stays green over a CLI that prints a
  * bare, wrong-tokened, or unbrowsable URL, and every real user lands in a
@@ -300,7 +301,7 @@ export async function launchStandalone(
   // asks over the tokened /ws handshake and the in-app dialog covers the
   // office in every spec. Only when the file does not exist yet — a shared
   // HOME (multi-server) was already seeded by the surface that owns it.
-  const configPath = path.join(tmpHome, '.pixel-agents', 'config.json');
+  const configPath = path.join(tmpHome, '.pixel-battles', 'config.json');
   if (!fs.existsSync(configPath)) {
     // The start directory is shown: the product hides host Directories by
     // default, and the launch specs click its drawer row. A spec about the
@@ -314,7 +315,7 @@ export async function launchStandalone(
     fs.writeFileSync(configPath, JSON.stringify(seeded, null, 2));
   }
   if (options.seedLayout !== undefined) {
-    const layoutPath = path.join(tmpHome, '.pixel-agents', 'layout.json');
+    const layoutPath = path.join(tmpHome, '.pixel-battles', 'layout.json');
     fs.mkdirSync(path.dirname(layoutPath), { recursive: true });
     fs.writeFileSync(layoutPath, JSON.stringify(options.seedLayout, null, 2));
   }
@@ -344,9 +345,9 @@ export async function launchStandalone(
   try {
     await page.setViewportSize(options.viewport ?? { width: 1280, height: 800 });
     // Mark this as the e2e harness before navigation so the standalone webview
-    // installs its test-only observability hooks (window.__pixelAgentsTestHooks).
+    // installs its test-only observability hooks (window.__pixelBattlesTestHooks).
     await page.addInitScript(() => {
-      (window as unknown as { __PIXEL_AGENTS_E2E?: boolean }).__PIXEL_AGENTS_E2E = true;
+      (window as unknown as { __PIXEL_BATTLES_E2E?: boolean }).__PIXEL_BATTLES_E2E = true;
     });
     await installMessageRecorder(page);
     await waitForHttpOk(`${hostUrl}/api/health`);

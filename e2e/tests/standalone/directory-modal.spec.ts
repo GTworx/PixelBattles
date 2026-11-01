@@ -31,7 +31,7 @@ interface SharedConfig {
 function readSharedConfig(tmpHome: string): SharedConfig {
   try {
     return JSON.parse(
-      fs.readFileSync(path.join(tmpHome, '.pixel-agents', 'config.json'), 'utf8'),
+      fs.readFileSync(path.join(tmpHome, '.pixel-battles', 'config.json'), 'utf8'),
     ) as SharedConfig;
   } catch {
     return {};

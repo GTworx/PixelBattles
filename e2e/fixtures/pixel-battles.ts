@@ -13,11 +13,15 @@ import {
   setNarrationContext,
   type TestNarrator,
 } from '../helpers/test-narration';
-import { arrangeReviewLayout, getPixelAgentsFrame, openPixelAgentsPanel } from '../helpers/webview';
+import {
+  arrangeReviewLayout,
+  getPixelBattlesFrame,
+  openPixelBattlesPanel,
+} from '../helpers/webview';
 
-const ATTACH_VIDEOS_ON_SUCCESS = process.env['PIXEL_AGENTS_E2E_ATTACH_VIDEOS_ON_SUCCESS'] === '1';
+const ATTACH_VIDEOS_ON_SUCCESS = process.env['PIXEL_BATTLES_E2E_ATTACH_VIDEOS_ON_SUCCESS'] === '1';
 
-export interface PixelAgentsContext {
+export interface PixelBattlesContext {
   session: VSCodeSession;
   window: Page;
   frame: Frame;
@@ -64,11 +68,11 @@ function removeDirIfExists(dirPath: string | undefined): void {
 }
 
 export const test = base.extend<{
-  pixelAgents: PixelAgentsContext;
+  pixelBattles: PixelBattlesContext;
   _allureLabels: void;
-  /** Pre-seed `~/.pixel-agents/config.json` (e.g. areaMappings, showAreas). */
+  /** Pre-seed `~/.pixel-battles/config.json` (e.g. areaMappings, showAreas). */
   seedConfig: unknown;
-  /** Pre-seed `~/.pixel-agents/layout.json` (must carry a high layoutRevision). */
+  /** Pre-seed `~/.pixel-battles/layout.json` (must carry a high layoutRevision). */
   seedLayout: unknown;
   /** Pre-seed `~/.claude/settings.json` (e.g. an existing hook install). */
   seedClaudeSettings: unknown;
@@ -80,7 +84,7 @@ export const test = base.extend<{
   seedClaudeSettings: [undefined, { option: true }],
   workspaceFolders: [[], { option: true }],
   // Auto-fixture: tag every test with Allure epic + feature derived from its
-  // @area: annotation and enclosing describe path. Runs before pixelAgents.
+  // @area: annotation and enclosing describe path. Runs before pixelBattles.
   _allureLabels: [
     async ({}, use, testInfo) => {
       await applyAllureLabels(testInfo);
@@ -88,7 +92,7 @@ export const test = base.extend<{
     },
     { auto: true },
   ],
-  pixelAgents: async (
+  pixelBattles: async (
     { seedConfig, seedLayout, seedClaudeSettings, workspaceFolders },
     use,
     testInfo,
@@ -104,12 +108,12 @@ export const test = base.extend<{
 
     try {
       await waitForWorkbench(window);
-      // autoShown: the seeded pixel-agents.autoShowPanel setting surfaces the
+      // autoShown: the seeded pixel-battles.autoShowPanel setting surfaces the
       // view on activation — no command-palette interaction at setup.
-      await openPixelAgentsPanel(window, { autoShown: true });
+      await openPixelBattlesPanel(window, { autoShown: true });
       // Run-video layout: office 2/3 left, terminal editor tabs 1/3 right.
       await arrangeReviewLayout(window);
-      const frame = await getPixelAgentsFrame(window);
+      const frame = await getPixelBattlesFrame(window);
 
       // Terminal services are reliably ready only after VS Code finishes its
       // startup layout restoration. Open the monitor at that lifecycle boundary
@@ -161,16 +165,16 @@ export const test = base.extend<{
         await attachTextFileIfExists(
           testInfo,
           'server-json',
-          path.join(tmpHome, '.pixel-agents', 'server.json'),
+          path.join(tmpHome, '.pixel-battles', 'server.json'),
           'application/json',
         );
-        // Diagnostic: server-side hook/broadcast log (gated by PIXEL_AGENTS_DEBUG_LOG
+        // Diagnostic: server-side hook/broadcast log (gated by PIXEL_BATTLES_DEBUG_LOG
         // env var set in launchVSCode). Lets CI failure analysis see the exact
         // server-side event timeline without local repro.
         await attachTextFileIfExists(
           testInfo,
-          'pixel-agents-debug-log',
-          path.join(tmpHome, '.pixel-agents', 'debug.log'),
+          'pixel-battles-debug-log',
+          path.join(tmpHome, '.pixel-battles', 'debug.log'),
           'text/plain',
         );
         // Webview-side counterpart: every transport message the webview's
@@ -181,7 +185,7 @@ export const test = base.extend<{
           const wvFrames = window.frames();
           for (const f of wvFrames) {
             if (!f.url().startsWith('vscode-webview://')) continue;
-            const log = await f.evaluate(() => window.__pixelAgentsTestHooks?.messageLog ?? null);
+            const log = await f.evaluate(() => window.__pixelBattlesTestHooks?.messageLog ?? null);
             if (log) {
               await testInfo.attach('webview-message-log', {
                 body: JSON.stringify(log, null, 2),

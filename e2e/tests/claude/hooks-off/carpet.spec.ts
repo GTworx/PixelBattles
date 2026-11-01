@@ -2,7 +2,7 @@ import type { Frame } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   enterEditMode,
   paintTile,
@@ -15,14 +15,18 @@ import {
   type TestHooksWindow,
 } from '../../../helpers/editor';
 import { buildSeedLayout } from '../../../helpers/layout-seed';
-import { closeBottomPanel, getPixelAgentsFrame, reopenBottomPanel } from '../../../helpers/webview';
+import {
+  closeBottomPanel,
+  getPixelBattlesFrame,
+  reopenBottomPanel,
+} from '../../../helpers/webview';
 
 /**
  * e2e coverage for the carpet system (a tile layer between floor and furniture).
  *
  * Carpet tiles render only on the canvas (no DOM) and the marching-squares
  * autotile case is render-derived (not stored), so assertions read state through
- * window.__pixelAgentsTestHooks.getCarpetTiles() / getCarpetJunctionCase() — the
+ * window.__pixelBattlesTestHooks.getCarpetTiles() / getCarpetJunctionCase() — the
  * same canvas-state approach the pets fixture uses. Tool selection goes through
  * the real toolbar; tile targeting goes through the editorTileAction hook, which
  * bypasses ONLY canvas pixel→tile geometry (see webview-ui/src/testHooks.ts).
@@ -35,7 +39,7 @@ const CARPET_THUMB = (variant: number) => `[title="Carpet ${variant + 1}"]`;
 async function waitForCarpetCount(frame: Frame, count: number): Promise<void> {
   await frame.waitForFunction(
     (n) =>
-      ((window as TestHooksWindow).__pixelAgentsTestHooks?.getCarpetTiles?.() ?? []).length === n,
+      ((window as TestHooksWindow).__pixelBattlesTestHooks?.getCarpetTiles?.() ?? []).length === n,
     count,
     { timeout: 10_000 },
   );
@@ -48,14 +52,14 @@ test.describe('Carpet', () => {
   test.use({ seedLayout: buildSeedLayout({ cols: 12, rows: 12 }) });
 
   test('carpet sprites load + broadcast, and the Carpet category renders variants @area:carpet', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     // carpetTilesLoaded is sent once after webviewReady — proven via the message log.
     narrator.step('waiting for the carpet sprites to load and broadcast to the webview');
     await frame.waitForFunction(() => {
-      const log = (window as TestHooksWindow).__pixelAgentsTestHooks?.messageLog ?? [];
+      const log = (window as TestHooksWindow).__pixelBattlesTestHooks?.messageLog ?? [];
       return log.some((m) => m.type === 'carpetTilesLoaded');
     });
     narrator.check('carpetTilesLoaded message received — sprites are ready');
@@ -68,8 +72,8 @@ test.describe('Carpet', () => {
     narrator.check('"Carpet 1" variant thumbnail renders in the Furniture panel');
   });
 
-  test('painting a tile records it in the carpet layer @area:carpet', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('painting a tile records it in the carpet layer @area:carpet', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor and selecting the carpet tool');
     await enterEditMode(frame);
     await selectCarpetTool(frame);
@@ -86,9 +90,9 @@ test.describe('Carpet', () => {
   });
 
   test('autotiling: the junction case reflects neighboring carpet tiles @area:carpet', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor and selecting the carpet tool');
     await enterEditMode(frame);
     await selectCarpetTool(frame);
@@ -126,8 +130,8 @@ test.describe('Carpet', () => {
     narrator.check('bitmask = 15 — all four corners present');
   });
 
-  test('erasing removes a carpet tile @area:carpet', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('erasing removes a carpet tile @area:carpet', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor and selecting the carpet tool');
     await enterEditMode(frame);
     await selectCarpetTool(frame);
@@ -142,15 +146,15 @@ test.describe('Carpet', () => {
     // Right-drag erase path routes CARPET_PAINT → eraseCarpet (useEditorActions).
     await frame.evaluate(
       ([col, row]) =>
-        (window as TestHooksWindow).__pixelAgentsTestHooks?.editorEraseAction?.(col, row),
+        (window as TestHooksWindow).__pixelBattlesTestHooks?.editorEraseAction?.(col, row),
       [5, 5] as const,
     );
     await waitForCarpetCount(frame, 0);
     narrator.check('carpet tile count back to 0 — the tile was erased');
   });
 
-  test('the carpet eyedropper copies a tile’s variant @area:carpet', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('the carpet eyedropper copies a tile’s variant @area:carpet', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor and selecting the carpet tool');
     await enterEditMode(frame);
     await selectCarpetTool(frame);
@@ -177,8 +181,8 @@ test.describe('Carpet', () => {
     narrator.check('new tile inherited variant 1 — the eyedropper overrode the active selection');
   });
 
-  test('a carpet stroke is a single undo entry @area:carpet', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('a carpet stroke is a single undo entry @area:carpet', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor and selecting the carpet tool');
     await enterEditMode(frame);
     await selectCarpetTool(frame);
@@ -199,9 +203,9 @@ test.describe('Carpet', () => {
   });
 
   test('carpet tiles persist across a save + panel reload @area:carpet', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, narrator } = pixelAgents;
+    const { frame, window, tmpHome, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor → carpet tool');
     await enterEditMode(frame);
@@ -218,7 +222,7 @@ test.describe('Carpet', () => {
     await saveLayout(frame);
 
     // The save round-trips through layoutPersistence to the isolated HOME.
-    const layoutPath = path.join(tmpHome, '.pixel-agents', 'layout.json');
+    const layoutPath = path.join(tmpHome, '.pixel-battles', 'layout.json');
     await expect
       .poll(
         () => {
@@ -237,7 +241,7 @@ test.describe('Carpet', () => {
         { timeout: 10_000 },
       )
       .toBe(2);
-    narrator.check('~/.pixel-agents/layout.json contains 2 carpet tiles');
+    narrator.check('~/.pixel-battles/layout.json contains 2 carpet tiles');
 
     // Reload the panel and confirm the carpet rehydrates from disk. The
     // reopen uses the same ⌘J chord closeBottomPanel used, so the reload is
@@ -246,10 +250,11 @@ test.describe('Carpet', () => {
     await closeBottomPanel(window);
     narrator.step('reopening the panel — carpet must rehydrate from disk');
     await reopenBottomPanel(window);
-    const freshFrame = await getPixelAgentsFrame(window);
+    const freshFrame = await getPixelBattlesFrame(window);
     await freshFrame.waitForFunction(
       () =>
-        ((window as TestHooksWindow).__pixelAgentsTestHooks?.getCarpetTiles?.() ?? []).length === 2,
+        ((window as TestHooksWindow).__pixelBattlesTestHooks?.getCarpetTiles?.() ?? []).length ===
+        2,
       undefined,
       { timeout: 15_000 },
     );
@@ -295,14 +300,14 @@ test.describe('Carpet surface placement (seeded)', () => {
   });
 
   test('a seeded carpet coexists with furniture on the same tile @area:carpet', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     narrator.step('loading a seeded layout with carpet + furniture sharing tile (3,3)');
     // Carpet tile (3,3) loaded.
     await frame.waitForFunction(
       () => {
-        const tiles = (window as TestHooksWindow).__pixelAgentsTestHooks?.getCarpetTiles?.() ?? [];
+        const tiles = (window as TestHooksWindow).__pixelBattlesTestHooks?.getCarpetTiles?.() ?? [];
         return tiles.some((t) => t.col === 3 && t.row === 3);
       },
       undefined,
@@ -311,7 +316,7 @@ test.describe('Carpet surface placement (seeded)', () => {
     narrator.check('carpet tile present at (3,3) after load');
     // Furniture also present (not blocked by the carpet).
     const furnitureCount = await frame.evaluate(
-      () => (window as TestHooksWindow).__pixelAgentsTestHooks?.getFurnitureCount?.() ?? 0,
+      () => (window as TestHooksWindow).__pixelBattlesTestHooks?.getFurnitureCount?.() ?? 0,
     );
     expect(furnitureCount).toBeGreaterThanOrEqual(1);
     narrator.check('furniture also survived — at least one item on the same tile');

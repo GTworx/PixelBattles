@@ -1,11 +1,11 @@
 /**
- * One-time migration of VS Code-native state into ~/.pixel-agents/.
+ * One-time migration of VS Code-native state into ~/.pixel-battles/.
  *
  * Sources:
  *   - context.globalState (settings) → config.json[vscode]
- *   - context.workspaceState['pixel-agents.agents'] → vscode-state.json.agents
- *   - context.workspaceState['pixel-agents.agentSeats'] → vscode-state.json.seats
- *   - context.workspaceState['pixel-agents.layout'] → ~/.pixel-agents/layout.json
+ *   - context.workspaceState['pixel-battles.agents'] → vscode-state.json.agents
+ *   - context.workspaceState['pixel-battles.agentSeats'] → vscode-state.json.seats
+ *   - context.workspaceState['pixel-battles.layout'] → ~/.pixel-battles/layout.json
  *
  * Runs on every extension activate(). Idempotent: if nothing legacy remains,
  * it's a no-op. Verifies file writes before clearing VS Code keys, so a disk
@@ -20,21 +20,21 @@ import type { PersistedAgent } from '../../core/src/schemas.js';
 import { readLayoutFromFile, writeLayoutToFile } from '../../server/src/layoutPersistence.js';
 
 /** VS Code globalState keys → setting key passed to adapter.getSetting/setSetting.
- *  `pixel-agents.hooksEnabled` is NOT here: a legacy hooks-off is deliberately
+ *  `pixel-battles.hooksEnabled` is NOT here: a legacy hooks-off is deliberately
  *  discarded rather than migrated (see the branch below). */
 const SETTINGS_MIGRATIONS: readonly { vscodeKey: string; settingKey: string }[] = [
-  { vscodeKey: 'pixel-agents.soundEnabled', settingKey: 'pixel-agents.soundEnabled' },
-  { vscodeKey: 'pixel-agents.lastSeenVersion', settingKey: 'pixel-agents.lastSeenVersion' },
-  { vscodeKey: 'pixel-agents.alwaysShowLabels', settingKey: 'pixel-agents.alwaysShowLabels' },
-  { vscodeKey: 'pixel-agents.watchAllSessions', settingKey: 'pixel-agents.watchAllSessions' },
-  { vscodeKey: 'pixel-agents.hooksInfoShown', settingKey: 'pixel-agents.hooksInfoShown' },
+  { vscodeKey: 'pixel-battles.soundEnabled', settingKey: 'pixel-battles.soundEnabled' },
+  { vscodeKey: 'pixel-battles.lastSeenVersion', settingKey: 'pixel-battles.lastSeenVersion' },
+  { vscodeKey: 'pixel-battles.alwaysShowLabels', settingKey: 'pixel-battles.alwaysShowLabels' },
+  { vscodeKey: 'pixel-battles.watchAllSessions', settingKey: 'pixel-battles.watchAllSessions' },
+  { vscodeKey: 'pixel-battles.hooksInfoShown', settingKey: 'pixel-battles.hooksInfoShown' },
 ];
 
-const VSCODE_KEY_HOOKS_ENABLED = 'pixel-agents.hooksEnabled';
+const VSCODE_KEY_HOOKS_ENABLED = 'pixel-battles.hooksEnabled';
 
-const WORKSPACE_KEY_AGENTS = 'pixel-agents.agents';
-const WORKSPACE_KEY_AGENT_SEATS = 'pixel-agents.agentSeats';
-const WORKSPACE_KEY_LAYOUT = 'pixel-agents.layout';
+const WORKSPACE_KEY_AGENTS = 'pixel-battles.agents';
+const WORKSPACE_KEY_AGENT_SEATS = 'pixel-battles.agentSeats';
+const WORKSPACE_KEY_LAYOUT = 'pixel-battles.layout';
 
 export function migrateVsCodeState(context: vscode.ExtensionContext, adapter: StateAdapter): void {
   const pending: string[] = [];
@@ -98,7 +98,7 @@ export function migrateVsCodeState(context: vscode.ExtensionContext, adapter: St
     }
   }
 
-  // ── Layout (workspaceState → ~/.pixel-agents/layout.json) ──
+  // ── Layout (workspaceState → ~/.pixel-battles/layout.json) ──
   // Old VS Code versions stored layout in workspaceState. New code reads from a
   // user-level file. Migrate, but never clobber an existing file (it's the
   // source of truth once written). If the file already exists, just clear the
@@ -123,12 +123,12 @@ export function migrateVsCodeState(context: vscode.ExtensionContext, adapter: St
 
   if (pending.length > 0) {
     console.warn(
-      `[Pixel Agents] Migration incomplete -- ${pending.length} legacy VS Code ` +
+      `[PixelBattles] Migration incomplete -- ${pending.length} legacy VS Code ` +
         `key(s) still present. Will retry next activate. Keys: ${pending.join(', ')}`,
     );
     void vscode.window.showWarningMessage(
-      `Pixel Agents: ${pending.length} legacy setting(s) could not be migrated to ` +
-        `~/.pixel-agents/config.json. Check ~/.pixel-agents/ is writable.`,
+      `PixelBattles: ${pending.length} legacy setting(s) could not be migrated to ` +
+        `~/.pixel-battles/config.json. Check ~/.pixel-battles/ is writable.`,
     );
   }
 }

@@ -8,7 +8,7 @@ on:
 jobs:
   update-badges:
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'pixel-agents-hq/pixel-agents' }}
+    if: ${{ github.repository == 'GTworx/PixelBattles' }}
 
     steps:
       - name: Fetch VS Code Marketplace stats
@@ -20,7 +20,7 @@ jobs:
             -H 'Accept: application/json;api-version=7.2-preview.1' \
             -d '{
               "filters": [{
-                "criteria": [{"filterType": 7, "value": "pablodelucca.pixel-agents"}]
+                "criteria": [{"filterType": 7, "value": "gtworx.pixel-battles"}]
               }],
               "flags": 914
             }')
@@ -34,7 +34,7 @@ jobs:
       - name: Fetch Open VSX stats
         id: openvsx
         run: |
-          DOWNLOADS=$(curl -s 'https://open-vsx.org/api/pablodelucca/pixel-agents' | jq '.downloadCount // 0')
+          DOWNLOADS=$(curl -s 'https://open-vsx.org/api/gtworx/pixel-battles' | jq '.downloadCount // 0')
           echo "downloads=$DOWNLOADS" >> "$GITHUB_OUTPUT"
 
       - name: Fetch GitHub Releases downloads
@@ -49,8 +49,8 @@ jobs:
         id: npm
         shell: bash
         run: |
-          START_DATE=$(curl --fail --silent --show-error 'https://registry.npmjs.org/pixel-agents' | jq -er '.time.created[0:10]')
-          END_DATE=$(curl --fail --silent --show-error 'https://api.npmjs.org/downloads/point/last-day/pixel-agents' | jq -er '.end')
+          START_DATE=$(curl --fail --silent --show-error 'https://registry.npmjs.org/pixel-battles' | jq -er '.time.created[0:10]')
+          END_DATE=$(curl --fail --silent --show-error 'https://api.npmjs.org/downloads/point/last-day/pixel-battles' | jq -er '.end')
           TOTAL=0
           CURSOR="$START_DATE"
 
@@ -61,7 +61,7 @@ jobs:
             fi
 
             DOWNLOADS=$(curl --fail --silent --show-error \
-              "https://api.npmjs.org/downloads/point/$CURSOR:$CHUNK_END/pixel-agents" \
+              "https://api.npmjs.org/downloads/point/$CURSOR:$CHUNK_END/pixel-battles" \
               | jq -er '.downloads')
             TOTAL=$((TOTAL + DOWNLOADS))
             CURSOR=$(date -u -d "$CHUNK_END + 1 day" +%F)

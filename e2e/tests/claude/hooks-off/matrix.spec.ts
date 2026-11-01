@@ -1,6 +1,6 @@
 import type { Frame } from '@playwright/test';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import { spawnInternalAgentAndWait } from '../../../helpers/internal-agent';
 import {
   arrangeNextClaudeInvocation,
@@ -29,7 +29,7 @@ import {
   withInlineTeammateSession,
   withTmuxTeammateSession,
 } from '../../../helpers/lifecycle';
-import { getPixelAgentsFrame, openPixelAgentsPanel, setSettings } from '../../../helpers/webview';
+import { getPixelBattlesFrame, openPixelBattlesPanel, setSettings } from '../../../helpers/webview';
 
 async function expectLeadActivity(frame: Frame, text: string): Promise<void> {
   await expectOverlayVisibleWithTexts(frame, ['LEAD', text]);
@@ -46,8 +46,8 @@ async function expectExternalAgentAdoption(frame: Frame): Promise<void> {
 }
 
 test.describe('Hooks OFF / matrix', () => {
-  test('internal basic spawn adopted via JSONL polling @area:matrix', async ({ pixelAgents }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+  test('internal basic spawn adopted via JSONL polling @area:matrix', async ({ pixelBattles }) => {
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('turning hooks OFF — adoption must come purely from JSONL polling');
     await setSettings(frame, {
@@ -76,8 +76,8 @@ test.describe('Hooks OFF / matrix', () => {
     const terminalTab = window.getByText(/Claude Code #\d+/);
     await expect(terminalTab.first()).toBeVisible({ timeout: 15_000 });
     narrator.check('the Claude Code terminal tab is visible');
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('watching the office — the launched session should be adopted by polling');
     await expectOverlayCount(panelFrame, 1);
@@ -85,9 +85,9 @@ test.describe('Hooks OFF / matrix', () => {
   });
 
   test('internal inline teammate adopted via JSONL polling @area:matrix', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
     const teamName = uniqueTeamName('hooks-off-internal-inline');
 
     narrator.step('turning hooks OFF — the team must be discovered from JSONL alone');
@@ -125,8 +125,8 @@ test.describe('Hooks OFF / matrix', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     await expectOverlayVisibleWithTexts(panelFrame, ['LEAD']);
     narrator.check('the LEAD character renders');
@@ -140,8 +140,10 @@ test.describe('Hooks OFF / matrix', () => {
     narrator.check('"Searching the web" on the teammate only');
   });
 
-  test('internal tmux teammate adopted via JSONL polling @area:matrix', async ({ pixelAgents }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+  test('internal tmux teammate adopted via JSONL polling @area:matrix', async ({
+    pixelBattles,
+  }) => {
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
     const teamName = uniqueTeamName('hooks-off-internal-tmux');
 
     narrator.step('turning hooks OFF — the tmux teammate must be found via JSONL polling');
@@ -188,8 +190,8 @@ test.describe('Hooks OFF / matrix', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     await expectOverlayVisibleWithTexts(panelFrame, ['LEAD']);
     narrator.check('the LEAD character renders');
@@ -205,8 +207,8 @@ test.describe('Hooks OFF / matrix', () => {
     narrator.check('the separate tmux teammate owns "Searching the web" only');
   });
 
-  test('external basic spawn adopted via JSONL polling @area:matrix', async ({ pixelAgents }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+  test('external basic spawn adopted via JSONL polling @area:matrix', async ({ pixelBattles }) => {
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
     const sessionId = 'hooks-off-external-basic-session';
 
     narrator.step(
@@ -251,9 +253,9 @@ test.describe('Hooks OFF / matrix', () => {
   });
 
   test('external inline teammate adopted via JSONL polling @area:matrix', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
     const teamName = uniqueTeamName('hooks-off-external-inline');
     const sessionId = 'hooks-off-external-inline-session';
 
@@ -309,8 +311,10 @@ test.describe('Hooks OFF / matrix', () => {
     narrator.check('"Searching the web" on the teammate only');
   });
 
-  test('external tmux teammate adopted via JSONL polling @area:matrix', async ({ pixelAgents }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+  test('external tmux teammate adopted via JSONL polling @area:matrix', async ({
+    pixelBattles,
+  }) => {
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
     const teamName = uniqueTeamName('hooks-off-external-tmux');
     const sessionId = 'hooks-off-external-tmux-session';
 

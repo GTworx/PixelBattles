@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   permissionRequest,
   preToolUseBash,
@@ -28,13 +28,13 @@ import {
   buildAssistantUsageRecord,
   buildUserToolResultRecord,
 } from '../../../helpers/team';
-import { getPixelAgentsFrame, openPixelAgentsPanel, setSettings } from '../../../helpers/webview';
+import { getPixelBattlesFrame, openPixelBattlesPanel, setSettings } from '../../../helpers/webview';
 
 test.describe('Hooks ON / spawn paths', () => {
   test('internal terminal spawns agent and Task subagent appears then despawns @area:spawn', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     // Ghosting ships off, so turn it on before anything spawns. That makes the
     // "not a ghost" assertion below say something — that this agent owns a
@@ -70,8 +70,8 @@ test.describe('Hooks ON / spawn paths', () => {
 
     // Panel first: the "no subtask yet" count-1 assertion must land before the
     // scheduled Task append at t+5s. The timing-free plumbing checks follow.
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
     await expectOverlayCount(panelFrame, 1);
     narrator.check('the lead character is on screen — one agent, no subtask yet');
 
@@ -123,9 +123,9 @@ test.describe('Hooks ON / spawn paths', () => {
   // seen in the review videos.
   //
   test('external Claude session adopted via hook confirmation lifecycle @area:spawn', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     // Ghosting ships off, so the test turns it on — otherwise the adopted agent
     // below is headless but drawn at full opacity, which is the correct default

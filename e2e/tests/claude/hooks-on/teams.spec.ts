@@ -1,6 +1,6 @@
 import type { Frame } from '@playwright/test';
 
-import { test } from '../../../fixtures/pixel-agents';
+import { test } from '../../../fixtures/pixel-battles';
 import {
   permissionRequest,
   preToolUseAgent,
@@ -41,7 +41,7 @@ import {
   buildTeammateSpawnResultRecord,
   seedTeamConfig,
 } from '../../../helpers/team';
-import { getPixelAgentsFrame, openPixelAgentsPanel, setSettings } from '../../../helpers/webview';
+import { getPixelBattlesFrame, openPixelBattlesPanel, setSettings } from '../../../helpers/webview';
 
 const TEAMMATE_ROLE = 'web-researcher';
 
@@ -62,9 +62,9 @@ async function expectTeammateActivity(frame: Frame, text: string): Promise<void>
 // separate session and send hooks with that session's identity.
 test.describe('Hooks ON / teams', () => {
   test('internal terminal lead with inline teammate routes tools to teammate @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     const teamName = uniqueTeamName('hooks-on-internal-inline');
     narrator.step('seeding a team config: a lead plus a web-researcher teammate');
@@ -101,8 +101,8 @@ test.describe('Hooks ON / teams', () => {
         .build(),
     );
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     await expectOverlayVisibleWithTexts(panelFrame, ['LEAD']);
     narrator.check('the lead is on screen labelled "LEAD"');
@@ -119,9 +119,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('internal terminal lead with tmux teammate routes tools to teammate @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     const teamName = uniqueTeamName('hooks-on-internal-tmux');
     narrator.step('seeding a team config: a lead plus a tmux teammate');
@@ -174,8 +174,8 @@ test.describe('Hooks ON / teams', () => {
         .build(),
     );
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     await expectOverlayVisibleWithTexts(panelFrame, ['LEAD']);
     narrator.check('the lead is on screen labelled "LEAD"');
@@ -193,9 +193,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('new-harness background agent becomes a named teammate character @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     // Newer harnesses (Claude 5) run every Agent spawn in the background as an
     // implicit-team teammate: the tool_input has NO run_in_background flag, the
@@ -261,8 +261,8 @@ test.describe('Hooks ON / teams', () => {
         .build(),
     );
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('waiting for the spawn result to mark the internal agent as team lead');
     await expectOverlayVisibleWithTexts(panelFrame, ['LEAD']);
@@ -285,9 +285,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('unnamed background spawn stays a sub-agent with live activity and survives Stop @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     // Unnamed Agent spawns (same CLI, no `name` in the input) take the async
     // path: "Async agent launched successfully", a transcript + sidecar under
@@ -334,8 +334,8 @@ test.describe('Hooks ON / teams', () => {
         .build(),
     );
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('waiting for the Subtask sub-character to spawn');
     await expectOverlayVisibleWithTexts(panelFrame, ['Say hello']);
@@ -356,9 +356,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('named background spawn becomes a teammate and badges the spawner LEAD @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     // Same async flow, but the sidecar carries a `name` — and name is the
     // classifier: named = Teammate. The spawn becomes a seated character named
@@ -401,8 +401,8 @@ test.describe('Hooks ON / teams', () => {
         .build(),
     );
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('waiting for the named spawn to join as a teammate');
     await expectOverlayVisibleWithTexts(panelFrame, ['ghost-writer']);
@@ -420,9 +420,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('external session lead with inline teammate routes tools to teammate @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('enabling Watch All Sessions so the external hooks-only session is adopted');
     await setSettings(frame, {
@@ -492,9 +492,9 @@ test.describe('Hooks ON / teams', () => {
   });
 
   test('external session lead with tmux teammate routes tools to teammate @area:teams', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('enabling Watch All Sessions so the external hooks-only session is adopted');
     await setSettings(frame, {

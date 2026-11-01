@@ -100,7 +100,7 @@ export const GHOST_BORDER_NO_HOVER_TILE = -999;
 
 // ── Layout Import/Export (browser-native, standalone) ────────
 /** Suggested filename when exporting the office layout from the standalone browser. */
-export const LAYOUT_EXPORT_FILENAME = 'pixel-agents-layout.json';
+export const LAYOUT_EXPORT_FILENAME = 'pixel-battles-layout.json';
 /** MIME type for the exported layout Blob. */
 export const LAYOUT_EXPORT_MIME = 'application/json';
 export const DEFAULT_FLOOR_COLOR: ColorValue = { h: 35, s: 30, b: 15, c: 0 };
@@ -513,7 +513,7 @@ export const DRAWER_EDIT_LONG_PRESS_MAX_MOVE_PX = 10;
 export const DROPDOWN_VIEWPORT_MARGIN_PX = 8;
 /** localStorage key for the mobile bar's custom card order (per device — a
  *  presentation preference, deliberately not synced through the server). */
-export const MOBILE_CARD_ORDER_STORAGE_KEY = 'pixel-agents.mobileCardOrder';
+export const MOBILE_CARD_ORDER_STORAGE_KEY = 'pixel-battles.mobileCardOrder';
 /** Breathing room kept between a card and the scroller edge when the bar
  *  auto-scrolls the focused agent's card into view. */
 export const CARD_SCROLL_INTO_VIEW_MARGIN_PX = 8;

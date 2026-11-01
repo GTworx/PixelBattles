@@ -75,8 +75,8 @@ describe('AgentRuntime -- restore reads the legacy folderName', () => {
   }
 
   it('a pre-rename record with only folderName restores with that as directoryName', () => {
-    const { store } = restore({ folderName: 'Pixel Agents' });
-    expect(store.get(7)?.directoryName).toBe('Pixel Agents');
+    const { store } = restore({ folderName: 'PixelBattles' });
+    expect(store.get(7)?.directoryName).toBe('PixelBattles');
   });
 
   it('directoryName wins when both spellings are present', () => {
@@ -91,10 +91,10 @@ describe('AgentRuntime -- restore reads the legacy folderName', () => {
   });
 
   it('the next persist rewrites the legacy record as directoryName only', () => {
-    const { store, adapter } = restore({ folderName: 'Pixel Agents' });
+    const { store, adapter } = restore({ folderName: 'PixelBattles' });
     store.persist();
     const written = adapter.saved.at(-1)?.find((p) => p.id === 7);
-    expect(written?.directoryName).toBe('Pixel Agents');
+    expect(written?.directoryName).toBe('PixelBattles');
     expect(written).not.toHaveProperty('folderName');
   });
 });

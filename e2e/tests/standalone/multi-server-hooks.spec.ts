@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { expect, test } from '../../fixtures/pixel-agents';
+import { expect, test } from '../../fixtures/pixel-battles';
 import { preToolUseBash, sessionStartStartup } from '../../helpers/hooks';
 import {
   claudeScenario,
@@ -30,9 +30,9 @@ function hookDrivenScenario(name: string, command: string) {
 test.describe('Standalone / multi-server hooks', () => {
   test('extension and standalone both stay hook-driven without cross-contamination @area:standalone', async ({
     page,
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir: extensionWorkspace, mockLogFile } = pixelAgents;
+    const { frame, tmpHome, workspaceDir: extensionWorkspace, mockLogFile } = pixelBattles;
 
     await setSettings(frame, {
       alwaysShowLabels: true,
@@ -52,7 +52,7 @@ test.describe('Standalone / multi-server hooks', () => {
       await standalone.drainMessages();
       await waitForClaudeHookSetup(tmpHome);
 
-      const registryDir = path.join(tmpHome, '.pixel-agents', 'servers');
+      const registryDir = path.join(tmpHome, '.pixel-battles', 'servers');
       await expect
         .poll(
           () => {

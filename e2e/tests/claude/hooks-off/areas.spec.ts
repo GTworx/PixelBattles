@@ -1,4 +1,4 @@
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   enterEditMode,
   readAreas,
@@ -38,16 +38,17 @@ test.describe('Areas (single-folder)', () => {
     });
 
     test('seeded areas + areaTiles load and showAreas is effective @area:areas', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, narrator } = pixelAgents;
+      const { frame, narrator } = pixelBattles;
 
       narrator.step('layout seeded with one "Engineering" area (two tiles) and showAreas on');
 
       // Area definitions + painted tiles survive the layout load.
       narrator.step('waiting for the seeded "Engineering" area to load into the office');
       await frame.waitForFunction(
-        () => ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAreas?.() ?? []).length === 1,
+        () =>
+          ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAreas?.() ?? []).length === 1,
         undefined,
         { timeout: 15_000 },
       );
@@ -62,7 +63,7 @@ test.describe('Areas (single-folder)', () => {
 
       // The seeded showAreas:true makes the overlay gate effective.
       const showAreas = await frame.evaluate(
-        () => (window as TestHooksWindow).__pixelAgentsTestHooks?.getShowAreas?.() ?? false,
+        () => (window as TestHooksWindow).__pixelBattlesTestHooks?.getShowAreas?.() ?? false,
       );
       expect(showAreas).toBe(true);
       narrator.check('seeded showAreas:true is effective — the overlay gate is on');
@@ -70,9 +71,9 @@ test.describe('Areas (single-folder)', () => {
   });
 
   test('the host-contributed workspace folder makes the Areas tool reachable @area:areas', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor in a single-folder window');
     // The VS Code host contributes every workspace folder as a Directory, the
     // single-root one included, so there is always something to map.
@@ -90,9 +91,9 @@ test.describe('Areas (single-folder)', () => {
     });
 
     test('the Areas tool button is visible with a seeded areas layout @area:areas', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, narrator } = pixelAgents;
+      const { frame, narrator } = pixelBattles;
       narrator.step('opening the seeded layout editor to check the Areas tool gate');
       await enterEditMode(frame);
       // areasAvailable is (layout.areas?.length ?? 0) > 0 || <mappable directories>.

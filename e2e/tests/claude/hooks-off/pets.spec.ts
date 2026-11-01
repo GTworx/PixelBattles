@@ -2,15 +2,19 @@ import type { Frame, Locator } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
-import { closeBottomPanel, getPixelAgentsFrame, reopenBottomPanel } from '../../../helpers/webview';
+import { expect, test } from '../../../fixtures/pixel-battles';
+import {
+  closeBottomPanel,
+  getPixelBattlesFrame,
+  reopenBottomPanel,
+} from '../../../helpers/webview';
 
 /**
  * e2e coverage for the animated pet system.
  *
  * Pets render only on the canvas (no DOM nodes) and the heart bubble is pure
  * runtime state that is never persisted, so the live assertions read pet state
- * through `window.__pixelAgentsTestHooks.getPets()` / `.petClick()` — the same
+ * through `window.__pixelBattlesTestHooks.getPets()` / `.petClick()` — the same
  * state-driving approach `selectAgent` uses for characters (see
  * webview-ui/src/testHooks.ts and the comment on closeAgentFromOverlay in
  * e2e/helpers/office.ts). Pets spawn at a random walkable tile, so tests never
@@ -40,7 +44,7 @@ interface PetTestHooks {
   messageLog?: Array<{ type: string }>;
 }
 
-type PetWindow = Window & { __pixelAgentsTestHooks?: PetTestHooks };
+type PetWindow = Window & { __pixelBattlesTestHooks?: PetTestHooks };
 
 const PETS_CAROUSEL = '[data-testid="pets-carousel"]';
 
@@ -75,29 +79,29 @@ async function openPetsTab(frame: Frame): Promise<Locator> {
 async function readPets(frame: Frame): Promise<PetSnapshot[]> {
   return frame.evaluate(() => {
     const w = window as PetWindow;
-    return w.__pixelAgentsTestHooks?.getPets?.() ?? [];
+    return w.__pixelBattlesTestHooks?.getPets?.() ?? [];
   });
 }
 
 /** Toggle a pet's heart bubble exactly as a canvas click would. */
 async function petClick(frame: Frame, petId: string): Promise<void> {
   await frame.evaluate((id) => {
-    (window as PetWindow).__pixelAgentsTestHooks?.petClick?.(id);
+    (window as PetWindow).__pixelBattlesTestHooks?.petClick?.(id);
   }, petId);
 }
 
 test.describe('Pets', () => {
   test('pet sprites load, broadcast, and expose manifest names in the editor @area:pets', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     // The petSpritesLoaded broadcast is sent once after webviewReady. Proven
     // delivered via the message log (records every received message type).
     narrator.step('waiting for the pet sprites to broadcast to the webview');
     await frame.waitForFunction(() => {
       const w = window as PetWindow;
-      const log = w.__pixelAgentsTestHooks?.messageLog ?? [];
+      const log = w.__pixelBattlesTestHooks?.messageLog ?? [];
       return log.some((m) => m.type === 'petSpritesLoaded');
     });
     narrator.check('petSpritesLoaded reached the client — pet assets delivered');
@@ -115,9 +119,9 @@ test.describe('Pets', () => {
   });
 
   test('placing a pet toggles it on/off and persists across a panel reload @area:pets', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, narrator } = pixelAgents;
+    const { frame, window, tmpHome, narrator } = pixelBattles;
 
     narrator.step('opening the layout editor → Pets tab');
     const carousel = await openPetsTab(frame);
@@ -128,7 +132,7 @@ test.describe('Pets', () => {
     narrator.step('clicking Claudio — placing the pet');
     await claudio.click();
     await frame.waitForFunction(() => {
-      const pets = (window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? [];
+      const pets = (window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? [];
       return pets.length === 1 && pets[0]?.petType === 0;
     });
     narrator.check('one pet on the canvas (getPets → 1, petType claudio)');
@@ -137,7 +141,7 @@ test.describe('Pets', () => {
     narrator.step('clicking Claudio again — removing the pet');
     await claudio.click();
     await frame.waitForFunction(
-      () => ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).length === 0,
+      () => ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).length === 0,
     );
     narrator.check('canvas empty again (getPets → 0)');
 
@@ -146,12 +150,12 @@ test.describe('Pets', () => {
     await claudio.click();
     await frame.waitForFunction(
       () =>
-        ((globalThis as unknown as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).length ===
+        ((globalThis as unknown as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).length ===
         1,
     );
     await gitcat.click();
     await frame.waitForFunction(
-      () => ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).length === 2,
+      () => ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).length === 2,
     );
     narrator.check('two pets on the canvas (getPets → 2)');
 
@@ -160,9 +164,9 @@ test.describe('Pets', () => {
     await expect(saveBtn).toBeVisible({ timeout: 5_000 });
     await saveBtn.click();
 
-    // The save round-trips through layoutPersistence to ~/.pixel-agents/layout.json
+    // The save round-trips through layoutPersistence to ~/.pixel-battles/layout.json
     // (under the fixture's isolated HOME). Pets are opaque pass-through server-side.
-    const layoutPath = path.join(tmpHome, '.pixel-agents', 'layout.json');
+    const layoutPath = path.join(tmpHome, '.pixel-battles', 'layout.json');
     await expect
       .poll(
         () => {
@@ -179,20 +183,20 @@ test.describe('Pets', () => {
         { timeout: 10_000 },
       )
       .toBe(2);
-    narrator.check('~/.pixel-agents/layout.json contains 2 pets');
+    narrator.check('~/.pixel-battles/layout.json contains 2 pets');
 
     // Reload the panel (webview is disposed + re-resolved since there is no
     // retainContextWhenHidden) and confirm the pets rehydrate from disk.
-    // Reopen with the same ⌘J toggle rather than openPixelAgentsPanel: the
+    // Reopen with the same ⌘J toggle rather than openPixelBattlesPanel: the
     // chord restores the panel as it was, without the palette "Show Panel" /
     // "Toggle Maximized Panel" overlays cluttering the end of the video.
     narrator.step('closing the bottom panel — the webview is disposed');
     await closeBottomPanel(window);
     narrator.step('reopening the panel — pets must rehydrate from disk');
     await reopenBottomPanel(window);
-    const freshFrame = await getPixelAgentsFrame(window);
+    const freshFrame = await getPixelBattlesFrame(window);
     await freshFrame.waitForFunction(
-      () => ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).length === 2,
+      () => ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).length === 2,
       undefined,
       { timeout: 15_000 },
     );
@@ -200,11 +204,11 @@ test.describe('Pets', () => {
   });
 
   test('clicking a pet shows a heart bubble that auto-dismisses and dismisses on re-click @area:pets', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
     // `window` stays un-destructured here so the waitForFunction callbacks'
     // `window` keeps resolving to the DOM global for TypeScript.
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
 
     // Place one pet through the editor, then read its id back (spawn tile is
     // random, so the id is the only stable handle).
@@ -212,7 +216,7 @@ test.describe('Pets', () => {
     const carousel = await openPetsTab(frame);
     await carousel.locator('button[title="Claudio"]').click();
     await frame.waitForFunction(
-      () => ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).length === 1,
+      () => ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).length === 1,
     );
     const pets = await readPets(frame);
     const petId = pets[0]!.id;
@@ -222,7 +226,7 @@ test.describe('Pets', () => {
     narrator.step('clicking the pet — heart bubble should appear');
     await petClick(frame, petId);
     await frame.waitForFunction((id) => {
-      const p = ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).find(
+      const p = ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).find(
         (x) => x.id === id,
       );
       return p?.bubbleType === 'heart';
@@ -234,7 +238,7 @@ test.describe('Pets', () => {
     narrator.step('waiting for the 2s auto-dismiss timer, no clicks');
     await frame.waitForFunction(
       (id) => {
-        const p = ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).find(
+        const p = ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).find(
           (x) => x.id === id,
         );
         return p?.bubbleType === null;
@@ -249,7 +253,7 @@ test.describe('Pets', () => {
     narrator.step('clicking again — heart bubble re-appears');
     await petClick(frame, petId);
     await frame.waitForFunction((id) => {
-      const p = ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).find(
+      const p = ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).find(
         (x) => x.id === id,
       );
       return p?.bubbleType === 'heart';
@@ -260,7 +264,7 @@ test.describe('Pets', () => {
     await petClick(frame, petId);
     await frame.waitForFunction(
       (id) => {
-        const p = ((window as PetWindow).__pixelAgentsTestHooks?.getPets?.() ?? []).find(
+        const p = ((window as PetWindow).__pixelBattlesTestHooks?.getPets?.() ?? []).find(
           (x) => x.id === id,
         );
         return p?.bubbleType === null;

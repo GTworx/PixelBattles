@@ -30,7 +30,7 @@ export type { ServerConfig } from './serverConfig.js';
 type HookEventCallback = (providerId: string, event: Record<string, unknown>) => void;
 
 /**
- * Pixel Agents server: receives hook events, broadcasts state via WebSocket,
+ * PixelBattles server: receives hook events, broadcasts state via WebSocket,
  * and optionally serves the SPA in standalone mode.
  *
  * Routes (via Fastify in httpServer.ts):
@@ -38,16 +38,16 @@ type HookEventCallback = (providerId: string, event: Record<string, unknown>) =>
  * - `GET /api/health` -- health check (no auth)
  * - `GET /ws` -- WebSocket for real-time agent state (auth required)
  *
- * Discovery: writes `~/.pixel-agents/server.json` (legacy single-target pointer)
- * and `~/.pixel-agents/servers/<pid>-<port>.json` (multi-server registry entry)
+ * Discovery: writes `~/.pixel-battles/server.json` (legacy single-target pointer)
+ * and `~/.pixel-battles/servers/<pid>-<port>.json` (multi-server registry entry)
  * with port, PID, auth token, and capability flags.
  * Multi-window / multi-surface: a second instance detects running servers via
  * the registry and reuses one only when it offers the same capability
  * (embedded reuses embedded, standalone reuses standalone) -- an embedded
- * VS Code server and a standalone `npx pixel-agents` server can run at once,
+ * VS Code server and a standalone `npx pixel-battles` server can run at once,
  * each owning its own registry entry, both reachable by hook fan-out.
  */
-export class PixelAgentsServer {
+export class PixelBattlesServer {
   private app: FastifyInstance | null = null;
   private config: ServerConfig | null = null;
   private ownsServer = false;
@@ -116,7 +116,7 @@ export class PixelAgentsServer {
       this.config = candidate;
       this.ownsServer = false;
       console.log(
-        `[Pixel Agents] Reusing existing ${wantsSpa ? 'standalone' : 'embedded'} server on port ${candidate.port} (PID ${candidate.pid})`,
+        `[PixelBattles] Reusing existing ${wantsSpa ? 'standalone' : 'embedded'} server on port ${candidate.port} (PID ${candidate.pid})`,
       );
       return candidate;
     }
@@ -157,8 +157,8 @@ export class PixelAgentsServer {
       ...(standalone ? { standalone } : {}),
       // Diagnostic-only: forward the debug-log path to the hook script via
       // server.json (env vars don't reach the spawned hook reliably).
-      ...(process.env['PIXEL_AGENTS_DEBUG_LOG']
-        ? { debugLog: process.env['PIXEL_AGENTS_DEBUG_LOG'] }
+      ...(process.env['PIXEL_BATTLES_DEBUG_LOG']
+        ? { debugLog: process.env['PIXEL_BATTLES_DEBUG_LOG'] }
         : {}),
     };
     this.ownsServer = true;
@@ -166,7 +166,7 @@ export class PixelAgentsServer {
     // entry (new hook scripts fan out to every entry here).
     this.writeServerJson(this.config);
     this.writeRegistryEntry(this.config);
-    console.log(`[Pixel Agents] Server: listening on 127.0.0.1:${port}`);
+    console.log(`[PixelBattles] Server: listening on 127.0.0.1:${port}`);
 
     return this.config;
   }
@@ -190,7 +190,7 @@ export class PixelAgentsServer {
     return this.config;
   }
 
-  /** Returns the absolute path to ~/.pixel-agents/server.json. */
+  /** Returns the absolute path to ~/.pixel-battles/server.json. */
   private getServerJsonPath(): string {
     return path.join(os.homedir(), SERVER_JSON_DIR, SERVER_JSON_NAME);
   }
@@ -207,7 +207,7 @@ export class PixelAgentsServer {
       fs.writeFileSync(tmpPath, JSON.stringify(config, null, 2), { mode: 0o600 });
       fs.renameSync(tmpPath, filePath);
     } catch (e) {
-      console.error(`[Pixel Agents] Failed to write server.json: ${e}`);
+      console.error(`[PixelBattles] Failed to write server.json: ${e}`);
     }
   }
 
@@ -237,7 +237,7 @@ export class PixelAgentsServer {
     }
   }
 
-  /** Returns the absolute path to ~/.pixel-agents/servers/. */
+  /** Returns the absolute path to ~/.pixel-battles/servers/. */
   private getRegistryDir(): string {
     return path.join(os.homedir(), SERVER_JSON_DIR, SERVERS_DIR);
   }
@@ -302,7 +302,7 @@ export class PixelAgentsServer {
       fs.writeFileSync(tmpPath, JSON.stringify(config, null, 2), { mode: 0o600 });
       fs.renameSync(tmpPath, filePath);
     } catch (e) {
-      console.error(`[Pixel Agents] Failed to write registry entry: ${e}`);
+      console.error(`[PixelBattles] Failed to write registry entry: ${e}`);
     }
   }
 

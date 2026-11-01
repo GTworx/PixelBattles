@@ -1,4 +1,4 @@
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   spawnInternalAgentAndWait,
   spawnInternalAgentAndWaitForInvocation,
@@ -39,8 +39,8 @@ import {
   seedTeamConfig,
 } from '../../../helpers/team';
 import {
-  getPixelAgentsFrame,
-  openPixelAgentsPanel,
+  getPixelBattlesFrame,
+  openPixelBattlesPanel,
   runCommand,
   setSettings,
 } from '../../../helpers/webview';
@@ -57,9 +57,9 @@ function otherOverlayId(ids: number[], knownId: number): number {
 
 test.describe('Hooks OFF / lifecycle', () => {
   test('/clear on internal agent reassigns the same character via JSONL polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — /clear must be detected from the JSONL stream alone');
     await setSettings(frame, {
@@ -97,8 +97,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
     const originalAgentId = await expectSingleAgentOverlay(panelFrame);
     narrator.check('one character on screen — our internal agent');
 
@@ -127,7 +127,7 @@ test.describe('Hooks OFF / lifecycle', () => {
   // reassigns the agent to the newest candidate — hence the replacement landing
   // at t+11s, just past the >10-poll threshold. Note this is a STARTUP fallback:
   // there is no grace window in heuristic mode (that's hooks-mode vocabulary),
-  // and no conversation-content continuity is asserted — Pixel Agents tracks
+  // and no conversation-content continuity is asserted — PixelBattles tracks
   // session files, not transcript content.
   //
   // Coexists with the /clear content-disambiguation heuristic in
@@ -135,9 +135,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   // substring in the new JSONL to claim it as a /clear file); --resume traffic
   // doesn't carry that substring so the two heuristics route correctly.
   test('/resume at startup reassigns the same agent via JSONL polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — startup /resume fallback runs on JSONL polling only');
     await setSettings(frame, {
@@ -168,8 +168,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWaitForInvocation(frame, tmpHome, workspaceDir, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
     const originalAgentId = await expectSingleAgentOverlay(panelFrame);
     narrator.check('one character seated for our agent');
 
@@ -181,9 +181,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('/clear edge case with a sibling agent in the same projectDir via JSONL polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — two agents in one projectDir, only one does the /clear dance');
     await setSettings(frame, {
@@ -205,8 +205,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    let panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    let panelFrame = await getPixelBattlesFrame(window);
     const siblingAgentId = await expectSingleAgentOverlay(panelFrame);
     narrator.check('sibling character on screen');
 
@@ -241,8 +241,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(panelFrame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    panelFrame = await getPixelBattlesFrame(window);
     narrator.step('waiting for both characters to be present');
     await expectOverlayCount(panelFrame, 2, 12_000);
     const clearingAgentId = otherOverlayId(await readAgentOverlayIds(panelFrame), siblingAgentId);
@@ -266,9 +266,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('/clear retains its character after the terminal editor moves @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step(
       'hooks OFF — keep two internal characters while one terminal moves during /clear',
@@ -291,8 +291,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    let panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    let panelFrame = await getPixelBattlesFrame(window);
     const siblingAgentId = await expectSingleAgentOverlay(panelFrame);
 
     await arrangeNextClaudeInvocation(
@@ -328,8 +328,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     narrator.step('moving the focused clearing terminal editor into the next group');
     await runCommand(window, 'View: Move Editor into Next Group');
 
-    await openPixelAgentsPanel(window);
-    panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    panelFrame = await getPixelBattlesFrame(window);
     await expectOverlayCount(panelFrame, 2, 12_000);
 
     await expectOverlayVisibleForAgent(panelFrame, clearingAgentId, 'Running: npm run moved-clear');
@@ -344,9 +344,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('heuristic late --resume after stale cleanup prevents zombie agents @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step(
       'enabling Watch All Sessions + hooks OFF so an external session is adopted via polling',
@@ -408,9 +408,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('three parallel Task subagents in one turn render distinct sub-characters via polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — three parallel Task subagents detected by JSONL polling alone');
     await setSettings(frame, {
@@ -458,8 +458,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('waiting for all three Subtask sub-characters to appear');
     await expectOverlayVisible(panelFrame, 'Subtask: Parallel task 3');
@@ -476,9 +476,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('inline teammate removed from team config disappears within one second via polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
     const teamName = uniqueTeamName('teammate-removal-hooks-off');
     narrator.step('seeding a team config: lead + one inline teammate');
     const configPath = seedTeamConfig(tmpHome, teamName, ['lead', INLINE_TEAMMATE_ROLE]);
@@ -514,8 +514,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     narrator.step('waiting for the teammate to be discovered from the team metadata');
     await expectOverlayVisibleWithTexts(panelFrame, [INLINE_TEAMMATE_ROLE], 10_000);
@@ -538,9 +538,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('rapid /clear then new tool within 500ms lands on the reassigned agent via polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — a compressed /clear-then-tool race, detected from JSONL alone');
     await setSettings(frame, {
@@ -580,8 +580,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
     const originalAgentId = await expectSingleAgentOverlay(panelFrame);
     narrator.check('one character for our agent');
 
@@ -599,9 +599,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('close via X prevents re-adoption of old JSONL during dismissal cooldown via polling @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('enabling Watch All Sessions + hooks OFF — external session adopted via polling');
     await setSettings(frame, {
@@ -673,9 +673,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('external basic subagent with run_in_background but no teamName routes to basic path @area:lifecycle', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('enabling Watch All Sessions + hooks OFF — a team-less lead read from JSONL');
     await setSettings(frame, {
@@ -733,9 +733,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   });
 
   test('agentToolsClear fires at turn end via turn_duration JSONL record @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — turn-end clear exercised through the JSONL parser path');
     await setSettings(frame, {
@@ -761,8 +761,8 @@ test.describe('Hooks OFF / lifecycle', () => {
     );
 
     await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     // First the active overlay should show the bash command.
     narrator.step('waiting for the active tool overlay');
@@ -786,9 +786,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   // playPermissionSound() / playDoneSound() (see
   // webview-ui/src/hooks/useExtensionMessages.ts:354 and 341), which our
   // notificationSound.ts instrumentation records in
-  // window.__pixelAgentsTestHooks.playedSounds.
+  // window.__pixelBattlesTestHooks.playedSounds.
   //
-  // Uses EXTERNAL agent (no VS Code terminal) so the Pixel Agents panel
+  // Uses EXTERNAL agent (no VS Code terminal) so the PixelBattles panel
   // stays at full size, dodging the layout race that breaks
   // closeAgentFromOverlay after an internal spawn (same close-via-overlay
   // pattern used by the dismissal-cooldown lifecycle test in this file).
@@ -798,9 +798,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   // invisible from the webview — they require extension-host instrumentation
   // and are out of scope here.
   test('heuristic permission timer is cancelled when an agent is closed via overlay @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+    const { frame, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
     narrator.step(
       'enabling Watch All Sessions + hooks OFF — external agent runs a tool that never replies',
@@ -842,9 +842,9 @@ test.describe('Hooks OFF / lifecycle', () => {
     narrator.step('resetting the recorded-sounds log so only post-close sounds count');
     await frame.evaluate(() => {
       const w = window as Window & {
-        __pixelAgentsTestHooks?: { playedSounds?: unknown[] };
+        __pixelBattlesTestHooks?: { playedSounds?: unknown[] };
       };
-      if (w.__pixelAgentsTestHooks) w.__pixelAgentsTestHooks.playedSounds = [];
+      if (w.__pixelBattlesTestHooks) w.__pixelBattlesTestHooks.playedSounds = [];
     });
 
     // Wait longer than the 7s permission timer + cushion. If a timer leaked,
@@ -855,9 +855,9 @@ test.describe('Hooks OFF / lifecycle', () => {
     await expectOverlayCount(frame, 0);
     const playedKinds = await frame.evaluate(() => {
       const w = window as Window & {
-        __pixelAgentsTestHooks?: { playedSounds?: Array<{ kind: string }> };
+        __pixelBattlesTestHooks?: { playedSounds?: Array<{ kind: string }> };
       };
-      return (w.__pixelAgentsTestHooks?.playedSounds ?? []).map((s) => s.kind);
+      return (w.__pixelBattlesTestHooks?.playedSounds ?? []).map((s) => s.kind);
     });
     expect(playedKinds).not.toContain('permission');
     expect(playedKinds).not.toContain('done');
@@ -877,9 +877,9 @@ test.describe('Hooks OFF / lifecycle', () => {
   //    both parent and sub-character (per CLAUDE.md "Sub-agent permission
   //    detection" note).
   test('sub-agent permission bubble fires on stalled non-exempt sub-tool via heuristic timer @area:cross-cutting', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+    const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
 
     narrator.step('hooks OFF — sub-agent permission handled by the heuristic timer');
     await setSettings(frame, {
@@ -928,8 +928,8 @@ test.describe('Hooks OFF / lifecycle', () => {
 
     const spawned = await spawnInternalAgentAndWait(frame, tmpHome, mockLogFile);
     expect(spawned.sessionId).toBeTruthy();
-    await openPixelAgentsPanel(window);
-    const panelFrame = await getPixelAgentsFrame(window);
+    await openPixelBattlesPanel(window);
+    const panelFrame = await getPixelBattlesFrame(window);
 
     // Sub-character appears once the Task tool_use is parsed.
     narrator.step('waiting for the Subtask sub-character to appear');

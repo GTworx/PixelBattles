@@ -10,7 +10,7 @@ import type { MessageTransport, TransportState } from './types.js';
 
 /**
  * WebSocket transport for standalone browser mode.
- * Connects to the Pixel Agents server via WebSocket for bidirectional messaging.
+ * Connects to the PixelBattles server via WebSocket for bidirectional messaging.
  * Includes automatic reconnection with exponential backoff and message queuing.
  */
 export class WebSocketTransport implements MessageTransport {

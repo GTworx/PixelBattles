@@ -1,6 +1,6 @@
-# Pixel Agents e2e tests
+# PixelBattles e2e tests
 
-Playwright end-to-end tests for the VS Code extension and the standalone `npx pixel-agents` server. This README is the single source of truth for what's e2e-tested, what's not, and how to run the suite.
+Playwright end-to-end tests for the VS Code extension and the standalone `npx pixel-battles` server. This README is the single source of truth for what's e2e-tested, what's not, and how to run the suite.
 
 ## What this suite covers
 
@@ -28,11 +28,11 @@ Every spawn permutation (internal vs external origin × basic vs inline-teammate
 
 ### Standalone server (`@area:standalone`)
 
-The `npx pixel-agents` CLI path: hook-driven lifecycle propagates from the local server into the browser SPA via the single `/ws` WebSocket endpoint.
+The `npx pixel-battles` CLI path: hook-driven lifecycle propagates from the local server into the browser SPA via the single `/ws` WebSocket endpoint.
 
 ### Pet system (`@area:pets`)
 
-The animated pets feature, which has no hook dependency. Pet sprites load and the `petSpritesLoaded` broadcast arrives with manifest display names; placing a pet from the Pets-tab carousel toggles it on/off and persists across a panel reload via `~/.pixel-agents/layout.json`; clicking a pet shows a heart bubble that auto-dismisses and dismisses again on re-click. Pets render only on the canvas, so live state is read through the `getPets` / `petClick` e2e test hooks. FSM internals, pathfinding, FOLLOW, z-sort, and legacy-layout migration are covered by webview unit tests, not e2e.
+The animated pets feature, which has no hook dependency. Pet sprites load and the `petSpritesLoaded` broadcast arrives with manifest display names; placing a pet from the Pets-tab carousel toggles it on/off and persists across a panel reload via `~/.pixel-battles/layout.json`; clicking a pet shows a heart bubble that auto-dismisses and dismisses again on re-click. Pets render only on the canvas, so live state is read through the `getPets` / `petClick` e2e test hooks. FSM internals, pathfinding, FOLLOW, z-sort, and legacy-layout migration are covered by webview unit tests, not e2e.
 
 ### Layout editor (`@area:editor`)
 
@@ -75,9 +75,9 @@ CI green on this suite is the safety net for behavioral regressions. The checks 
 - Use a session with a large pasted image (multi-MB base64 user message) — confirm the "Possible format issue" warning doesn't false-fire and tool tracking still works.
 - Test with one MCP server installed — confirm `mcp_progress` records don't break tool status.
 
-**`npx pixel-agents` standalone** (e2e covers Chrome via Playwright; verify other browsers + real workflow):
+**`npx pixel-battles` standalone** (e2e covers Chrome via Playwright; verify other browsers + real workflow):
 
-- `node dist/cli.js` (or `npx pixel-agents` after publish), open `http://localhost:3100` in Firefox AND Safari, run a real Claude session in a terminal — confirm characters appear and animate via WebSocket.
+- `node dist/cli.js` (or `npx pixel-battles` after publish), open `http://localhost:3100` in Firefox AND Safari, run a real Claude session in a terminal — confirm characters appear and animate via WebSocket.
 - Refresh the browser mid-session — WebSocketTransport reconnects, agents reappear from server state.
 
 **Cross-window sync** (rarely covered by CI, easy to break):
@@ -86,7 +86,7 @@ CI green on this suite is the safety net for behavioral regressions. The checks 
 
 **First-run experience** (before publishing):
 
-- Delete `~/.pixel-agents/` entirely. Launch the extension fresh — default layout loads, first-run tooltip appears, no console errors, hooks auto-install on first agent spawn.
+- Delete `~/.pixel-battles/` entirely. Launch the extension fresh — default layout loads, first-run tooltip appears, no console errors, hooks auto-install on first agent spawn.
 
 **Platform sanity** (CI hosts ≠ your machine):
 
@@ -97,7 +97,7 @@ Skip the F5 matrix walk-through that used to take hours — the e2e suite covers
 ## Running
 
 ```bash
-cd pixel-agents
+cd pixel-battles
 npm run compile && npm run e2e               # full suite (~10 min)
 
 npm run e2e -- --grep "@area:spawn"          # filter by area tag
@@ -111,7 +111,7 @@ npm run test:report:open                     # serve + open the Allure dashboard
 
 ## Mocking model & rules
 
-E2E tests drive Pixel Agents through a Claude-like **process boundary**, not by poking internals. The mocked `claude` (`e2e/fixtures/mock-claude` → `mock-claude-runner.cjs`) behaves like the real CLI for the parts Pixel Agents observes: it spawns as a process, creates its own append-only JSONL transcripts, and executes the installed hook script under `~/.pixel-agents/hooks` — the same path the real CLI uses. The builder API itself (`claudeScenario(...)`, `.at()`, `.appendJsonl()`, `.emitHook()`, `.holdOpenFor()`) is documented in CONTRIBUTING.md → "Mock claude".
+E2E tests drive PixelBattles through a Claude-like **process boundary**, not by poking internals. The mocked `claude` (`e2e/fixtures/mock-claude` → `mock-claude-runner.cjs`) behaves like the real CLI for the parts PixelBattles observes: it spawns as a process, creates its own append-only JSONL transcripts, and executes the installed hook script under `~/.pixel-battles/hooks` — the same path the real CLI uses. The builder API itself (`claudeScenario(...)`, `.at()`, `.appendJsonl()`, `.emitHook()`, `.holdOpenFor()`) is documented in CONTRIBUTING.md → "Mock claude".
 
 Rules for a correct test:
 
@@ -122,9 +122,9 @@ Rules for a correct test:
 
 ## What to read before adding a test
 
-- `pixel-agents/CLAUDE.md` — architecture and message protocol
-- `pixel-agents/e2e/fixtures/pixel-agents.ts` — fixture lifecycle
-- `pixel-agents/e2e/helpers/` — every helper, especially `hooks.ts`, `mock-claude.ts`, `office.ts`, `webview.ts`
+- `pixel-battles/CLAUDE.md` — architecture and message protocol
+- `pixel-battles/e2e/fixtures/pixel-battles.ts` — fixture lifecycle
+- `pixel-battles/e2e/helpers/` — every helper, especially `hooks.ts`, `mock-claude.ts`, `office.ts`, `webview.ts`
 
 When you add a new test:
 
@@ -163,12 +163,12 @@ Standalone recordings are deliberately raw browser artifacts. Their fixture has
 no VS Code terminal or narration surface, so the eight standalone videos are
 outside this narration contract.
 
-Usage: the `pixelAgents` fixture exposes a `narrator` on its payload — tests call
+Usage: the `pixelBattles` fixture exposes a `narrator` on its payload — tests call
 `narrator.step('…')` before an action and `narrator.check('…')` after an
 assertion resolves. Shared helpers narrate universal moments (spawning/closing an
 agent) via the module-level `narrate` in `helpers/test-narration.ts`.
 
-**Cosmetic-only contract (never violate):** Pixel Agents never reads terminal
+**Cosmetic-only contract (never violate):** PixelBattles never reads terminal
 output — its inputs are JSONL transcripts and hook POSTs — so narration cannot
 change what a test exercises. Narration must **never carry an assertion, gate
 logic, or affect timing**. Deleting every `step`/`check` call must leave all
@@ -239,7 +239,7 @@ This section is auto-generated. Do not edit between the markers; CI fails on dri
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1127` — restored agents skip the matrix spawn animation (Hooks ON / lifecycle)
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1211` — tool status text matches every PreToolUse tool name (Hooks ON / lifecycle)
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1306` — permission sound chime fires on agentToolPermission (Hooks ON / lifecycle)
-- `e2e/claude/hooks-on/lifecycle.spec.ts:1428` — pixel-agents hook is installed in settings.json on extension startup (Hooks ON / lifecycle)
+- `e2e/claude/hooks-on/lifecycle.spec.ts:1428` — pixel-battles hook is installed in settings.json on extension startup (Hooks ON / lifecycle)
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1450` — hook install and uninstall round-trip via the Settings toggle (Hooks ON / lifecycle)
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1504` — permission bubble auto-clears when a fresh PreToolUse arrives (Hooks ON / lifecycle)
 - `e2e/claude/hooks-on/lifecycle.spec.ts:1578` — settings toggles persist across a webview reload (Hooks ON / lifecycle)

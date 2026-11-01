@@ -196,7 +196,8 @@ export async function expectCharacterGhosted(
             getCharacters?: () => Array<{ id: number; isHeadless?: boolean }>;
             getGhostHeadlessAgents?: () => boolean;
           }
-          const hooks = (window as { __pixelAgentsTestHooks?: GhostHooks }).__pixelAgentsTestHooks;
+          const hooks = (window as { __pixelBattlesTestHooks?: GhostHooks })
+            .__pixelBattlesTestHooks;
           const characters = hooks?.getCharacters?.() ?? [];
           if (characters.length !== 1) return `expected 1 character, got ${characters.length}`;
           const setting = hooks?.getGhostHeadlessAgents?.() ?? false;
@@ -228,7 +229,7 @@ export async function expectTeammateSeatedNextToLead(
       getAgentSeats?: () => Array<{ id: number; seatId: string | null }>;
       getSeats?: () => Array<{ uid: string; col: number; row: number; assigned: boolean }>;
     }
-    const hooks = (window as { __pixelAgentsTestHooks?: SeatHooks }).__pixelAgentsTestHooks;
+    const hooks = (window as { __pixelBattlesTestHooks?: SeatHooks }).__pixelBattlesTestHooks;
     const characters = hooks?.getCharacters?.() ?? [];
     const agentSeats = hooks?.getAgentSeats?.() ?? [];
     const seats = hooks?.getSeats?.() ?? [];
@@ -259,7 +260,7 @@ export async function expectTeammateSeatedNextToLead(
  *  live activity text in its overlay (hover shows only the subtask title). */
 export async function selectCharacter(frame: OverlaySurface, agentId: number): Promise<void> {
   await frame.evaluate((id) => {
-    window.__pixelAgentsTestHooks?.selectAgent?.(id);
+    window.__pixelBattlesTestHooks?.selectAgent?.(id);
   }, agentId);
 }
 
@@ -285,7 +286,7 @@ export async function closeAgentFromOverlay(
   // data-agent-id, so the text-based lookup path resolves an id too.
   const agentId = options.agentId ?? Number(await overlay.getAttribute('data-agent-id'));
   await frame.evaluate((id) => {
-    window.__pixelAgentsTestHooks?.selectAgent?.(id);
+    window.__pixelBattlesTestHooks?.selectAgent?.(id);
   }, agentId);
 
   const closeButton = overlay.locator('button[title="Close agent"]');

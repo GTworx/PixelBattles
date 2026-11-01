@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import type { Frame, Page } from '@playwright/test';
 
-import { expect, test } from '../../../fixtures/pixel-agents';
+import { expect, test } from '../../../fixtures/pixel-battles';
 import {
   addArea,
   enterEditMode,
@@ -24,9 +24,9 @@ import {
   addDirectory,
   getDirectoryAreas,
   getDirectoryModal,
-  getPixelAgentsFrame,
+  getPixelBattlesFrame,
   openLaunchDrawer,
-  openPixelAgentsPanel,
+  openPixelBattlesPanel,
   submitDirectoryModal,
 } from '../../../helpers/webview';
 
@@ -65,7 +65,8 @@ async function paintAndSaveEngineering(frame: Frame): Promise<void> {
     await paintTile(frame, seat.col, seat.row);
   }
   await frame.waitForFunction(
-    (n) => ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaTiles?.() ?? []).length >= n,
+    (n) =>
+      ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaTiles?.() ?? []).length >= n,
     targetSeats.length,
     { timeout: 10_000 },
   );
@@ -74,15 +75,15 @@ async function paintAndSaveEngineering(frame: Frame): Promise<void> {
 
 /** Re-open the panel (disposed by the spawned terminal) + return a fresh frame. */
 async function reacquireFrame(window: Page): Promise<Frame> {
-  await openPixelAgentsPanel(window);
-  return getPixelAgentsFrame(window);
+  await openPixelBattlesPanel(window);
+  return getPixelBattlesFrame(window);
 }
 
 test.describe('Areas (multi-root)', () => {
   test.use({ workspaceFolders: [ALPHA, BETA] });
 
-  test('painting an area labels tiles in the layout @area:areas', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('painting an area labels tiles in the layout @area:areas', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the Areas editor and adding an "Engineering" area');
     await startArea(frame, 'Engineering');
 
@@ -98,7 +99,7 @@ test.describe('Areas (multi-root)', () => {
 
     await frame.waitForFunction(
       (n) =>
-        ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaTiles?.() ?? []).length >= n,
+        ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaTiles?.() ?? []).length >= n,
       targets.length,
       { timeout: 10_000 },
     );
@@ -109,8 +110,8 @@ test.describe('Areas (multi-root)', () => {
     narrator.check('both painted tiles are labeled "Engineering"');
   });
 
-  test('areas can be added and removed @area:areas', async ({ pixelAgents }) => {
-    const { frame, narrator } = pixelAgents;
+  test('areas can be added and removed @area:areas', async ({ pixelBattles }) => {
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor → Areas tool');
     await enterEditMode(frame);
     await selectAreaTool(frame);
@@ -119,7 +120,7 @@ test.describe('Areas (multi-root)', () => {
     await addArea(frame, 'Design');
     await frame.waitForFunction(
       () =>
-        ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAreas?.() ?? []).some(
+        ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAreas?.() ?? []).some(
           (a) => a.label === 'Design',
         ),
       undefined,
@@ -133,7 +134,7 @@ test.describe('Areas (multi-root)', () => {
     await frame.locator('button[title="Remove area"]').first().click();
     await frame.waitForFunction(
       () =>
-        !((window as TestHooksWindow).__pixelAgentsTestHooks?.getAreas?.() ?? []).some(
+        !((window as TestHooksWindow).__pixelBattlesTestHooks?.getAreas?.() ?? []).some(
           (a) => a.label === 'Design',
         ),
       undefined,
@@ -143,9 +144,9 @@ test.describe('Areas (multi-root)', () => {
   });
 
   test('a folder can be mapped to an area and the mapping persists @area:areas', async ({
-    pixelAgents,
+    pixelBattles,
   }) => {
-    const { frame, narrator } = pixelAgents;
+    const { frame, narrator } = pixelBattles;
     narrator.step('opening the layout editor → Areas tool');
     await enterEditMode(frame);
     await selectAreaTool(frame);
@@ -159,7 +160,7 @@ test.describe('Areas (multi-root)', () => {
 
     await frame.waitForFunction(
       (folder) => {
-        const m = (window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaMappings?.() ?? {};
+        const m = (window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaMappings?.() ?? {};
         return (m[folder] ?? []).includes('Engineering');
       },
       ALPHA,
@@ -178,9 +179,9 @@ test.describe('Areas (multi-root)', () => {
     test.use({ seedConfig: buildSeedConfig({ areaMappings: { [ALPHA]: ['Engineering'] } }) });
 
     test('an agent for the MAPPED folder takes a seat inside its area @area:areas', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+      const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
       narrator.step('painting Engineering over free seats and saving the layout');
       await paintAndSaveEngineering(frame);
 
@@ -194,7 +195,7 @@ test.describe('Areas (multi-root)', () => {
       narrator.step('expecting the restored alpha agent to re-seat inside Engineering');
       await fresh.waitForFunction(
         (folder) =>
-          ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAgentSeats?.() ?? []).some(
+          ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAgentSeats?.() ?? []).some(
             (a) => a.directoryName === folder && a.seatId !== null,
           ),
         ALPHA,
@@ -209,9 +210,9 @@ test.describe('Areas (multi-root)', () => {
     });
 
     test('an agent for an UNMAPPED folder is not forced into the area @area:areas', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, window, tmpHome, mockLogFile, narrator } = pixelAgents;
+      const { frame, window, tmpHome, mockLogFile, narrator } = pixelBattles;
       narrator.step('painting Engineering over free seats and saving the layout');
       await paintAndSaveEngineering(frame);
 
@@ -224,7 +225,7 @@ test.describe('Areas (multi-root)', () => {
       narrator.step('expecting the unmapped beta agent to land on an unzoned seat');
       await fresh.waitForFunction(
         (folder) =>
-          ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAgentSeats?.() ?? []).some(
+          ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAgentSeats?.() ?? []).some(
             (a) => a.directoryName === folder && a.seatId !== null,
           ),
         BETA,
@@ -253,9 +254,9 @@ test.describe('Areas (multi-root)', () => {
     const GAMMA_NAME = 'Gamma Project';
 
     test('a Directory assigned an Area in its modal seats the agent it launches inside that Area @area:areas', async ({
-      pixelAgents,
+      pixelBattles,
     }) => {
-      const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelAgents;
+      const { frame, window, tmpHome, workspaceDir, mockLogFile, narrator } = pixelBattles;
 
       narrator.step('painting Engineering over free seats and saving the layout');
       await paintAndSaveEngineering(frame);
@@ -269,7 +270,7 @@ test.describe('Areas (multi-root)', () => {
 
       await frame.waitForFunction(
         (name) => {
-          const m = (window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaMappings?.() ?? {};
+          const m = (window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaMappings?.() ?? {};
           return (m[name] ?? []).includes('Engineering');
         },
         GAMMA_NAME,
@@ -284,7 +285,7 @@ test.describe('Areas (multi-root)', () => {
       narrator.step(`expecting the restored "${GAMMA_NAME}" agent to sit inside Engineering`);
       await fresh.waitForFunction(
         (name) =>
-          ((window as TestHooksWindow).__pixelAgentsTestHooks?.getAgentSeats?.() ?? []).some(
+          ((window as TestHooksWindow).__pixelBattlesTestHooks?.getAgentSeats?.() ?? []).some(
             (a) => a.directoryName === name && a.seatId !== null,
           ),
         GAMMA_NAME,
@@ -306,9 +307,9 @@ test.describe('Areas (multi-root)', () => {
       });
 
       test('renaming a Directory carries its Area mapping to the new name @area:areas', async ({
-        pixelAgents,
+        pixelBattles,
       }) => {
-        const { frame, workspaceDir, narrator } = pixelAgents;
+        const { frame, workspaceDir, narrator } = pixelBattles;
 
         const target = path.join(workspaceDir, 'gamma');
         fs.mkdirSync(target, { recursive: true });
@@ -334,14 +335,15 @@ test.describe('Areas (multi-root)', () => {
         // new name instead of being orphaned under the old one.
         await frame.waitForFunction(
           () => {
-            const m = (window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaMappings?.() ?? {};
+            const m =
+              (window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaMappings?.() ?? {};
             return (m['Gamma Renamed'] ?? []).includes('Engineering');
           },
           undefined,
           { timeout: 10_000 },
         );
         const mappings = await frame.evaluate(
-          () => (window as TestHooksWindow).__pixelAgentsTestHooks?.getAreaMappings?.() ?? {},
+          () => (window as TestHooksWindow).__pixelBattlesTestHooks?.getAreaMappings?.() ?? {},
         );
         expect(mappings[GAMMA_NAME]).toBeUndefined();
         narrator.check('the mapping moved with the name — no orphan under the old one');

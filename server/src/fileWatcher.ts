@@ -25,7 +25,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type * as vscode from 'vscode';
 
-const debug = process.env.PIXEL_AGENTS_DEBUG !== '0';
+const debug = process.env.PIXEL_BATTLES_DEBUG !== '0';
 
 import type { HookProvider } from '../../core/src/provider.js';
 import type { TeamProvider } from '../../core/src/teamProvider.js';
@@ -56,12 +56,12 @@ import type { AgentState } from './types.js';
  *  seededMtimes, and pendingClearFiles Maps/Sets. */
 let dismissalTracker: DismissalTracker | null = null;
 
-/** Register the DismissalTracker instance. Called from PixelAgentsViewProvider at startup. */
+/** Register the DismissalTracker instance. Called from PixelBattlesViewProvider at startup. */
 export function setDismissalTracker(tracker: DismissalTracker): void {
   dismissalTracker = tracker;
 }
 
-/** Get the active DismissalTracker (for PixelAgentsViewProvider direct access).
+/** Get the active DismissalTracker (for PixelBattlesViewProvider direct access).
  *
  * @public
  */
@@ -77,12 +77,12 @@ export function setTerminalAdapter(adapter: ITerminalAdapter): void {
   terminalAdapter = adapter;
 }
 
-/** Agent removal callback. Injected by PixelAgentsViewProvider to avoid a
+/** Agent removal callback. Injected by PixelBattlesViewProvider to avoid a
  *  server/src/ → src/ back-import on agentManager.ts. The ViewProvider closure
  *  captures the store and timer Maps, so only the agent ID is needed. */
 let agentRemovalCallback: ((id: number) => void) | null = null;
 
-/** Register the agent removal callback. Called by PixelAgentsViewProvider. */
+/** Register the agent removal callback. Called by PixelBattlesViewProvider. */
 export function setAgentRemovalCallback(cb: typeof agentRemovalCallback): void {
   agentRemovalCallback = cb;
 }
@@ -178,7 +178,7 @@ export function startFileWatching(
           // Found a /clear file (has last-prompt) → claim it
           deps.knownJsonlFiles.add(file);
           console.log(
-            `[Pixel Agents] Watcher: Agent ${agentId} - /clear detected, reassigning to ${path.basename(file)}`,
+            `[PixelBattles] Watcher: Agent ${agentId} - /clear detected, reassigning to ${path.basename(file)}`,
           );
           reassignAgentToFile(
             agentId,
@@ -247,7 +247,7 @@ export function readNewLines(
   } catch (e) {
     // ENOENT is expected for hook-detected agents where the JSONL file hasn't been created yet
     if (e instanceof Error && 'code' in e && (e as NodeJS.ErrnoException).code === 'ENOENT') return;
-    console.log(`[Pixel Agents] Watcher: Agent ${agentId} - read error: ${e}`);
+    console.log(`[PixelBattles] Watcher: Agent ${agentId} - read error: ${e}`);
   }
 }
 
@@ -474,7 +474,7 @@ export function scanForNewJsonlFiles(
   for (const [id, agent] of agents) {
     if (agent.isExternal) continue;
     if (agent.terminalRef && agent.terminalRef.exitStatus !== undefined) {
-      console.log(`[Pixel Agents] Watcher: Agent ${id} - terminal closed, cleaning up orphan`);
+      console.log(`[PixelBattles] Watcher: Agent ${id} - terminal closed, cleaning up orphan`);
       agentRemovalCallback?.(id);
     }
   }
@@ -522,7 +522,7 @@ function adoptTerminalForFile(
   onAgentCreated?.(agent);
 
   console.log(
-    `[Pixel Agents] Watcher: Agent ${id} - adopted terminal "${terminal.name}" for ${path.basename(jsonlFile)}`,
+    `[PixelBattles] Watcher: Agent ${id} - adopted terminal "${terminal.name}" for ${path.basename(jsonlFile)}`,
   );
 
   startFileWatching(
@@ -670,7 +670,7 @@ export function scanForTeammateFiles(
     if (existingTeammate) {
       if (debug)
         console.log(
-          `[Pixel Agents] Teammate "${teammateName}" already exists (Agent ${existingTeammate.id}), reassigning to ${path.basename(file)}`,
+          `[PixelBattles] Teammate "${teammateName}" already exists (Agent ${existingTeammate.id}), reassigning to ${path.basename(file)}`,
         );
       // Reassign to new JSONL file -- stop old polling, start new
       const oldTimer = pollingTimers.get(existingTeammate.id);
@@ -731,7 +731,7 @@ export function scanForTeammateFiles(
     persistAgents();
 
     console.log(
-      `[Pixel Agents] Teammate detected: "${teammateName}" (Agent ${id}) for parent Agent ${parentAgentId} (${path.basename(file)})`,
+      `[PixelBattles] Teammate detected: "${teammateName}" (Agent ${id}) for parent Agent ${parentAgentId} (${path.basename(file)})`,
     );
 
     // Own-session teammates get registered so their hook events route directly
@@ -885,7 +885,7 @@ export function scanForBackgroundAgentFiles(
     persistAgents();
 
     console.log(
-      `[Pixel Agents] Background teammate detected: "${agent.agentName}" (Agent ${id}) for lead Agent ${leadId} (${path.basename(entry.jsonlPath)})`,
+      `[PixelBattles] Background teammate detected: "${agent.agentName}" (Agent ${id}) for lead Agent ${leadId} (${path.basename(entry.jsonlPath)})`,
     );
 
     // The transient Subtask sub-character is superseded by this real character.
@@ -1058,7 +1058,7 @@ export function adoptExternalSessionFromHook(
     const adoptedAgent = [...agents.values()].find((a) => pathsMatch(a.jsonlFile, transcriptPath));
     if (adoptedAgent && debug) {
       console.log(
-        `[Pixel Agents] Hook: Agent ${adoptedAgent.id} - detected external session ${path.basename(transcriptPath)}${adoptedAgent.directoryName ? ` (${adoptedAgent.directoryName})` : ''}`,
+        `[PixelBattles] Hook: Agent ${adoptedAgent.id} - detected external session ${path.basename(transcriptPath)}${adoptedAgent.directoryName ? ` (${adoptedAgent.directoryName})` : ''}`,
       );
     }
     if (adoptedAgent) {
@@ -1087,7 +1087,7 @@ export function adoptExternalSessionFromHook(
     persistAgents();
     if (debug) {
       console.log(
-        `[Pixel Agents] Hook: Agent ${id} - detected hooks-only external session${directoryName ? ` (${directoryName})` : ''}`,
+        `[PixelBattles] Hook: Agent ${id} - detected hooks-only external session${directoryName ? ` (${directoryName})` : ''}`,
       );
     }
     onAgentCreated?.(agent);
@@ -1373,7 +1373,7 @@ export function scanExternalDir(
     }
 
     knownJsonlFiles.add(file);
-    console.log(`[Pixel Agents] Watcher: detected external session ${path.basename(file)}`);
+    console.log(`[PixelBattles] Watcher: detected external session ${path.basename(file)}`);
     adoptExternalSession(
       file,
       projectDir,
@@ -1461,7 +1461,7 @@ function scanGlobalProjectDirs(
         directoryNameFromProjectDir(path.basename(dirPath));
       knownJsonlFiles.add(file);
       console.log(
-        `[Pixel Agents] Watcher: detected global session ${path.basename(file)} (${directoryName})`,
+        `[PixelBattles] Watcher: detected global session ${path.basename(file)} (${directoryName})`,
       );
       adoptExternalSession(
         file,
@@ -1514,7 +1514,7 @@ export function startStaleExternalAgentCheck(
         // Remove from knownJsonlFiles so the file can be re-adopted if it becomes active again
         knownJsonlFiles.delete(agent.jsonlFile);
       }
-      console.log(`[Pixel Agents] Watcher: Agent ${id} - removing stale external agent`);
+      console.log(`[PixelBattles] Watcher: Agent ${id} - removing stale external agent`);
       agentRemovalCallback?.(id);
     }
   }, EXTERNAL_STALE_CHECK_INTERVAL_MS);

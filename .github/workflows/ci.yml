@@ -1,4 +1,4 @@
-# CI workflow for pixel-agents
+# CI workflow for pixel-battles
 
 name: CI
 
@@ -651,7 +651,7 @@ jobs:
         run: |
           base_url="${DEPLOYMENT_URL%/}"
           comment_body="$(cat <<EOF
-          <!-- pixel-agents-vercel-preview -->
+          <!-- pixel-battles-vercel-preview -->
           🔍 Vercel Preview: $base_url
 
           Allure report (Linux + macOS + Windows): $base_url/reports/allure/
@@ -663,7 +663,7 @@ jobs:
               -H "Accept: application/vnd.github+json" \
               "/repos/$GH_REPO/issues/$PR_NUMBER/comments" \
               --paginate \
-              --jq '.[] | select(.user.login == "github-actions[bot]") | select((.body // "") | contains("<!-- pixel-agents-vercel-preview -->") or contains("🔍 Vercel Preview:")) | .id' \
+              --jq '.[] | select(.user.login == "github-actions[bot]") | select((.body // "") | contains("<!-- pixel-battles-vercel-preview -->") or contains("🔍 Vercel Preview:")) | .id' \
               | tail -n 1
           )"
 

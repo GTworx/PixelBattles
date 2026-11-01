@@ -27,14 +27,14 @@ import { PtySessionManager } from '../src/terminal/ptySessionManager.js';
 let tmpBase: string;
 
 // Isolated HOME: server.start() writes server.json + the registry entry, and a
-// test must never touch the developer's real ~/.pixel-agents.
+// test must never touch the developer's real ~/.pixel-battles.
 vi.mock('os', async () => {
   const actual = await vi.importActual<typeof import('os')>('os');
   return { ...actual, homedir: () => tmpBase };
 });
 
 // Imported after the os mock is registered, so server.ts picks up the temp HOME.
-const { PixelAgentsServer } = await import('../src/server.js');
+const { PixelBattlesServer } = await import('../src/server.js');
 const { AgentStateStore } = await import('../src/agentStateStore.js');
 
 /** Minimal fake PTY -- no real process is ever spawned by these tests. */
@@ -119,15 +119,15 @@ function attach(
 }
 
 describe('terminal WebSocket auth', () => {
-  let server: InstanceType<typeof PixelAgentsServer>;
+  let server: InstanceType<typeof PixelBattlesServer>;
   let ptyManager: PtySessionManager;
   let port: number;
   let token: string;
 
   beforeEach(async () => {
     tmpBase = fs.mkdtempSync(path.join(os.tmpdir(), 'pxl-terminal-test-'));
-    fs.mkdirSync(path.join(tmpBase, '.pixel-agents'), { recursive: true });
-    server = new PixelAgentsServer();
+    fs.mkdirSync(path.join(tmpBase, '.pixel-battles'), { recursive: true });
+    server = new PixelBattlesServer();
     ptyManager = fakeManager();
     const config = await server.start({
       store: new AgentStateStore(),
@@ -202,7 +202,7 @@ describe('terminal WebSocket auth', () => {
     expect(refused.code).toBe(WS_CLOSE_FORBIDDEN_ORIGIN);
 
     server.stop();
-    server = new PixelAgentsServer();
+    server = new PixelBattlesServer();
     const config = await server.start({
       store: new AgentStateStore(),
       embedded: false,

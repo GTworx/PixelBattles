@@ -146,10 +146,10 @@ describe('clientMessageHandler: areas + carpet wire ordering', () => {
       handleClientMessage({ type: 'setShowAreas', enabled: true }, (m) => sent.push(m), ctx);
 
       const adapter = store.getAdapter()!;
-      expect(adapter.getSetting('pixel-agents.showAreas', false)).toBe(true);
+      expect(adapter.getSetting('pixel-battles.showAreas', false)).toBe(true);
 
       handleClientMessage({ type: 'setShowAreas', enabled: false }, (m) => sent.push(m), ctx);
-      expect(adapter.getSetting('pixel-agents.showAreas', true)).toBe(false);
+      expect(adapter.getSetting('pixel-battles.showAreas', true)).toBe(false);
     });
   });
 
@@ -191,7 +191,7 @@ describe('clientMessageHandler: areas + carpet wire ordering', () => {
   describe('setHooksEnabled persistence', () => {
     /** Put our command on every installed event, as a real install would. */
     function seedInstalledHooks(): void {
-      const command = `node "${path.join(tempHome, '.pixel-agents', 'hooks', 'claude-hook.js')}"`;
+      const command = `node "${path.join(tempHome, '.pixel-battles', 'hooks', 'claude-hook.js')}"`;
       const entry = { matcher: '', hooks: [{ type: 'command', command, timeout: 5 }] };
       fs.mkdirSync(path.join(tempHome, '.claude'), { recursive: true });
       fs.writeFileSync(
@@ -377,7 +377,7 @@ describe('clientMessageHandler: areas + carpet wire ordering', () => {
     it('emits carpetTilesLoaded after wallTilesLoaded when both are present in the cache', () => {
       // Hex placeholders are test fixtures, not UI tokens — disable the
       // centralized-color rule just for this cache literal.
-      /* eslint-disable pixel-agents/no-inline-colors */
+      /* eslint-disable pixel-battles/no-inline-colors */
       const cache: AssetCache = {
         characters: null,
         pets: null,
@@ -387,7 +387,7 @@ describe('clientMessageHandler: areas + carpet wire ordering', () => {
         furniture: null,
         defaultLayout: null,
       };
-      /* eslint-enable pixel-agents/no-inline-colors */
+      /* eslint-enable pixel-battles/no-inline-colors */
       ctx = freshCtx(cache);
 
       handleClientMessage({ type: 'webviewReady' }, (m) => sent.push(m), ctx);
@@ -839,10 +839,10 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
   it('setBypassPermissions persists via the adapter (standalone namespace)', () => {
     dispatch({ type: 'setBypassPermissions', enabled: true }, ctx());
     const adapter = store.getAdapter()!;
-    expect(adapter.getSetting('pixel-agents.bypassPermissions', false)).toBe(true);
+    expect(adapter.getSetting('pixel-battles.bypassPermissions', false)).toBe(true);
 
     dispatch({ type: 'setBypassPermissions', enabled: false }, ctx());
-    expect(adapter.getSetting('pixel-agents.bypassPermissions', true)).toBe(false);
+    expect(adapter.getSetting('pixel-battles.bypassPermissions', true)).toBe(false);
   });
 
   it('setBypassPermissions publishes the accepted posture to every connected office', () => {
@@ -865,7 +865,7 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
 
     dispatch({ type: 'setBypassPermissions', enabled: true }, ctx({ privileged: false }));
 
-    expect(store.getAdapter()!.getSetting('pixel-agents.bypassPermissions', false)).toBe(false);
+    expect(store.getAdapter()!.getSetting('pixel-battles.bypassPermissions', false)).toBe(false);
     // Nothing changed, so nothing is published to the other offices.
     expect(broadcasts.filter((m) => m.type === 'bypassPermissionsUpdated')).toEqual([]);
     // The optimistic toggle snaps back: the refused client gets the real value.
@@ -901,7 +901,7 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
 
   it('webviewReady contributes the server start directory as a host Directory when shown', () => {
     const { manager } = workingPtyManager();
-    store.getAdapter()!.setSetting('pixel-agents.showHostDirectories', true);
+    store.getAdapter()!.setSetting('pixel-battles.showHostDirectories', true);
 
     dispatch({ type: 'webviewReady' }, ctx({ ptyManager: manager }));
 
@@ -918,12 +918,12 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
     const host = { name: path.basename(process.cwd()), path: process.cwd(), source: 'host' };
 
     dispatch({ type: 'setShowHostDirectories', enabled: true }, ctx({ ptyManager: manager }));
-    expect(store.getAdapter()!.getSetting('pixel-agents.showHostDirectories', false)).toBe(true);
+    expect(store.getAdapter()!.getSetting('pixel-battles.showHostDirectories', false)).toBe(true);
     expect(broadcasts).toEqual([{ type: 'directoriesLoaded', directories: [host] }]);
 
     broadcasts = [];
     dispatch({ type: 'setShowHostDirectories', enabled: false }, ctx({ ptyManager: manager }));
-    expect(store.getAdapter()!.getSetting('pixel-agents.showHostDirectories', true)).toBe(false);
+    expect(store.getAdapter()!.getSetting('pixel-battles.showHostDirectories', true)).toBe(false);
     expect(broadcasts).toEqual([{ type: 'directoriesLoaded', directories: [] }]);
   });
 
@@ -955,7 +955,7 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
       ctx({ ptyManager: manager, privileged: false }),
     );
 
-    expect(store.getAdapter()!.getSetting('pixel-agents.showHostDirectories', false)).toBe(false);
+    expect(store.getAdapter()!.getSetting('pixel-battles.showHostDirectories', false)).toBe(false);
     expect(broadcasts.filter((m) => m.type === 'directoriesLoaded')).toEqual([]);
     expect(sent).toContainEqual(
       expect.objectContaining({ type: 'settingsLoaded', showHostDirectories: false }),
@@ -1017,7 +1017,7 @@ describe('clientMessageHandler: standalone terminal control plane', () => {
   });
 
   it('refuses external asset directory changes from an unprivileged client', () => {
-    // An asset directory is read from outside ~/.pixel-agents/ and its sprites
+    // An asset directory is read from outside ~/.pixel-battles/ and its sprites
     // are sent back over the socket -- an untokened viewer must not choose it.
     const reloads: number[] = [];
     const untokened = ctx({ privileged: false, onReloadAssets: async () => void reloads.push(1) });

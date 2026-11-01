@@ -72,7 +72,7 @@ describe('isAllowedWebSocketOrigin', () => {
   it('allows a missing origin (non-browser caller)', () => {
     // Browsers omit Origin on same-origin GET and always send it cross-origin,
     // so "absent" means curl or a local script -- which can already read the
-    // token from ~/.pixel-agents/server.json.
+    // token from ~/.pixel-battles/server.json.
     expect(isAllowedWebSocketOrigin(undefined, '127.0.0.1:3100')).toBe(true);
     expect(isAllowedWebSocketOrigin('', '127.0.0.1:3100')).toBe(true);
   });

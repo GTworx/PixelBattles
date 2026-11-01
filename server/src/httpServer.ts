@@ -211,7 +211,7 @@ function registerWebSocketRoute(
         // listed (typically a reverse proxy). Say how to fix it, or the session
         // silently stays watch-only.
         console.warn(
-          `[Pixel Agents] Tokened connection via Host "${request.headers.host ?? ''}" is read-only: restart with --allowed-host <that name> to allow changes from it.`,
+          `[PixelBattles] Tokened connection via Host "${request.headers.host ?? ''}" is read-only: restart with --allowed-host <that name> to allow changes from it.`,
         );
       }
     }
@@ -252,7 +252,7 @@ function registerWebSocketRoute(
       try {
         const msg = JSON.parse(data.toString()) as Record<string, unknown>;
         if (!options.embedded && msg.type) {
-          console.log('[Pixel Agents] WS client message:', msg.type);
+          console.log('[PixelBattles] WS client message:', msg.type);
         }
         handleClientMessage(msg, (m) => safeSend(socket, m), {
           store,

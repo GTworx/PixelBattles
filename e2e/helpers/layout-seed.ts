@@ -1,6 +1,6 @@
 /**
- * Builders for seeded `~/.pixel-agents/{layout,config}.json`, passed to the
- * pixelAgents fixture via `test.use({ seedLayout, seedConfig })`. The fixture
+ * Builders for seeded `~/.pixel-battles/{layout,config}.json`, passed to the
+ * pixelBattles fixture via `test.use({ seedLayout, seedConfig })`. The fixture
  * writes them under the isolated HOME BEFORE VS Code launches (see
  * e2e/helpers/launch.ts), so the server reads them on startup.
  *
@@ -107,7 +107,7 @@ export interface SeedConfigOptions {
 }
 
 /**
- * Build a full PixelAgentsConfig for `test.use({ seedConfig })`, setting the
+ * Build a full PixelBattlesConfig for `test.use({ seedConfig })`, setting the
  * vscode namespace's areaMappings / showAreas. The standalone namespace keeps
  * defaults so there is no cross-namespace leak.
  */
