@@ -17,7 +17,8 @@
 	"include": [
 		"adapters/vscode",
 		"server/src",
-		"core/src"
+		"core/src",
+		"netlify/functions"
 	],
 	"exclude": [
 		"node_modules",

@@ -105,8 +105,88 @@ export interface ChatRequest {
   signal?: AbortSignal;
 }
 
+/**
+ * Static site: is there a hosted chat (the Netlify Function with an Ollama
+ * Cloud key)? Learned from the first question and remembered for the visit;
+ * without one the browser asks the visitor's own Ollama instead.
+ */
+let hostedChat: boolean | null = null;
+
 export async function sendBattleChat(req: ChatRequest): Promise<ChatResponse> {
-  return isStaticSite ? askLocalOllama(req) : askServer(req);
+  if (!isStaticSite) return askServer(req);
+  if (hostedChat !== false) {
+    const res = await askHosted(req);
+    if (res !== null) {
+      hostedChat = true;
+      return res;
+    }
+    hostedChat = false;
+  }
+  return askLocalOllama(req);
+}
+
+/**
+ * The hosted chat streams Ollama's NDJSON straight through. Returns null when
+ * this site has no hosted chat (no function, or no API key configured).
+ */
+async function askHosted({
+  scenario,
+  message,
+  history,
+  state,
+  signal,
+}: ChatRequest): Promise<ChatResponse | null> {
+  let res: Response;
+  try {
+    res = await fetch('/api/battles/chat', {
+      method: 'POST',
+      signal,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        battleId: scenario.id,
+        message,
+        history: history.slice(-BATTLE_CHAT_HISTORY_MAX),
+        state,
+      }),
+    });
+  } catch (err) {
+    if ((err as Error).name === 'AbortError') throw err;
+    return null;
+  }
+  // A plain file host answers a POST with 404/405/501; the function says
+  // `no-key` when the site has no OLLAMA_API_KEY.
+  if ([404, 405, 501].includes(res.status)) return null;
+  if (!res.ok) {
+    const body = (await res.json().catch(() => ({}))) as { error?: string; code?: string };
+    if (body.code === 'no-key') return null;
+    throw new Error(body.error ?? `Chat failed: HTTP ${res.status}`);
+  }
+  if (!(res.headers.get('Content-Type') ?? '').includes('ndjson') || !res.body) return null;
+
+  // Accumulate the streamed message, then parse the finished JSON reply.
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffered = '';
+  let content = '';
+  const take = (line: string) => {
+    if (!line.trim()) return;
+    const chunk = JSON.parse(line) as { message?: { content?: string }; error?: string };
+    if (chunk.error) throw new Error(`Ollama Cloud: ${chunk.error}`);
+    content += chunk.message?.content ?? '';
+  };
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffered += decoder.decode(value, { stream: true });
+    const lines = buffered.split('\n');
+    buffered = lines.pop() ?? '';
+    lines.forEach(take);
+  }
+  take(buffered);
+  return {
+    ...(parseChatReply(content) as ChatResponse),
+    model: res.headers.get('X-Battle-Model') ?? undefined,
+  };
 }
 
 async function askServer({ scenario, message, history, state, signal }: ChatRequest) {

@@ -127,7 +127,16 @@ Stop a standalone server with **Ctrl+C**. It removes only its own registration.
 
 The repository deploys to Netlify as-is: `netlify.toml` runs `npm run build:static` and publishes `dist/webview`. Netlify serves files only, so the hosted site is the Battle Simulator alone — battle selector, maps, simulation, sound and flags. The Claude agent office, terminals and hooks need the PixelBattles server and are not part of it.
 
-The war-room chat still uses **your own Ollama**: the page in your browser talks to `http://localhost:11434` on your computer (Netlify's servers can't reach it, your browser can). To allow it once:
+**War-room chat on Netlify (Ollama Cloud).** Set these in Netlify → Site configuration → Environment variables, then redeploy:
+
+| Variable         |                                                                                                                                                                                                                |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `OLLAMA_API_KEY` | Required. An API key from [ollama.com/settings/keys](https://ollama.com/settings/keys). It stays in the Netlify Function (`netlify/functions/battle-chat.mts`) and never reaches the browser.                  |
+| `OLLAMA_MODEL`   | Optional. A cloud model name without the `-cloud` suffix, from [ollama.com/search?c=cloud](https://ollama.com/search?c=cloud). Default `gpt-oss:120b` (Ollama Cloud has no Qwen model at the time of writing). |
+
+The function answers `/api/battles/chat`, builds the war-room prompt from the battle files itself, only accepts requests from your site, and caps message size and reply length, so the key can't be used as a general-purpose proxy. Replies are streamed so slow answers don't hit Netlify's function time limit. Anyone who can open the site can still chat and spend your Ollama Cloud quota.
+
+**Without a key**, the chat falls back to **your own Ollama**: the page in your browser talks to `http://localhost:11434` on your computer (Netlify's servers can't reach it, your browser can). To allow it once:
 
 1. Let Ollama accept requests from your site. Set the environment variable `OLLAMA_ORIGINS` to your site's address and restart Ollama. On Windows (PowerShell):
 

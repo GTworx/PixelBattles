@@ -171,9 +171,9 @@ function OllamaSettingsButton({
       <button
         className="bg-transparent border-0 text-text-muted cursor-pointer text-xs p-0 hover:text-text"
         onClick={() => setOpen((o) => !o)}
-        title="Which Ollama the chat asks"
+        title="Your own Ollama: used when this site has no hosted chat"
       >
-        ⚙ {model}
+        ⚙ Local Ollama
       </button>
       {open && (
         <form

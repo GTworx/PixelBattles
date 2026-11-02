@@ -5,7 +5,7 @@ import pixelBattlesPlugin from './eslint-rules/pixel-battles-rules.mjs';
 
 export default [
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts', '**/*.mts'],
   },
   {
     plugins: {

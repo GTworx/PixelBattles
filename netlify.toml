@@ -1,7 +1,7 @@
 # Netlify deploys the Battle Simulator as a static site: the SPA, its sprites
-# and the battle wiki/scenarios as plain files. There is no PixelBattles server
-# on Netlify (no agent office, no terminals); the war-room chat runs from the
-# visitor's browser against their own local Ollama — see README "Netlify".
+# and the battle wiki/scenarios as plain files, plus one function for the
+# war-room chat (Ollama Cloud). There is no PixelBattles server on Netlify (no
+# agent office, no terminals) — see README "Netlify".
 [build]
   command = "npm run build:static"
   publish = "dist/webview"
@@ -10,6 +10,14 @@
   NODE_VERSION = "22"
   # Git hooks are a development tool; skip installing them on the build image.
   HUSKY = "0"
+
+# The war-room chat: netlify/functions/battle-chat.mts answers
+# /api/battles/chat with Ollama Cloud (OLLAMA_API_KEY, optional OLLAMA_MODEL).
+# It builds the prompt from the battle files, so they ship with it.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["battles/**"]
 
 # Battle data changes with each deploy; let browsers revalidate it.
 [[headers]]
