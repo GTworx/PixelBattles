@@ -27,8 +27,202 @@
          fallback would otherwise answer the probe with index.html, leaving a
          stale cached icon in place forever. Bump ?v= on every icon change. -->
     <title>PixelBattles</title>
+    <!-- Link previews (chat apps, social sites). The static-site build makes
+         these image URLs absolute (scrapers ignore relative ones); the card is
+         rendered from scripts/og-image.html by scripts/generate-og-image.mjs. -->
+    <meta
+      name="description"
+      content="Replay history's great battles in pixel art, then change the orders and see if history holds."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PixelBattles" />
+    <meta property="og:title" content="PixelBattles" />
+    <meta
+      property="og:description"
+      content="Replay history's great battles in pixel art, then change the orders and see if history holds."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PixelBattles: two pixel-art armies facing off" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-image.png" />
+    <!-- Opening splash: plain HTML + CSS so it paints before any script runs.
+         dismissSplash() (src/splash.ts) fades it out once the app is ready. -->
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        background-color: #1e1e2e;
+        background-image:
+          linear-gradient(#181828 2px, transparent 2px),
+          linear-gradient(90deg, #181828 2px, transparent 2px);
+        background-size: 48px 48px;
+        background-position: center;
+        font-family: 'FS Pixel Sans', monospace;
+        color: rgba(255, 255, 255, 0.9);
+        transition: opacity 0.4s steps(4);
+      }
+      #splash[data-state='leaving'] {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #splash .splash-logo {
+        width: 96px;
+        height: 96px;
+        border: 4px solid #746fff;
+        box-shadow: 4px 4px 0 #0a0a14;
+        image-rendering: pixelated;
+        animation: splash-hop 0.8s steps(2) infinite;
+      }
+      #splash .splash-title {
+        font-size: 48px;
+        letter-spacing: 1px;
+        text-shadow: 3px 3px 0 #0a0a14;
+        visibility: hidden;
+      }
+      #splash .splash-title span {
+        color: #746fff;
+      }
+      #splash.fonts-ready .splash-title,
+      #splash.fonts-ready .splash-status {
+        visibility: visible;
+      }
+      /* The track a character marches along while the bar fills. */
+      #splash .splash-track {
+        position: relative;
+        width: 240px;
+        padding-top: 64px;
+      }
+      #splash .splash-walker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 64px;
+        overflow: hidden;
+        animation: splash-march 2.4s linear infinite;
+      }
+      /* char_0.png at 2x: frames 32px wide, the right-facing row starts 128px down. */
+      #splash .splash-walker img {
+        display: block;
+        width: 224px;
+        height: 192px;
+        max-width: none;
+        margin-top: -128px;
+        image-rendering: pixelated;
+        animation: splash-walk 0.45s steps(3) infinite;
+      }
+      /* 8 segments of 25px + 4px gaps (228px inside the border and padding). */
+      #splash .splash-bar {
+        position: relative;
+        padding: 4px;
+        border: 2px solid #4a4a6a;
+        background: #181828;
+        box-shadow: 2px 2px 0 #0a0a14;
+      }
+      #splash .splash-bar::before,
+      #splash .splash-bar::after {
+        content: '';
+        display: block;
+        height: 12px;
+        background: repeating-linear-gradient(90deg, #2a2a3a 0 25px, transparent 25px 29px);
+      }
+      #splash .splash-bar::after {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        max-width: 228px;
+        background: repeating-linear-gradient(90deg, #746fff 0 25px, transparent 25px 29px);
+        animation: splash-fill 2.4s steps(9, end) infinite;
+      }
+      #splash .splash-status {
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.5);
+        visibility: hidden;
+      }
+      #splash .splash-status::after {
+        content: '...';
+        display: inline-block;
+        width: 3ch;
+        text-align: left;
+        overflow: hidden;
+        vertical-align: bottom;
+        animation: splash-dots 1.2s steps(4) infinite;
+      }
+      @keyframes splash-hop {
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      @keyframes splash-walk {
+        to {
+          transform: translateX(-96px);
+        }
+      }
+      @keyframes splash-march {
+        from {
+          transform: translateX(-8px);
+        }
+        to {
+          transform: translateX(216px);
+        }
+      }
+      @keyframes splash-fill {
+        from {
+          width: 0;
+        }
+        to {
+          width: 261px;
+        }
+      }
+      @keyframes splash-dots {
+        from {
+          width: 0;
+        }
+        to {
+          width: 4ch;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #splash *,
+        #splash *::after {
+          animation: none !important;
+        }
+        #splash .splash-bar::after {
+          width: 228px;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="splash" role="status" aria-label="Loading PixelBattles">
+      <img class="splash-logo" src="/icons/icon-256.png?v=2" alt="" />
+      <div class="splash-title">Pixel<span>Battles</span></div>
+      <div class="splash-track" aria-hidden="true">
+        <div class="splash-walker"><img src="/assets/characters/char_0.png" alt="" /></div>
+        <div class="splash-bar"></div>
+      </div>
+      <div class="splash-status">Loading</div>
+    </div>
+    <script>
+      // Hold the text until the pixel font is in, so it never flashes a fallback.
+      (function () {
+        var splash = document.getElementById('splash');
+        var show = function () {
+          splash.classList.add('fonts-ready');
+        };
+        if (!document.fonts) return show();
+        document.fonts.load('22px "FS Pixel Sans"').then(show, show);
+        setTimeout(show, 1500);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

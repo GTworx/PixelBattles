@@ -1,0 +1,168 @@
+<!doctype html>
+<!-- The link-preview card (og:image), 1200×630. Rendered to
+     webview-ui/public/og-image.png by scripts/generate-og-image.mjs; open it
+     in a browser to iterate on the design. Uses the app's own logo, font and
+     character sprites, so the card matches what the link opens. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PixelBattles preview card</title>
+    <style>
+      @font-face {
+        font-family: 'FS Pixel Sans';
+        src: url('../webview-ui/public/fonts/FSPixelSansUnicode-Regular.ttf') format('truetype');
+      }
+      :root {
+        --bg: #1e1e2e;
+        --bg-dark: #181828;
+        --border: #4a4a6a;
+        --accent: #6030ff;
+        --accent-bright: #746fff;
+        --shadow: #0a0a14;
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.55);
+        --ground: #2f3a2a;
+        --ground-dark: #263022;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--bg);
+        font-family: 'FS Pixel Sans', monospace;
+        color: var(--text);
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        /* A faint tile grid, like the office floor seen from above. */
+        background-image:
+          linear-gradient(var(--bg-dark) 2px, transparent 2px),
+          linear-gradient(90deg, var(--bg-dark) 2px, transparent 2px);
+        background-size: 48px 48px;
+        border: 8px solid var(--border);
+      }
+      .hero {
+        position: absolute;
+        top: 104px;
+        left: 72px;
+        right: 72px;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+      }
+      .logo {
+        width: 216px;
+        height: 216px;
+        border: 6px solid var(--accent-bright);
+        box-shadow: 8px 8px 0 var(--shadow);
+        image-rendering: pixelated;
+        flex-shrink: 0;
+      }
+      h1 {
+        font-size: 132px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 2px;
+        text-shadow: 6px 6px 0 var(--shadow);
+      }
+      h1 span {
+        color: var(--accent-bright);
+      }
+      .tagline {
+        margin-top: 22px;
+        font-size: 46px;
+        color: var(--accent-bright);
+        text-shadow: 3px 3px 0 var(--shadow);
+      }
+      .sub {
+        margin-top: 14px;
+        font-size: 34px;
+        color: var(--muted);
+      }
+      .field {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 168px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--ground) 0 24px,
+          var(--ground-dark) 24px 48px
+        );
+        border-top: 6px solid var(--shadow);
+      }
+      .army {
+        position: absolute;
+        bottom: 26px;
+        display: flex;
+        gap: 6px;
+      }
+      .army.left {
+        left: 64px;
+      }
+      .army.right {
+        right: 64px;
+      }
+      /* One 16×32 sprite frame at 4×: right-facing row, walk frame 1. */
+      .char {
+        width: 64px;
+        height: 128px;
+        background-size: 448px 384px;
+        background-position: 0 -256px;
+        image-rendering: pixelated;
+      }
+      .army.right .char {
+        transform: scaleX(-1);
+      }
+      .clash {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 60px;
+        color: var(--text);
+        text-shadow: 4px 4px 0 var(--shadow);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="hero">
+        <img class="logo" src="../webview-ui/public/icons/icon-256.png" alt="" />
+        <div>
+          <h1>Pixel<span>Battles</span></h1>
+          <p class="tagline">Replay history's great battles.</p>
+          <p class="sub">Then change the orders and see if history holds.</p>
+        </div>
+      </div>
+      <div class="field">
+        <div class="army left" id="left"></div>
+        <div class="clash">VS</div>
+        <div class="army right" id="right"></div>
+      </div>
+    </div>
+    <script>
+      const sprite = (n) => `../webview-ui/public/assets/characters/char_${n}.png`;
+      for (const [id, palettes] of [
+        ['left', [0, 2, 4, 1, 3, 5]],
+        ['right', [5, 3, 1, 4, 2, 0]],
+      ]) {
+        const army = document.getElementById(id);
+        for (const n of palettes) {
+          const el = document.createElement('div');
+          el.className = 'char';
+          el.style.backgroundImage = `url(${sprite(n)})`;
+          army.appendChild(el);
+        }
+      }
+    </script>
+  </body>
+</html>

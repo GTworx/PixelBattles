@@ -22,6 +22,25 @@ execSync('npm run build --workspace webview-ui', {
   env: { ...process.env, VITE_STATIC_SITE: '1' },
 });
 
+// Link previews: scrapers ignore relative og:image URLs, so point them at the
+// deployed site. Netlify sets URL to the site's primary address; SITE_URL
+// overrides it (e.g. a custom domain). Without either, the tags stay relative.
+const siteUrl = (process.env.SITE_URL || process.env.URL || '').replace(/\/$/, '');
+if (siteUrl) {
+  const indexPath = path.join(out, 'index.html');
+  const html = fs
+    .readFileSync(indexPath, 'utf8')
+    .replace(
+      /(<meta (?:property|name)="(?:og|twitter):image" content=")\.?\/([^"]+)"/g,
+      `$1${siteUrl}/$2"`,
+    )
+    .replace(
+      '<meta property="og:type"',
+      `<meta property="og:url" content="${siteUrl}/" />\n    <meta property="og:type"`,
+    );
+  fs.writeFileSync(indexPath, html);
+}
+
 fs.rmSync(battlesOut, { recursive: true, force: true });
 fs.cpSync(battlesSrc, battlesOut, { recursive: true });
 
