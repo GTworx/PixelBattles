@@ -73,6 +73,11 @@
         opacity: 0;
         pointer-events: none;
       }
+      /* Freeze the full bar while fading, so it never loops back to empty. */
+      #splash[data-state='leaving'] *,
+      #splash[data-state='leaving'] *::after {
+        animation-play-state: paused;
+      }
       #splash .splash-logo {
         width: 96px;
         height: 96px;
@@ -107,7 +112,7 @@
         width: 32px;
         height: 64px;
         overflow: hidden;
-        animation: splash-march 2.4s linear infinite;
+        animation: splash-march 1.6s linear infinite;
       }
       /* char_0.png at 2x: frames 32px wide, the right-facing row starts 128px down. */
       #splash .splash-walker img {
@@ -140,7 +145,7 @@
         left: 4px;
         max-width: 228px;
         background: repeating-linear-gradient(90deg, #746fff 0 25px, transparent 25px 29px);
-        animation: splash-fill 2.4s steps(9, end) infinite;
+        animation: splash-fill 1.6s steps(9, end) infinite;
       }
       #splash .splash-status {
         font-size: 22px;
@@ -213,8 +218,10 @@
     </div>
     <script>
       // Hold the text until the pixel font is in, so it never flashes a fallback.
+      // shownAt: dismissSplash() keeps the splash up for one full bar cycle from here.
       (function () {
         var splash = document.getElementById('splash');
+        splash.dataset.shownAt = String(performance.now());
         var show = function () {
           splash.classList.add('fonts-ready');
         };

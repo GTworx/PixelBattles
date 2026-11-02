@@ -674,7 +674,7 @@ export const BATTLE_CHAT_HISTORY_MAX = 12;
 export const BATTLE_OLLAMA_SETTINGS_KEY = 'pixelBattles.ollama';
 
 // ── Opening splash (index.html) ─────────────────────────────────
-/** The splash stays up at least this long after navigation, so it never just flickers. */
-export const SPLASH_MIN_VISIBLE_MS = 900;
+/** The splash stays up at least this long after it first appears: until its loading bar (a 1.6 s loop in index.html) shows full. */
+export const SPLASH_MIN_VISIBLE_MS = 1500;
 /** Matches the splash's opacity transition in index.html (plus slack); removes it if transitionend never fires. */
 export const SPLASH_REMOVE_FALLBACK_MS = 600;

@@ -13,6 +13,7 @@ export function dismissSplash(): void {
     splash.remove();
     return;
   }
+  const shownAt = Number(splash.dataset.shownAt) || 0;
   splash.dataset.state = 'waiting';
   const remove = () => splash.remove();
   setTimeout(
@@ -21,6 +22,6 @@ export function dismissSplash(): void {
       splash.addEventListener('transitionend', remove, { once: true });
       setTimeout(remove, SPLASH_REMOVE_FALLBACK_MS);
     },
-    Math.max(0, SPLASH_MIN_VISIBLE_MS - performance.now()),
+    Math.max(0, shownAt + SPLASH_MIN_VISIBLE_MS - performance.now()),
   );
 }
