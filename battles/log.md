@@ -53,3 +53,14 @@ or standard — Athenian owl, Achaemenid falcon, Spartan lambda, Vergina sun, si
 eagle, Wessex wyvern, Norman lions, Seljuk bow, Chi-Rho labarum, Palaiologan cross, English royal
 arms, French fleurs-de-lis, Ottoman crescent, French tricolour, Union Flag, Soviet red flag and the
 Wehrmacht Balkenkreuz. Pre-modern ones are the emblems the sources tie to each army, not national flags.
+
+## [2026-11-02] ingest | Battle of Preveza (1538)
+
+Added `battles/preveza` and `scenarios/preveza.json`, the simulator's first naval battle: a sea map of
+the Ionian coast with Preveza, Actium, the narrow mouth of the Gulf of Arta and Lefkada (the fighting
+off Sessola is drawn closer than it was), and nine phases from Grimani's failed landing through the
+stand-off and Barbarossa's sortie to the Holy League's night withdrawal. New pages:
+`commanders/hayreddin-barbarossa`, `commanders/andrea-doria`, `concepts/galley-warfare`; Preveza
+added to `concepts/janissaries`. New flag `burgundy-cross` (the Habsburg saltire) for the Holy League.
+Sources: Wikipedia's Preveza, Barbarossa, Doria and Galley articles; the three contemporary
+accounts (Venetian-Papal, Hispano-Imperial, Hospitaller) disagree, and the pages say so.

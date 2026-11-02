@@ -1,0 +1,976 @@
+{
+  "id": "preveza",
+  "title": "Battle of Preveza",
+  "year": "1538",
+  "date": "28 September 1538",
+  "location": "Off Preveza and the mouth of the Gulf of Arta, Ionian Sea (north-western Greece)",
+  "wiki": "wiki/battles/preveza.md",
+  "summary": "In September 1538 Hayreddin Barbarossa's Ottoman fleet sheltered inside the Gulf of Arta while the much larger Holy League armada of Venice, the Papacy, Habsburg Spain, Genoa and the Knights of Malta, under Andrea Doria, waited outside. When Doria drew off south, Barbarossa came out, caught the Christian sailing ships becalmed, and the divided League fleet withdrew in the night, leaving the Ottomans the dominant naval power in the Mediterranean for over thirty years.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 700 m (the battle off Sessola is drawn closer than it was)",
+    "north": "up",
+    "terrain": [
+      "===================b.T.T^^^^^.~...^MMMMM^^~^MMMM",
+      "===================bT.T.^^^^^.~...^MMMMM^^~^MMMM",
+      "==================bT.T.T^^^^^..~..^MMMMM^~^^MMMM",
+      "==================b.T.T.^^^^^..~..^MMMMM^~^^MMMM",
+      "==================bT.T.T^^^^^..~..^^^^^^^~^^^^^^",
+      "===================b..,.^,^^^...~.^^^^^^~^^^^^^^",
+      "===================b.,..,.......~.......~.......",
+      "===================b...,..,.....~.......~...cc..",
+      "===================b..,rr,......~ssss===========",
+      "====================b,.rr...sss=================",
+      "====================b..,..b=====================",
+      "====================b.,..,b=====================",
+      "=====================bcc,.b=====================",
+      "=====================bcccbb=====================",
+      "================================================",
+      "================================================",
+      "======================bccbb=====================",
+      "====================bb....b=====================",
+      "===================b...........=================",
+      "===================b...........==========^T^^^^T",
+      "==================b...............cc.....^^^^T^^",
+      "==================b.ss^T^^^^T^^^^T^^^^T^^^^T^^^^",
+      "================bbccss^^^^T^^^^T^^^^T^^^^T^^^^T^",
+      "==============bb....ss^^T^^^^T^^^^T^^MMMMMMMMMMM",
+      "=============b^^^^^^ssT^^^^T^^^^T^^^^MMMMMMMMMMM",
+      "============b.^MMM^^ss^^^T^^^^T^^^^T^MMMMMMMMMMM",
+      "============b.^MMM^^ss^T^^^^T^^^^T^^^MMMMMMMMMMM",
+      "============b.^MMM^^ss^^^^T^^^^T^^^^TMMMMMMMMMMM",
+      "=============b^MMM^^ss^^T^^^^T^^^^T^^MMMMMMMMMMM",
+      "=============b^^^^^^ssT^^^^T^^^^T^^^^MMMMMMMMMMM"
+    ],
+    "labels": [
+      {
+        "text": "Ionian Sea",
+        "col": 3,
+        "row": 17
+      },
+      {
+        "text": "Gulf of Arta",
+        "col": 36,
+        "row": 13
+      },
+      {
+        "text": "Preveza",
+        "col": 21,
+        "row": 11
+      },
+      {
+        "text": "Actium",
+        "col": 22,
+        "row": 17
+      },
+      {
+        "text": "Nicopolis (ruins)",
+        "col": 21,
+        "row": 7
+      },
+      {
+        "text": "Epirus",
+        "col": 25,
+        "row": 2
+      },
+      {
+        "text": "Arta",
+        "col": 43,
+        "row": 6
+      },
+      {
+        "text": "Vonitsa",
+        "col": 33,
+        "row": 21
+      },
+      {
+        "text": "Acarnania",
+        "col": 27,
+        "row": 24
+      },
+      {
+        "text": "Lefkada",
+        "col": 14,
+        "row": 23
+      },
+      {
+        "text": "To Corfu",
+        "col": 1,
+        "row": 0
+      },
+      {
+        "text": "To Sessola",
+        "col": 2,
+        "row": 29
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Ottoman Empire",
+      "commander": "Hayreddin Barbarossa",
+      "color": "#2e8b57",
+      "flag": "ottoman"
+    },
+    {
+      "id": "B",
+      "name": "Holy League",
+      "commander": "Andrea Doria",
+      "color": "#a8323a",
+      "flag": "burgundy-cross"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "ott-barbarossa",
+      "side": "A",
+      "name": "Barbarossa's centre (with Sinan, Cafer, Şaban and Hasan Reis)",
+      "type": "ships",
+      "strength": 3500,
+      "col": 1,
+      "row": 26,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Hayreddin Barbarossa",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "ott-seydi",
+      "side": "A",
+      "name": "Left wing galleys (Seydi Ali Reis)",
+      "type": "ships",
+      "strength": 2500,
+      "col": 0,
+      "row": 28,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Seydi Ali Reis",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "ott-salih",
+      "side": "A",
+      "name": "Right wing galleys (Salih Reis)",
+      "type": "ships",
+      "strength": 2500,
+      "col": 3,
+      "row": 28,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Salih Reis",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "ott-rear",
+      "side": "A",
+      "name": "Murat Reis's squadron, later the rear wing of large galliots under Turgut Reis",
+      "type": "ships",
+      "strength": 1500,
+      "col": 29,
+      "row": 14,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Turgut Reis"
+    },
+    {
+      "id": "ott-preveza",
+      "side": "A",
+      "name": "Preveza fortress garrison and coastal guns",
+      "type": "artillery",
+      "strength": 1000,
+      "col": 23,
+      "row": 12,
+      "facing": "left",
+      "morale": 80
+    },
+    {
+      "id": "ott-actium",
+      "side": "A",
+      "name": "Troops landed at Actium (Sinan Reis's proposal)",
+      "type": "infantry",
+      "strength": 1000,
+      "col": 25,
+      "row": 17,
+      "facing": "left",
+      "morale": 75,
+      "enterPhase": "p4"
+    },
+    {
+      "id": "hl-grimani",
+      "side": "B",
+      "name": "Papal galleys (Marco Grimani)",
+      "type": "ships",
+      "strength": 7000,
+      "col": 11,
+      "row": 12,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Marco Grimani"
+    },
+    {
+      "id": "hl-landing",
+      "side": "B",
+      "name": "Grimani's landing party",
+      "type": "infantry",
+      "strength": 1500,
+      "col": 20,
+      "row": 7,
+      "facing": "right",
+      "morale": 65,
+      "commander": "Marco Grimani"
+    },
+    {
+      "id": "hl-doria",
+      "side": "B",
+      "name": "Spanish-Genoese galleys (Andrea Doria)",
+      "type": "ships",
+      "strength": 15000,
+      "col": 1,
+      "row": 2,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Andrea Doria",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "hl-cappello",
+      "side": "B",
+      "name": "Venetian galleys (Vincenzo Cappello)",
+      "type": "ships",
+      "strength": 18000,
+      "col": 0,
+      "row": 5,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Vincenzo Cappello",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "hl-hospitallers",
+      "side": "B",
+      "name": "Knights of Malta galleys (Paolo Simeone)",
+      "type": "ships",
+      "strength": 1000,
+      "col": 3,
+      "row": 1,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Paolo Simeone",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "hl-sail",
+      "side": "B",
+      "name": "Carracks and galleons (Francesco Doria, Francisco Sarmiento)",
+      "type": "ships",
+      "strength": 12000,
+      "col": 0,
+      "row": 8,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Francesco Doria",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "hl-galleon",
+      "side": "B",
+      "name": "Galeone di Venezia (Alessandro Condalmiero)",
+      "type": "ships",
+      "strength": 800,
+      "col": 0,
+      "row": 11,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Alessandro Condalmiero",
+      "enterPhase": "p3"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Grimani's landing at Preveza",
+      "time": "early September 1538",
+      "durationSec": 8,
+      "narration": "Before Doria arrives, the Papal fleet under Marco Grimani reaches the Ionian coast and tries to land troops near the fortress of Preveza, which guards the narrow mouth of the Gulf of Arta. Ottoman forces under Murat Reis catch the landing party and drive it back to the boats.",
+      "orders": [
+        {
+          "unit": "hl-grimani",
+          "action": "move",
+          "to": [
+            17,
+            11
+          ]
+        },
+        {
+          "unit": "hl-landing",
+          "action": "attack",
+          "target": "ott-preveza"
+        },
+        {
+          "unit": "ott-preveza",
+          "action": "bombard",
+          "target": "hl-landing"
+        },
+        {
+          "unit": "ott-rear",
+          "action": "bombard",
+          "target": "hl-landing"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "hl-landing",
+          "strength": 1300,
+          "morale": 35
+        },
+        {
+          "unit": "ott-preveza",
+          "strength": 990
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Barbarossa reaches Preveza",
+      "time": "mid-September 1538",
+      "durationSec": 10,
+      "narration": "Grimani re-embarks and falls back on Corfu, where the Holy League is gathering. Hayreddin Barbarossa, coming up from Kos by way of Kefalonia, which he has taken, brings the main Ottoman fleet into the Gulf of Arta, where the shores are Ottoman and the narrow mouth can be held against any fleet.",
+      "orders": [
+        {
+          "unit": "hl-landing",
+          "action": "retreat",
+          "to": [
+            19,
+            6
+          ]
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "retreat",
+          "to": [
+            1,
+            6
+          ]
+        },
+        {
+          "unit": "ott-barbarossa",
+          "action": "move",
+          "to": [
+            32,
+            13
+          ]
+        },
+        {
+          "unit": "ott-salih",
+          "action": "move",
+          "to": [
+            31,
+            11
+          ]
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "move",
+          "to": [
+            31,
+            16
+          ]
+        },
+        {
+          "unit": "ott-rear",
+          "action": "move",
+          "to": [
+            35,
+            14
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "hl-landing",
+          "strength": 1250,
+          "status": "withdrawn"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The Holy League arrives off the gulf",
+      "time": "22-25 September 1538",
+      "durationSec": 10,
+      "narration": "Andrea Doria joins the Venetian and Papal fleets on 22 September with the Spanish-Genoese galleys, and on 25 September the whole armada, perhaps 130-170 galleys and 50-140 sailing ships, stations itself in front of the mouth of the gulf. It is the largest Christian fleet yet assembled against the Ottomans, under divided command.",
+      "orders": [
+        {
+          "unit": "hl-doria",
+          "action": "move",
+          "to": [
+            14,
+            12
+          ]
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "move",
+          "to": [
+            13,
+            16
+          ]
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "move",
+          "to": [
+            11,
+            10
+          ]
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "move",
+          "to": [
+            16,
+            14
+          ]
+        },
+        {
+          "unit": "hl-sail",
+          "action": "move",
+          "to": [
+            7,
+            13
+          ]
+        },
+        {
+          "unit": "hl-galleon",
+          "action": "move",
+          "to": [
+            8,
+            17
+          ]
+        },
+        {
+          "unit": "ott-barbarossa",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-salih",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-rear",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-preveza",
+          "action": "hold"
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p4",
+      "title": "Stand-off at the mouth",
+      "time": "25-27 September 1538",
+      "durationSec": 10,
+      "narration": "Neither admiral can strike. Barbarossa cannot come out without being overwhelmed; Doria cannot force a mouth a few hundred metres wide under the fortress guns, and his sailing ships risk being driven onto a hostile shore. A Spanish landing to silence the Ottoman batteries is debated and rejected. Following Sinan Reis's advice, Ottoman troops land at Actium; an exchange of artillery stops their entrenching, the only fighting of these days.",
+      "orders": [
+        {
+          "unit": "hl-hospitallers",
+          "action": "bombard",
+          "target": "ott-actium"
+        },
+        {
+          "unit": "ott-preveza",
+          "action": "bombard",
+          "target": "hl-hospitallers"
+        },
+        {
+          "unit": "ott-actium",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-doria",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-actium",
+          "strength": 960,
+          "morale": 70
+        },
+        {
+          "unit": "hl-hospitallers",
+          "strength": 985
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Doria turns south",
+      "time": "night of 27-28 September 1538",
+      "durationSec": 10,
+      "narration": "During the night Doria takes the fleet about 30 miles south toward Sessola, near Lefkada, threatening Lepanto and the Ottoman positions beyond to lure Barbarossa out of the gulf. The oared galleys pull ahead; the sailing ships, dependent on the wind, fall behind.",
+      "orders": [
+        {
+          "unit": "hl-doria",
+          "action": "move",
+          "to": [
+            6,
+            24
+          ]
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "move",
+          "to": [
+            4,
+            22
+          ]
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "move",
+          "to": [
+            3,
+            26
+          ]
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "move",
+          "to": [
+            8,
+            23
+          ]
+        },
+        {
+          "unit": "hl-sail",
+          "action": "move",
+          "to": [
+            8,
+            19
+          ]
+        },
+        {
+          "unit": "hl-galleon",
+          "action": "move",
+          "to": [
+            11,
+            21
+          ]
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p6",
+      "title": "Barbarossa sorties",
+      "time": "28 September 1538, morning",
+      "durationSec": 10,
+      "narration": "Barbarossa takes the bait halfway: he brings the fleet out through the strait in a Y-shaped line, Seydi Ali Reis on the left, Salih Reis on the right, himself in the centre and Turgut Reis's large galliots behind, and keeps it close under the Ottoman shore. Doria turns his fleet back to meet him.",
+      "orders": [
+        {
+          "unit": "ott-rear",
+          "action": "move",
+          "to": [
+            16,
+            14
+          ]
+        },
+        {
+          "unit": "ott-barbarossa",
+          "action": "move",
+          "to": [
+            14,
+            17
+          ]
+        },
+        {
+          "unit": "ott-salih",
+          "action": "move",
+          "to": [
+            12,
+            16
+          ]
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "move",
+          "to": [
+            16,
+            19
+          ]
+        },
+        {
+          "unit": "hl-doria",
+          "action": "move",
+          "to": [
+            5,
+            22
+          ]
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "move",
+          "to": [
+            3,
+            21
+          ]
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "move",
+          "to": [
+            3,
+            24
+          ]
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "move",
+          "to": [
+            7,
+            22
+          ]
+        }
+      ],
+      "outcomes": []
+    },
+    {
+      "id": "p7",
+      "title": "The becalmed sailing ships",
+      "time": "28 September 1538, midday to afternoon",
+      "durationSec": 12,
+      "narration": "The wind dies and the Christian sailing ships are left immobile, ahead of their galleys. The Ottoman galleys, independent of the wind, row in against them. The great Venetian galleon under Condalmiero, stranded four miles off the coast, beats off attack after attack with its heavy guns even after Barbarossa's flagship joins in; Villegas de Figueroa's galleon is overwhelmed and sinks, and Munguía's ship is dismasted. Doria's galleys, held back by the argument among the League's admirals, do not come to their aid.",
+      "orders": [
+        {
+          "unit": "ott-barbarossa",
+          "action": "attack",
+          "target": "hl-sail"
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "bombard",
+          "target": "hl-sail"
+        },
+        {
+          "unit": "ott-salih",
+          "action": "attack",
+          "target": "hl-galleon"
+        },
+        {
+          "unit": "ott-rear",
+          "action": "move",
+          "to": [
+            15,
+            16
+          ]
+        },
+        {
+          "unit": "hl-sail",
+          "action": "bombard",
+          "target": "ott-barbarossa"
+        },
+        {
+          "unit": "hl-galleon",
+          "action": "bombard",
+          "target": "ott-salih"
+        },
+        {
+          "unit": "hl-doria",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "hl-sail",
+          "strength": 10600,
+          "morale": 40
+        },
+        {
+          "unit": "hl-galleon",
+          "strength": 650,
+          "morale": 60
+        },
+        {
+          "unit": "ott-barbarossa",
+          "strength": 3400
+        },
+        {
+          "unit": "ott-salih",
+          "strength": 2350
+        },
+        {
+          "unit": "ott-seydi",
+          "strength": 2450
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Doria's feints",
+      "time": "28 September 1538, late afternoon",
+      "durationSec": 8,
+      "narration": "Doria twice makes as if to attack, hoping to draw Barbarossa away from the coast and catch him between the galleys and the sailing ships. Barbarossa will not leave the shelter of his shore. Cappello and Grimani board Doria's flagship to demand battle; the Venetian and Papal galleys hang back.",
+      "orders": [
+        {
+          "unit": "hl-doria",
+          "action": "move",
+          "to": [
+            9,
+            21
+          ]
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "move",
+          "to": [
+            10,
+            20
+          ]
+        },
+        {
+          "unit": "hl-sail",
+          "action": "retreat",
+          "to": [
+            5,
+            18
+          ]
+        },
+        {
+          "unit": "hl-galleon",
+          "action": "retreat",
+          "to": [
+            6,
+            20
+          ]
+        },
+        {
+          "unit": "ott-barbarossa",
+          "action": "retreat",
+          "to": [
+            15,
+            17
+          ]
+        },
+        {
+          "unit": "ott-salih",
+          "action": "retreat",
+          "to": [
+            13,
+            15
+          ]
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "hold"
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "hl-cappello",
+          "morale": 45
+        },
+        {
+          "unit": "hl-grimani",
+          "morale": 45
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "The Holy League withdraws",
+      "time": "night of 28 September 1538",
+      "durationSec": 10,
+      "narration": "Before nightfall Doria orders the whole fleet away. Under rain, with lanterns put out, the armada slips away toward Corfu; the Venetian galleon and the damaged ships limp after it. The Ottomans keep every ship they brought; Barbarossa is left master of the Ionian Sea.",
+      "orders": [
+        {
+          "unit": "hl-doria",
+          "action": "retreat",
+          "to": [
+            0,
+            7
+          ]
+        },
+        {
+          "unit": "hl-cappello",
+          "action": "retreat",
+          "to": [
+            0,
+            4
+          ]
+        },
+        {
+          "unit": "hl-grimani",
+          "action": "retreat",
+          "to": [
+            0,
+            10
+          ]
+        },
+        {
+          "unit": "hl-hospitallers",
+          "action": "retreat",
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "hl-sail",
+          "action": "retreat",
+          "to": [
+            0,
+            13
+          ]
+        },
+        {
+          "unit": "hl-galleon",
+          "action": "retreat",
+          "to": [
+            0,
+            16
+          ]
+        },
+        {
+          "unit": "ott-barbarossa",
+          "action": "move",
+          "to": [
+            13,
+            14
+          ]
+        },
+        {
+          "unit": "ott-salih",
+          "action": "move",
+          "to": [
+            11,
+            12
+          ]
+        },
+        {
+          "unit": "ott-seydi",
+          "action": "move",
+          "to": [
+            14,
+            17
+          ]
+        },
+        {
+          "unit": "ott-rear",
+          "action": "move",
+          "to": [
+            16,
+            14
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "hl-doria",
+          "strength": 14700,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "hl-cappello",
+          "strength": 17800,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "hl-grimani",
+          "status": "withdrawn"
+        },
+        {
+          "unit": "hl-hospitallers",
+          "status": "withdrawn"
+        },
+        {
+          "unit": "hl-sail",
+          "strength": 10500,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "hl-galleon",
+          "status": "withdrawn"
+        },
+        {
+          "unit": "ott-barbarossa",
+          "morale": 95
+        },
+        {
+          "unit": "ott-salih",
+          "morale": 95
+        },
+        {
+          "unit": "ott-seydi",
+          "morale": 95
+        },
+        {
+          "unit": "ott-rear",
+          "morale": 95
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Holy League fleet withdrew to Corfu on the night of 28 September 1538 after a day of manoeuvre in which only its becalmed sailing ships were seriously engaged. Christian sources admit the loss of two galleys and five sailing ships; Turkish sources claim far more (128 ships and 3,000 prisoners). The Ottomans lost no ships, with about 400 killed and 800 wounded. The defeat broke the League apart; Venice made a separate peace in 1540, and the Ottomans dominated the Mediterranean until Lepanto in 1571.",
+    "casualties": {
+      "A": "~400 killed, ~800 wounded; no ships lost (Ottoman figures)",
+      "B": "2 galleys and 5 sailing ships lost (Italian and Spanish sources); Turkish sources claim 128 ships and ~3,000 prisoners"
+    }
+  },
+  "sources": [
+    {
+      "title": "Battle of Preveza — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Preveza"
+    },
+    {
+      "title": "Hayreddin Barbarossa — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hayreddin_Barbarossa"
+    },
+    {
+      "title": "Andrea Doria — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Andrea_Doria"
+    },
+    {
+      "title": "Galley — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Galley"
+    }
+  ]
+}

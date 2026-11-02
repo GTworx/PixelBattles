@@ -236,6 +236,23 @@ export const FLAGS: Record<string, SpriteData> = {
     ],
     { r: '#c8102e', w: WHITE },
   ),
+  // The ragged red saltire the Habsburg fleets flew; Doria commanded the Holy
+  // League for Charles V.
+  'burgundy-cross': art(
+    [
+      'rrwwwwwwwwwwwwrr',
+      'wrrrwwwwwwwwrrrw',
+      'wwrrrwrwwwwrrrww',
+      'wwwwrrrwwrrrwwww',
+      'wwwwwrrrrrrwwwww',
+      'wwwwwrrrrrrwwwww',
+      'wwwwrrrwwrrrwwww',
+      'wwrrrwwwwrwrrrww',
+      'wrrrwwwwwwwwrrrw',
+      'rrwwwwwwwwwwwwrr',
+    ],
+    { r: RED, w: WHITE },
+  ),
   soviet: art(
     [
       'rryrrrrrrrrrrrrr',

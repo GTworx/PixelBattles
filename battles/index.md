@@ -5,7 +5,7 @@
 > Conventions: [SCHEMA.md](SCHEMA.md). History of changes: [log.md](log.md).
 > Raw source: [OldBatles1.md](OldBatles1.md) (immutable).
 
-## Battles (10)
+## Battles (11)
 
 | Battle                                                   | Date                                                                                      | Victor                            | Scenario                                             | Summary                                                                                                                                                                                                                                        |
 | -------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,14 +17,16 @@
 | [Battle of Manzikert](wiki/battles/manzikert.md)         | 26 August 1071                                                                            | Seljuk Empire                     | [manzikert.json](scenarios/manzikert.json)           | On 26 August 1071 the mobile Seljuk army of Sultan Alp Arslan destroyed the field army of the Byzantine emperor Romanos IV Diogenes near Manzikert in the Armenian borderlands.                                                                |
 | [Battle of Agincourt](wiki/battles/agincourt.md)         | 25 October 1415                                                                           | England                           | [agincourt.json](scenarios/agincourt.json)           | On St Crispin's Day, 25 October 1415, Henry V's small, sick and hungry English army, perhaps four-fifths of it longbowmen, destroyed a much larger French army in a narrow ploughed field between two woods.                                   |
 | [Fall of Constantinople](wiki/battles/constantinople.md) | 6 April - 29 May 1453                                                                     | Ottoman Empire                    | [constantinople.json](scenarios/constantinople.json) | After 53 days of siege, the 21-year-old Sultan Mehmed II took Constantinople on 29 May 1453 with a vast army, a fleet and the largest cannon yet used in war, ending the Byzantine Empire and the last vestige of the Roman state in the East. |
+| [Battle of Preveza](wiki/battles/preveza.md)             | 28 September 1538                                                                         | Ottoman Empire                    | [preveza.json](scenarios/preveza.json)               | On 28 September 1538 the Ottoman fleet of hayreddin-barbarossa, which had sheltered inside the Gulf of Arta, came out against the much larger armada of the Holy League (Venice, the Papacy, Habsburg Sp                                       |
 | [Battle of Waterloo](wiki/battles/waterloo.md)           | 18 June 1815                                                                              | Seventh Coalition                 | [waterloo.json](scenarios/waterloo.json)             | On Sunday 18 June 1815, Napoleon's Armée du Nord attacked the Duke of Wellington's Anglo-allied army on the Mont-Saint-Jean ridge south of Waterloo.                                                                                           |
 | [Battle of Stalingrad](wiki/battles/stalingrad.md)       | 23 August 1942 – 2 February 1943                                                          | Soviet Union                      | [stalingrad.json](scenarios/stalingrad.json)         | Fought between 23 August 1942 and 2 February 1943, Stalingrad was the largest and deadliest urban battle in military history and the turning point of the war in Europe.                                                                       |
 
-## Commanders (55)
+## Commanders (57)
 
 - [Alan the Red](wiki/commanders/alan-the-red.md) — Brittany / Duchy of Normandy, dates not established in the sources consulted; battles: [[hastings]]
 - [Alexander III of Macedon (Alexander the Great)](wiki/commanders/alexander-the-great.md) — Macedonia, 356–323 BCE; battles: [[gaugamela]]
 - [Alp Arslan](wiki/commanders/alp-arslan.md) — Seljuk Empire, 20 January 1029 (probable) - 24 November 1072; battles: [[manzikert]]
+- [Andrea Doria](wiki/commanders/andrea-doria.md) — Republic of Genoa; France (to 1528); Charles V (Habsburg Spain and the Holy Roman Empire), 30 November 1466 – 25 November 1560; battles: [[preveza]]
 - [Andrey Yeryomenko](wiki/commanders/andrey-yeryomenko.md) — Soviet Union, 1892-1970; battles: [[stalingrad]]
 - [Andronikos Doukas](wiki/commanders/andronikos-doukas.md) — Byzantine Empire, died 14 October 1077; battles: [[manzikert]]
 - [Artaphernes (son of the satrap of Sardis)](wiki/commanders/artaphernes.md) — Achaemenid Empire (Persia), unknown; battles: [[marathon]]
@@ -51,6 +53,7 @@
 - [Hannibal Barca](wiki/commanders/hannibal-barca.md) — Carthage, 247–c. 183 BCE; battles: [[cannae]]
 - [Harold II Godwinson](wiki/commanders/harold-ii-godwinson.md) — Kingdom of England, c. 1022 - 14 October 1066; battles: [[hastings]]
 - [Hasdrubal (cavalry commander at Cannae)](wiki/commanders/hasdrubal.md) — Carthage, unknown; battles: [[cannae]]
+- [Hayreddin Barbarossa (Hızır Reis)](wiki/commanders/hayreddin-barbarossa.md) — Ottoman Empire (Beylerbey of Algiers; Kapudan Pasha), c. 1466/1483 – 4 July 1546; battles: [[preveza]]
 - [Henry V of England](wiki/commanders/henry-v.md) — Kingdom of England, 1386-1422; battles: [[agincourt]]
 - [Hermann Hoth](wiki/commanders/hermann-hoth.md) — Nazi Germany, 1885-1971; battles: [[stalingrad]]
 - [Hydarnes (commander of the Immortals)](wiki/commanders/hydarnes.md) — Achaemenid Empire (Persia), unknown; battles: [[thermopylae]]
@@ -78,39 +81,40 @@
 - [Xerxes I](wiki/commanders/xerxes-i.md) — Achaemenid Empire (Persia), c. 518 - 465 BCE; battles: [[thermopylae]]
 - [Zaganos Pasha](wiki/commanders/zaganos-pasha.md) — Ottoman Empire, dates not verified; battles: [[constantinople]]
 
-## Concepts (34)
+## Concepts (35)
 
-- [Combined arms](wiki/concepts/combined-arms.md) — Battles: [[waterloo]], [[stalingrad]]
-- [Companion cavalry](wiki/concepts/companion-cavalry.md) — Battles: [[gaugamela]]
-- [Defensive terrain and funnelling](wiki/concepts/defensive-terrain.md) — Battles: [[agincourt]]
-- [Defile defence](wiki/concepts/defile-defence.md) — Battles: [[thermopylae]]
-- [Double envelopment](wiki/concepts/double-envelopment.md) — Battles: [[marathon]], [[stalingrad]], [[cannae]]
-- [Encirclement (Kessel)](wiki/concepts/encirclement.md) — Battles: [[stalingrad]]
-- [English longbow](wiki/concepts/english-longbow.md) — Battles: [[agincourt]]
-- [Feigned retreat](wiki/concepts/feigned-retreat.md) — Battles: [[hastings]], [[manzikert]]
-- [Gunpowder siege artillery](wiki/concepts/gunpowder-siege-artillery.md) — Battles: [[constantinople]]
-- [Heavy cavalry](wiki/concepts/heavy-cavalry.md) — Battles: [[hastings]], [[waterloo]]
-- [Hoplite](wiki/concepts/hoplite.md) — Battles: [[marathon]], [[thermopylae]]
-- [Hoplite phalanx](wiki/concepts/hoplite-phalanx.md) — Battles: [[marathon]], [[thermopylae]], [[gaugamela]]
-- [Horse archers](wiki/concepts/horse-archers.md) — Battles: [[manzikert]]
-- [Housecarls](wiki/concepts/housecarls.md) — Battles: [[hastings]]
-- [The Immortals](wiki/concepts/immortals.md) — Battles: [[thermopylae]], [[gaugamela]]
-- [Imperial Guard](wiki/concepts/imperial-guard.md) — Battles: [[waterloo]]
-- [Infantry square](wiki/concepts/infantry-square.md) — Battles: [[waterloo]]
-- [Janissaries](wiki/concepts/janissaries.md) — Battles: [[constantinople]]
-- [Macedonian phalanx](wiki/concepts/macedonian-phalanx.md) — Battles: [[gaugamela]]
-- [Men-at-arms](wiki/concepts/men-at-arms.md) — Battles: [[agincourt]]
-- [Napoleonic artillery](wiki/concepts/napoleonic-artillery.md) — Battles: [[waterloo]]
-- [Numidian cavalry](wiki/concepts/numidian-cavalry.md) — Battles: [[cannae]]
-- [Operation Uranus](wiki/concepts/operation-uranus.md) — Battles: [[stalingrad]]
-- [Plate armour](wiki/concepts/plate-armour.md) — Battles: [[agincourt]]
-- [Reverse slope defence](wiki/concepts/reverse-slope-defence.md) — Battles: [[waterloo]]
-- [Roman legion (manipular system)](wiki/concepts/roman-manipular-legion.md) — Battles: [[cannae]]
-- [Scythed chariots](wiki/concepts/scythed-chariots.md) — Battles: [[gaugamela]]
-- [Shield wall](wiki/concepts/shield-wall.md) — Battles: [[hastings]]
-- [Siege warfare](wiki/concepts/siege-warfare.md) — Battles: [[constantinople]]
-- [Tagmata](wiki/concepts/tagmata.md) — Battles: [[manzikert]]
-- [Theodosian Walls](wiki/concepts/theodosian-walls.md) — Battles: [[constantinople]]
-- [Urban warfare](wiki/concepts/urban-warfare.md) — Battles: [[stalingrad]]
-- [Varangian Guard](wiki/concepts/varangian-guard.md) — Battles: [[manzikert]]
-- [War elephants](wiki/concepts/war-elephants.md) — Battles: [[gaugamela]]
+- [Combined arms](wiki/concepts/combined-arms.md) — Using infantry, artillery, cavalry or armour, engineers and air power together so that each covers the other's weakness. Battles: [[waterloo]], [[stalingrad]]
+- [Companion cavalry](wiki/concepts/companion-cavalry.md) — The Macedonian aristocratic heavy cavalry (hetairoi), the Macedonian heavy cavalry that alexander-the-great led on the right wing at Gaugamela. Battles: [[gaugamela]]
+- [Defensive terrain and funnelling](wiki/concepts/defensive-terrain.md) — Choosing ground that forces a larger enemy onto a narrow front and denies flank manoeuvre. Battles: [[agincourt]]
+- [Defile defence](wiki/concepts/defile-defence.md) — Holding a narrow pass so that a numerically superior enemy can only attack on a front as wide as the pass. Battles: [[thermopylae]]
+- [Double envelopment](wiki/concepts/double-envelopment.md) — A manoeuvre in which both wings of an army turn inward to attack the enemy's centre or rear, trapping it from two sides. Battles: [[marathon]], [[stalingrad]], [[cannae]]
+- [Encirclement (Kessel)](wiki/concepts/encirclement.md) — Cutting an army off from its supply and escape routes by closing a ring around it (German: _Kessel_, "cauldron"), then reducing the pocket. Battles: [[stalingrad]]
+- [English longbow](wiki/concepts/english-longbow.md) — A tall self-bow of yew, drawn by trained archers to shoot heavy arrows at a high rate of fire. Battles: [[agincourt]]
+- [Feigned retreat](wiki/concepts/feigned-retreat.md) — A tactic in which troops pretend to flee to draw the enemy out of formation, then turn on them. Battles: [[hastings]], [[manzikert]]
+- [Galley warfare](wiki/concepts/galley-warfare.md) — Naval warfare with galleys: long, low warships driven mainly by oars, which dominated the Mediterranean until the late sixteenth century. Battles: [[preveza]]
+- [Gunpowder siege artillery](wiki/concepts/gunpowder-siege-artillery.md) — Cannon and bombards used to batter fortifications. Battles: [[constantinople]]
+- [Heavy cavalry](wiki/concepts/heavy-cavalry.md) — Mounted, armoured shock troops who fought with lance and sword. Battles: [[hastings]], [[waterloo]]
+- [Hoplite](wiki/concepts/hoplite.md) — A citizen-soldier of an ancient Greek city-state, armed with a long thrusting spear (dory), a short sword, a large round shield (hoplon), a bronze helmet, breastplate and greaves. Battles: [[marathon]], [[thermopylae]]
+- [Hoplite phalanx](wiki/concepts/hoplite-phalanx.md) — The close-order formation of Greek hoplite spearmen, shield to shield in ranks eight deep or so, that dominated Greek warfare from roughly the 7th century BCE. Battles: [[marathon]], [[thermopylae]], [[gaugamela]]
+- [Horse archers](wiki/concepts/horse-archers.md) — Mounted bowmen who shoot from the saddle, skirmishing at range and avoiding close combat until the enemy is disordered. Battles: [[manzikert]]
+- [Housecarls](wiki/concepts/housecarls.md) — Paid, full-time household soldiers (Old Norse husk-arl, "house man") introduced to England by Svein Forkbeard and Cnut. Battles: [[hastings]]
+- [The Immortals](wiki/concepts/immortals.md) — The elite Persian infantry corps of 10,000, so called because any fallen member was at once replaced so that the strength never dropped. Battles: [[thermopylae]], [[gaugamela]]
+- [Imperial Guard](wiki/concepts/imperial-guard.md) — Napoleon's elite household troops, organized into the Old, Middle and Young Guard, with their own infantry, cavalry and artillery; the army's strategic reserve. Battles: [[waterloo]]
+- [Infantry square](wiki/concepts/infantry-square.md) — A hollow rectangular formation in which infantry face outward on all four sides, with bayonets fixed, to defeat cavalry attacking from any direction. Battles: [[waterloo]]
+- [Janissaries](wiki/concepts/janissaries.md) — The Ottoman sultan's elite standing infantry. Battles: [[constantinople]], [[preveza]]
+- [Macedonian phalanx](wiki/concepts/macedonian-phalanx.md) — The infantry formation of Philip II and alexander-the-great: pezhetairoi ("foot companions") carrying the sarissa, a pike of some four to six metres, with a small shield slung from the neck. Battles: [[gaugamela]]
+- [Men-at-arms](wiki/concepts/men-at-arms.md) — Armoured professional or noble heavy fighters, mounted or dismounted, the core of a medieval army. Battles: [[agincourt]]
+- [Napoleonic artillery](wiki/concepts/napoleonic-artillery.md) — Smoothbore muzzle-loading guns and howitzers firing round shot, canister and shell, grouped in batteries; at Waterloo the French massed about 80 guns in a "grande batterie". Battles: [[waterloo]]
+- [Numidian cavalry](wiki/concepts/numidian-cavalry.md) — Light horsemen from North Africa, riding small horses without saddle or bridle, armed with javelins, and renowned for speed, harassment and pursuit. Battles: [[cannae]]
+- [Operation Uranus](wiki/concepts/operation-uranus.md) — The Soviet strategic counteroffensive of 19-23 November 1942 that encircled the German 6th Army at Stalingrad. Battles: [[stalingrad]]
+- [Plate armour](wiki/concepts/plate-armour.md) — Articulated steel armour covering the whole body, standard for knights by the early 15th century. Battles: [[agincourt]]
+- [Reverse slope defence](wiki/concepts/reverse-slope-defence.md) — Deploying a defending force behind the crest of a ridge, on the side facing away from the enemy, so that it is hidden from direct observation and fire until the attackers climb to the crest. Battles: [[waterloo]]
+- [Roman legion (manipular system)](wiki/concepts/roman-manipular-legion.md) — The Roman citizen legion of the Middle Republic: about 4,200–5,000 infantry and 300 horse, divided into velites (skirmishers), hastati, principes and triarii, in small tactical units (maniples) that n Battles: [[cannae]]
+- [Scythed chariots](wiki/concepts/scythed-chariots.md) — Light horse-drawn chariots fitted with blades projecting from the wheel hubs, the yoke or the body, intended to cut through close-packed infantry. Battles: [[gaugamela]]
+- [Shield wall](wiki/concepts/shield-wall.md) — A close formation of infantry whose shields overlap to form a continuous barrier, used across early medieval Europe. Battles: [[hastings]]
+- [Siege warfare](wiki/concepts/siege-warfare.md) — The art of attacking and defending fortified places: blockade, bombardment, mining, assault and relief. Battles: [[constantinople]]
+- [Tagmata](wiki/concepts/tagmata.md) — The professional, centrally paid regiments of the Byzantine army, as distinct from provincial theme levies. Battles: [[manzikert]]
+- [Theodosian Walls](wiki/concepts/theodosian-walls.md) — The triple line of fortifications built in the fifth century across the western landward side of Constantinople, from the Golden Horn to the Sea of Marmara. Battles: [[constantinople]]
+- [Urban warfare](wiki/concepts/urban-warfare.md) — Combat in towns and cities, where buildings, rubble and cellars restrict movement, limit visibility and neutralize long-range fire and armour. Battles: [[stalingrad]]
+- [Varangian Guard](wiki/concepts/varangian-guard.md) — An elite unit of the Byzantine army from about the 10th to the 14th century, serving as the emperors' personal bodyguard. Battles: [[manzikert]]
+- [War elephants](wiki/concepts/war-elephants.md) — Elephants trained to carry troops or charge in battle, used by Indian armies and adopted by Persians and later Hellenistic and Carthaginian forces. Battles: [[gaugamela]]
