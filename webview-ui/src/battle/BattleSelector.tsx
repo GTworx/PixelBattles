@@ -1,4 +1,4 @@
-import { BATTLE_SELECTOR_Z_INDEX } from '../constants.js';
+import { BATTLE_MOBILE_TOUCH_TARGET_PX, BATTLE_SELECTOR_Z_INDEX } from '../constants.js';
 import type { BattleSummary } from './battleTypes.js';
 import { FlagIcon } from './FlagIcon.js';
 
@@ -8,12 +8,20 @@ interface BattleSelectorProps {
   onPick: (id: string) => void;
   /** Absent until a battle is loaded: the first choice can't be dismissed. */
   onClose?: () => void;
+  /** Phones: one card per row, tighter padding. */
+  singleColumn?: boolean;
 }
 
-export function BattleSelector({ battles, currentId, onPick, onClose }: BattleSelectorProps) {
+export function BattleSelector({
+  battles,
+  currentId,
+  onPick,
+  onClose,
+  singleColumn = false,
+}: BattleSelectorProps) {
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center p-16"
+      className={`fixed inset-0 flex items-center justify-center ${singleColumn ? 'p-8 battle-safe-pad' : 'p-16'}`}
       style={{ zIndex: BATTLE_SELECTOR_Z_INDEX, background: 'var(--vignette)' }}
       onClick={onClose}
     >
@@ -21,7 +29,9 @@ export function BattleSelector({ battles, currentId, onPick, onClose }: BattleSe
         className="bg-bg border-2 border-border max-w-[960px] w-full max-h-full overflow-y-auto shadow-pixel"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center px-14 py-10 border-b-2 border-border">
+        <div
+          className={`flex items-center border-b-2 border-border ${singleColumn ? 'px-10 py-8' : 'px-14 py-10'}`}
+        >
           <div className="flex-1">
             <div className="text-xl">Choose a battle</div>
             <div className="text-xs text-text-muted">
@@ -32,6 +42,14 @@ export function BattleSelector({ battles, currentId, onPick, onClose }: BattleSe
           {onClose && (
             <button
               className="bg-transparent border-0 text-text-muted text-lg cursor-pointer"
+              style={
+                singleColumn
+                  ? {
+                      minWidth: BATTLE_MOBILE_TOUCH_TARGET_PX,
+                      minHeight: BATTLE_MOBILE_TOUCH_TARGET_PX,
+                    }
+                  : undefined
+              }
               onClick={onClose}
             >
               ✕
@@ -39,8 +57,10 @@ export function BattleSelector({ battles, currentId, onPick, onClose }: BattleSe
           )}
         </div>
         <div
-          className="grid gap-8 p-14"
-          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}
+          className={`grid gap-8 ${singleColumn ? 'p-10' : 'p-14'}`}
+          style={{
+            gridTemplateColumns: singleColumn ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))',
+          }}
         >
           {battles.map((b) => {
             const victor = b.sides.find((s) => s.id === b.victor);

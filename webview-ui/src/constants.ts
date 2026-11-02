@@ -629,6 +629,18 @@ export const BATTLE_ZOOM_STEP = 1.2;
 /** Fitting a new map leaves this fraction of the canvas used. */
 export const BATTLE_FIT_MARGIN = 0.98;
 /** The battle view covers the whole office (above its modals, z-100). */
+// ── Battle Simulator on phones ───────────────────────────────
+/** A landscape viewport this short is a phone on its side: the battle goes
+ *  full screen (map edge to edge, toolbars down to a minimal overlay). */
+export const BATTLE_PHONE_LANDSCAPE_MAX_HEIGHT_PX = 500;
+/** ...and no wider than this, so a short desktop window keeps its layout
+ *  (the widest phones are ~930px on their side). Touch-tablet widths that
+ *  match MOBILE_MEDIA_QUERY qualify regardless. */
+export const BATTLE_PHONE_LANDSCAPE_MAX_WIDTH_PX = 960;
+/** Minimum height of a phone control (touch target). */
+export const BATTLE_MOBILE_TOUCH_TARGET_PX = 40;
+/** Height of the phase-seek bars on phones (10px on desktop). */
+export const BATTLE_MOBILE_PHASE_BAR_PX = 20;
 export const BATTLE_VIEW_Z_INDEX = 200;
 export const BATTLE_SELECTOR_Z_INDEX = 210;
 

@@ -293,6 +293,26 @@
     top: calc(env(safe-area-inset-top, 0px) + 8px);
   }
 
+  /* Battle Simulator on phones: overlays on the map keep clear of the notch
+     and home bar (equal to the 10px insets wherever env() is 0); the compact
+     layout pads its whole frame in by the insets. */
+  .battle-safe-left {
+    left: calc(env(safe-area-inset-left, 0px) + 10px);
+  }
+  .battle-safe-right {
+    right: calc(env(safe-area-inset-right, 0px) + 10px);
+  }
+  .battle-safe-top {
+    top: calc(env(safe-area-inset-top, 0px) + 10px);
+  }
+  .battle-safe-bottom {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+  }
+  .battle-safe-pad {
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+      env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  }
+
   /* Same, for the mobile terminal pane wrappers (4px base, matches inset-4). */
   .mobile-safe-pane-top {
     top: calc(env(safe-area-inset-top, 0px) + 4px);

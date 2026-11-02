@@ -12,6 +12,8 @@ import { TILE_SIZE } from '../office/types.js';
 import type { BattleState } from './battleEngine.js';
 import { stepBattle } from './battleEngine.js';
 import { renderBattle, tileAt, unitAt } from './battleRenderer.js';
+import type { BattleTouchEvent, BattleTouchState } from './battleTouch.js';
+import { initialBattleTouchState, reduceBattleTouch, zoomAbout } from './battleTouch.js';
 
 interface BattleCanvasProps {
   /** Mutable battle state; the loop steps and draws it every frame. */
@@ -142,6 +144,62 @@ export function BattleCanvas({
     });
   }, [stateRef, playingRef, speedRef]);
 
+  // Touch: one finger pans, two pinch-zoom, a tap selects (battleTouch.ts).
+  // Native non-passive listeners: React's touch handlers are passive, and we
+  // must preventDefault so the page neither scrolls nor synthesizes a second
+  // click after our tap. A touchcancel (the page swipe claiming the touch)
+  // drops the gesture.
+  const selectRef = useRef(onSelectUnit);
+  selectRef.current = onSelectUnit;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    let gesture: BattleTouchState = initialBattleTouchState;
+    const handle = (type: BattleTouchEvent['type']) => (e: TouchEvent) => {
+      if (type !== 'cancel' && e.cancelable) e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const local = (list: TouchList) =>
+        Array.from(list, (t) => ({
+          identifier: t.identifier,
+          clientX: t.clientX - rect.left,
+          clientY: t.clientY - rect.top,
+        }));
+      const step = reduceBattleTouch(
+        gesture,
+        { type, touches: local(e.touches), changed: local(e.changedTouches), t: e.timeStamp },
+        {
+          view: view.current,
+          dpr: window.devicePixelRatio || 1,
+          width: canvas.width,
+          height: canvas.height,
+          clampZoom,
+        },
+      );
+      gesture = step.state;
+      if (step.view) Object.assign(view.current, step.view);
+      const state = stateRef.current;
+      if (step.tap && state) {
+        const { offsetX, offsetY } = offsets.current;
+        const u = unitAt(state, step.tap.x, step.tap.y, offsetX, offsetY, view.current.zoom);
+        selectRef.current(u?.id ?? null);
+      }
+    };
+    const onStart = handle('start');
+    const onMove = handle('move');
+    const onEnd = handle('end');
+    const onCancel = handle('cancel');
+    canvas.addEventListener('touchstart', onStart, { passive: false });
+    canvas.addEventListener('touchmove', onMove, { passive: false });
+    canvas.addEventListener('touchend', onEnd, { passive: false });
+    canvas.addEventListener('touchcancel', onCancel);
+    return () => {
+      canvas.removeEventListener('touchstart', onStart);
+      canvas.removeEventListener('touchmove', onMove);
+      canvas.removeEventListener('touchend', onEnd);
+      canvas.removeEventListener('touchcancel', onCancel);
+    };
+  }, [stateRef]);
+
   // Mouse: click selects a unit, drag pans, wheel zooms, right-click picks a tile.
   const drag = useRef<{ x: number; y: number; panX: number; panY: number; moved: boolean } | null>(
     null,
@@ -157,7 +215,11 @@ export function BattleCanvas({
       <canvas
         ref={canvasRef}
         className="block"
-        style={{ imageRendering: 'pixelated', cursor: hovered.current ? 'pointer' : 'grab' }}
+        style={{
+          imageRendering: 'pixelated',
+          cursor: hovered.current ? 'pointer' : 'grab',
+          touchAction: 'none',
+        }}
         onMouseDown={(e) => {
           if (e.button !== 0) return;
           drag.current = {
@@ -236,13 +298,8 @@ export function BattleCanvas({
           );
           if (next === v.zoom) return;
           // Keep the map point under the cursor fixed while zooming.
-          const p = toCanvas(e);
           const canvas = canvasRef.current!;
-          const cx = p.x - canvas.width / 2 - v.panX;
-          const cy = p.y - canvas.height / 2 - v.panY;
-          v.panX -= cx * (next / v.zoom - 1);
-          v.panY -= cy * (next / v.zoom - 1);
-          v.zoom = next;
+          Object.assign(v, zoomAbout(v, toCanvas(e), next, canvas.width, canvas.height));
         }}
       />
     </div>

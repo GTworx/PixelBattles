@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { BATTLE_MOBILE_TOUCH_TARGET_PX } from '../constants.js';
 import type { OllamaSettings } from './battleApi.js';
 import type { BattleEventKind } from './battleEngine.js';
 import type { SideId } from './battleTypes.js';
@@ -24,6 +25,8 @@ interface BattleChatProps {
   disabled: boolean;
   disabledReason?: string;
   suggestions: string[];
+  /** Phones: no right-click hint, and fingertip-sized suggestions and Send. */
+  touch?: boolean;
   /** Static site only: which local Ollama + model the browser should ask. */
   ollama?: { initial: OllamaSettings; onSave: (s: OllamaSettings) => void };
 }
@@ -37,8 +40,10 @@ export function BattleChat({
   disabled,
   disabledReason,
   suggestions,
+  touch = false,
   ollama,
 }: BattleChatProps) {
+  const touchTarget = touch ? { minHeight: BATTLE_MOBILE_TOUCH_TARGET_PX } : undefined;
   const listRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = listRef.current;
@@ -63,6 +68,7 @@ export function BattleChat({
             <button
               key={s}
               className="border-2 border-border bg-btn-bg px-6 py-2 text-2xs cursor-pointer hover:bg-btn-hover text-left"
+              style={touchTarget}
               onClick={() => onSend(s)}
               disabled={busy}
             >
@@ -84,7 +90,9 @@ export function BattleChat({
           placeholder={
             disabled
               ? (disabledReason ?? 'Choose a battle first')
-              : 'Ask about the battle, or give orders… (right-click the map to add a tile)'
+              : touch
+                ? 'Ask about the battle, or give orders…'
+                : 'Ask about the battle, or give orders… (right-click the map to add a tile)'
           }
           value={draft}
           disabled={disabled}
