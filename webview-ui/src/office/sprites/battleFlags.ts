@@ -281,6 +281,26 @@ export const FLAGS: Record<string, SpriteData> = {
     if (d < 1.1 || e < 1.1) return WHITE;
     return '#1f2f6b';
   }),
+  // A coalition has no flag of its own: the 1914 Entente postcard emblem of the
+  // allied colours quartered — France, Britain, Russia and Italy.
+  entente: art(
+    [
+      'bbbwwrrrwuurruuw',
+      'bbbwwrrruwwrrwwu',
+      'bbbwwrrrrrrrrrrr',
+      'bbbwwrrruwwrrwwu',
+      'bbbwwrrrwuurruuw',
+      'wwwwwwwwgggwwrrr',
+      'wwwwwwwwgggwwrrr',
+      'bbbbbbbbgggwwrrr',
+      'rrrrrrrrgggwwrrr',
+      'rrrrrrrrgggwwrrr',
+    ],
+    { b: BLUE, w: WHITE, r: RED, u: '#1f2f6b', g: '#1f8a3a' },
+  ),
+  // The Kaiserreich's black-white-red, which the Central Powers' leading army
+  // fought under in 1914–1918.
+  'german-imperial': grid((_x, y) => (y < 3 ? '#141414' : y < 7 ? WHITE : RED)),
   'german-cross': grid((x, y) => {
     const cx = Math.abs(x - 7.5);
     const cy = Math.abs(y - 4.5);

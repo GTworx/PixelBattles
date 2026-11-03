@@ -2,7 +2,7 @@
 type: concept
 slug: combined-arms
 name: Combined arms
-battles: [waterloo, stalingrad]
+battles: [waterloo, stalingrad, world-war-i]
 ---
 
 # Combined arms
@@ -19,8 +19,10 @@ Napoleonic combined arms meant infantry in column, cavalry and guns in step; Ney
 
 - [[waterloo]]: the French cavalry went in without infantry or artillery support; the Allies combined squares, guns and counter-charging cavalry.
 - [[stalingrad]]: [[operation-uranus]] pairs an artillery barrage with tank corps exploiting the breakthrough; [[urban-warfare]] splits combined arms into small assault groups.
+- [[world-war-i]]: by 1918 the British attacked with infantry, predicted artillery fire, tanks and aircraft together; at Amiens on 8 August more than 500 tanks led the break-in. The German Spring Offensive paired a short hurricane bombardment with [[infiltration-tactics]].
 
 ## Sources
 
 1. https://en.wikipedia.org/wiki/Battle_of_Waterloo
 2. https://en.wikipedia.org/wiki/Operation_Uranus
+3. https://en.wikipedia.org/wiki/Battle_of_Amiens_(1918)

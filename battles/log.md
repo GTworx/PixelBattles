@@ -64,3 +64,20 @@ stand-off and Barbarossa's sortie to the Holy League's night withdrawal. New pag
 added to `concepts/janissaries`. New flag `burgundy-cross` (the Habsburg saltire) for the Holy League.
 Sources: Wikipedia's Preveza, Barbarossa, Doria and Galley articles; the three contemporary
 accounts (Venetian-Papal, Hispano-Imperial, Hospitaller) disagree, and the pages say so.
+
+## [2026-11-03] ingest | World War I (1914–1918)
+
+Added `battles/world-war-i` and `scenarios/world-war-i.json`, the simulator's first war-scale scenario: one
+48×30 map of Europe, the Middle East and North Africa (1 tile ≈ 100 km) from Ireland and Scandinavia to the
+Sahara and the Persian Gulf, with every front on it — Western, Eastern, Italian, Balkan/Salonika, Gallipoli,
+Caucasus, Sinai–Palestine, Mesopotamia and the Senussi campaign — and the Grand Fleet and High Seas Fleet in
+the North Sea. Units are armies and army groups; fifteen phases run from the invasion of Belgium to the
+armistice of 11 November 1918. Geography is compressed (the Western Front is about seven tiles; Gallipoli is
+a two-tile spit cut off from Thrace so that the evacuation leaves the map). Russia and Romania leave the war
+as `surrendered`, the German western armies as `withdrawn`. New pages: `commanders/joseph-joffre`,
+`ferdinand-foch`, `douglas-haig`, `aleksei-brusilov`, `paul-von-hindenburg`, `erich-ludendorff`,
+`enver-pasha`, `mustafa-kemal`; `concepts/trench-warfare`, `concepts/infiltration-tactics`; World War I
+added to `concepts/encirclement` (Tannenberg), `concepts/combined-arms` (Amiens) and `concepts/siege-warfare`
+(Liège, Przemyśl, Kut). New flags `entente` (the allied colours quartered) and `german-imperial` (the
+black-white-red tricolour). Sources: Wikipedia's articles on the war, its casualties and each campaign; unit
+strengths are representative theatre figures, and the casualty ranges follow the sources' disagreement.

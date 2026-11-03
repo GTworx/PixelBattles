@@ -193,7 +193,7 @@ the screen.
 unit banners, the commanders' standards and the legend; without one a side flies a plain banner in
 its `color`. Available: `athens`, `persia`, `greek-lambda`, `macedon`, `carthage`, `rome`, `wessex`,
 `normandy`, `seljuk`, `byzantine-labarum`, `palaiologan`, `england-royal`, `france-ancient`,
-`ottoman`, `burgundy-cross`, `france-tricolor`, `union-flag`, `soviet`, `german-cross`. Pre-modern "flags" are the
+`ottoman`, `burgundy-cross`, `france-tricolor`, `union-flag`, `entente`, `german-imperial`, `soviet`, `german-cross`. Pre-modern "flags" are the
 standards or emblems the sources associate with the army; add a sprite there to add a flag.
 
 ### Unit types

@@ -1,0 +1,2690 @@
+{
+  "id": "world-war-i",
+  "title": "World War I",
+  "year": "1914–1918",
+  "date": "28 July 1914 – 11 November 1918",
+  "location": "Europe, the Middle East and North Africa: the Western, Eastern, Italian, Balkan, Caucasus, Gallipoli, Sinai–Palestine, Mesopotamian and Libyan–Egyptian fronts",
+  "wiki": "wiki/battles/world-war-i.md",
+  "summary": "The First World War on one map: the Entente of France, the British Empire, Russia, Italy, Serbia, Romania and, from 1917, the United States against the Central Powers of Germany, Austria-Hungary, the Ottoman Empire and Bulgaria. A war of movement in 1914 froze into trench lines from the Channel to Switzerland, while the fighting spread to Galicia, the Alps, the Dardanelles, the Balkans, the Caucasus, Sinai, Mesopotamia and the Libyan desert. It ended with the collapse of the Central Powers one after another in the autumn of 1918 and the armistice of 11 November.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 100 km (≈ 1.2° of longitude × 1.1° of latitude); fronts and armies drawn at theatre scale",
+    "north": "up",
+    "terrain": [
+      "============MMMTTTTTTTT===TTTTTTT===TTTTTTTTTTTT",
+      "============MMTTTTTTTTT====TTTTTT===TTTTTTTTTTTT",
+      "=============MTTTcTTTTTc=========cTTTTTTTTTTTTTT",
+      "====^^^======M^^TTTTTTT,====,,,,,,TTTTTTTTTTTTTT",
+      "===^^^^=========,=TTTT,=,===c,,,,,,TTTTTTTTTTTTT",
+      "====^^,c=======,,=,,T,====,,,,,,,,TTTTTTTTTTTTTT",
+      "==,,=^,,c======,,=c======c,,,,,,TTTTTTTTcTTTTTTT",
+      "=,,,=,^,,======,,===,,,,c,ssTTTTTTTTTTTTTTTTTTTT",
+      ",,,c=,,,,====,,,,c,,,,,,,,TTTTTTTTTTTTTTTTTTTTTT",
+      ",,,==^,,c,==,~,,,,,c,,,,,,c,,sssssTTT,,,,,,,,,,,",
+      "===,^,,,,=,ccTc,,,,,,,,,,,,,,css,,c,,,,,,,,,,,,,",
+      "==========c,,T,~,^^,c,,,,c,,c,,,,,,,,,,,,,,,,,,,",
+      "=====,,,,,c~,c^~,,,,,,c,MM,MM,,,,,,,,,,,,,,,,,,,",
+      "=======,,,,,~^^~,c,,,,,~c,,,MM,,,,,,,,,,,,,,,,,,",
+      "=======,,,,,,MMMMMM~^,,,,,^^^M,,,,c,,====,,,,,,,",
+      "=======,,,,,cMM,c,c=^^,,,~MMMM,,~===^,,==,,,,,,,",
+      "========,,,,,^Mc,,,==MM^^c~,,,c,~=======,,,,^^^^",
+      "=^^^^^^MMM^==c==T,,^==^M^^^~~~~~========^^MMMMMM",
+      "=,,^^^,,^,,=====T=,c^==MM^^,cMM^===========MMM,c",
+      "=,,,^^^,,,c====^^==,c^,=^^^c,=,,c~^^=====cM^^^^M",
+      "=,,,,c,^,==,===^,===^^=,=M^M=^====^^c^^^^^^c^MMM",
+      "=c,,^^^,,======^=====^===M^^=^=c^^^^^^^^^^^^=MMM",
+      "=,,^,,^,==========,^^,====^^c==,^^MMMMMMM~^^~MMM",
+      "=,,^======,c^^^,,c========^====,^^=MM^=c,~,,c,MM",
+      "=====MMMc,^MM^,,,,==c=======^M^=======,^,~bbb~MM",
+      "===,MM^^^MM^^bbb,,=================,^=c^bb~bb~^M",
+      "==,,^M^bbbbbbbbbb,,c,,===============,^cbbb~bc~^",
+      "=,,MMMMbbbbbbbbbbbbbb====c^^c========,c~bbbb~bc~",
+      "=,^^bbbbbbbbbbbbbbbbbb===bbbbcbcbc,~bccbbbbbbb~c",
+      "=bbbbbbbbbbbbbbbbbbbbbbbbbbbbb,bb~c~b^=bbbbbbbb="
+    ],
+    "labels": [
+      {
+        "text": "ATLANTIC",
+        "col": 2,
+        "row": 14
+      },
+      {
+        "text": "North Sea",
+        "col": 10,
+        "row": 5
+      },
+      {
+        "text": "Baltic",
+        "col": 21,
+        "row": 6
+      },
+      {
+        "text": "Mediterranean Sea",
+        "col": 24,
+        "row": 25
+      },
+      {
+        "text": "Black Sea",
+        "col": 36,
+        "row": 17
+      },
+      {
+        "text": "London",
+        "col": 7,
+        "row": 9
+      },
+      {
+        "text": "Paris",
+        "col": 9,
+        "row": 12
+      },
+      {
+        "text": "Ypres",
+        "col": 10,
+        "row": 9
+      },
+      {
+        "text": "Verdun",
+        "col": 13,
+        "row": 13
+      },
+      {
+        "text": "Berlin",
+        "col": 19,
+        "row": 9
+      },
+      {
+        "text": "Vienna",
+        "col": 22,
+        "row": 13
+      },
+      {
+        "text": "Tannenberg",
+        "col": 25,
+        "row": 8
+      },
+      {
+        "text": "Warsaw",
+        "col": 26,
+        "row": 10
+      },
+      {
+        "text": "Petrograd",
+        "col": 33,
+        "row": 3
+      },
+      {
+        "text": "Moscow",
+        "col": 40,
+        "row": 7
+      },
+      {
+        "text": "Isonzo",
+        "col": 20,
+        "row": 13
+      },
+      {
+        "text": "Rome",
+        "col": 19,
+        "row": 19
+      },
+      {
+        "text": "Belgrade",
+        "col": 25,
+        "row": 16
+      },
+      {
+        "text": "Salonika",
+        "col": 27,
+        "row": 20
+      },
+      {
+        "text": "Gallipoli",
+        "col": 29,
+        "row": 22
+      },
+      {
+        "text": "Constantinople",
+        "col": 33,
+        "row": 18
+      },
+      {
+        "text": "Sarikamish",
+        "col": 44,
+        "row": 18
+      },
+      {
+        "text": "ANATOLIA",
+        "col": 37,
+        "row": 21
+      },
+      {
+        "text": "Gaza",
+        "col": 37,
+        "row": 29
+      },
+      {
+        "text": "Jerusalem",
+        "col": 39,
+        "row": 27
+      },
+      {
+        "text": "Damascus",
+        "col": 40,
+        "row": 26
+      },
+      {
+        "text": "Baghdad",
+        "col": 44,
+        "row": 25
+      },
+      {
+        "text": "Kut",
+        "col": 46,
+        "row": 27
+      },
+      {
+        "text": "Cairo",
+        "col": 34,
+        "row": 29
+      },
+      {
+        "text": "Sollum",
+        "col": 29,
+        "row": 29
+      },
+      {
+        "text": "LIBYA",
+        "col": 15,
+        "row": 27
+      },
+      {
+        "text": "SAHARA",
+        "col": 9,
+        "row": 28
+      },
+      {
+        "text": "Alps",
+        "col": 16,
+        "row": 14
+      },
+      {
+        "text": "Carpathians",
+        "col": 28,
+        "row": 12
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Entente",
+      "commander": "Joffre, Foch & Haig",
+      "color": "#2e64c8",
+      "flag": "entente"
+    },
+    {
+      "id": "B",
+      "name": "Central Powers",
+      "commander": "Hindenburg & Ludendorff",
+      "color": "#8a8f98",
+      "flag": "german-imperial"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "fr-5th",
+      "side": "A",
+      "name": "French 5th & 6th Armies (Lanrezac, Franchet d'Espèrey, Maunoury)",
+      "type": "infantry",
+      "strength": 300000,
+      "col": 12,
+      "row": 11,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Louis Franchet d'Espèrey"
+    },
+    {
+      "id": "bef",
+      "side": "A",
+      "name": "British Expeditionary Force (Sir John French, then Haig)",
+      "type": "infantry",
+      "strength": 90000,
+      "col": 11,
+      "row": 10,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Douglas Haig"
+    },
+    {
+      "id": "fr-centre",
+      "side": "A",
+      "name": "French 3rd & 4th Armies, later 2nd Army at Verdun (Joffre; Pétain)",
+      "type": "infantry",
+      "strength": 450000,
+      "col": 12,
+      "row": 12,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Joseph Joffre"
+    },
+    {
+      "id": "fr-east",
+      "side": "A",
+      "name": "French 1st & 2nd Armies in Lorraine (Dubail, de Castelnau)",
+      "type": "infantry",
+      "strength": 450000,
+      "col": 13,
+      "row": 13,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Édouard de Castelnau"
+    },
+    {
+      "id": "fr-artillery",
+      "side": "A",
+      "name": "French field and heavy artillery (the 75 mm gun)",
+      "type": "artillery",
+      "strength": 40000,
+      "col": 12,
+      "row": 14,
+      "facing": "right",
+      "morale": 75,
+      "enterPhase": "p1"
+    },
+    {
+      "id": "ru-1st",
+      "side": "A",
+      "name": "Russian 1st Army, then the Northern & Western Fronts (Rennenkampf; Alekseyev)",
+      "type": "infantry",
+      "strength": 200000,
+      "col": 28,
+      "row": 7,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Paul von Rennenkampf",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "ru-2nd",
+      "side": "A",
+      "name": "Russian 2nd Army (Samsonov)",
+      "type": "infantry",
+      "strength": 230000,
+      "col": 26,
+      "row": 9,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Alexander Samsonov",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "ru-sw",
+      "side": "A",
+      "name": "Russian Southwestern Front (Ivanov, then Brusilov)",
+      "type": "infantry",
+      "strength": 1200000,
+      "col": 30,
+      "row": 11,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Aleksei Brusilov",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "serbian-army",
+      "side": "A",
+      "name": "Serbian Army (Putnik)",
+      "type": "infantry",
+      "strength": 250000,
+      "col": 25,
+      "row": 17,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Radomir Putnik",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "grand-fleet",
+      "side": "A",
+      "name": "Grand Fleet (Jellicoe, Beatty)",
+      "type": "ships",
+      "strength": 60000,
+      "col": 7,
+      "row": 3,
+      "facing": "right",
+      "morale": 80,
+      "commander": "John Jellicoe",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "ru-caucasus",
+      "side": "A",
+      "name": "Russian Caucasus Army (Yudenich)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 45,
+      "row": 19,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Nikolai Yudenich",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "ief-d",
+      "side": "A",
+      "name": "Indian Expeditionary Force D (Townshend's 6th Poona Division)",
+      "type": "infantry",
+      "strength": 18000,
+      "col": 47,
+      "row": 28,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Charles Townshend",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "egypt-force",
+      "side": "A",
+      "name": "British forces in Egypt, then the Egyptian Expeditionary Force (Murray; Allenby)",
+      "type": "infantry",
+      "strength": 70000,
+      "col": 34,
+      "row": 28,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Edmund Allenby",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "med-fleet",
+      "side": "A",
+      "name": "Anglo-French Dardanelles fleet (de Robeck)",
+      "type": "ships",
+      "strength": 20000,
+      "col": 28,
+      "row": 21,
+      "facing": "right",
+      "morale": 80,
+      "commander": "John de Robeck",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "mef",
+      "side": "A",
+      "name": "Mediterranean Expeditionary Force: British, ANZAC & French (Hamilton)",
+      "type": "infantry",
+      "strength": 75000,
+      "col": 29,
+      "row": 21,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Ian Hamilton",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "it-army",
+      "side": "A",
+      "name": "Italian Army (Cadorna, then Diaz)",
+      "type": "infantry",
+      "strength": 900000,
+      "col": 18,
+      "row": 15,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Luigi Cadorna",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "salonika",
+      "side": "A",
+      "name": "Allied Army of the Orient (Sarrail, then Franchet d'Espèrey)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 27,
+      "row": 19,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Maurice Sarrail",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "wff",
+      "side": "A",
+      "name": "Western Frontier Force (Wallace, then Peyton)",
+      "type": "infantry",
+      "strength": 12000,
+      "col": 33,
+      "row": 28,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Alexander Wallace",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "tigris-corps",
+      "side": "A",
+      "name": "Tigris Corps, then Maude's Mesopotamian Expeditionary Force",
+      "type": "infantry",
+      "strength": 30000,
+      "col": 47,
+      "row": 28,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Frederick Stanley Maude",
+      "enterPhase": "p8"
+    },
+    {
+      "id": "desert-mounted",
+      "side": "A",
+      "name": "Desert Mounted Corps: ANZAC Light Horse & yeomanry (Chauvel)",
+      "type": "cavalry",
+      "strength": 12000,
+      "col": 36,
+      "row": 28,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Harry Chauvel",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "ro-army",
+      "side": "A",
+      "name": "Romanian Army",
+      "type": "infantry",
+      "strength": 650000,
+      "col": 30,
+      "row": 16,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Constantin Prezan",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "en-artillery",
+      "side": "A",
+      "name": "British heavy artillery (Royal Garrison Artillery)",
+      "type": "artillery",
+      "strength": 60000,
+      "col": 10,
+      "row": 11,
+      "facing": "right",
+      "morale": 80,
+      "enterPhase": "p9"
+    },
+    {
+      "id": "tanks-uk",
+      "side": "A",
+      "name": "British Tank Corps (Mark I–V tanks)",
+      "type": "armor",
+      "strength": 4000,
+      "col": 9,
+      "row": 12,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Hugh Elles",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "arab-army",
+      "side": "A",
+      "name": "Arab Northern Army (Faisal, with T. E. Lawrence)",
+      "type": "cavalry",
+      "strength": 5000,
+      "col": 39,
+      "row": 29,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Faisal bin Hussein",
+      "enterPhase": "p11"
+    },
+    {
+      "id": "aef",
+      "side": "A",
+      "name": "American Expeditionary Forces (Pershing)",
+      "type": "infantry",
+      "strength": 300000,
+      "col": 11,
+      "row": 13,
+      "facing": "right",
+      "morale": 85,
+      "commander": "John J. Pershing",
+      "enterPhase": "p13"
+    },
+    {
+      "id": "de-right-wing",
+      "side": "B",
+      "name": "German 1st & 2nd Armies (von Kluck, von Bülow)",
+      "type": "infantry",
+      "strength": 580000,
+      "col": 14,
+      "row": 10,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Alexander von Kluck"
+    },
+    {
+      "id": "de-centre",
+      "side": "B",
+      "name": "German 3rd, 4th & 5th Armies (Crown Prince Wilhelm)",
+      "type": "infantry",
+      "strength": 560000,
+      "col": 13,
+      "row": 11,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Crown Prince Wilhelm"
+    },
+    {
+      "id": "de-artillery",
+      "side": "B",
+      "name": "German heavy siege artillery (42 cm 'Big Bertha', 30.5 cm mortars)",
+      "type": "artillery",
+      "strength": 20000,
+      "col": 14,
+      "row": 11,
+      "facing": "left",
+      "morale": 85
+    },
+    {
+      "id": "de-left",
+      "side": "B",
+      "name": "German 6th & 7th Armies (Rupprecht of Bavaria)",
+      "type": "infantry",
+      "strength": 345000,
+      "col": 14,
+      "row": 12,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Rupprecht of Bavaria"
+    },
+    {
+      "id": "de-8th",
+      "side": "B",
+      "name": "German 8th Army, then Ober Ost (Hindenburg & Ludendorff)",
+      "type": "infantry",
+      "strength": 153000,
+      "col": 24,
+      "row": 8,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Paul von Hindenburg"
+    },
+    {
+      "id": "ah-galicia",
+      "side": "B",
+      "name": "Austro-Hungarian 1st, 3rd & 4th Armies in Galicia (Conrad)",
+      "type": "infantry",
+      "strength": 900000,
+      "col": 26,
+      "row": 11,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Franz Conrad von Hötzendorf"
+    },
+    {
+      "id": "ah-balkan",
+      "side": "B",
+      "name": "Austro-Hungarian Balkan armies (Potiorek, later Kövess)",
+      "type": "infantry",
+      "strength": 450000,
+      "col": 24,
+      "row": 15,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Oskar Potiorek",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "high-seas-fleet",
+      "side": "B",
+      "name": "High Seas Fleet (Scheer, Hipper)",
+      "type": "ships",
+      "strength": 45000,
+      "col": 14,
+      "row": 7,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Reinhard Scheer",
+      "enterPhase": "p1"
+    },
+    {
+      "id": "ott-forts",
+      "side": "B",
+      "name": "Dardanelles forts & minefields (Cevat Pasha)",
+      "type": "artillery",
+      "strength": 15000,
+      "col": 31,
+      "row": 21,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Cevat Pasha",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "ott-3rd",
+      "side": "B",
+      "name": "Ottoman 3rd Army (Enver Pasha)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 43,
+      "row": 20,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Enver Pasha",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "ott-4th",
+      "side": "B",
+      "name": "Ottoman 4th Army in Sinai & Palestine (Djemal, Kress von Kressenstein), later Yıldırım Army Group",
+      "type": "infantry",
+      "strength": 20000,
+      "col": 38,
+      "row": 28,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Friedrich Kress von Kressenstein",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "ott-6th",
+      "side": "B",
+      "name": "Ottoman forces in Mesopotamia, 6th Army from 1915 (Nureddin, von der Goltz, Khalil)",
+      "type": "infantry",
+      "strength": 20000,
+      "col": 45,
+      "row": 26,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Khalil Kut Pasha",
+      "enterPhase": "p4"
+    },
+    {
+      "id": "ott-5th",
+      "side": "B",
+      "name": "Ottoman 5th Army (Liman von Sanders; Mustafa Kemal's 19th Division)",
+      "type": "infantry",
+      "strength": 60000,
+      "col": 29,
+      "row": 20,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Mustafa Kemal",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "de-11th",
+      "side": "B",
+      "name": "Army Group Mackensen (German 11th Army)",
+      "type": "infantry",
+      "strength": 220000,
+      "col": 25,
+      "row": 11,
+      "facing": "right",
+      "morale": 85,
+      "commander": "August von Mackensen",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "ah-isonzo",
+      "side": "B",
+      "name": "Austro-Hungarian 5th (Isonzo) Army (Boroević)",
+      "type": "infantry",
+      "strength": 300000,
+      "col": 20,
+      "row": 14,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Svetozar Boroević",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "bg-army",
+      "side": "B",
+      "name": "Bulgarian Army (Zhekov)",
+      "type": "infantry",
+      "strength": 300000,
+      "col": 28,
+      "row": 18,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Nikola Zhekov",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "senussi",
+      "side": "B",
+      "name": "Senussi (Ahmed Sharif as-Senussi, with Nuri Bey & Jafar al-Askari)",
+      "type": "cavalry",
+      "strength": 5000,
+      "col": 27,
+      "row": 27,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Ahmed Sharif as-Senussi",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "de-9th",
+      "side": "B",
+      "name": "German 9th Army (Falkenhayn)",
+      "type": "infantry",
+      "strength": 200000,
+      "col": 27,
+      "row": 14,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Erich von Falkenhayn",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "de-14th",
+      "side": "B",
+      "name": "Austro-German 14th Army (Otto von Below)",
+      "type": "infantry",
+      "strength": 200000,
+      "col": 19,
+      "row": 13,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Otto von Below",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "de-storm",
+      "side": "B",
+      "name": "German storm armies of the Spring Offensive (17th, 2nd, 18th; Ludendorff)",
+      "type": "light_infantry",
+      "strength": 750000,
+      "col": 12,
+      "row": 10,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Erich Ludendorff",
+      "enterPhase": "p13"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Invasion of Belgium and the Battle of the Frontiers",
+      "time": "4–24 August 1914",
+      "durationSec": 12,
+      "narration": "Germany declares war on Russia and France and invades neutral Belgium; Britain enters the war on 4 August. The Schlieffen Plan's right wing storms the Liège forts with its heavy siege guns and wheels through Belgium, while France's Plan XVII throws its armies into Lorraine and the Ardennes and is cut down, 27,000 killed on 22 August alone. The BEF meets von Kluck at Mons. In the east Russia invades East Prussia far sooner than Berlin expected, Austria-Hungary's first invasion of Serbia is beaten at Cer, and the Austro-Hungarian and Russian armies collide in Galicia.",
+      "orders": [
+        {
+          "unit": "de-right-wing",
+          "action": "attack",
+          "target": "bef"
+        },
+        {
+          "unit": "de-artillery",
+          "action": "bombard",
+          "target": "fr-5th"
+        },
+        {
+          "unit": "de-centre",
+          "action": "attack",
+          "target": "fr-centre"
+        },
+        {
+          "unit": "fr-east",
+          "action": "attack",
+          "target": "de-left"
+        },
+        {
+          "unit": "fr-5th",
+          "action": "hold"
+        },
+        {
+          "unit": "de-left",
+          "action": "hold"
+        },
+        {
+          "unit": "ru-1st",
+          "action": "move",
+          "to": [
+            26,
+            6
+          ]
+        },
+        {
+          "unit": "ru-2nd",
+          "action": "move",
+          "to": [
+            25,
+            9
+          ]
+        },
+        {
+          "unit": "de-8th",
+          "action": "hold"
+        },
+        {
+          "unit": "ah-balkan",
+          "action": "attack",
+          "target": "serbian-army"
+        },
+        {
+          "unit": "serbian-army",
+          "action": "hold"
+        },
+        {
+          "unit": "ah-galicia",
+          "action": "attack",
+          "target": "ru-sw"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "attack",
+          "target": "ah-galicia"
+        },
+        {
+          "unit": "grand-fleet",
+          "action": "move",
+          "to": [
+            9,
+            5
+          ]
+        },
+        {
+          "unit": "high-seas-fleet",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-5th",
+          "strength": 270000,
+          "morale": 60
+        },
+        {
+          "unit": "bef",
+          "strength": 85000,
+          "morale": 65
+        },
+        {
+          "unit": "fr-centre",
+          "strength": 400000,
+          "morale": 55
+        },
+        {
+          "unit": "fr-east",
+          "strength": 390000,
+          "morale": 50
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 540000,
+          "morale": 85
+        },
+        {
+          "unit": "de-centre",
+          "strength": 530000,
+          "morale": 80
+        },
+        {
+          "unit": "de-left",
+          "strength": 330000,
+          "morale": 80
+        },
+        {
+          "unit": "ah-balkan",
+          "strength": 430000,
+          "morale": 50
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "The Great Retreat and Tannenberg",
+      "time": "24 August – 5 September 1914",
+      "durationSec": 10,
+      "narration": "The French and British fall back from the frontier toward Paris, fighting at Le Cateau and Guise, while the German right wing marches on the Marne and von Kluck turns east of Paris instead of round it. In East Prussia Hindenburg and Ludendorff, using intercepted uncoded Russian radio, encircle Samsonov's 2nd Army at Tannenberg: some 92,000 Russians are captured and Samsonov shoots himself. Far to the south the Russians crush the Austro-Hungarians in the battles for Galicia and take Lemberg.",
+      "orders": [
+        {
+          "unit": "fr-5th",
+          "action": "retreat",
+          "to": [
+            10,
+            12
+          ]
+        },
+        {
+          "unit": "bef",
+          "action": "retreat",
+          "to": [
+            10,
+            13
+          ]
+        },
+        {
+          "unit": "fr-centre",
+          "action": "retreat",
+          "to": [
+            13,
+            12
+          ]
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "move",
+          "to": [
+            11,
+            12
+          ]
+        },
+        {
+          "unit": "de-centre",
+          "action": "move",
+          "to": [
+            12,
+            12
+          ]
+        },
+        {
+          "unit": "de-left",
+          "action": "attack",
+          "target": "fr-east"
+        },
+        {
+          "unit": "de-8th",
+          "action": "attack",
+          "target": "ru-2nd"
+        },
+        {
+          "unit": "ru-2nd",
+          "action": "hold"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "attack",
+          "target": "ah-galicia"
+        },
+        {
+          "unit": "ah-galicia",
+          "action": "retreat",
+          "to": [
+            26,
+            12
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ru-2nd",
+          "strength": 0,
+          "morale": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "de-8th",
+          "strength": 140000,
+          "morale": 90
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 600000,
+          "morale": 40
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 1000000,
+          "morale": 75
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 255000,
+          "morale": 50
+        },
+        {
+          "unit": "bef",
+          "strength": 80000,
+          "morale": 55
+        },
+        {
+          "unit": "fr-east",
+          "strength": 380000,
+          "morale": 60
+        },
+        {
+          "unit": "de-left",
+          "strength": 310000,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The Miracle of the Marne",
+      "time": "5–12 September 1914",
+      "durationSec": 9,
+      "narration": "Joffre turns his retreating armies round. Maunoury's 6th Army strikes von Kluck's flank from Paris, a gap opens between the German 1st and 2nd Armies, and the BEF and Franchet d'Espèrey's 5th Army push into it. Moltke's staff orders a general withdrawal to the Aisne heights. The plan for a quick victory in the west is dead; Moltke is replaced by Falkenhayn.",
+      "orders": [
+        {
+          "unit": "fr-5th",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "fr-artillery",
+          "action": "bombard",
+          "target": "de-centre"
+        },
+        {
+          "unit": "fr-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "retreat",
+          "to": [
+            11,
+            11
+          ]
+        },
+        {
+          "unit": "de-centre",
+          "action": "retreat",
+          "to": [
+            12,
+            11
+          ]
+        },
+        {
+          "unit": "ru-1st",
+          "action": "retreat",
+          "to": [
+            28,
+            7
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-right-wing",
+          "strength": 500000,
+          "morale": 60
+        },
+        {
+          "unit": "de-centre",
+          "strength": 510000,
+          "morale": 65
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 230000,
+          "morale": 75
+        },
+        {
+          "unit": "bef",
+          "strength": 78000,
+          "morale": 70
+        },
+        {
+          "unit": "ru-1st",
+          "strength": 150000,
+          "morale": 50
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "The race to the sea, First Ypres and the Ottoman entry",
+      "time": "September – December 1914",
+      "durationSec": 11,
+      "narration": "Each side tries to outflank the other northward until the lines reach the Channel; the BEF is moved to Flanders and holds Ypres against the German autumn offensive, at the cost of most of the old regular army. A continuous line of trenches now runs from the North Sea to Switzerland. The Ottoman Empire enters the war at the end of October; British and Indian troops land at Basra. In Serbia Putnik's army throws a second Austro-Hungarian invasion back over the Drina and Sava at the Kolubara.",
+      "orders": [
+        {
+          "unit": "bef",
+          "action": "move",
+          "to": [
+            10,
+            10
+          ]
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "attack",
+          "target": "bef"
+        },
+        {
+          "unit": "fr-5th",
+          "action": "move",
+          "to": [
+            11,
+            12
+          ]
+        },
+        {
+          "unit": "fr-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "ah-balkan",
+          "action": "attack",
+          "target": "serbian-army"
+        },
+        {
+          "unit": "serbian-army",
+          "action": "attack",
+          "target": "ah-balkan"
+        },
+        {
+          "unit": "ief-d",
+          "action": "move",
+          "to": [
+            47,
+            27
+          ]
+        },
+        {
+          "unit": "ott-6th",
+          "action": "hold"
+        },
+        {
+          "unit": "egypt-force",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-3rd",
+          "action": "hold"
+        },
+        {
+          "unit": "ru-caucasus",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "bef",
+          "strength": 60000,
+          "morale": 55
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 450000,
+          "morale": 60
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 260000,
+          "morale": 70
+        },
+        {
+          "unit": "ah-balkan",
+          "strength": 300000,
+          "morale": 25
+        },
+        {
+          "unit": "serbian-army",
+          "strength": 200000,
+          "morale": 75
+        },
+        {
+          "unit": "ru-1st",
+          "strength": 900000,
+          "morale": 60
+        },
+        {
+          "unit": "de-8th",
+          "strength": 300000,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Sarikamish, the Suez raid and the Carpathian winter",
+      "time": "December 1914 – February 1915",
+      "durationSec": 10,
+      "narration": "Enver Pasha sends the Ottoman 3rd Army across the snowbound mountains to encircle the Russians at Sarikamish; frostbite and the Russian counterstroke destroy it, and only a fraction comes back. In February Djemal's 4th Army hauls pontoons across the Sinai and attacks the Suez Canal, and is driven off. In the Carpathian passes Austro-Hungarian winter offensives to relieve besieged Przemyśl bleed their armies white; the fortress surrenders in March.",
+      "orders": [
+        {
+          "unit": "ott-3rd",
+          "action": "attack",
+          "target": "ru-caucasus"
+        },
+        {
+          "unit": "ru-caucasus",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-4th",
+          "action": "attack",
+          "target": "egypt-force"
+        },
+        {
+          "unit": "egypt-force",
+          "action": "hold"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "attack",
+          "target": "ah-galicia"
+        },
+        {
+          "unit": "ah-balkan",
+          "action": "retreat",
+          "to": [
+            24,
+            15
+          ]
+        },
+        {
+          "unit": "serbian-army",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-3rd",
+          "strength": 25000,
+          "morale": 20
+        },
+        {
+          "unit": "ru-caucasus",
+          "strength": 90000,
+          "morale": 75
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 19000,
+          "morale": 50
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 500000,
+          "morale": 35
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 950000,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Gallipoli, Gorlice–Tarnów and the Isonzo",
+      "time": "March – September 1915",
+      "durationSec": 12,
+      "narration": "On 18 March the Anglo-French fleet tries to force the Dardanelles and loses three battleships to an unswept minefield. On 25 April British, ANZAC and French troops land on the Gallipoli peninsula and are pinned to their beachheads; Mustafa Kemal's 19th Division holds the heights above Anzac Cove. In Galicia Mackensen's breakthrough at Gorlice–Tarnów in May begins the Russian Great Retreat: Warsaw falls in August. Italy joins the Entente and opens the first of eleven battles on the Isonzo; at Ypres the Germans use chlorine gas.",
+      "orders": [
+        {
+          "unit": "ott-forts",
+          "action": "bombard",
+          "target": "med-fleet"
+        },
+        {
+          "unit": "med-fleet",
+          "action": "bombard",
+          "target": "ott-forts"
+        },
+        {
+          "unit": "mef",
+          "action": "attack",
+          "target": "ott-5th"
+        },
+        {
+          "unit": "ott-5th",
+          "action": "hold"
+        },
+        {
+          "unit": "de-11th",
+          "action": "attack",
+          "target": "ru-sw"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "retreat",
+          "to": [
+            30,
+            10
+          ]
+        },
+        {
+          "unit": "de-8th",
+          "action": "attack",
+          "target": "ru-1st"
+        },
+        {
+          "unit": "ru-1st",
+          "action": "retreat",
+          "to": [
+            30,
+            8
+          ]
+        },
+        {
+          "unit": "it-army",
+          "action": "attack",
+          "target": "ah-isonzo"
+        },
+        {
+          "unit": "ah-isonzo",
+          "action": "hold"
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "attack",
+          "target": "bef"
+        },
+        {
+          "unit": "ott-3rd",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "med-fleet",
+          "strength": 18000,
+          "morale": 55
+        },
+        {
+          "unit": "mef",
+          "strength": 70000,
+          "morale": 50
+        },
+        {
+          "unit": "ott-5th",
+          "strength": 70000,
+          "morale": 80
+        },
+        {
+          "unit": "de-11th",
+          "strength": 200000,
+          "morale": 85
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 700000,
+          "morale": 40
+        },
+        {
+          "unit": "ru-1st",
+          "strength": 750000,
+          "morale": 40
+        },
+        {
+          "unit": "de-8th",
+          "strength": 450000,
+          "morale": 80
+        },
+        {
+          "unit": "it-army",
+          "strength": 820000,
+          "morale": 60
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 600000,
+          "morale": 60
+        },
+        {
+          "unit": "bef",
+          "strength": 500000,
+          "morale": 65
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 700000,
+          "morale": 70
+        },
+        {
+          "unit": "ott-3rd",
+          "strength": 60000,
+          "morale": 45
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Serbia overrun, Salonika, Ctesiphon and the Senussi",
+      "time": "October 1915 – January 1916",
+      "durationSec": 12,
+      "narration": "Bulgaria joins the Central Powers and Mackensen invades Serbia from the north while the Bulgarians cut in from the east; the Serbian army and thousands of civilians retreat over the Albanian mountains in winter. A Franco-British force lands at Salonika too late to help. In Mesopotamia Townshend's advance on Baghdad is stopped at Ctesiphon. On the Egyptian frontier the Senussi, urged on by Ottoman officers, rise and take Sollum. The Allies evacuate Gallipoli without losing a man in the withdrawal.",
+      "orders": [
+        {
+          "unit": "de-11th",
+          "action": "attack",
+          "target": "serbian-army"
+        },
+        {
+          "unit": "bg-army",
+          "action": "attack",
+          "target": "serbian-army"
+        },
+        {
+          "unit": "ah-balkan",
+          "action": "attack",
+          "target": "serbian-army"
+        },
+        {
+          "unit": "serbian-army",
+          "action": "retreat",
+          "to": [
+            24,
+            19
+          ]
+        },
+        {
+          "unit": "salonika",
+          "action": "attack",
+          "target": "bg-army"
+        },
+        {
+          "unit": "ief-d",
+          "action": "attack",
+          "target": "ott-6th"
+        },
+        {
+          "unit": "ott-6th",
+          "action": "hold"
+        },
+        {
+          "unit": "senussi",
+          "action": "move",
+          "to": [
+            29,
+            28
+          ]
+        },
+        {
+          "unit": "wff",
+          "action": "move",
+          "to": [
+            31,
+            28
+          ]
+        },
+        {
+          "unit": "med-fleet",
+          "action": "move",
+          "to": [
+            27,
+            23
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "serbian-army",
+          "strength": 140000,
+          "morale": 35
+        },
+        {
+          "unit": "de-11th",
+          "strength": 210000,
+          "morale": 85
+        },
+        {
+          "unit": "bg-army",
+          "strength": 290000,
+          "morale": 85
+        },
+        {
+          "unit": "ah-balkan",
+          "strength": 250000,
+          "morale": 70
+        },
+        {
+          "unit": "salonika",
+          "strength": 95000,
+          "morale": 55
+        },
+        {
+          "unit": "ief-d",
+          "strength": 13500,
+          "morale": 45
+        },
+        {
+          "unit": "ott-6th",
+          "strength": 18000,
+          "morale": 60
+        },
+        {
+          "unit": "mef",
+          "strength": 60000,
+          "morale": 40,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "ott-5th",
+          "strength": 80000,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Verdun, Erzurum and the fall of Kut",
+      "time": "February – May 1916",
+      "durationSec": 12,
+      "narration": "Falkenhayn attacks Verdun to bleed the French army white; Fort Douaumont falls in four days, but Pétain organises the defence and the Voie Sacrée keeps it supplied. In the Caucasus Yudenich storms Erzurum in midwinter. In the Western Desert the Western Frontier Force beats the Senussi at Agagia and retakes Sollum. At Kut, Townshend's division holds out for 147 days while relief attempts fail with 23,000 casualties, and surrenders on 29 April. The Serbian army, re-formed on Corfu, lands at Salonika.",
+      "orders": [
+        {
+          "unit": "de-centre",
+          "action": "attack",
+          "target": "fr-centre"
+        },
+        {
+          "unit": "de-artillery",
+          "action": "bombard",
+          "target": "fr-centre"
+        },
+        {
+          "unit": "fr-centre",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-artillery",
+          "action": "bombard",
+          "target": "de-centre"
+        },
+        {
+          "unit": "ru-caucasus",
+          "action": "attack",
+          "target": "ott-3rd"
+        },
+        {
+          "unit": "ott-3rd",
+          "action": "retreat",
+          "to": [
+            41,
+            21
+          ]
+        },
+        {
+          "unit": "wff",
+          "action": "attack",
+          "target": "senussi"
+        },
+        {
+          "unit": "senussi",
+          "action": "retreat",
+          "to": [
+            30,
+            29
+          ]
+        },
+        {
+          "unit": "ief-d",
+          "action": "retreat",
+          "to": [
+            46,
+            27
+          ]
+        },
+        {
+          "unit": "ott-6th",
+          "action": "attack",
+          "target": "ief-d"
+        },
+        {
+          "unit": "tigris-corps",
+          "action": "attack",
+          "target": "ott-6th"
+        },
+        {
+          "unit": "serbian-army",
+          "action": "move",
+          "to": [
+            26,
+            19
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-centre",
+          "strength": 380000,
+          "morale": 55
+        },
+        {
+          "unit": "de-centre",
+          "strength": 470000,
+          "morale": 55
+        },
+        {
+          "unit": "ru-caucasus",
+          "strength": 130000,
+          "morale": 85
+        },
+        {
+          "unit": "ott-3rd",
+          "strength": 40000,
+          "morale": 30
+        },
+        {
+          "unit": "senussi",
+          "strength": 3000,
+          "morale": 35
+        },
+        {
+          "unit": "ief-d",
+          "strength": 13000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "tigris-corps",
+          "strength": 22000,
+          "morale": 45
+        },
+        {
+          "unit": "ott-6th",
+          "strength": 30000,
+          "morale": 70
+        },
+        {
+          "unit": "serbian-army",
+          "strength": 120000,
+          "morale": 60
+        },
+        {
+          "unit": "salonika",
+          "strength": 300000,
+          "morale": 65
+        },
+        {
+          "unit": "bef",
+          "strength": 1100000,
+          "morale": 75
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 1000000,
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Jutland, the Brusilov offensive and the Somme",
+      "time": "May – August 1916",
+      "durationSec": 13,
+      "narration": "The Grand Fleet and the High Seas Fleet meet off Jutland on 31 May: the British lose more ships and men, but the German fleet never again seeks battle. On 4 June Brusilov attacks on a wide front without the usual telltale build-up and shatters the Austro-Hungarian armies. On 1 July the British and French attack on the Somme after a week-long bombardment; the British suffer 57,470 casualties on the first day. Romania joins the Entente and invades Transylvania; in Sinai the Ottoman attack at Romani is beaten.",
+      "orders": [
+        {
+          "unit": "high-seas-fleet",
+          "action": "attack",
+          "target": "grand-fleet"
+        },
+        {
+          "unit": "grand-fleet",
+          "action": "attack",
+          "target": "high-seas-fleet"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "attack",
+          "target": "ah-galicia"
+        },
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "en-artillery",
+          "action": "bombard",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "hold"
+        },
+        {
+          "unit": "ro-army",
+          "action": "move",
+          "to": [
+            28,
+            14
+          ]
+        },
+        {
+          "unit": "ott-4th",
+          "action": "attack",
+          "target": "desert-mounted"
+        },
+        {
+          "unit": "desert-mounted",
+          "action": "hold"
+        },
+        {
+          "unit": "it-army",
+          "action": "attack",
+          "target": "ah-isonzo"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "high-seas-fleet",
+          "strength": 42000,
+          "morale": 70
+        },
+        {
+          "unit": "grand-fleet",
+          "strength": 54000,
+          "morale": 75
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 350000,
+          "morale": 25
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 800000,
+          "morale": 60
+        },
+        {
+          "unit": "bef",
+          "strength": 900000,
+          "morale": 55
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 520000,
+          "morale": 50
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 15000,
+          "morale": 45
+        },
+        {
+          "unit": "it-army",
+          "strength": 800000,
+          "morale": 55
+        },
+        {
+          "unit": "ah-isonzo",
+          "strength": 280000,
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Romania crushed, Verdun regained, Baghdad taken",
+      "time": "September 1916 – March 1917",
+      "durationSec": 11,
+      "narration": "Falkenhayn's 9th Army drives the Romanians out of Transylvania while Mackensen crosses the Danube from Bulgaria; Bucharest falls on 6 December. The first tanks go into action on the Somme at Flers in September, and the battle ends in November. At Verdun the French retake Douaumont and most of the ground lost. Maude's rebuilt army retakes Kut and enters Baghdad on 11 March 1917. The Egyptian Expeditionary Force crosses Sinai to the edge of Palestine, and the Senussi are driven from Siwa into the desert.",
+      "orders": [
+        {
+          "unit": "de-9th",
+          "action": "attack",
+          "target": "ro-army"
+        },
+        {
+          "unit": "de-11th",
+          "action": "attack",
+          "target": "ro-army"
+        },
+        {
+          "unit": "ro-army",
+          "action": "retreat",
+          "to": [
+            31,
+            14
+          ]
+        },
+        {
+          "unit": "tanks-uk",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "fr-centre",
+          "action": "attack",
+          "target": "de-centre"
+        },
+        {
+          "unit": "tigris-corps",
+          "action": "move",
+          "to": [
+            45,
+            26
+          ]
+        },
+        {
+          "unit": "ott-6th",
+          "action": "retreat",
+          "to": [
+            44,
+            23
+          ]
+        },
+        {
+          "unit": "egypt-force",
+          "action": "move",
+          "to": [
+            36,
+            28
+          ]
+        },
+        {
+          "unit": "desert-mounted",
+          "action": "move",
+          "to": [
+            36,
+            29
+          ]
+        },
+        {
+          "unit": "ott-4th",
+          "action": "retreat",
+          "to": [
+            37,
+            28
+          ]
+        },
+        {
+          "unit": "senussi",
+          "action": "retreat",
+          "to": [
+            26,
+            29
+          ]
+        },
+        {
+          "unit": "high-seas-fleet",
+          "action": "retreat",
+          "to": [
+            14,
+            7
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ro-army",
+          "strength": 300000,
+          "morale": 35
+        },
+        {
+          "unit": "de-9th",
+          "strength": 190000,
+          "morale": 85
+        },
+        {
+          "unit": "de-11th",
+          "strength": 200000,
+          "morale": 80
+        },
+        {
+          "unit": "fr-centre",
+          "strength": 360000,
+          "morale": 65
+        },
+        {
+          "unit": "de-centre",
+          "strength": 440000,
+          "morale": 45
+        },
+        {
+          "unit": "tigris-corps",
+          "strength": 150000,
+          "morale": 80
+        },
+        {
+          "unit": "ott-6th",
+          "strength": 15000,
+          "morale": 35
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 25000,
+          "morale": 60
+        },
+        {
+          "unit": "senussi",
+          "strength": 1500,
+          "morale": 15
+        },
+        {
+          "unit": "egypt-force",
+          "strength": 100000,
+          "morale": 70
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Revolution in Russia, America enters, Gaza holds",
+      "time": "March – July 1917",
+      "durationSec": 11,
+      "narration": "The February Revolution topples the Tsar. Germany's unrestricted U-boat campaign brings the United States into the war in April. The British attack at Arras and the Canadians take Vimy Ridge, but Nivelle's offensive on the Chemin des Dames fails and mutinies spread through the French army; Pétain restores it by promising no more futile attacks. Twice the British fail to take Gaza. The Kerensky offensive in Galicia collapses, and Faisal's Arab army, with T. E. Lawrence, takes Aqaba.",
+      "orders": [
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "fr-5th",
+          "action": "attack",
+          "target": "de-centre"
+        },
+        {
+          "unit": "egypt-force",
+          "action": "attack",
+          "target": "ott-4th"
+        },
+        {
+          "unit": "ott-4th",
+          "action": "hold"
+        },
+        {
+          "unit": "ru-sw",
+          "action": "attack",
+          "target": "ah-galicia"
+        },
+        {
+          "unit": "arab-army",
+          "action": "move",
+          "to": [
+            40,
+            28
+          ]
+        },
+        {
+          "unit": "it-army",
+          "action": "attack",
+          "target": "ah-isonzo"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "bef",
+          "strength": 1000000,
+          "morale": 60
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 600000,
+          "morale": 60
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 220000,
+          "morale": 30
+        },
+        {
+          "unit": "de-centre",
+          "strength": 450000,
+          "morale": 60
+        },
+        {
+          "unit": "egypt-force",
+          "strength": 90000,
+          "morale": 45
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 35000,
+          "morale": 75
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 700000,
+          "morale": 20
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 400000,
+          "morale": 45
+        },
+        {
+          "unit": "it-army",
+          "strength": 780000,
+          "morale": 45
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Passchendaele, Caporetto, Beersheba and Jerusalem",
+      "time": "July – December 1917",
+      "durationSec": 13,
+      "narration": "The British offensive at Ypres grinds through rain and mud to Passchendaele; at Cambrai in November massed tanks break the line for a few days. A German–Austrian army using infiltration tactics breaks through at Caporetto, and the Italians fall back to the Piave, losing some 300,000 men, most of them prisoners. In Palestine the Australian Light Horse charges Beersheba, Gaza falls, and Allenby enters Jerusalem on 11 December. After the Bolshevik seizure of power Russia signs an armistice.",
+      "orders": [
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "tanks-uk",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "de-14th",
+          "action": "attack",
+          "target": "it-army"
+        },
+        {
+          "unit": "ah-isonzo",
+          "action": "attack",
+          "target": "it-army"
+        },
+        {
+          "unit": "it-army",
+          "action": "retreat",
+          "to": [
+            17,
+            15
+          ]
+        },
+        {
+          "unit": "desert-mounted",
+          "action": "charge",
+          "target": "ott-4th"
+        },
+        {
+          "unit": "egypt-force",
+          "action": "attack",
+          "target": "ott-4th"
+        },
+        {
+          "unit": "ott-4th",
+          "action": "retreat",
+          "to": [
+            38,
+            26
+          ]
+        },
+        {
+          "unit": "de-8th",
+          "action": "attack",
+          "target": "ru-1st"
+        },
+        {
+          "unit": "ru-caucasus",
+          "action": "retreat",
+          "to": [
+            45,
+            19
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "bef",
+          "strength": 950000,
+          "morale": 45
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 520000,
+          "morale": 45
+        },
+        {
+          "unit": "tanks-uk",
+          "strength": 6000,
+          "morale": 80
+        },
+        {
+          "unit": "it-army",
+          "strength": 500000,
+          "morale": 30
+        },
+        {
+          "unit": "de-14th",
+          "strength": 190000,
+          "morale": 90
+        },
+        {
+          "unit": "ah-isonzo",
+          "strength": 350000,
+          "morale": 80
+        },
+        {
+          "unit": "desert-mounted",
+          "strength": 15000,
+          "morale": 90
+        },
+        {
+          "unit": "egypt-force",
+          "strength": 100000,
+          "morale": 80
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 25000,
+          "morale": 40
+        },
+        {
+          "unit": "ru-1st",
+          "strength": 600000,
+          "morale": 15
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 600000,
+          "morale": 10
+        },
+        {
+          "unit": "de-8th",
+          "strength": 500000,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Brest-Litovsk and the Kaiserschlacht",
+      "time": "March – July 1918",
+      "durationSec": 12,
+      "narration": "Russia makes peace at Brest-Litovsk on 3 March and Romania at Bucharest in May, freeing German divisions for the west. On 21 March Ludendorff's storm troops break through the British Fifth Army on the Somme; further blows fall in Flanders and on the Aisne, and the Germans reach the Marne again, 90 km from Paris. Foch is made Allied supreme commander. American divisions go into action at Cantigny and Belleau Wood, and on the Piave the last Austro-Hungarian offensive fails. The offensives cost Germany nearly a million men it cannot replace.",
+      "orders": [
+        {
+          "unit": "de-storm",
+          "action": "attack",
+          "target": "bef"
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "attack",
+          "target": "fr-5th"
+        },
+        {
+          "unit": "bef",
+          "action": "hold"
+        },
+        {
+          "unit": "aef",
+          "action": "move",
+          "to": [
+            11,
+            12
+          ]
+        },
+        {
+          "unit": "fr-5th",
+          "action": "hold"
+        },
+        {
+          "unit": "ah-isonzo",
+          "action": "attack",
+          "target": "it-army"
+        },
+        {
+          "unit": "it-army",
+          "action": "hold"
+        },
+        {
+          "unit": "ott-3rd",
+          "action": "move",
+          "to": [
+            43,
+            20
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ru-1st",
+          "strength": 600000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ru-sw",
+          "strength": 600000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ro-army",
+          "strength": 300000,
+          "morale": 20,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ru-caucasus",
+          "strength": 30000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-14th",
+          "strength": 190000,
+          "morale": 80,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-8th",
+          "strength": 350000,
+          "morale": 70
+        },
+        {
+          "unit": "de-storm",
+          "strength": 500000,
+          "morale": 45
+        },
+        {
+          "unit": "bef",
+          "strength": 850000,
+          "morale": 50
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 200000,
+          "morale": 50
+        },
+        {
+          "unit": "aef",
+          "strength": 650000,
+          "morale": 85
+        },
+        {
+          "unit": "ah-isonzo",
+          "strength": 300000,
+          "morale": 50
+        },
+        {
+          "unit": "it-army",
+          "strength": 600000,
+          "morale": 65
+        },
+        {
+          "unit": "ott-3rd",
+          "strength": 50000,
+          "morale": 55
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "The Hundred Days, Megiddo and Dobro Pole",
+      "time": "July – September 1918",
+      "durationSec": 13,
+      "narration": "Foch counterattacks on the Marne in July, and on 8 August British, Dominion and French troops with more than 500 tanks break the line at Amiens, \"the black day of the German army\". The Americans clear the St Mihiel salient and open the Meuse–Argonne offensive. At Dobro Pole the Army of the Orient and the Serbians break the Bulgarian front, and Bulgaria signs an armistice on 29 September. At Megiddo Allenby's infantry opens a gap and the Desert Mounted Corps rides through behind the Ottoman 7th and 8th Armies, which are destroyed.",
+      "orders": [
+        {
+          "unit": "fr-5th",
+          "action": "attack",
+          "target": "de-storm"
+        },
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "tanks-uk",
+          "action": "attack",
+          "target": "de-storm"
+        },
+        {
+          "unit": "en-artillery",
+          "action": "bombard",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "aef",
+          "action": "attack",
+          "target": "de-centre"
+        },
+        {
+          "unit": "salonika",
+          "action": "attack",
+          "target": "bg-army"
+        },
+        {
+          "unit": "serbian-army",
+          "action": "attack",
+          "target": "bg-army"
+        },
+        {
+          "unit": "desert-mounted",
+          "action": "charge",
+          "target": "ott-4th"
+        },
+        {
+          "unit": "egypt-force",
+          "action": "attack",
+          "target": "ott-4th"
+        },
+        {
+          "unit": "arab-army",
+          "action": "move",
+          "to": [
+            39,
+            27
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-5th",
+          "strength": 230000,
+          "morale": 70
+        },
+        {
+          "unit": "bef",
+          "strength": 900000,
+          "morale": 75
+        },
+        {
+          "unit": "tanks-uk",
+          "strength": 9000,
+          "morale": 85
+        },
+        {
+          "unit": "de-storm",
+          "strength": 300000,
+          "morale": 30
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 450000,
+          "morale": 35
+        },
+        {
+          "unit": "aef",
+          "strength": 1200000,
+          "morale": 85
+        },
+        {
+          "unit": "de-centre",
+          "strength": 380000,
+          "morale": 35
+        },
+        {
+          "unit": "bg-army",
+          "strength": 250000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "salonika",
+          "strength": 400000,
+          "morale": 85
+        },
+        {
+          "unit": "serbian-army",
+          "strength": 120000,
+          "morale": 85
+        },
+        {
+          "unit": "ott-4th",
+          "strength": 0,
+          "morale": 0,
+          "status": "destroyed"
+        },
+        {
+          "unit": "desert-mounted",
+          "strength": 20000,
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "title": "The armistices",
+      "time": "October – 11 November 1918",
+      "durationSec": 12,
+      "narration": "Damascus falls on 1 October and Aleppo later that month; the Ottoman army in Mesopotamia surrenders at Sharqat, and the Ottoman Empire signs the Armistice of Mudros on 30 October. The Italians break the Austro-Hungarian front at Vittorio Veneto, and Austria-Hungary, dissolving into its nations, signs the Armistice of Villa Giusti on 3 November. Mutiny spreads from the High Seas Fleet at Kiel, the Kaiser abdicates, and at 11 a.m. on 11 November the Armistice of Compiègne ends the fighting in the west. The German armies march home behind the Rhine.",
+      "orders": [
+        {
+          "unit": "arab-army",
+          "action": "move",
+          "to": [
+            39,
+            26
+          ]
+        },
+        {
+          "unit": "desert-mounted",
+          "action": "move",
+          "to": [
+            39,
+            23
+          ]
+        },
+        {
+          "unit": "tigris-corps",
+          "action": "attack",
+          "target": "ott-6th"
+        },
+        {
+          "unit": "it-army",
+          "action": "attack",
+          "target": "ah-isonzo"
+        },
+        {
+          "unit": "bef",
+          "action": "attack",
+          "target": "de-right-wing"
+        },
+        {
+          "unit": "fr-5th",
+          "action": "attack",
+          "target": "de-storm"
+        },
+        {
+          "unit": "aef",
+          "action": "attack",
+          "target": "de-centre"
+        },
+        {
+          "unit": "fr-centre",
+          "action": "attack",
+          "target": "de-centre"
+        },
+        {
+          "unit": "de-right-wing",
+          "action": "retreat",
+          "to": [
+            12,
+            10
+          ]
+        },
+        {
+          "unit": "de-centre",
+          "action": "retreat",
+          "to": [
+            13,
+            11
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "ott-6th",
+          "strength": 12000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ott-5th",
+          "strength": 60000,
+          "morale": 30,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ott-3rd",
+          "strength": 45000,
+          "morale": 30,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ott-forts",
+          "strength": 12000,
+          "morale": 30,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ah-isonzo",
+          "strength": 300000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ah-galicia",
+          "strength": 350000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "ah-balkan",
+          "strength": 200000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "high-seas-fleet",
+          "strength": 40000,
+          "morale": 10,
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-right-wing",
+          "strength": 400000,
+          "morale": 30,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-centre",
+          "strength": 350000,
+          "morale": 30,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-left",
+          "strength": 300000,
+          "morale": 35,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-storm",
+          "strength": 250000,
+          "morale": 25,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-artillery",
+          "strength": 15000,
+          "morale": 30,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "it-army",
+          "strength": 650000,
+          "morale": 85
+        },
+        {
+          "unit": "tigris-corps",
+          "strength": 160000,
+          "morale": 85
+        },
+        {
+          "unit": "bef",
+          "strength": 880000,
+          "morale": 85
+        },
+        {
+          "unit": "aef",
+          "strength": 1300000,
+          "morale": 90
+        },
+        {
+          "unit": "fr-centre",
+          "strength": 340000,
+          "morale": 80
+        },
+        {
+          "unit": "fr-5th",
+          "strength": 220000,
+          "morale": 80
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Entente won. Bulgaria signed an armistice on 29 September 1918, the Ottoman Empire at Mudros on 30 October, Austria-Hungary at Villa Giusti on 3 November and Germany at Compiègne on 11 November. Russia had left the war at Brest-Litovsk in March 1918 and Romania at Bucharest in May. The peace treaties of 1919–1920 (Versailles, Saint-Germain, Trianon, Neuilly, Sèvres) broke up the German, Austro-Hungarian, Russian and Ottoman empires and redrew the map of Europe and the Middle East.",
+    "casualties": {
+      "A": "~5.4–5.7 million military dead (Russia ~1.8–2.25 million, France ~1.4 million, British Empire ~0.9–1.1 million, Italy ~0.65 million, Serbia, Romania, United States ~117,000)",
+      "B": "~4.0–4.4 million military dead (Germany ~2.0 million, Austria-Hungary ~1.1–1.2 million, Ottoman Empire ~0.8 million, Bulgaria ~0.09 million)"
+    }
+  },
+  "sources": [
+    {
+      "title": "World War I — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/World_War_I"
+    },
+    {
+      "title": "World War I casualties — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/World_War_I_casualties"
+    },
+    {
+      "title": "First Battle of the Marne — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/First_Battle_of_the_Marne"
+    },
+    {
+      "title": "Battle of Tannenberg — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tannenberg"
+    },
+    {
+      "title": "Battle of Verdun — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Verdun"
+    },
+    {
+      "title": "Battle of the Somme — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Somme"
+    },
+    {
+      "title": "Brusilov offensive — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brusilov_offensive"
+    },
+    {
+      "title": "Gallipoli campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gallipoli_campaign"
+    },
+    {
+      "title": "Battle of Caporetto — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Caporetto"
+    },
+    {
+      "title": "Macedonian front — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Macedonian_front"
+    },
+    {
+      "title": "Sinai and Palestine campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sinai_and_Palestine_campaign"
+    },
+    {
+      "title": "Mesopotamian campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mesopotamian_campaign"
+    },
+    {
+      "title": "Senussi campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Senussi_campaign"
+    },
+    {
+      "title": "Caucasus campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caucasus_campaign"
+    },
+    {
+      "title": "Battle of Jutland — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Jutland"
+    },
+    {
+      "title": "Hundred Days Offensive — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hundred_Days_Offensive"
+    }
+  ]
+}

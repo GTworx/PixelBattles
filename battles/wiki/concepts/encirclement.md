@@ -2,7 +2,7 @@
 type: concept
 slug: encirclement
 name: Encirclement (Kessel)
-battles: [stalingrad]
+battles: [stalingrad, world-war-i]
 ---
 
 # Encirclement (Kessel)
@@ -18,8 +18,10 @@ A ring is closed by two pincers meeting behind the enemy; the trapped army is th
 ## Where it appears
 
 - [[stalingrad]]: see [[operation-uranus]], [[double-envelopment]], [[friedrich-paulus]] and [[erich-von-manstein]].
+- [[world-war-i]]: at Tannenberg (26–30 August 1914) [[paul-von-hindenburg]] and [[erich-ludendorff]] closed a ring round Samsonov's Russian 2nd Army and took about 92,000 prisoners; Kut (1915–16) is the reverse case, a besieged British-Indian division that relief could not reach.
 
 ## Sources
 
 1. https://en.wikipedia.org/wiki/Battle_of_Stalingrad
 2. https://en.wikipedia.org/wiki/Operation_Uranus
+3. https://en.wikipedia.org/wiki/Battle_of_Tannenberg
