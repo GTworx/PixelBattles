@@ -1,0 +1,1727 @@
+{
+  "id": "pacific-war",
+  "title": "The Pacific War",
+  "year": "1937–1945",
+  "date": "7 July 1937 – 2 September 1945",
+  "location": "East and Southeast Asia and the Pacific: China, Burma, Malaya, the Dutch East Indies, the Philippines, New Guinea, the Solomons, the Central Pacific, Japan and Manchuria",
+  "wiki": "wiki/battles/pacific-war.md",
+  "summary": "The war in Asia and the Pacific on one map, from Japan's invasion of China in 1937 to its surrender in 1945. After Pearl Harbor Japan overran Southeast Asia in five months, but Midway, Guadalcanal and the Kokoda Track stopped it. The Allies then advanced across the Central and South West Pacific and through Burma, destroyed the Japanese navy at the Philippine Sea and Leyte Gulf, took Iwo Jima and Okinawa, and burned Japan's cities from the air; the atomic bombs and the Soviet invasion of Manchuria brought surrender in August 1945.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 250–300 km (≈ 2.4° of longitude × 2.7° of latitude), from 88°E to 155°W and 52°N to 28°S; islands drawn as single tiles",
+    "north": "up",
+    "terrain": [
+      "TTTTTTTTTTTTTTTTTTTTTT^====^^=====b=b======b====",
+      "TTTTTTTTTTTTTTTTTTTTT=^=========================",
+      "...bbbbbbbbb...c....=^^=========================",
+      "...bbbbbbbbb..c....==^^^========================",
+      ",,,,,,,,,,,c,,,,,====^==========================",
+      ",,,,,,,,,,,,,==c,==^^^==========================",
+      "MMMMM^^,,,,,,====^c^^c==========================",
+      "MMMMM^^,,,,,cc===c^=============================",
+      "MMMMM^^c~~c~,,========================b=========",
+      "^^^^^^^,,,,,,===b===============================",
+      "TTcTTTTTT,,,=^=======b==========================",
+      "=TTcTTTcT,c===================================c=",
+      "==TTTTTTbb===^==================b==============b",
+      "===cTTTT=====^=========b========================",
+      "====TcTTT====c^========b========================",
+      "====T=Tc======^T================================",
+      "====T=========^^===b======b=====b===============",
+      "===T=T=====T==^^================================",
+      "===TTTc===TTT=====================b=============",
+      "====TT===TTT=^^=T===============================",
+      "=====TT==TTT^^^==TTTTT====T=====================",
+      "======Tc,,==^^======TMMT=TcT====================",
+      "=======,,,,====b=====TT^M===TT==================",
+      "==============b=========c====T==================",
+      "=================c..==.=========================",
+      "===============.....=...========================",
+      "==============bbbbbbbbbb========================",
+      "===========bbbbbbbbbbbbbb=======================",
+      "==========bbbbbbbbbbbbbbbb======================",
+      "==========bbbbbbbbbbbbbbbbb====================="
+    ],
+    "labels": [
+      {
+        "text": "PACIFIC OCEAN",
+        "col": 32,
+        "row": 4
+      },
+      {
+        "text": "CHINA",
+        "col": 5,
+        "row": 5
+      },
+      {
+        "text": "MANCHURIA",
+        "col": 14,
+        "row": 1
+      },
+      {
+        "text": "JAPAN",
+        "col": 20,
+        "row": 4
+      },
+      {
+        "text": "Tokyo",
+        "col": 21,
+        "row": 7
+      },
+      {
+        "text": "Hiroshima",
+        "col": 17,
+        "row": 5
+      },
+      {
+        "text": "Nagasaki",
+        "col": 16,
+        "row": 8
+      },
+      {
+        "text": "Shanghai",
+        "col": 14,
+        "row": 7
+      },
+      {
+        "text": "Nanjing",
+        "col": 11,
+        "row": 6
+      },
+      {
+        "text": "Chongqing",
+        "col": 5,
+        "row": 9
+      },
+      {
+        "text": "Hong Kong",
+        "col": 10,
+        "row": 12
+      },
+      {
+        "text": "Burma",
+        "col": 1,
+        "row": 12
+      },
+      {
+        "text": "Imphal",
+        "col": 0,
+        "row": 9
+      },
+      {
+        "text": "Rangoon",
+        "col": 2,
+        "row": 14
+      },
+      {
+        "text": "Malaya",
+        "col": 2,
+        "row": 16
+      },
+      {
+        "text": "Singapore",
+        "col": 6,
+        "row": 19
+      },
+      {
+        "text": "Java",
+        "col": 8,
+        "row": 23
+      },
+      {
+        "text": "Borneo",
+        "col": 10,
+        "row": 18
+      },
+      {
+        "text": "Philippines",
+        "col": 15,
+        "row": 13
+      },
+      {
+        "text": "Leyte",
+        "col": 16,
+        "row": 15
+      },
+      {
+        "text": "Okinawa",
+        "col": 15,
+        "row": 10
+      },
+      {
+        "text": "Iwo Jima",
+        "col": 22,
+        "row": 10
+      },
+      {
+        "text": "Saipan",
+        "col": 24,
+        "row": 13
+      },
+      {
+        "text": "Truk",
+        "col": 26,
+        "row": 17
+      },
+      {
+        "text": "Rabaul",
+        "col": 27,
+        "row": 20
+      },
+      {
+        "text": "New Guinea",
+        "col": 18,
+        "row": 21
+      },
+      {
+        "text": "Port Moresby",
+        "col": 24,
+        "row": 24
+      },
+      {
+        "text": "Guadalcanal",
+        "col": 30,
+        "row": 23
+      },
+      {
+        "text": "Coral Sea",
+        "col": 27,
+        "row": 26
+      },
+      {
+        "text": "AUSTRALIA",
+        "col": 16,
+        "row": 27
+      },
+      {
+        "text": "Darwin",
+        "col": 17,
+        "row": 25
+      },
+      {
+        "text": "Tarawa",
+        "col": 35,
+        "row": 18
+      },
+      {
+        "text": "Midway",
+        "col": 38,
+        "row": 7
+      },
+      {
+        "text": "Pearl Harbor",
+        "col": 43,
+        "row": 12
+      },
+      {
+        "text": "Aleutians",
+        "col": 36,
+        "row": 1
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Allies",
+      "commander": "Nimitz, MacArthur, Chiang Kai-shek & Slim",
+      "color": "#2e64c8",
+      "flag": "allies-pacific"
+    },
+    {
+      "id": "B",
+      "name": "Empire of Japan",
+      "commander": "Emperor Hirohito; Tojo, Yamamoto, Yamashita",
+      "color": "#b3202a",
+      "flag": "japan"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "nra",
+      "side": "A",
+      "name": "National Revolutionary Army (Chiang Kai-shek)",
+      "type": "infantry",
+      "strength": 1700000,
+      "col": 12,
+      "row": 7,
+      "facing": "up",
+      "morale": 70,
+      "commander": "Chiang Kai-shek"
+    },
+    {
+      "id": "us-pacfleet",
+      "side": "A",
+      "name": "US Pacific Fleet battle line (Kimmel; at Surigao Strait under Oldendorf)",
+      "type": "ships",
+      "strength": 60000,
+      "col": 45,
+      "row": 11,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Husband E. Kimmel",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "us-carriers",
+      "side": "A",
+      "name": "US carrier task forces (Fletcher, Halsey, Spruance; Mitscher's Task Force 58)",
+      "type": "ships",
+      "strength": 40000,
+      "col": 44,
+      "row": 10,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Raymond Spruance",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "carrier-air",
+      "side": "A",
+      "name": "US Navy carrier air groups",
+      "type": "aircraft",
+      "strength": 20000,
+      "col": 44,
+      "row": 11,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Marc Mitscher",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "usaffe",
+      "side": "A",
+      "name": "US Army Forces in the Far East: US and Philippine Army (MacArthur, Wainwright)",
+      "type": "infantry",
+      "strength": 150000,
+      "col": 13,
+      "row": 14,
+      "facing": "up",
+      "morale": 65,
+      "commander": "Douglas MacArthur",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "uk-malaya",
+      "side": "A",
+      "name": "Malaya Command: British, Indian and Australian divisions (Percival)",
+      "type": "infantry",
+      "strength": 140000,
+      "col": 5,
+      "row": 17,
+      "facing": "up",
+      "morale": 60,
+      "commander": "Arthur Percival",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "force-z",
+      "side": "A",
+      "name": "Force Z: HMS Prince of Wales and Repulse (Phillips)",
+      "type": "ships",
+      "strength": 3000,
+      "col": 7,
+      "row": 17,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Tom Phillips",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "abda",
+      "side": "A",
+      "name": "ABDA naval striking force (Doorman)",
+      "type": "ships",
+      "strength": 10000,
+      "col": 8,
+      "row": 20,
+      "facing": "up",
+      "morale": 65,
+      "commander": "Karel Doorman",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "knil",
+      "side": "A",
+      "name": "Royal Netherlands East Indies Army (ter Poorten)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 9,
+      "row": 22,
+      "facing": "up",
+      "morale": 55,
+      "commander": "Hein ter Poorten",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "burma",
+      "side": "A",
+      "name": "Burma Corps, then the Fourteenth Army (Slim)",
+      "type": "infantry",
+      "strength": 40000,
+      "col": 3,
+      "row": 13,
+      "facing": "right",
+      "morale": 60,
+      "commander": "William Slim",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "chinese-x",
+      "side": "A",
+      "name": "Chinese Expeditionary Force and X Force in Burma (Stilwell, Sun Li-jen)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 4,
+      "row": 10,
+      "facing": "down",
+      "morale": 70,
+      "commander": "Joseph Stilwell",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "anzac-ng",
+      "side": "A",
+      "name": "Australian and US forces in New Guinea (Blamey; Eichelberger, under MacArthur)",
+      "type": "infantry",
+      "strength": 30000,
+      "col": 24,
+      "row": 23,
+      "facing": "up",
+      "morale": 75,
+      "commander": "Thomas Blamey",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "allied-air",
+      "side": "A",
+      "name": "Allied Air Forces in the South West Pacific (Kenney)",
+      "type": "aircraft",
+      "strength": 30000,
+      "col": 24,
+      "row": 24,
+      "facing": "up",
+      "morale": 80,
+      "commander": "George Kenney",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "us-guadalcanal",
+      "side": "A",
+      "name": "1st Marine Division, then XIV Corps on Guadalcanal (Vandegrift, Patch)",
+      "type": "infantry",
+      "strength": 60000,
+      "col": 29,
+      "row": 23,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Alexander Vandegrift",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "us-tarawa",
+      "side": "A",
+      "name": "2nd Marine Division at Tarawa (Julian Smith)",
+      "type": "infantry",
+      "strength": 18000,
+      "col": 34,
+      "row": 18,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Julian C. Smith",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "us-saipan",
+      "side": "A",
+      "name": "V Amphibious Corps in the Marianas (Holland Smith)",
+      "type": "infantry",
+      "strength": 71000,
+      "col": 23,
+      "row": 14,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Holland Smith",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "us-6th",
+      "side": "A",
+      "name": "US Sixth Army in the Philippines (Krueger, under MacArthur)",
+      "type": "infantry",
+      "strength": 200000,
+      "col": 15,
+      "row": 15,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Walter Krueger",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "us-iwo",
+      "side": "A",
+      "name": "V Amphibious Corps on Iwo Jima (Schmidt)",
+      "type": "infantry",
+      "strength": 70000,
+      "col": 21,
+      "row": 10,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Harry Schmidt",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "b29",
+      "side": "A",
+      "name": "XXI Bomber Command B-29s from the Marianas (LeMay)",
+      "type": "aircraft",
+      "strength": 50000,
+      "col": 23,
+      "row": 13,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Curtis LeMay",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "us-10th",
+      "side": "A",
+      "name": "US Tenth Army on Okinawa (Buckner)",
+      "type": "infantry",
+      "strength": 183000,
+      "col": 16,
+      "row": 9,
+      "facing": "up",
+      "morale": 85,
+      "commander": "Simon Bolivar Buckner Jr.",
+      "enterPhase": "p13"
+    },
+    {
+      "id": "soviet-fe",
+      "side": "A",
+      "name": "Soviet Far East Command: Transbaikal, 1st and 2nd Far Eastern Fronts (Vasilevsky)",
+      "type": "armor",
+      "strength": 1577000,
+      "col": 10,
+      "row": 2,
+      "facing": "right",
+      "morale": 90,
+      "commander": "Aleksandr Vasilevsky",
+      "enterPhase": "p14"
+    },
+    {
+      "id": "china-exp",
+      "side": "B",
+      "name": "Japanese armies in China: Shanghai Expeditionary Force, then the China Expeditionary Army (Matsui; Hata, Okamura)",
+      "type": "infantry",
+      "strength": 600000,
+      "col": 12,
+      "row": 5,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Yasuji Okamura"
+    },
+    {
+      "id": "kwantung",
+      "side": "B",
+      "name": "Kwantung Army in Manchuria (Umezu, then Yamada)",
+      "type": "infantry",
+      "strength": 700000,
+      "col": 14,
+      "row": 3,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Otozo Yamada"
+    },
+    {
+      "id": "kido-butai",
+      "side": "B",
+      "name": "Kido Butai: the six carriers of the 1st Air Fleet (Nagumo)",
+      "type": "ships",
+      "strength": 30000,
+      "col": 22,
+      "row": 7,
+      "facing": "right",
+      "morale": 90,
+      "commander": "Chuichi Nagumo",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "combined-fleet",
+      "side": "B",
+      "name": "Combined Fleet battleships and cruisers (Yamamoto; Kondo, Kurita; Yamato)",
+      "type": "ships",
+      "strength": 50000,
+      "col": 19,
+      "row": 7,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Isoroku Yamamoto",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "jp-naval-air",
+      "side": "B",
+      "name": "11th Air Fleet and the land-based naval air arm, from October 1944 the kamikaze units",
+      "type": "aircraft",
+      "strength": 50000,
+      "col": 13,
+      "row": 10,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Takijiro Onishi",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "jp-25th",
+      "side": "B",
+      "name": "25th Army (Yamashita)",
+      "type": "light_infantry",
+      "strength": 70000,
+      "col": 4,
+      "row": 15,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Tomoyuki Yamashita",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "jp-14th",
+      "side": "B",
+      "name": "14th Army (Homma), from 1944 the 14th Area Army (Yamashita)",
+      "type": "infantry",
+      "strength": 130000,
+      "col": 13,
+      "row": 12,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Masaharu Homma",
+      "enterPhase": "p2"
+    },
+    {
+      "id": "jp-16th",
+      "side": "B",
+      "name": "16th Army in the Dutch East Indies (Imamura)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 5,
+      "row": 20,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Hitoshi Imamura",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "jp-15th",
+      "side": "B",
+      "name": "15th Army (Iida; Mutaguchi), later the Burma Area Army (Kimura)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 5,
+      "row": 14,
+      "facing": "left",
+      "morale": 85,
+      "commander": "Renya Mutaguchi",
+      "enterPhase": "p3"
+    },
+    {
+      "id": "jp-south-seas",
+      "side": "B",
+      "name": "South Seas Detachment, then the 18th Army in New Guinea (Horii; Adachi)",
+      "type": "infantry",
+      "strength": 30000,
+      "col": 23,
+      "row": 21,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Tomitaro Horii",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "jp-17th",
+      "side": "B",
+      "name": "17th Army on Guadalcanal (Hyakutake)",
+      "type": "infantry",
+      "strength": 36000,
+      "col": 28,
+      "row": 22,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Harukichi Hyakutake",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "rabaul",
+      "side": "B",
+      "name": "8th Area Army at Rabaul, later bypassed (Imamura)",
+      "type": "infantry",
+      "strength": 90000,
+      "col": 26,
+      "row": 21,
+      "facing": "down",
+      "morale": 75,
+      "commander": "Hitoshi Imamura",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "tarawa-g",
+      "side": "B",
+      "name": "Tarawa garrison: 3rd Special Base Force and 7th Sasebo SNLF (Shibazaki)",
+      "type": "infantry",
+      "strength": 4700,
+      "col": 34,
+      "row": 18,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Keiji Shibazaki",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "mobile-fleet",
+      "side": "B",
+      "name": "1st Mobile Fleet: the rebuilt carrier force (Ozawa)",
+      "type": "ships",
+      "strength": 25000,
+      "col": 17,
+      "row": 13,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Jisaburo Ozawa",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "saipan-g",
+      "side": "B",
+      "name": "31st Army on Saipan (Saito, Nagumo)",
+      "type": "infantry",
+      "strength": 31600,
+      "col": 23,
+      "row": 13,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Yoshitsugu Saito",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "iwo-g",
+      "side": "B",
+      "name": "109th Division on Iwo Jima (Kuribayashi)",
+      "type": "infantry",
+      "strength": 21000,
+      "col": 21,
+      "row": 10,
+      "facing": "down",
+      "morale": 90,
+      "commander": "Tadamichi Kuribayashi",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "home",
+      "side": "B",
+      "name": "Japanese home islands: cities, war industry and air defences",
+      "type": "artillery",
+      "strength": 2000000,
+      "col": 21,
+      "row": 6,
+      "facing": "down",
+      "morale": 75,
+      "enterPhase": "p12"
+    },
+    {
+      "id": "okinawa-g",
+      "side": "B",
+      "name": "32nd Army on Okinawa (Ushijima)",
+      "type": "infantry",
+      "strength": 100000,
+      "col": 16,
+      "row": 9,
+      "facing": "down",
+      "morale": 85,
+      "commander": "Mitsuru Ushijima",
+      "enterPhase": "p13"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The Second Sino-Japanese War",
+      "time": "July 1937 – 1941",
+      "durationSec": 12,
+      "narration": "A clash at the Marco Polo Bridge near Beijing on 7 July 1937 becomes full-scale war. Japan wins a long, bloody battle for Shanghai and takes Nanjing in December, where its troops massacre an estimated 200,000–300,000 civilians and prisoners. Wuhan falls in 1938, and Chiang Kai-shek's government moves up the Yangtze to Chongqing. The war settles into a stalemate in which the Japanese hold the cities and railways and cannot end the war.",
+      "orders": [
+        {
+          "unit": "china-exp",
+          "action": "attack",
+          "target": "nra"
+        },
+        {
+          "unit": "nra",
+          "action": "retreat",
+          "to": [
+            7,
+            8
+          ]
+        },
+        {
+          "unit": "kwantung",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "nra",
+          "strength": 1200000,
+          "morale": 60
+        },
+        {
+          "unit": "china-exp",
+          "strength": 560000,
+          "morale": 75
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Pearl Harbor and the first strikes",
+      "time": "7–10 December 1941",
+      "durationSec": 11,
+      "narration": "On 7 December Nagumo's six carriers strike the US Pacific Fleet at Pearl Harbor: four battleships are sunk, 188 aircraft destroyed and 2,403 Americans killed, for 29 Japanese aircraft. Within hours Japan lands in Malaya and Thailand and bombs the Philippines; on 10 December land-based naval bombers sink the British battleship Prince of Wales and battlecruiser Repulse. Hong Kong falls on 25 December.",
+      "orders": [
+        {
+          "unit": "kido-butai",
+          "action": "move",
+          "to": [
+            42,
+            10
+          ]
+        },
+        {
+          "unit": "kido-butai",
+          "action": "bombard",
+          "target": "us-pacfleet"
+        },
+        {
+          "unit": "us-pacfleet",
+          "action": "hold"
+        },
+        {
+          "unit": "jp-naval-air",
+          "action": "bombard",
+          "target": "force-z"
+        },
+        {
+          "unit": "jp-25th",
+          "action": "attack",
+          "target": "uk-malaya"
+        },
+        {
+          "unit": "jp-14th",
+          "action": "attack",
+          "target": "usaffe"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "us-pacfleet",
+          "strength": 35000,
+          "morale": 40
+        },
+        {
+          "unit": "force-z",
+          "status": "destroyed"
+        },
+        {
+          "unit": "kido-butai",
+          "strength": 29800
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The southern conquests",
+      "time": "December 1941 – May 1942",
+      "durationSec": 13,
+      "narration": "Yamashita's 25th Army drives down the Malay peninsula, and Singapore surrenders on 15 February 1942 with about 80,000 British, Indian and Australian troops, the largest capitulation in British history. The Allied fleet is destroyed in the Battle of the Java Sea and the Dutch East Indies surrender on 8–9 March. Bataan falls on 9 April and Corregidor on 6 May; the 15th Army takes Rangoon in March and drives the British back to India. The Doolittle Raid bombs Tokyo on 18 April.",
+      "orders": [
+        {
+          "unit": "jp-25th",
+          "action": "attack",
+          "target": "uk-malaya"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "attack",
+          "target": "abda"
+        },
+        {
+          "unit": "jp-16th",
+          "action": "attack",
+          "target": "knil"
+        },
+        {
+          "unit": "jp-14th",
+          "action": "attack",
+          "target": "usaffe"
+        },
+        {
+          "unit": "jp-15th",
+          "action": "attack",
+          "target": "burma"
+        },
+        {
+          "unit": "burma",
+          "action": "retreat",
+          "to": [
+            2,
+            10
+          ]
+        },
+        {
+          "unit": "kido-butai",
+          "action": "move",
+          "to": [
+            22,
+            8
+          ]
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            40,
+            10
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "uk-malaya",
+          "strength": 80000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "abda",
+          "status": "destroyed"
+        },
+        {
+          "unit": "knil",
+          "strength": 90000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "usaffe",
+          "strength": 76000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "burma",
+          "strength": 25000,
+          "morale": 45
+        },
+        {
+          "unit": "jp-25th",
+          "strength": 60000
+        },
+        {
+          "unit": "jp-14th",
+          "strength": 120000
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Coral Sea and Midway",
+      "time": "May – June 1942",
+      "durationSec": 12,
+      "narration": "In the Coral Sea (4–8 May) carrier aircraft fight the first naval battle in which the fleets never see each other, and the invasion convoy bound for Port Moresby turns back. Yamamoto then sends Nagumo against Midway. Forewarned by codebreakers, Spruance's and Fletcher's dive-bombers catch the Japanese carriers on 4 June: Akagi, Kaga, Sōryū and Hiryū are all sunk, with about 3,000 men and 248 aircraft, for the loss of Yorktown. The initiative passes to the United States.",
+      "orders": [
+        {
+          "unit": "kido-butai",
+          "action": "move",
+          "to": [
+            37,
+            9
+          ]
+        },
+        {
+          "unit": "kido-butai",
+          "action": "bombard",
+          "target": "us-carriers"
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            40,
+            9
+          ]
+        },
+        {
+          "unit": "carrier-air",
+          "action": "bombard",
+          "target": "kido-butai"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "kido-butai",
+          "status": "destroyed"
+        },
+        {
+          "unit": "us-carriers",
+          "strength": 36000,
+          "morale": 85
+        },
+        {
+          "unit": "carrier-air",
+          "strength": 18500,
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Guadalcanal, Kokoda and Milne Bay",
+      "time": "July 1942 – February 1943",
+      "durationSec": 13,
+      "narration": "On 7 August US Marines land on Guadalcanal and seize the airfield the Japanese are building. Six months of attrition follow on land, at sea and in the air, with seven major naval battles; in February 1943 the Japanese evacuate 10,652 survivors. In New Guinea the South Seas Detachment crosses the Owen Stanley Range on the Kokoda Track to within 32 km of Port Moresby before the Australians turn it back; at Milne Bay Japan suffers its first defeat on land, and the beachheads at Buna and Gona fall in January 1943.",
+      "orders": [
+        {
+          "unit": "us-guadalcanal",
+          "action": "attack",
+          "target": "jp-17th"
+        },
+        {
+          "unit": "jp-17th",
+          "action": "attack",
+          "target": "us-guadalcanal"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "move",
+          "to": [
+            27,
+            23
+          ]
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "bombard",
+          "target": "us-guadalcanal"
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            30,
+            21
+          ]
+        },
+        {
+          "unit": "jp-south-seas",
+          "action": "attack",
+          "target": "anzac-ng"
+        },
+        {
+          "unit": "anzac-ng",
+          "action": "attack",
+          "target": "jp-south-seas"
+        },
+        {
+          "unit": "allied-air",
+          "action": "bombard",
+          "target": "rabaul"
+        },
+        {
+          "unit": "rabaul",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "jp-17th",
+          "strength": 10652,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "us-guadalcanal",
+          "strength": 53000
+        },
+        {
+          "unit": "jp-south-seas",
+          "strength": 12000,
+          "morale": 30
+        },
+        {
+          "unit": "anzac-ng",
+          "strength": 27000
+        },
+        {
+          "unit": "combined-fleet",
+          "strength": 42000,
+          "morale": 70
+        },
+        {
+          "unit": "us-carriers",
+          "strength": 30000
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Cartwheel: the Solomons and New Guinea",
+      "time": "1943",
+      "durationSec": 11,
+      "narration": "MacArthur and Halsey advance up New Guinea and the Solomons in Operation Cartwheel. Allied aircraft destroy a Japanese troop convoy in the Bismarck Sea in March, and on 18 April American fighters shoot down Admiral Yamamoto over Bougainville. Rather than assault the fortress of Rabaul, the Allies surround it with air bases and leave its 90,000 men to wither, and the Combined Fleet falls back to its anchorage at Lingga near Singapore. In Burma, Wingate's Chindits raid behind Japanese lines.",
+      "orders": [
+        {
+          "unit": "anzac-ng",
+          "action": "attack",
+          "target": "jp-south-seas"
+        },
+        {
+          "unit": "jp-south-seas",
+          "action": "retreat",
+          "to": [
+            20,
+            20
+          ]
+        },
+        {
+          "unit": "allied-air",
+          "action": "bombard",
+          "target": "rabaul"
+        },
+        {
+          "unit": "rabaul",
+          "action": "hold"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "retreat",
+          "to": [
+            8,
+            17
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "rabaul",
+          "strength": 85000,
+          "morale": 45
+        },
+        {
+          "unit": "jp-south-seas",
+          "strength": 25000,
+          "morale": 40
+        },
+        {
+          "unit": "combined-fleet",
+          "strength": 40000,
+          "morale": 60
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Tarawa and the Central Pacific drive",
+      "time": "November 1943 – February 1944",
+      "durationSec": 10,
+      "narration": "Nimitz opens the Central Pacific drive in the Gilbert Islands. On Betio, in Tarawa atoll, the 2nd Marine Division wades ashore across a reef under fire; in 76 hours about 1,700 Americans and almost all of the 4,700 defenders die, and only 17 Japanese soldiers are taken alive. The Marshalls follow in February 1944, and carrier raids wreck the Japanese base at Truk.",
+      "orders": [
+        {
+          "unit": "us-tarawa",
+          "action": "attack",
+          "target": "tarawa-g"
+        },
+        {
+          "unit": "tarawa-g",
+          "action": "hold"
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            29,
+            16
+          ]
+        },
+        {
+          "unit": "carrier-air",
+          "action": "move",
+          "to": [
+            27,
+            16
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "tarawa-g",
+          "status": "destroyed"
+        },
+        {
+          "unit": "us-tarawa",
+          "strength": 15000
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Imphal, Kohima and Ichi-Go",
+      "time": "March – December 1944",
+      "durationSec": 12,
+      "narration": "In March 1944 Mutaguchi's 15th Army invades India to take Imphal and Kohima. Slim's Fourteenth Army, supplied by air, holds both, and by July the Japanese have lost about 55,000 men, most to starvation and disease, the greatest Japanese defeat on land until then. Stilwell's Chinese divisions take Myitkyina in northern Burma. In China, Japan's Operation Ichi-Go, the largest offensive of its war, overruns the American airfields in the south and opens a corridor to Indochina.",
+      "orders": [
+        {
+          "unit": "jp-15th",
+          "action": "attack",
+          "target": "burma"
+        },
+        {
+          "unit": "burma",
+          "action": "hold"
+        },
+        {
+          "unit": "chinese-x",
+          "action": "attack",
+          "target": "jp-15th"
+        },
+        {
+          "unit": "china-exp",
+          "action": "attack",
+          "target": "nra"
+        },
+        {
+          "unit": "nra",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "jp-15th",
+          "strength": 45000,
+          "morale": 20
+        },
+        {
+          "unit": "burma",
+          "strength": 120000,
+          "morale": 85
+        },
+        {
+          "unit": "nra",
+          "strength": 1000000,
+          "morale": 45
+        },
+        {
+          "unit": "china-exp",
+          "strength": 530000,
+          "morale": 65
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Saipan and the Philippine Sea",
+      "time": "June – August 1944",
+      "durationSec": 12,
+      "narration": "US forces land on Saipan on 15 June. Ozawa's rebuilt carrier fleet comes out to fight and loses three carriers and some 550–645 aircraft in two days (19–20 June), the \"Great Marianas Turkey Shoot\". Saipan falls on 9 July after a final suicidal charge; almost its whole garrison and thousands of civilians die. Tojo's government falls, and the Marianas become bases for B-29s within range of Tokyo.",
+      "orders": [
+        {
+          "unit": "us-saipan",
+          "action": "attack",
+          "target": "saipan-g"
+        },
+        {
+          "unit": "saipan-g",
+          "action": "hold"
+        },
+        {
+          "unit": "mobile-fleet",
+          "action": "move",
+          "to": [
+            21,
+            13
+          ]
+        },
+        {
+          "unit": "mobile-fleet",
+          "action": "bombard",
+          "target": "us-carriers"
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            24,
+            12
+          ]
+        },
+        {
+          "unit": "carrier-air",
+          "action": "bombard",
+          "target": "mobile-fleet"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "saipan-g",
+          "status": "destroyed"
+        },
+        {
+          "unit": "us-saipan",
+          "strength": 58000
+        },
+        {
+          "unit": "mobile-fleet",
+          "strength": 12000,
+          "morale": 30
+        },
+        {
+          "unit": "carrier-air",
+          "strength": 19000
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Leyte Gulf and the return to the Philippines",
+      "time": "October 1944 – March 1945",
+      "durationSec": 13,
+      "narration": "The US Sixth Army lands on Leyte on 20 October 1944, and the Japanese navy commits everything it has left. In the Battle of Leyte Gulf (23–26 October), the largest naval battle in history, Ozawa's empty carriers lure Halsey north, Oldendorf's old battleships, several raised from the mud of Pearl Harbor, destroy the southern force in Surigao Strait, and Kurita turns back off Samar. Japan loses 26 ships, and the first kamikaze attacks begin. The Americans land on Luzon in January; Manila is destroyed in a month of street fighting.",
+      "orders": [
+        {
+          "unit": "us-6th",
+          "action": "attack",
+          "target": "jp-14th"
+        },
+        {
+          "unit": "jp-14th",
+          "action": "hold"
+        },
+        {
+          "unit": "us-pacfleet",
+          "action": "move",
+          "to": [
+            16,
+            16
+          ]
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "move",
+          "to": [
+            16,
+            16
+          ]
+        },
+        {
+          "unit": "mobile-fleet",
+          "action": "move",
+          "to": [
+            18,
+            12
+          ]
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            19,
+            12
+          ]
+        },
+        {
+          "unit": "carrier-air",
+          "action": "bombard",
+          "target": "mobile-fleet"
+        },
+        {
+          "unit": "jp-naval-air",
+          "action": "bombard",
+          "target": "us-carriers"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "mobile-fleet",
+          "status": "destroyed"
+        },
+        {
+          "unit": "combined-fleet",
+          "strength": 18000,
+          "morale": 30
+        },
+        {
+          "unit": "jp-14th",
+          "strength": 170000,
+          "morale": 35
+        },
+        {
+          "unit": "us-carriers",
+          "strength": 28000
+        },
+        {
+          "unit": "jp-naval-air",
+          "strength": 35000
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Burma reconquered",
+      "time": "December 1944 – May 1945",
+      "durationSec": 11,
+      "narration": "Slim's Fourteenth Army crosses the Chindwin and the Irrawaddy, seizes Meiktila in a deep armoured thrust in March 1945 and retakes Mandalay. The Burma Road to China reopens, and Rangoon is taken on 3 May, just ahead of the monsoon. The broken Burma Area Army retreats toward Thailand.",
+      "orders": [
+        {
+          "unit": "burma",
+          "action": "attack",
+          "target": "jp-15th"
+        },
+        {
+          "unit": "chinese-x",
+          "action": "attack",
+          "target": "jp-15th"
+        },
+        {
+          "unit": "jp-15th",
+          "action": "retreat",
+          "to": [
+            5,
+            14
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "jp-15th",
+          "strength": 30000,
+          "morale": 15
+        },
+        {
+          "unit": "burma",
+          "strength": 130000
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Iwo Jima and the fire raids",
+      "time": "February – May 1945",
+      "durationSec": 12,
+      "narration": "On 19 February the Marines land on Iwo Jima, where Kuribayashi's 21,000 men fight from tunnels; the island is secured on 26 March, with about 6,800 Americans and almost the entire garrison dead. From the Marianas, LeMay's B-29s switch to low-level night incendiary raids: on 9–10 March about 100,000 people die in Tokyo in the most destructive air raid in history, and city after city burns.",
+      "orders": [
+        {
+          "unit": "us-iwo",
+          "action": "attack",
+          "target": "iwo-g"
+        },
+        {
+          "unit": "iwo-g",
+          "action": "hold"
+        },
+        {
+          "unit": "b29",
+          "action": "bombard",
+          "target": "home"
+        },
+        {
+          "unit": "home",
+          "action": "bombard",
+          "target": "b29"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "iwo-g",
+          "status": "destroyed"
+        },
+        {
+          "unit": "us-iwo",
+          "strength": 48000
+        },
+        {
+          "unit": "home",
+          "strength": 1800000,
+          "morale": 45
+        },
+        {
+          "unit": "b29",
+          "strength": 48000
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Okinawa",
+      "time": "1 April – 22 June 1945",
+      "durationSec": 12,
+      "narration": "The Tenth Army lands on Okinawa on 1 April. Ushijima's 32nd Army defends the south from caves and ridges for nearly three months, while waves of kamikaze aircraft strike the fleet offshore. The battleship Yamato, sent on a one-way mission, is sunk by carrier aircraft on 7 April. About 110,000 Japanese soldiers, more than 12,000 Americans and between 40,000 and 150,000 Okinawan civilians die.",
+      "orders": [
+        {
+          "unit": "us-10th",
+          "action": "attack",
+          "target": "okinawa-g"
+        },
+        {
+          "unit": "okinawa-g",
+          "action": "hold"
+        },
+        {
+          "unit": "combined-fleet",
+          "action": "retreat",
+          "to": [
+            17,
+            10
+          ]
+        },
+        {
+          "unit": "carrier-air",
+          "action": "bombard",
+          "target": "combined-fleet"
+        },
+        {
+          "unit": "us-carriers",
+          "action": "move",
+          "to": [
+            18,
+            9
+          ]
+        },
+        {
+          "unit": "jp-naval-air",
+          "action": "bombard",
+          "target": "us-carriers"
+        },
+        {
+          "unit": "b29",
+          "action": "bombard",
+          "target": "home"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "okinawa-g",
+          "status": "destroyed"
+        },
+        {
+          "unit": "combined-fleet",
+          "status": "destroyed"
+        },
+        {
+          "unit": "us-10th",
+          "strength": 150000
+        },
+        {
+          "unit": "jp-naval-air",
+          "strength": 15000,
+          "morale": 40
+        },
+        {
+          "unit": "us-carriers",
+          "strength": 25000
+        },
+        {
+          "unit": "home",
+          "strength": 1700000,
+          "morale": 35
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "Atomic bombs and August Storm",
+      "time": "6–15 August 1945",
+      "durationSec": 11,
+      "narration": "On 6 August a B-29 drops an atomic bomb on Hiroshima. On 8 August the Soviet Union declares war, and the next day 1.5 million Soviet troops invade Manchuria from three sides; the same day a second atomic bomb destroys Nagasaki. Between 150,000 and 246,000 people die in the two cities by the end of the year. The Kwantung Army collapses, and on 15 August the Emperor announces Japan's surrender by radio.",
+      "orders": [
+        {
+          "unit": "b29",
+          "action": "bombard",
+          "target": "home"
+        },
+        {
+          "unit": "soviet-fe",
+          "action": "charge",
+          "target": "kwantung"
+        },
+        {
+          "unit": "kwantung",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "kwantung",
+          "strength": 600000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "home",
+          "strength": 1500000,
+          "morale": 10
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "title": "Surrender",
+      "time": "15 August – 9 September 1945",
+      "durationSec": 9,
+      "narration": "Japan's representatives sign the instrument of surrender aboard USS Missouri in Tokyo Bay on 2 September 1945, and the China Expeditionary Army surrenders at Nanjing on 9 September. The Japanese garrisons across Asia and the Pacific lay down their arms; some isolated soldiers hold out for years.",
+      "orders": [
+        {
+          "unit": "us-6th",
+          "action": "hold"
+        },
+        {
+          "unit": "nra",
+          "action": "hold"
+        },
+        {
+          "unit": "burma",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "china-exp",
+          "status": "surrendered"
+        },
+        {
+          "unit": "home",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-25th",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-14th",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-16th",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-15th",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-south-seas",
+          "status": "surrendered"
+        },
+        {
+          "unit": "rabaul",
+          "status": "surrendered"
+        },
+        {
+          "unit": "jp-naval-air",
+          "status": "surrendered"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Allies won. Emperor Hirohito announced Japan's surrender on 15 August 1945, the instrument of surrender was signed on 2 September and the China Expeditionary Army surrendered at Nanjing on 9 September. Japan was occupied under MacArthur; Taiwan returned to China, Korea was divided at the 38th parallel, and the Soviet Union took southern Sakhalin and the Kurils. The war in Asia and the Pacific killed well over 20 million people, the great majority of them Chinese civilians.",
+    "casualties": {
+      "A": "Allied military 2.3–4 million+ dead and civilians 26 million+ (1937–45), most of them Chinese: China alone lost 14–22 million soldiers and civilians",
+      "B": "Japanese and allied military 2.5 million+ dead and civilians 1 million+, including 150,000–246,000 at Hiroshima and Nagasaki and 90,000–100,000 in the Tokyo raid of 9–10 March 1945"
+    }
+  },
+  "sources": [
+    {
+      "title": "Pacific War — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pacific_War"
+    },
+    {
+      "title": "Second Sino-Japanese War — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War"
+    },
+    {
+      "title": "Attack on Pearl Harbor — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor"
+    },
+    {
+      "title": "Fall of Singapore — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Singapore"
+    },
+    {
+      "title": "Dutch East Indies campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dutch_East_Indies_campaign"
+    },
+    {
+      "title": "Battle of Midway — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Midway"
+    },
+    {
+      "title": "Guadalcanal campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Guadalcanal_campaign"
+    },
+    {
+      "title": "Kokoda Track campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kokoda_Track_campaign"
+    },
+    {
+      "title": "Battle of Tarawa — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tarawa"
+    },
+    {
+      "title": "Battle of Imphal — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Imphal"
+    },
+    {
+      "title": "Operation Ichi-Go — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Ichi-Go"
+    },
+    {
+      "title": "Burma campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Burma_campaign"
+    },
+    {
+      "title": "Battle of the Philippine Sea — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Philippine_Sea"
+    },
+    {
+      "title": "Battle of Saipan — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Saipan"
+    },
+    {
+      "title": "Battle of Leyte Gulf — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Leyte_Gulf"
+    },
+    {
+      "title": "Battle of Iwo Jima — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Iwo_Jima"
+    },
+    {
+      "title": "Bombing of Tokyo (10 March 1945) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bombing_of_Tokyo_(10_March_1945)"
+    },
+    {
+      "title": "Battle of Okinawa — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Okinawa"
+    },
+    {
+      "title": "Atomic bombings of Hiroshima and Nagasaki — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki"
+    },
+    {
+      "title": "Soviet invasion of Manchuria — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria"
+    }
+  ]
+}

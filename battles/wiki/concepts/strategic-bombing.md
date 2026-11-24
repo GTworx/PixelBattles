@@ -2,7 +2,7 @@
 type: concept
 slug: strategic-bombing
 name: Strategic bombing
-battles: [world-war-ii]
+battles: [world-war-ii, pacific-war]
 ---
 
 # Strategic bombing
@@ -18,8 +18,11 @@ In the Second World War the Luftwaffe's Blitz struck British cities in 1940–41
 ## Where it appears
 
 - [[world-war-ii]]: the Blitz, the bombing of the Ruhr and Hamburg (1943) and Dresden (February 1945); the bomber offensive also drew the Luftwaffe's fighters and much of Germany's artillery into home air defence.
+- [[pacific-war]]: the B-29 offensive from the Marianas, above all the low-level incendiary raid on Tokyo of 9–10 March 1945 (90,000–100,000 dead, over a million homeless), and the atomic bombings of Hiroshima and Nagasaki in August 1945 (150,000–246,000 dead by the end of the year).
 
 ## Sources
 
 1. https://en.wikipedia.org/wiki/Strategic_bombing
 2. https://en.wikipedia.org/wiki/World_War_II
+3. https://en.wikipedia.org/wiki/Bombing_of_Tokyo_(10_March_1945)
+4. https://en.wikipedia.org/wiki/Atomic_bombings_of_Hiroshima_and_Nagasaki

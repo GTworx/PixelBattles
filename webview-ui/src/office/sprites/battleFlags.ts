@@ -317,6 +317,30 @@ export const FLAGS: Record<string, SpriteData> = {
     if (x < 8) return (x === 1 || x === 2) && (y === 6 || y === 7) ? '#f2c12e' : '#c4161c';
     return x < 11 ? BLUE : x < 13 ? WHITE : RED;
   }),
+  // The Pacific allies quartered: Stars and Stripes, Union Flag, the Republic
+  // of China's flag, Australia's blue ensign.
+  'allies-pacific': grid((x, y) => {
+    if (y < 5 && x < 8) {
+      if (x < 3 && y < 3) return x === 1 && y === 1 ? WHITE : '#1f2f6b';
+      return y % 2 === 0 ? RED : WHITE;
+    }
+    if (y < 5) {
+      const cx = Math.abs(x - 11.5);
+      if (cx < 1 || y === 2) return RED;
+      if (cx < 2 || y === 1 || y === 3) return WHITE;
+      return '#1f2f6b';
+    }
+    if (x < 8) {
+      if (x < 4 && y < 8) return x >= 1 && x <= 2 && y >= 6 && y <= 7 ? WHITE : '#1c3f94';
+      return '#c8102e';
+    }
+    if (x < 11 && y < 7) return x === 9 && y === 5 ? RED : x === 8 || y === 6 ? WHITE : '#1f2f6b';
+    return (x === 13 && y === 6) || (x === 12 && y === 8) || (x === 14 && y === 8)
+      ? WHITE
+      : '#1f2f6b';
+  }),
+  // The Hinomaru, Japan's national flag.
+  japan: grid((x, y) => (Math.hypot(x - 7.5, (y - 4.5) * 1.1) < 3.2 ? '#bc002d' : WHITE)),
   'german-cross': grid((x, y) => {
     const cx = Math.abs(x - 7.5);
     const cy = Math.abs(y - 4.5);

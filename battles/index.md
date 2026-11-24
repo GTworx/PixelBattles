@@ -5,7 +5,7 @@
 > Conventions: [SCHEMA.md](SCHEMA.md). History of changes: [log.md](log.md).
 > Raw source: [OldBatles1.md](OldBatles1.md) (immutable).
 
-## Battles (13)
+## Battles (14)
 
 | Battle                                                   | Date                                                                                      | Victor                            | Scenario                                             | Summary                                                                                                                                                                                                                                        |
 | -------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,10 +20,11 @@
 | [Battle of Preveza](wiki/battles/preveza.md)             | 28 September 1538                                                                         | Ottoman Empire                    | [preveza.json](scenarios/preveza.json)               | On 28 September 1538 the Ottoman fleet of hayreddin-barbarossa, which had sheltered inside the Gulf of Arta, came out against the much larger armada of the Holy League (Venice, the Papacy, Habsburg Sp                                       |
 | [Battle of Waterloo](wiki/battles/waterloo.md)           | 18 June 1815                                                                              | Seventh Coalition                 | [waterloo.json](scenarios/waterloo.json)             | On Sunday 18 June 1815, Napoleon's Armée du Nord attacked the Duke of Wellington's Anglo-allied army on the Mont-Saint-Jean ridge south of Waterloo.                                                                                           |
 | [World War I](wiki/battles/world-war-i.md)               | 28 July 1914 – 11 November 1918                                                           | Entente                           | [world-war-i.json](scenarios/world-war-i.json)       | The First World War (1914–1918) set the Entente of France, the British Empire, Russia, Italy, Serbia, Romania and, from 1917, the United States against the Central Powers of Germany, Austria-Hungary, the Ottoman Empire and Bulgaria.       |
+| [The Pacific War](wiki/battles/pacific-war.md)           | 7 July 1937 – 2 September 1945                                                            | Allies                            | [pacific-war.json](scenarios/pacific-war.json)       | The war in Asia and the Pacific began with Japan's invasion of China in July 1937 and widened on 7 December 1941, when Japan struck Pearl Harbor, Malaya and the Philippines.                                                                  |
 | [World War II in Europe](wiki/battles/world-war-ii.md)   | 1 September 1939 – 8 May 1945                                                             | Allies                            | [world-war-ii.json](scenarios/world-war-ii.json)     | The Second World War in Europe (1939–1945) set Nazi Germany and its allies (Fascist Italy until 1943, Romania, Hungary, Finland and others) against Poland, France and the British Empire from 1939, the                                       |
 | [Battle of Stalingrad](wiki/battles/stalingrad.md)       | 23 August 1942 – 2 February 1943                                                          | Soviet Union                      | [stalingrad.json](scenarios/stalingrad.json)         | Fought between 23 August 1942 and 2 February 1943, Stalingrad was the largest and deadliest urban battle in military history and the turning point of the war in Europe.                                                                       |
 
-## Commanders (70)
+## Commanders (76)
 
 - [Alan the Red](wiki/commanders/alan-the-red.md) — Brittany / Duchy of Normandy, dates not established in the sources consulted; battles: [[hastings]]
 - [Aleksei Brusilov](wiki/commanders/aleksei-brusilov.md) — Russian Empire; later the Soviet Red Army, 31 August 1853 – 17 March 1926; battles: [[world-war-i]]
@@ -37,11 +38,14 @@
 - [Bessus (Artaxerxes V)](wiki/commanders/bessus.md) — Achaemenid Empire, died 329 BCE; battles: [[gaugamela]]
 - [Callimachus of Aphidnae](wiki/commanders/callimachus.md) — Athens, died 490 BCE; battles: [[marathon]]
 - [Charles d'Albret, Constable of France](wiki/commanders/charles-d-albret.md) — Kingdom of France, ? - 1415; battles: [[agincourt]]
+- [Chester W. Nimitz](wiki/commanders/chester-w-nimitz.md) — United States, 24 February 1885 – 20 February 1966; battles: [[pacific-war]]
+- [Chiang Kai-shek](wiki/commanders/chiang-kai-shek.md) — Republic of China (Kuomintang), 31 October 1887 – 5 April 1975; battles: [[pacific-war]]
 - [Constantine XI Palaiologos](wiki/commanders/constantine-xi-palaiologos.md) — Byzantine Empire, 1405-1453; battles: [[constantinople]]
 - [Darius I the Great](wiki/commanders/darius-i.md) — Achaemenid Empire (Persia), 550 - 486 BCE; battles: [[marathon]]
 - [Darius III](wiki/commanders/darius-iii.md) — Achaemenid Empire, died 330 BCE; battles: [[gaugamela]]
 - [Datis the Mede](wiki/commanders/datis.md) — Achaemenid Empire (Persia), died after 490 BCE (date unknown); battles: [[marathon]]
 - [Douglas Haig](wiki/commanders/douglas-haig.md) — United Kingdom, 19 June 1861 – 29 January 1928; battles: [[world-war-i]]
+- [Douglas MacArthur](wiki/commanders/douglas-macarthur.md) — United States, 26 January 1880 – 5 April 1964; battles: [[pacific-war]]
 - [Jean I, Duke of Alençon](wiki/commanders/duke-of-alencon.md) — Kingdom of France, ? - 1415; battles: [[agincourt]]
 - [Arthur Wellesley, Duke of Wellington](wiki/commanders/duke-of-wellington.md) — United Kingdom (commanding the Anglo-allied army), 1769-1852; battles: [[waterloo]]
 - [Dwight D. Eisenhower](wiki/commanders/dwight-d-eisenhower.md) — United States, 14 October 1890 – 28 March 1969; battles: [[world-war-ii]]
@@ -69,6 +73,7 @@
 - [Hermann Hoth](wiki/commanders/hermann-hoth.md) — Nazi Germany, 1885-1971; battles: [[stalingrad]], [[world-war-ii]]
 - [Hugh Dowding](wiki/commanders/hugh-dowding.md) — United Kingdom, 24 April 1882 – 15 February 1970; battles: [[world-war-ii]]
 - [Hydarnes (commander of the Immortals)](wiki/commanders/hydarnes.md) — Achaemenid Empire (Persia), unknown; battles: [[thermopylae]]
+- [Isoroku Yamamoto](wiki/commanders/isoroku-yamamoto.md) — Empire of Japan, 4 April 1884 – 18 April 1943; battles: [[pacific-war]]
 - [Jean-Baptiste Drouet, comte d'Erlon](wiki/commanders/jean-baptiste-drouet-d-erlon.md) — First French Empire, 1765-1844; battles: [[waterloo]]
 - [Jean II Le Maingre, "Boucicaut"](wiki/commanders/jean-le-maingre-boucicaut.md) — Kingdom of France, d. 1421 (birth year not verified); battles: [[agincourt]]
 - [Joseph Joffre](wiki/commanders/joseph-joffre.md) — French Third Republic, 12 January 1852 – 3 January 1931; battles: [[world-war-i]]
@@ -91,14 +96,17 @@
 - [Romanos IV Diogenes](wiki/commanders/romanos-iv-diogenes.md) — Byzantine Empire, c. 1030 - 4 August 1072; battles: [[manzikert]]
 - [Theodore Alyates](wiki/commanders/theodore-alyates.md) — Byzantine Empire, dates not established in the sources consulted; battles: [[manzikert]]
 - [Sir Thomas Erpingham](wiki/commanders/thomas-erpingham.md) — Kingdom of England, dates not verified; battles: [[agincourt]]
+- [Tomoyuki Yamashita](wiki/commanders/tomoyuki-yamashita.md) — Empire of Japan, 8 November 1885 – 23 February 1946; battles: [[pacific-war]]
 - [Vasily Chuikov](wiki/commanders/vasily-chuikov.md) — Soviet Union, 1900-1982; battles: [[stalingrad]], [[world-war-ii]]
+- [William Slim](wiki/commanders/william-slim.md) — United Kingdom (British Indian Army), 6 August 1891 – 14 December 1970; battles: [[pacific-war]]
 - [William the Conqueror (Duke William II of Normandy)](wiki/commanders/william-the-conqueror.md) — Duchy of Normandy, c. 1028 - 9 September 1087; battles: [[hastings]]
 - [Xerxes I](wiki/commanders/xerxes-i.md) — Achaemenid Empire (Persia), c. 518 - 465 BCE; battles: [[thermopylae]]
 - [Zaganos Pasha](wiki/commanders/zaganos-pasha.md) — Ottoman Empire, dates not verified; battles: [[constantinople]]
 
-## Concepts (39)
+## Concepts (42)
 
 - [Blitzkrieg](wiki/concepts/blitzkrieg.md) — "Lightning war": the popular name for the German armoured campaigns of 1939–41, in which concentrated tanks, motorised infantry and aircraft broke through at a chosen point and drove deep before the enemy could react. Battles: [[world-war-ii]]
+- [Carrier warfare](wiki/concepts/carrier-warfare.md) — Naval warfare in which aircraft flown from carriers, rather than the guns of battleships, decide the battle, often between fleets that never see each other. Battles: [[pacific-war]]
 - [Combined arms](wiki/concepts/combined-arms.md) — Using infantry, artillery, cavalry or armour, engineers and air power together so that each covers the other's weakness. Battles: [[waterloo]], [[stalingrad]], [[world-war-i]], [[world-war-ii]]
 - [Companion cavalry](wiki/concepts/companion-cavalry.md) — The Macedonian aristocratic heavy cavalry (hetairoi), the Macedonian heavy cavalry that alexander-the-great led on the right wing at Gaugamela. Battles: [[gaugamela]]
 - [Defensive terrain and funnelling](wiki/concepts/defensive-terrain.md) — Choosing ground that forces a larger enemy onto a narrow front and denies flank manoeuvre. Battles: [[agincourt]]
@@ -119,6 +127,8 @@
 - [Infantry square](wiki/concepts/infantry-square.md) — A hollow rectangular formation in which infantry face outward on all four sides, with bayonets fixed, to defeat cavalry attacking from any direction. Battles: [[waterloo]]
 - [Infiltration tactics (storm troops)](wiki/concepts/infiltration-tactics.md) — Attacking a trench system with small, heavily armed assault groups that bypass strongpoints and push deep into the defences, leaving the strongpoints to follow-on troops, instead of advancing in waves on a broad front. Battles: [[world-war-i]]
 - [Janissaries](wiki/concepts/janissaries.md) — The Ottoman sultan's elite standing infantry. Battles: [[constantinople]], [[preveza]]
+- [Kamikaze](wiki/concepts/kamikaze.md) — Japanese suicide attacks, mostly by aircraft deliberately crashed into Allied ships, from October 1944 to the end of the war. Battles: [[pacific-war]]
+- [Leapfrogging (island hopping)](wiki/concepts/leapfrogging.md) — The Allied amphibious strategy in the Pacific of bypassing heavily held islands and leaving their garrisons cut off from supply, instead of capturing every island in turn. Battles: [[pacific-war]]
 - [Macedonian phalanx](wiki/concepts/macedonian-phalanx.md) — The infantry formation of Philip II and alexander-the-great: pezhetairoi ("foot companions") carrying the sarissa, a pike of some four to six metres, with a small shield slung from the neck. Battles: [[gaugamela]]
 - [Men-at-arms](wiki/concepts/men-at-arms.md) — Armoured professional or noble heavy fighters, mounted or dismounted, the core of a medieval army. Battles: [[agincourt]]
 - [Napoleonic artillery](wiki/concepts/napoleonic-artillery.md) — Smoothbore muzzle-loading guns and howitzers firing round shot, canister and shell, grouped in batteries; at Waterloo the French massed about 80 guns in a "grande batterie". Battles: [[waterloo]]
@@ -130,7 +140,7 @@
 - [Scythed chariots](wiki/concepts/scythed-chariots.md) — Light horse-drawn chariots fitted with blades projecting from the wheel hubs, the yoke or the body, intended to cut through close-packed infantry. Battles: [[gaugamela]]
 - [Shield wall](wiki/concepts/shield-wall.md) — A close formation of infantry whose shields overlap to form a continuous barrier, used across early medieval Europe. Battles: [[hastings]]
 - [Siege warfare](wiki/concepts/siege-warfare.md) — The art of attacking and defending fortified places: blockade, bombardment, mining, assault and relief. Battles: [[constantinople]], [[world-war-i]]
-- [Strategic bombing](wiki/concepts/strategic-bombing.md) — Bombing an enemy's cities, industry and transport to destroy its ability and will to fight, rather than its forces in the field. Battles: [[world-war-ii]]
+- [Strategic bombing](wiki/concepts/strategic-bombing.md) — Bombing an enemy's cities, industry and transport to destroy its ability and will to fight, rather than its forces in the field. Battles: [[world-war-ii]], [[pacific-war]]
 - [Tagmata](wiki/concepts/tagmata.md) — The professional, centrally paid regiments of the Byzantine army, as distinct from provincial theme levies. Battles: [[manzikert]]
 - [Theodosian Walls](wiki/concepts/theodosian-walls.md) — The triple line of fortifications built in the fifth century across the western landward side of Constantinople, from the Golden Horn to the Sea of Marmara. Battles: [[constantinople]]
 - [Trench warfare](wiki/concepts/trench-warfare.md) — Fighting from lines of dug-in, connected trenches protected by barbed wire, machine guns and artillery, in which the defender holds a large advantage over an attacker crossing open ground. Battles: [[world-war-i]]

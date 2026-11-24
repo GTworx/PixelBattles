@@ -102,3 +102,21 @@ World War II added to the Stalingrad commanders (Zhukov, Chuikov, Paulus, Yeryom
 to `concepts/encirclement`, `combined-arms`, `urban-warfare` and `operation-uranus`. Sources: Wikipedia's
 articles on the war, its European theatre, its casualties and each major campaign; strengths are
 representative theatre figures, and casualty ranges follow the sources' disagreement.
+
+## [2026-11-24] ingest | The Pacific War (1937–1945)
+
+Added `battles/pacific-war` and `scenarios/pacific-war.json`, the third war-scale scenario and the companion
+to `world-war-ii` (Europe), on a new 48×30 map of Asia and the Pacific (1 tile ≈ 250–300 km, 88°E–155°W,
+52°N–28°S) rasterised from approximate coastlines: China with the Yangtze, Manchuria, Korea, Japan, Burma,
+Malaya, the East Indies, the Philippines, New Guinea with the Kokoda Track across the Owen Stanleys,
+northern Australia, the Solomons, and the Central Pacific islands as single tiles out to Midway and Pearl
+Harbor. Fifteen phases run from the Marco Polo Bridge (1937) to the surrender (2 September 1945). Ships move
+only on the sea, so each island assault (Guadalcanal, Tarawa, Saipan, Iwo Jima, Okinawa, Leyte) is its own
+unit that comes ashore on its island; Kido Butai is sunk at Midway, the Mobile Fleet at Leyte Gulf and the
+Combined Fleet off Okinawa. New flags `japan` (the Hinomaru, the national flag rather than the military
+Rising Sun) and `allies-pacific` (US, UK, Republic of China and Australian flags quartered). New pages:
+`commanders/chester-w-nimitz`, `douglas-macarthur`, `chiang-kai-shek`, `william-slim`, `isoroku-yamamoto`,
+`tomoyuki-yamashita`; `concepts/carrier-warfare`, `concepts/leapfrogging`, `concepts/kamikaze`; the Pacific War
+added to `concepts/strategic-bombing`. Sources: twenty Wikipedia articles on the war and its campaigns;
+casualty totals are the articles' ranges, and the Philippines campaign of 1941–42 rests on the Pacific War
+article because its own page could not be fetched.
