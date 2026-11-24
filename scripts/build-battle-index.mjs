@@ -7,6 +7,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import * as prettier from 'prettier';
+
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'battles');
 const wiki = path.join(root, 'wiki');
 
@@ -122,7 +124,13 @@ const lines = [
   ),
   '',
 ];
-const index = lines.join('\n');
+const target = path.join(root, 'index.md');
+// Written in Prettier's style, so the pre-commit formatter leaves it alone and
+// --check keeps agreeing with what is committed.
+const index = await prettier.format(lines.join('\n'), {
+  ...(await prettier.resolveConfig(target)),
+  filepath: target,
+});
 
 // Broken wikilinks: a [[slug]] with no page is a page worth writing later.
 const missing = new Map();
@@ -133,7 +141,6 @@ for (const p of [...battles, ...commanders, ...concepts]) {
   }
 }
 
-const target = path.join(root, 'index.md');
 if (process.argv.includes('--check')) {
   const current = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : '';
   if (current !== index) {
