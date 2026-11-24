@@ -4,7 +4,7 @@ slug: erich-von-manstein
 name: Erich von Manstein
 lifespan: 1887-1973
 allegiance: Nazi Germany
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Erich von Manstein
@@ -23,7 +23,7 @@ Operational, mobile-warfare doctrine; he pressed Hitler for freedom of action bu
 
 ## Battles
 
-[[stalingrad]]
+[[stalingrad]], [[world-war-ii]]
 
 ## Sources
 

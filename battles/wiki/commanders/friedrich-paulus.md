@@ -4,7 +4,7 @@ slug: friedrich-paulus
 name: Friedrich Paulus
 lifespan: 1890-1957
 allegiance: Nazi Germany
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Friedrich Paulus
@@ -23,7 +23,7 @@ Cautious staff officer, dependent on orders from Hitler and on the Luftwaffe air
 
 ## Battles
 
-[[stalingrad]]; see also [[encirclement]]
+[[stalingrad]], [[world-war-ii]]; see also [[encirclement]]
 
 ## Sources
 

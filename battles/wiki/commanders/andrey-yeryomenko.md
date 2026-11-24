@@ -4,7 +4,7 @@ slug: andrey-yeryomenko
 name: Andrey Yeryomenko
 lifespan: 1892-1970
 allegiance: Soviet Union
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Andrey Yeryomenko
@@ -23,7 +23,7 @@ Forceful and politically close to Stalin and Khrushchev, who served on his milit
 
 ## Battles
 
-[[stalingrad]]; see also [[operation-uranus]]
+[[stalingrad]], [[world-war-ii]]; see also [[operation-uranus]]
 
 ## Sources
 

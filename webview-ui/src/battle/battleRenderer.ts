@@ -35,6 +35,7 @@ import {
   HOUSE_SPRITE,
   MOUNTAIN_SPRITE,
   MUZZLE_FLASH_COLORS,
+  PLANE_SPRITE,
   RUIN_SPRITE,
   SHIP_SPRITE,
   SIEGE_SPRITE,
@@ -296,7 +297,7 @@ function formation(n: number, facing: Facing): Array<{ dx: number; dy: number }>
 function soldierCount(u: SimUnit, maxStrength: number): number {
   const span = BATTLE_MAX_SOLDIERS_PER_UNIT - BATTLE_MIN_SOLDIERS_PER_UNIT;
   const n = BATTLE_MIN_SOLDIERS_PER_UNIT + Math.round(span * Math.sqrt(u.strength / maxStrength));
-  if (u.type === 'armor' || u.type === 'ships' || u.type === 'elephants')
+  if (u.type === 'armor' || u.type === 'ships' || u.type === 'aircraft' || u.type === 'elephants')
     return Math.max(1, Math.ceil(n / 2));
   if (u.type === 'command') return 2;
   return n;
@@ -330,7 +331,7 @@ function pushUnitDrawables(
       const vx = Math.round(ox + px * zoom - cached.width / 2);
       const vy = Math.round(oy + (py + 4) * zoom - cached.height);
       out.push({ zY: zY - 0.1, draw: (c) => drawImage(c, cached, vx, vy, mirror, alpha) });
-      if (u.type === 'armor' || u.type === 'ships') return; // crew hidden inside
+      if (u.type === 'armor' || u.type === 'ships' || u.type === 'aircraft') return; // crew hidden inside
     }
     const ch = soldier(u, i % 2 === 0 ? palA : palB, px, py, moving, fighting, time, i);
     const sprite = getCharacterSprite(ch, getCharacterSprites(ch.palette, ch.hueShift));
@@ -373,6 +374,8 @@ function vehicleSprite(type: UnitType): SpriteData | null {
       return SIEGE_SPRITE;
     case 'ships':
       return SHIP_SPRITE;
+    case 'aircraft':
+      return PLANE_SPRITE;
     case 'armor':
       return TANK_SPRITE;
     default:

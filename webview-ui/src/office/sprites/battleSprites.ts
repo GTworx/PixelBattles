@@ -352,6 +352,20 @@ export const SHIP_SPRITE = art(
   { w: '#4a3420', S: '#efe6d0', b: '#6b4423' },
 );
 
+/** A twin-engined warplane seen from the side, nose to the right. */
+export const PLANE_SPRITE = art(
+  [
+    '...k............',
+    '...kk...........',
+    '...kkk......g...',
+    '.kkkkkkkkkkkkkgk',
+    '..kkkkkkkkkkkkkg',
+    '.....WWWWWW.....',
+    '......WWWW......',
+  ],
+  { k: '#7d8a96', W: '#4b5560', g: '#bfe0f0' },
+);
+
 export const TANK_SPRITE = art(
   [
     '.........kkkkkkk',

@@ -49,7 +49,14 @@ import {
   weaponFor,
   yearOf,
 } from './battleEffects.js';
-import { canEnter, CHARGE_TYPES, RANGED_TYPES, terrainAt, UNIT_STATS } from './battleRules.js';
+import {
+  canEnter,
+  CHARGE_TYPES,
+  mobilityOf,
+  RANGED_TYPES,
+  terrainAt,
+  UNIT_STATS,
+} from './battleRules.js';
 import type {
   Facing,
   Order,
@@ -439,7 +446,7 @@ export function findPath(
   gr: number,
 ): Array<[number, number]> {
   const { cols, rows } = state.scenario.map;
-  const naval = u.type === 'ships';
+  const mobility = mobilityOf(u.type);
   const sc = clampInt(Math.round(u.x), 0, cols - 1);
   const sr = clampInt(Math.round(u.y), 0, rows - 1);
   const goalC = clampInt(gc, 0, cols - 1);
@@ -466,12 +473,12 @@ export function findPath(
       if (nc < 0 || nr < 0 || nc >= cols || nr >= rows) continue;
       const ni = nr * cols + nc;
       if (prev[ni] !== -1) continue;
-      if (!canEnter(state.terrain, nc, nr, naval)) continue;
+      if (!canEnter(state.terrain, nc, nr, mobility)) continue;
       // No corner-cutting between two impassable tiles.
       if (dc !== 0 && dr !== 0) {
         if (
-          !canEnter(state.terrain, cc + dc, cr, naval) &&
-          !canEnter(state.terrain, cc, cr + dr, naval)
+          !canEnter(state.terrain, cc + dc, cr, mobility) &&
+          !canEnter(state.terrain, cc, cr + dr, mobility)
         )
           continue;
       }
@@ -601,7 +608,8 @@ function updateUnit(state: BattleState, u: SimUnit, dt: number): void {
 function followPath(state: BattleState, u: SimUnit, dt: number, speedMul: number): void {
   if (u.path.length === 0) return;
   const tile = terrainAt(state.terrain, Math.round(u.x), Math.round(u.y));
-  const base = u.paceSpeed ?? UNIT_STATS[u.type].speed * (u.type === 'ships' ? 1 : tile.speed);
+  const base =
+    u.paceSpeed ?? UNIT_STATS[u.type].speed * (mobilityOf(u.type) === 'land' ? tile.speed : 1);
   let budget = base * speedMul * dt;
   while (budget > 0 && u.path.length > 0) {
     const [nc, nr] = u.path[0];
@@ -851,7 +859,7 @@ function effective(attacker: SimUnit, defender: SimUnit): number {
 function defenseOf(state: BattleState, u: SimUnit): number {
   const tile = terrainAt(state.terrain, Math.round(u.x), Math.round(u.y));
   const aura = hasCommandAura(state, u) ? 1.1 : 1;
-  return UNIT_STATS[u.type].defense * (u.type === 'ships' ? 1 : tile.defense) * aura;
+  return UNIT_STATS[u.type].defense * (mobilityOf(u.type) === 'land' ? tile.defense : 1) * aura;
 }
 
 /** Hitting a unit from where it is not facing hurts more. */

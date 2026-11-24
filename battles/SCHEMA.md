@@ -193,27 +193,28 @@ the screen.
 unit banners, the commanders' standards and the legend; without one a side flies a plain banner in
 its `color`. Available: `athens`, `persia`, `greek-lambda`, `macedon`, `carthage`, `rome`, `wessex`,
 `normandy`, `seljuk`, `byzantine-labarum`, `palaiologan`, `england-royal`, `france-ancient`,
-`ottoman`, `burgundy-cross`, `france-tricolor`, `union-flag`, `entente`, `german-imperial`, `soviet`, `german-cross`. Pre-modern "flags" are the
+`ottoman`, `burgundy-cross`, `france-tricolor`, `union-flag`, `entente`, `german-imperial`, `allies`, `soviet`, `german-cross`. Pre-modern "flags" are the
 standards or emblems the sources associate with the army; add a sprite there to add a flag.
 
 ### Unit types
 
 `infantry`, `heavy_infantry`, `light_infantry`, `archers`, `cavalry`,
 `heavy_cavalry`, `horse_archers`, `chariots`, `elephants`, `artillery`, `siege`,
-`ships`, `armor`, `command`.
+`ships`, `aircraft`, `armor`, `command`. `ships` move only on `=` and `~`; `aircraft` fly over
+any terrain (start anywhere, ignore terrain speed and cover) and fight best with `bombard`.
 
 ### Order actions
 
-| Action    | Fields                            | Meaning                                                          |
-| --------- | --------------------------------- | ---------------------------------------------------------------- |
-| `move`    | `to: [col,row]`                   | march to a tile                                                  |
-| `attack`  | `target: unitId`                  | close with and fight a unit                                      |
-| `charge`  | `target: unitId`                  | fast attack, bonus on impact (cavalry, chariots, elephants)      |
-| `flank`   | `target: unitId`, `to: [col,row]` | go round via `to`, then attack                                   |
-| `bombard` | `target: unitId`                  | ranged attack without closing (archers, artillery, siege, ships) |
-| `hold`    | —                                 | stand and defend in place                                        |
-| `retreat` | `to: [col,row]`                   | fall back in order                                               |
-| `rout`    | —                                 | break and flee off the map                                       |
+| Action    | Fields                            | Meaning                                                                    |
+| --------- | --------------------------------- | -------------------------------------------------------------------------- |
+| `move`    | `to: [col,row]`                   | march to a tile                                                            |
+| `attack`  | `target: unitId`                  | close with and fight a unit                                                |
+| `charge`  | `target: unitId`                  | fast attack, bonus on impact (cavalry, chariots, elephants)                |
+| `flank`   | `target: unitId`, `to: [col,row]` | go round via `to`, then attack                                             |
+| `bombard` | `target: unitId`                  | ranged attack without closing (archers, artillery, siege, ships, aircraft) |
+| `hold`    | —                                 | stand and defend in place                                                  |
+| `retreat` | `to: [col,row]`                   | fall back in order                                                         |
+| `rout`    | —                                 | break and flee off the map                                                 |
 
 `outcomes` pin the historical result at the end of a phase: `strength` (men
 left), `morale`, and `status` (`active`, `routed`, `destroyed`, `surrendered`,

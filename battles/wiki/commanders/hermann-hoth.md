@@ -4,7 +4,7 @@ slug: hermann-hoth
 name: Hermann Hoth
 lifespan: 1885-1971
 allegiance: Nazi Germany
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Hermann Hoth
@@ -23,7 +23,7 @@ Armoured spearheads in open country: the corps in the city fighting was poorly s
 
 ## Battles
 
-[[stalingrad]]
+[[stalingrad]], [[world-war-ii]]
 
 ## Sources
 

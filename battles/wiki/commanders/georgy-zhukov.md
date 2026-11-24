@@ -4,7 +4,7 @@ slug: georgy-zhukov
 name: Georgy Zhukov
 lifespan: 1896-1974
 allegiance: Soviet Union
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Georgy Zhukov
@@ -23,7 +23,7 @@ Methodical, ruthless and fond of mass: fronts assembled secretly on the flanks, 
 
 ## Battles
 
-[[stalingrad]]
+[[stalingrad]], [[world-war-ii]]
 
 ## Sources
 

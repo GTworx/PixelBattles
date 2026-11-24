@@ -2,7 +2,7 @@
 type: concept
 slug: urban-warfare
 name: Urban warfare
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Urban warfare
@@ -18,6 +18,7 @@ In Stalingrad the fighting went building to building, in the largest and deadlie
 ## Where it appears
 
 - [[stalingrad]]: 13 September to November 1942, in the city and factory district; see [[vasily-chuikov]] and [[friedrich-paulus]]. See also [[combined-arms]].
+- [[world-war-ii]]: Stalingrad (1942) and the Battle of Berlin (1945) on the war-scale map.
 
 ## Sources
 

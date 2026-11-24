@@ -2,7 +2,7 @@
 type: concept
 slug: operation-uranus
 name: Operation Uranus
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Operation Uranus
@@ -18,6 +18,7 @@ Stavka (with [[georgy-zhukov]] and Vasilevsky) massed fronts out of sight on the
 ## Where it appears
 
 - [[stalingrad]]: the turning point between the city fighting and the Kessel. See [[double-envelopment]], [[encirclement]], [[combined-arms]].
+- [[world-war-ii]]: phase 9 of the war-scale scenario, the turn of the war in the east.
 
 ## Sources
 

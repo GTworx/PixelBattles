@@ -2,7 +2,7 @@
 type: concept
 slug: encirclement
 name: Encirclement (Kessel)
-battles: [stalingrad, world-war-i]
+battles: [stalingrad, world-war-i, world-war-ii]
 ---
 
 # Encirclement (Kessel)
@@ -19,6 +19,7 @@ A ring is closed by two pincers meeting behind the enemy; the trapped army is th
 
 - [[stalingrad]]: see [[operation-uranus]], [[double-envelopment]], [[friedrich-paulus]] and [[erich-von-manstein]].
 - [[world-war-i]]: at Tannenberg (26–30 August 1914) [[paul-von-hindenburg]] and [[erich-ludendorff]] closed a ring round Samsonov's Russian 2nd Army and took about 92,000 prisoners; Kut (1915–16) is the reverse case, a besieged British-Indian division that relief could not reach.
+- [[world-war-ii]]: the Kiev pocket of 1941 (over half a million prisoners), Stalingrad (the 6th Army, 1942–43), the Falaise pocket (1944) and the Ruhr pocket (about 300,000 prisoners, 1945).
 
 ## Sources
 

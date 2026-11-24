@@ -25,6 +25,7 @@ const UNIT_TYPES = new Set([
   'artillery',
   'siege',
   'ships',
+  'aircraft',
   'armor',
   'command',
 ]);
@@ -112,7 +113,9 @@ function validate(file) {
     else {
       const t = tileAt(u.col, u.row);
       const naval = u.type === 'ships';
-      if (naval ? t !== '=' && t !== '~' : IMPASSABLE.has(t))
+      if (u.type === 'aircraft') {
+        // Air units fly over any terrain.
+      } else if (naval ? t !== '=' && t !== '~' : IMPASSABLE.has(t))
         err(`${tag}: starts on ${naval ? 'land' : 'impassable'} tile "${t}" at ${u.col},${u.row}`);
     }
   }

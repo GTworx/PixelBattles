@@ -104,7 +104,7 @@ for (const scenario of scenarios) {
 
   test(`${scenario.id}: land paths avoid impassable terrain`, () => {
     const state = createBattle(scenario);
-    for (const u of state.units.filter((x) => x.type !== 'ships')) {
+    for (const u of state.units.filter((x) => x.type !== 'ships' && x.type !== 'aircraft')) {
       const path = findPath(
         state,
         u,
@@ -112,10 +112,23 @@ for (const scenario of scenarios) {
         scenario.map.rows - 1 - Math.round(u.y),
       );
       for (const [c, r] of path)
-        assert.ok(canEnter(state.terrain, c, r, false), `${u.id} path enters (${c},${r})`);
+        assert.ok(canEnter(state.terrain, c, r, 'land'), `${u.id} path enters (${c},${r})`);
     }
   });
 }
+
+test('aircraft fly over sea, mountains and walls', () => {
+  const scenario = scenarios.find((s) => s.map.terrain.some((row) => row.includes('=')))!;
+  const state = createBattle(scenario);
+  const u = state.units[0];
+  u.type = 'aircraft';
+  const r = scenario.map.terrain.findIndex((row) => row.includes('='));
+  const c = scenario.map.terrain[r].indexOf('=');
+  const path = findPath(state, u, c, r);
+  assert.deepEqual(path[path.length - 1] ?? [Math.round(u.x), Math.round(u.y)], [c, r]);
+  assert.ok(canEnter(scenario.map.terrain, c, r, 'air'));
+  assert.ok(!canEnter(scenario.map.terrain, c, r, 'land'));
+});
 
 test('chat orders for unknown units, friendly targets or routed units are rejected', () => {
   const scenario = scenarios[0];

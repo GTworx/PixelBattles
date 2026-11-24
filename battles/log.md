@@ -81,3 +81,24 @@ added to `concepts/encirclement` (Tannenberg), `concepts/combined-arms` (Amiens)
 (Liège, Przemyśl, Kut). New flags `entente` (the allied colours quartered) and `german-imperial` (the
 black-white-red tricolour). Sources: Wikipedia's articles on the war, its casualties and each campaign; unit
 strengths are representative theatre figures, and the casualty ranges follow the sources' disagreement.
+
+## [2026-11-24] ingest | World War II in Europe (1939–1945)
+
+Added `battles/world-war-ii` and `scenarios/world-war-ii.json`, the second war-scale scenario, on the
+World War I map (1 tile ≈ 100 km) with Stalingrad and the lower Volga added at the eastern edge. Units are
+army groups, fronts, fleets and air forces; fifteen phases run from the invasion of Poland to the surrender
+of 8 May 1945 — France and Dunkirk, the Battle of Britain, the desert war, Barbarossa, Case Blue,
+Stalingrad and El Alamein, Uranus and Tunisia, Kursk and Sicily, Italy, D-Day and Bagration, the Bulge,
+Berlin. The Pacific War is off the map and appears only in the narration. The three German army groups
+carry their commanders through renamings (Bock's North/B/Centre, Rundstedt's South/A/South, Leeb's C/North),
+so a unit's name lists its successive titles.
+
+Schema: new unit type `aircraft` (flies over any terrain, starts anywhere, ignores terrain speed and
+cover, bombards at range 6) for the Luftwaffe, RAF Fighter Command and the Allied bomber forces. New flag
+`allies` (Union Flag, Stars and Stripes, Soviet flag and French tricolour quartered); the Axis flies the
+existing Balkenkreuz `german-cross`. New pages: `commanders/dwight-d-eisenhower`, `bernard-montgomery`,
+`erwin-rommel`, `heinz-guderian`, `hugh-dowding`; `concepts/blitzkrieg`, `concepts/strategic-bombing`.
+World War II added to the Stalingrad commanders (Zhukov, Chuikov, Paulus, Yeryomenko, Manstein, Hoth) and
+to `concepts/encirclement`, `combined-arms`, `urban-warfare` and `operation-uranus`. Sources: Wikipedia's
+articles on the war, its European theatre, its casualties and each major campaign; strengths are
+representative theatre figures, and casualty ranges follow the sources' disagreement.

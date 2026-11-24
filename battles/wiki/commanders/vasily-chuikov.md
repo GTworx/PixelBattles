@@ -4,7 +4,7 @@ slug: vasily-chuikov
 name: Vasily Chuikov
 lifespan: 1900-1982
 allegiance: Soviet Union
-battles: [stalingrad]
+battles: [stalingrad, world-war-ii]
 ---
 
 # Vasily Chuikov
@@ -23,7 +23,7 @@ Held the front line close to the Germans ("hugging" tactics) so the Luftwaffe co
 
 ## Battles
 
-[[stalingrad]]
+[[stalingrad]], [[world-war-ii]]
 
 ## Sources
 

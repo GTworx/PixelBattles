@@ -64,6 +64,7 @@ export function weaponFor(type: UnitType, year: number): Weapon {
     case 'ships':
       return year < 1400 ? 'bow' : 'cannon';
     case 'armor':
+    case 'aircraft':
       return 'cannon';
     case 'light_infantry':
       return year < 1500 ? 'javelin' : year < 1900 ? 'musket' : 'rifle';

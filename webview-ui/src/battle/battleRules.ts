@@ -144,6 +144,16 @@ export const UNIT_STATS: Record<UnitType, UnitStats> = {
     code: 'SHP',
     label: 'Ships',
   },
+  aircraft: {
+    melee: 0.3,
+    defense: 0.8,
+    speed: 2.5,
+    ranged: 1.6,
+    range: 6,
+    charge: 1.0,
+    code: 'AIR',
+    label: 'Air force',
+  },
   armor: {
     melee: 2.0,
     defense: 1.8,
@@ -198,11 +208,19 @@ export function terrainAt(terrain: string[], col: number, row: number): TerrainP
   return TERRAIN[terrain[row]?.[col] ?? '.'] ?? UNKNOWN_TERRAIN;
 }
 
-/** Ships move on water (sea, rivers); everything else on passable land. */
-export function canEnter(terrain: string[], col: number, row: number, naval: boolean): boolean {
+/** How a unit type crosses the map. */
+export type Mobility = 'land' | 'naval' | 'air';
+
+export function mobilityOf(type: UnitType): Mobility {
+  return type === 'ships' ? 'naval' : type === 'aircraft' ? 'air' : 'land';
+}
+
+/** Ships move on water (sea, rivers), aircraft fly over anything; everything else on passable land. */
+export function canEnter(terrain: string[], col: number, row: number, mobility: Mobility): boolean {
   const ch = terrain[row]?.[col];
   if (ch === undefined) return false;
-  if (naval) return ch === '=' || ch === '~';
+  if (mobility === 'air') return true;
+  if (mobility === 'naval') return ch === '=' || ch === '~';
   return TERRAIN[ch]?.passable ?? true;
 }
 
@@ -212,6 +230,7 @@ export const RANGED_TYPES: ReadonlySet<UnitType> = new Set([
   'artillery',
   'siege',
   'ships',
+  'aircraft',
   'armor',
   'light_infantry',
 ]);

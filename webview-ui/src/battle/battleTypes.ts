@@ -15,6 +15,7 @@ export type UnitType =
   | 'artillery'
   | 'siege'
   | 'ships'
+  | 'aircraft'
   | 'armor'
   | 'command';
 

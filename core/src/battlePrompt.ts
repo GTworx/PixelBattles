@@ -76,7 +76,7 @@ export function buildBattleSystemPrompt(scenario: Record<string, unknown>, wiki:
     '  move/retreat need "to"; attack/charge/bombard need "target"; flank needs both "target" and "to" (the waypoint to go round by).',
     '  Use ONLY unit ids from the CURRENT STATE sent with each message. "to" must be inside 0–47 columns, 0–29 rows, on passable terrain (not = M #).',
     '  Only units with status "active" can obey. A command for a whole side means one order per relevant unit.',
-    '  bombard is for archers, horse_archers, artillery, siege and ships; charge suits cavalry, chariots, elephants and armor.',
+    '  bombard is for archers, horse_archers, artillery, siege, ships and aircraft (aircraft fly over any terrain); charge suits cavalry, chariots, elephants and armor.',
     '',
     `MAP (${map.scale ?? ''}; row number then 48 columns, col 0 = left). Legend: . open  , fields  b sand  : road  ^ hills  T forest  s marsh  ~ river  c town  r ruins  g gate  = sea (impassable)  M mountains (impassable)  # wall (impassable)`,
     ...terrain,

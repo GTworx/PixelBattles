@@ -1,0 +1,1826 @@
+{
+  "id": "world-war-ii",
+  "title": "World War II in Europe",
+  "year": "1939–1945",
+  "date": "1 September 1939 – 8 May 1945",
+  "location": "Europe, the Atlantic and North Africa: the Polish, Western, Eastern, Mediterranean, North African and Italian fronts, the air war and the Battle of the Atlantic (the Pacific War is not on this map)",
+  "wiki": "wiki/battles/world-war-ii.md",
+  "summary": "The Second World War in Europe on one map: Nazi Germany and its allies against Poland, France and the British Empire from 1939, the Soviet Union from 1941 and the United States from December 1941. Blitzkrieg campaigns overran Poland, France and the Balkans and carried the Germans to Moscow and the Volga, but the Battle of Britain, Stalingrad, El Alamein and Kursk turned the war. The Allies invaded Italy and Normandy while the Red Army destroyed the German armies in the east, and Germany surrendered on 8 May 1945.",
+  "map": {
+    "cols": 48,
+    "rows": 30,
+    "scale": "1 tile ≈ 100 km (≈ 1.2° of longitude × 1.1° of latitude); fronts and armies drawn at theatre scale",
+    "north": "up",
+    "terrain": [
+      "============MMMTTTTTTTT===TTTTTTT===TTTTTTTTTTTT",
+      "============MMTTTTTTTTT====TTTTTT===TTTTTTTTTTTT",
+      "=============MTTTcTTTTTc=========cTTTTTTTTTTTTTT",
+      "====^^^======M^^TTTTTTT,====,,,,,,TTTTTTTTTTTTTT",
+      "===^^^^=========,=TTTT,=,===c,,,,,,TTTTTTTTTTTTT",
+      "====^^,c=======,,=,,T,====,,,,,,,,TTTTTTTTTTTTTT",
+      "==,,=^,,c======,,=c======c,,,,,,TTTTTTTTcTTTTTTT",
+      "=,,,=,^,,======,,===,,,,c,ssTTTTTTTTTTTTTTTTTTTT",
+      ",,,c=,,,,====,,,,c,,,,,,,,TTTTTTTTTTTTTTTTTTTTTT",
+      ",,,==^,,c,==,~,,,,,c,,,,,,c,,sssssTTT,,,,,,,,,,~",
+      "===,^,,,,=,ccTc,,,,,,,,,,,,,,css,,c,,,,,,,,,,,,~",
+      "==========c,,T,~,^^,c,,,,c,,c,,,,,,,,,,,,,,,,,~,",
+      "=====,,,,,c~,c^~,,,,,,c,MM,MM,,,,,,,,,,,,,,,,c~,",
+      "=======,,,,,~^^~,c,,,,,~c,,,MM,,,,,,,,,,,,,,,c~,",
+      "=======,,,,,,MMMMMM~^,,,,,^^^M,,,,c,,====,,,,,,~",
+      "=======,,,,,cMM,c,c=^^,,,~MMMM,,~===^,,==,,,,,,~",
+      "========,,,,,^Mc,,,==MM^^c~,,,c,~=======,,,,^^^^",
+      "=^^^^^^MMM^==c==T,,^==^M^^^~~~~~========^^MMMMMM",
+      "=,,^^^,,^,,=====T=,c^==MM^^,cMM^===========MMM,c",
+      "=,,,^^^,,,c====^^==,c^,=^^^c,=,,c~^^=====cM^^^^M",
+      "=,,,,c,^,==,===^,===^^=,=M^M=^====^^c^^^^^^c^MMM",
+      "=c,,^^^,,======^=====^===M^^=^=c^^^^^^^^^^^^=MMM",
+      "=,,^,,^,==========,^^,====^^c==,^^MMMMMMM~^^~MMM",
+      "=,,^======,c^^^,,c========^====,^^=MM^=c,~,,c,MM",
+      "=====MMMc,^MM^,,,,==c=======^M^=======,^,~bbb~MM",
+      "===,MM^^^MM^^bbb,,=================,^=c^bb~bb~^M",
+      "==,,^M^bbbbbbbbbb,,c,,===============,^cbbb~bc~^",
+      "=,,MMMMbbbbbbbbbbbbbb====c^^c========,c~bbbb~bc~",
+      "=,^^bbbbbbbbbbbbbbbbbb===bbbbcbcbc,~bccbbbbbbb~c",
+      "=bbbbbbbbbbbbbbbbbbbbbbbbbbbbb,bb~c~b^=bbbbbbbb="
+    ],
+    "labels": [
+      {
+        "text": "ATLANTIC",
+        "col": 2,
+        "row": 14
+      },
+      {
+        "text": "North Sea",
+        "col": 10,
+        "row": 5
+      },
+      {
+        "text": "Baltic",
+        "col": 21,
+        "row": 6
+      },
+      {
+        "text": "Mediterranean Sea",
+        "col": 24,
+        "row": 25
+      },
+      {
+        "text": "Black Sea",
+        "col": 36,
+        "row": 17
+      },
+      {
+        "text": "London",
+        "col": 7,
+        "row": 9
+      },
+      {
+        "text": "Dunkirk",
+        "col": 10,
+        "row": 10
+      },
+      {
+        "text": "Normandy",
+        "col": 4,
+        "row": 13
+      },
+      {
+        "text": "Paris",
+        "col": 9,
+        "row": 12
+      },
+      {
+        "text": "Ardennes",
+        "col": 12,
+        "row": 11
+      },
+      {
+        "text": "Ruhr",
+        "col": 13,
+        "row": 9
+      },
+      {
+        "text": "Berlin",
+        "col": 19,
+        "row": 9
+      },
+      {
+        "text": "Warsaw",
+        "col": 26,
+        "row": 10
+      },
+      {
+        "text": "Leningrad",
+        "col": 33,
+        "row": 2
+      },
+      {
+        "text": "Moscow",
+        "col": 40,
+        "row": 7
+      },
+      {
+        "text": "Kiev",
+        "col": 33,
+        "row": 11
+      },
+      {
+        "text": "Kursk",
+        "col": 38,
+        "row": 10
+      },
+      {
+        "text": "Stalingrad",
+        "col": 43,
+        "row": 14
+      },
+      {
+        "text": "Caucasus",
+        "col": 41,
+        "row": 17
+      },
+      {
+        "text": "Rome",
+        "col": 19,
+        "row": 19
+      },
+      {
+        "text": "Monte Cassino",
+        "col": 18,
+        "row": 18
+      },
+      {
+        "text": "Sicily",
+        "col": 19,
+        "row": 23
+      },
+      {
+        "text": "Tunis",
+        "col": 17,
+        "row": 22
+      },
+      {
+        "text": "Algiers",
+        "col": 10,
+        "row": 24
+      },
+      {
+        "text": "Tripoli",
+        "col": 19,
+        "row": 27
+      },
+      {
+        "text": "Tobruk",
+        "col": 27,
+        "row": 26
+      },
+      {
+        "text": "El Alamein",
+        "col": 31,
+        "row": 29
+      },
+      {
+        "text": "Crete",
+        "col": 28,
+        "row": 25
+      },
+      {
+        "text": "Norway",
+        "col": 13,
+        "row": 1
+      }
+    ]
+  },
+  "sides": [
+    {
+      "id": "A",
+      "name": "Allies",
+      "commander": "Eisenhower, Montgomery & Zhukov",
+      "color": "#2e64c8",
+      "flag": "allies"
+    },
+    {
+      "id": "B",
+      "name": "Axis",
+      "commander": "Hitler (with Mussolini until 1943)",
+      "color": "#6f7462",
+      "flag": "german-cross"
+    }
+  ],
+  "victor": "A",
+  "units": [
+    {
+      "id": "pl-army",
+      "side": "A",
+      "name": "Polish Army (Rydz-Śmigły)",
+      "type": "infantry",
+      "strength": 1000000,
+      "col": 26,
+      "row": 10,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Edward Rydz-Śmigły"
+    },
+    {
+      "id": "fr-army",
+      "side": "A",
+      "name": "French Army and its 1st Army Group (Gamelin, then Weygand)",
+      "type": "infantry",
+      "strength": 2200000,
+      "col": 12,
+      "row": 12,
+      "facing": "right",
+      "morale": 70,
+      "commander": "Maurice Gamelin"
+    },
+    {
+      "id": "bef",
+      "side": "A",
+      "name": "British Expeditionary Force (Gort)",
+      "type": "infantry",
+      "strength": 390000,
+      "col": 11,
+      "row": 11,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Lord Gort"
+    },
+    {
+      "id": "raf",
+      "side": "A",
+      "name": "RAF Fighter Command (Dowding)",
+      "type": "aircraft",
+      "strength": 150000,
+      "col": 8,
+      "row": 8,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Hugh Dowding"
+    },
+    {
+      "id": "home-fleet",
+      "side": "A",
+      "name": "Royal Navy Home Fleet and the Atlantic convoy escorts (Forbes, Tovey; Horton)",
+      "type": "ships",
+      "strength": 120000,
+      "col": 10,
+      "row": 5,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Max Horton"
+    },
+    {
+      "id": "uk-8th",
+      "side": "A",
+      "name": "Western Desert Force, then the British Eighth Army in the desert (O'Connor, Auchinleck, Montgomery)",
+      "type": "infantry",
+      "strength": 150000,
+      "col": 33,
+      "row": 28,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Bernard Montgomery",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "sov-north",
+      "side": "A",
+      "name": "Soviet Northwestern and Leningrad Fronts (Voroshilov, Zhukov, Govorov)",
+      "type": "infantry",
+      "strength": 800000,
+      "col": 33,
+      "row": 3,
+      "facing": "left",
+      "morale": 70,
+      "commander": "Leonid Govorov",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "sov-west",
+      "side": "A",
+      "name": "Soviet Western Front, later the 1st Belorussian Front (Pavlov, Zhukov, Rokossovsky)",
+      "type": "infantry",
+      "strength": 1200000,
+      "col": 31,
+      "row": 8,
+      "facing": "left",
+      "morale": 65,
+      "commander": "Georgy Zhukov",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "sov-southwest",
+      "side": "A",
+      "name": "Soviet Southwestern and Southern Fronts (Kirponos, Budyonny, Timoshenko)",
+      "type": "infantry",
+      "strength": 1500000,
+      "col": 33,
+      "row": 11,
+      "facing": "left",
+      "morale": 65,
+      "commander": "Semyon Timoshenko",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "sov-stalingrad",
+      "side": "A",
+      "name": "Stalingrad Front and Chuikov's 62nd Army (Yeryomenko, Chuikov)",
+      "type": "infantry",
+      "strength": 500000,
+      "col": 45,
+      "row": 13,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Vasily Chuikov",
+      "enterPhase": "p8"
+    },
+    {
+      "id": "sov-uranus",
+      "side": "A",
+      "name": "Southwestern and Don Fronts, the tank corps of Operation Uranus (Vatutin, Rokossovsky)",
+      "type": "armor",
+      "strength": 1000000,
+      "col": 42,
+      "row": 11,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Nikolai Vatutin",
+      "enterPhase": "p9"
+    },
+    {
+      "id": "sov-kursk",
+      "side": "A",
+      "name": "Central and Voronezh Fronts, later the 1st Ukrainian Front (Rokossovsky, Vatutin, Konev)",
+      "type": "infantry",
+      "strength": 1900000,
+      "col": 38,
+      "row": 9,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Ivan Konev",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "us-torch",
+      "side": "A",
+      "name": "Allied forces of Operation Torch and the British First Army in Tunisia (Eisenhower; Anderson, Patton)",
+      "type": "infantry",
+      "strength": 300000,
+      "col": 10,
+      "row": 23,
+      "facing": "right",
+      "morale": 75,
+      "commander": "Mark Clark",
+      "enterPhase": "p8"
+    },
+    {
+      "id": "allied-italy",
+      "side": "A",
+      "name": "15th Army Group in Sicily and Italy: US Seventh, then Fifth, and British Eighth Armies (Alexander; Patton, Clark, Montgomery)",
+      "type": "infantry",
+      "strength": 450000,
+      "col": 19,
+      "row": 22,
+      "facing": "up",
+      "morale": 80,
+      "commander": "Harold Alexander",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "bombers",
+      "side": "A",
+      "name": "RAF Bomber Command and the US Eighth Air Force (Harris, Spaatz)",
+      "type": "aircraft",
+      "strength": 200000,
+      "col": 8,
+      "row": 7,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Arthur Harris",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "neptune",
+      "side": "A",
+      "name": "Operation Neptune: the invasion fleet (Ramsay)",
+      "type": "ships",
+      "strength": 200000,
+      "col": 7,
+      "row": 11,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Bertram Ramsay",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "overlord",
+      "side": "A",
+      "name": "21st Army Group and US 12th Army Group (Eisenhower; Montgomery, Bradley)",
+      "type": "infantry",
+      "strength": 1450000,
+      "col": 7,
+      "row": 12,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Dwight D. Eisenhower",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "us-3rd",
+      "side": "A",
+      "name": "US Third Army (Patton)",
+      "type": "armor",
+      "strength": 250000,
+      "col": 8,
+      "row": 13,
+      "facing": "right",
+      "morale": 85,
+      "commander": "George S. Patton",
+      "enterPhase": "p12"
+    },
+    {
+      "id": "de-ag-b",
+      "side": "B",
+      "name": "Bock's army group: North in Poland, B in France, Centre in Russia (later Kluge, Busch, Model; Heinrici's Army Group Vistula at the end)",
+      "type": "infantry",
+      "strength": 1300000,
+      "col": 22,
+      "row": 8,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Fedor von Bock"
+    },
+    {
+      "id": "de-ag-a",
+      "side": "B",
+      "name": "Rundstedt's army group: South in Poland, A with Kleist's panzers in France, South in Ukraine (later Manstein)",
+      "type": "armor",
+      "strength": 1200000,
+      "col": 23,
+      "row": 10,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Gerd von Rundstedt"
+    },
+    {
+      "id": "de-ag-c",
+      "side": "B",
+      "name": "Army Group C on the West Wall, then Army Group North before Leningrad (Leeb)",
+      "type": "infantry",
+      "strength": 700000,
+      "col": 16,
+      "row": 10,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Wilhelm von Leeb"
+    },
+    {
+      "id": "luftwaffe",
+      "side": "B",
+      "name": "Luftwaffe (Göring; Kesselring, Sperrle)",
+      "type": "aircraft",
+      "strength": 400000,
+      "col": 19,
+      "row": 9,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Albert Kesselring"
+    },
+    {
+      "id": "kriegsmarine",
+      "side": "B",
+      "name": "Kriegsmarine and the U-boat arm (Raeder, Dönitz)",
+      "type": "ships",
+      "strength": 100000,
+      "col": 14,
+      "row": 6,
+      "facing": "left",
+      "morale": 80,
+      "commander": "Karl Dönitz"
+    },
+    {
+      "id": "it-libya",
+      "side": "B",
+      "name": "Italian 10th Army in Libya (Graziani)",
+      "type": "infantry",
+      "strength": 150000,
+      "col": 27,
+      "row": 28,
+      "facing": "right",
+      "morale": 55,
+      "commander": "Rodolfo Graziani",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "afrika-korps",
+      "side": "B",
+      "name": "Afrika Korps, then Panzer Army Africa with its Italian corps (Rommel)",
+      "type": "armor",
+      "strength": 100000,
+      "col": 19,
+      "row": 26,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Erwin Rommel",
+      "enterPhase": "p5"
+    },
+    {
+      "id": "de-west",
+      "side": "B",
+      "name": "OB West: the army in occupied France, then Army Group B in Normandy (Rundstedt, Rommel, Model)",
+      "type": "infantry",
+      "strength": 640000,
+      "col": 11,
+      "row": 12,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Erwin Rommel",
+      "enterPhase": "p6"
+    },
+    {
+      "id": "de-6th",
+      "side": "B",
+      "name": "6th Army and 4th Panzer Army (Paulus, Hoth)",
+      "type": "infantry",
+      "strength": 330000,
+      "col": 38,
+      "row": 12,
+      "facing": "right",
+      "morale": 85,
+      "commander": "Friedrich Paulus",
+      "enterPhase": "p7"
+    },
+    {
+      "id": "de-kursk",
+      "side": "B",
+      "name": "9th Army and 4th Panzer Army for Operation Citadel (Model, Hoth)",
+      "type": "armor",
+      "strength": 780000,
+      "col": 36,
+      "row": 9,
+      "facing": "right",
+      "morale": 80,
+      "commander": "Walter Model",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "de-italy",
+      "side": "B",
+      "name": "Army Group C in Italy, with the Italian 6th Army on Sicily (Kesselring)",
+      "type": "infantry",
+      "strength": 400000,
+      "col": 21,
+      "row": 20,
+      "facing": "left",
+      "morale": 75,
+      "commander": "Albert Kesselring",
+      "enterPhase": "p10"
+    },
+    {
+      "id": "de-reich",
+      "side": "B",
+      "name": "Reich air defences and the Ruhr: flak, night fighters and war industry",
+      "type": "artillery",
+      "strength": 900000,
+      "col": 14,
+      "row": 9,
+      "facing": "left",
+      "morale": 75,
+      "enterPhase": "p10"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The invasion of Poland",
+      "time": "1 September – 6 October 1939",
+      "durationSec": 11,
+      "narration": "Germany invades Poland on 1 September, Bock's army group from the north and Rundstedt's from the south with the Luftwaffe overhead; Britain and France declare war on 3 September but do little in the west. Under the Nazi–Soviet pact the Red Army invades from the east on 17 September. Warsaw surrenders on 27 September and the last Polish forces on 6 October: some 66,000–70,000 Polish soldiers are killed and about 700,000 captured by the Germans.",
+      "orders": [
+        {
+          "unit": "de-ag-b",
+          "action": "attack",
+          "target": "pl-army"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "charge",
+          "target": "pl-army"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "pl-army"
+        },
+        {
+          "unit": "de-ag-c",
+          "action": "hold"
+        },
+        {
+          "unit": "fr-army",
+          "action": "hold"
+        },
+        {
+          "unit": "bef",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "pl-army",
+          "strength": 300000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 1290000
+        },
+        {
+          "unit": "de-ag-a",
+          "strength": 1195000
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Phoney War, Winter War and Norway",
+      "time": "October 1939 – April 1940",
+      "durationSec": 10,
+      "narration": "In the west the Phoney War drags on while the German army groups move to the Rhine. The Soviet Union attacks Finland on 30 November; the Finns hold out until the Moscow peace of 12 March 1940, at the cost of about a tenth of their territory. On 9 April Germany seizes Denmark in a few hours and lands in Norway, where the Royal Navy and an Allied expedition fight it until June.",
+      "orders": [
+        {
+          "unit": "de-ag-b",
+          "action": "move",
+          "to": [
+            15,
+            9
+          ]
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "move",
+          "to": [
+            16,
+            11
+          ]
+        },
+        {
+          "unit": "kriegsmarine",
+          "action": "move",
+          "to": [
+            12,
+            2
+          ]
+        },
+        {
+          "unit": "home-fleet",
+          "action": "attack",
+          "target": "kriegsmarine"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "move",
+          "to": [
+            17,
+            7
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "kriegsmarine",
+          "strength": 90000,
+          "morale": 70
+        },
+        {
+          "unit": "home-fleet",
+          "strength": 115000
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "The fall of France and Dunkirk",
+      "time": "10 May – 25 June 1940",
+      "durationSec": 13,
+      "narration": "Bock's Army Group B draws the Allies into Belgium and the Netherlands while Rundstedt's Army Group A, with Guderian's and Kleist's panzers, comes through the Ardennes and crosses the Meuse at Sedan on 13 May, then races to the Channel and cuts the Allied armies in two. About 338,000 British and French troops are evacuated from Dunkirk by 4 June. Italy declares war on 10 June, Paris falls on 14 June and France signs an armistice on 22 June; nearly 1.8 million Allied soldiers are taken prisoner.",
+      "orders": [
+        {
+          "unit": "de-ag-a",
+          "action": "charge",
+          "target": "fr-army"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "attack",
+          "target": "bef"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "bef"
+        },
+        {
+          "unit": "bef",
+          "action": "retreat",
+          "to": [
+            10,
+            11
+          ]
+        },
+        {
+          "unit": "fr-army",
+          "action": "hold"
+        },
+        {
+          "unit": "home-fleet",
+          "action": "move",
+          "to": [
+            9,
+            10
+          ]
+        },
+        {
+          "unit": "de-ag-c",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "fr-army",
+          "strength": 450000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "bef",
+          "strength": 320000,
+          "status": "withdrawn"
+        },
+        {
+          "unit": "de-ag-a",
+          "strength": 1175000
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 1270000
+        },
+        {
+          "unit": "luftwaffe",
+          "strength": 390000
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "The Battle of Britain",
+      "time": "10 July – 31 October 1940",
+      "durationSec": 11,
+      "narration": "To clear the way for an invasion, Göring's Luftflotten attack the Channel convoys, then the RAF's airfields, then London. Dowding's Fighter Command, directed by radar and the Observer Corps, keeps enough Hurricanes and Spitfires in the air to deny the Luftwaffe control of the sky: the RAF loses about 1,744 aircraft, the Luftwaffe about 1,977. The night Blitz on British cities begins on 7 September, and Hitler puts off the invasion indefinitely.",
+      "orders": [
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "raf"
+        },
+        {
+          "unit": "raf",
+          "action": "bombard",
+          "target": "luftwaffe"
+        },
+        {
+          "unit": "home-fleet",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "luftwaffe",
+          "strength": 375000,
+          "morale": 55
+        },
+        {
+          "unit": "raf",
+          "strength": 145000,
+          "morale": 90
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "The desert war and the Balkans",
+      "time": "September 1940 – June 1941",
+      "durationSec": 12,
+      "narration": "Graziani's 10th Army invades Egypt and halts at Sidi Barrani. In December O'Connor's small Western Desert Force strikes back in Operation Compass and destroys it, taking about 133,000 prisoners by Beda Fomm in February 1941. Rommel and the Afrika Korps land at Tripoli, retake Cyrenaica and besiege Tobruk. In April Germany overruns Yugoslavia and Greece, and in May takes Crete from the air.",
+      "orders": [
+        {
+          "unit": "it-libya",
+          "action": "attack",
+          "target": "uk-8th"
+        },
+        {
+          "unit": "uk-8th",
+          "action": "attack",
+          "target": "it-libya"
+        },
+        {
+          "unit": "afrika-korps",
+          "action": "move",
+          "to": [
+            27,
+            27
+          ]
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "move",
+          "to": [
+            22,
+            8
+          ]
+        },
+        {
+          "unit": "raf",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "it-libya",
+          "strength": 15000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "uk-8th",
+          "strength": 140000,
+          "morale": 70
+        },
+        {
+          "unit": "afrika-korps",
+          "strength": 98000
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Operation Barbarossa",
+      "time": "22 June – December 1941",
+      "durationSec": 13,
+      "narration": "About 3.8 million Axis troops invade the Soviet Union on a front from the Baltic to the Black Sea. Leeb drives on Leningrad, which is cut off on 8 September; Bock's Army Group Centre takes Minsk and Smolensk; Rundstedt's Army Group South and Guderian's panzers close the Kiev pocket, the largest encirclement in history. The Soviets lose some 4.5 million men in 1941, but the Germans are halted in the snow before Moscow, and on 5 December Zhukov counterattacks. Japan attacks Pearl Harbor on 7 December and Germany declares war on the United States.",
+      "orders": [
+        {
+          "unit": "de-ag-c",
+          "action": "attack",
+          "target": "sov-north"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "attack",
+          "target": "sov-west"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "charge",
+          "target": "sov-southwest"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "sov-west"
+        },
+        {
+          "unit": "sov-north",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-west",
+          "action": "retreat",
+          "to": [
+            38,
+            7
+          ]
+        },
+        {
+          "unit": "sov-southwest",
+          "action": "retreat",
+          "to": [
+            39,
+            12
+          ]
+        },
+        {
+          "unit": "de-west",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "sov-west",
+          "strength": 700000,
+          "morale": 55
+        },
+        {
+          "unit": "sov-southwest",
+          "strength": 600000,
+          "morale": 45
+        },
+        {
+          "unit": "sov-north",
+          "strength": 600000,
+          "morale": 60
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 1100000,
+          "morale": 55
+        },
+        {
+          "unit": "de-ag-a",
+          "strength": 1000000,
+          "morale": 70
+        },
+        {
+          "unit": "de-ag-c",
+          "strength": 620000,
+          "morale": 70
+        },
+        {
+          "unit": "luftwaffe",
+          "strength": 360000
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Case Blue, Gazala and the Atlantic",
+      "time": "January – July 1942",
+      "durationSec": 12,
+      "narration": "In the summer of 1942 Germany strikes south, toward the Caucasus oil and the Volga: Paulus's 6th Army and Hoth's panzers drive across the Don bend while Army Group A turns south. In the desert Rommel beats the Eighth Army at Gazala and takes Tobruk on 21 June, but is stopped at the first battle of El Alamein in July. In the Atlantic the U-boats, now hunting off the American coast too, sink more Allied shipping than at any other time.",
+      "orders": [
+        {
+          "unit": "de-6th",
+          "action": "attack",
+          "target": "sov-southwest"
+        },
+        {
+          "unit": "sov-southwest",
+          "action": "retreat",
+          "to": [
+            44,
+            12
+          ]
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "move",
+          "to": [
+            41,
+            16
+          ]
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "hold"
+        },
+        {
+          "unit": "kriegsmarine",
+          "action": "move",
+          "to": [
+            1,
+            12
+          ]
+        },
+        {
+          "unit": "home-fleet",
+          "action": "attack",
+          "target": "kriegsmarine"
+        },
+        {
+          "unit": "afrika-korps",
+          "action": "attack",
+          "target": "uk-8th"
+        },
+        {
+          "unit": "uk-8th",
+          "action": "retreat",
+          "to": [
+            32,
+            28
+          ]
+        },
+        {
+          "unit": "sov-west",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "uk-8th",
+          "strength": 120000,
+          "morale": 55
+        },
+        {
+          "unit": "afrika-korps",
+          "strength": 90000,
+          "morale": 85
+        },
+        {
+          "unit": "sov-southwest",
+          "strength": 450000,
+          "morale": 45
+        },
+        {
+          "unit": "home-fleet",
+          "strength": 105000,
+          "morale": 65
+        },
+        {
+          "unit": "kriegsmarine",
+          "strength": 95000,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Stalingrad and El Alamein",
+      "time": "August – November 1942",
+      "durationSec": 13,
+      "narration": "The 6th Army reaches Stalingrad on 23 August, and the Luftwaffe bombs the city to ruins. Chuikov's 62nd Army holds a strip along the Volga in house-to-house fighting. In Egypt Montgomery opens the Second Battle of El Alamein on 23 October; by 4 November Rommel's army is in retreat, and on 8 November Anglo-American forces land in Morocco and Algeria in Operation Torch.",
+      "orders": [
+        {
+          "unit": "de-6th",
+          "action": "attack",
+          "target": "sov-stalingrad"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "sov-stalingrad"
+        },
+        {
+          "unit": "sov-stalingrad",
+          "action": "hold"
+        },
+        {
+          "unit": "uk-8th",
+          "action": "attack",
+          "target": "afrika-korps"
+        },
+        {
+          "unit": "afrika-korps",
+          "action": "retreat",
+          "to": [
+            16,
+            24
+          ]
+        },
+        {
+          "unit": "us-torch",
+          "action": "move",
+          "to": [
+            12,
+            23
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-6th",
+          "strength": 280000,
+          "morale": 65
+        },
+        {
+          "unit": "sov-stalingrad",
+          "strength": 300000,
+          "morale": 70
+        },
+        {
+          "unit": "afrika-korps",
+          "strength": 60000,
+          "morale": 50
+        },
+        {
+          "unit": "uk-8th",
+          "strength": 180000,
+          "morale": 85
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Operation Uranus, Tunisia and Black May",
+      "time": "November 1942 – May 1943",
+      "durationSec": 13,
+      "narration": "On 19 November the Red Army breaks through the Romanian armies on both flanks of Stalingrad and closes the ring round the 6th Army four days later. Relief fails, and Paulus surrenders on 31 January; the last pocket gives up on 2 February with about 91,000 prisoners. In Tunisia the Axis is squeezed between the Torch armies and the Eighth Army; after Kasserine and Mareth it surrenders on 13 May with over 250,000 men. In May the escorts and long-range aircraft turn the Battle of the Atlantic: the U-boats lose so many boats that Dönitz withdraws them.",
+      "orders": [
+        {
+          "unit": "sov-uranus",
+          "action": "charge",
+          "target": "de-6th"
+        },
+        {
+          "unit": "sov-stalingrad",
+          "action": "attack",
+          "target": "de-6th"
+        },
+        {
+          "unit": "de-6th",
+          "action": "hold"
+        },
+        {
+          "unit": "us-torch",
+          "action": "attack",
+          "target": "afrika-korps"
+        },
+        {
+          "unit": "uk-8th",
+          "action": "attack",
+          "target": "afrika-korps"
+        },
+        {
+          "unit": "home-fleet",
+          "action": "attack",
+          "target": "kriegsmarine"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-6th",
+          "strength": 91000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "afrika-korps",
+          "strength": 40000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "us-torch",
+          "strength": 280000
+        },
+        {
+          "unit": "uk-8th",
+          "strength": 175000
+        },
+        {
+          "unit": "kriegsmarine",
+          "strength": 60000,
+          "morale": 35
+        },
+        {
+          "unit": "sov-uranus",
+          "strength": 900000
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Kursk, Sicily and the bomber offensive",
+      "time": "July – August 1943",
+      "durationSec": 12,
+      "narration": "On 5 July the Germans attack the Kursk salient from north and south with about 2,900 tanks, against Soviet defences built in depth by Rokossovsky and Vatutin. The offensive stalls within a week; the Soviet counteroffensives at Orel and Belgorod–Kharkov follow. On 9–10 July the Allies cross from Tunisia and land on Sicily, and on 25 July Mussolini is deposed. Over Germany, RAF Bomber Command by night and the US Eighth Air Force by day carry the war to the Ruhr and Hamburg.",
+      "orders": [
+        {
+          "unit": "us-torch",
+          "action": "move",
+          "to": [
+            17,
+            22
+          ]
+        },
+        {
+          "unit": "uk-8th",
+          "action": "move",
+          "to": [
+            18,
+            22
+          ]
+        },
+        {
+          "unit": "de-kursk",
+          "action": "charge",
+          "target": "sov-kursk"
+        },
+        {
+          "unit": "sov-kursk",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-uranus",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "sov-stalingrad",
+          "action": "move",
+          "to": [
+            41,
+            12
+          ]
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "move",
+          "to": [
+            38,
+            12
+          ]
+        },
+        {
+          "unit": "allied-italy",
+          "action": "attack",
+          "target": "de-italy"
+        },
+        {
+          "unit": "de-italy",
+          "action": "retreat",
+          "to": [
+            21,
+            19
+          ]
+        },
+        {
+          "unit": "bombers",
+          "action": "bombard",
+          "target": "de-reich"
+        },
+        {
+          "unit": "de-reich",
+          "action": "bombard",
+          "target": "bombers"
+        },
+        {
+          "unit": "luftwaffe",
+          "action": "bombard",
+          "target": "bombers"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-kursk",
+          "strength": 450000,
+          "morale": 40
+        },
+        {
+          "unit": "sov-kursk",
+          "strength": 1300000,
+          "morale": 80
+        },
+        {
+          "unit": "de-italy",
+          "strength": 330000,
+          "morale": 55
+        },
+        {
+          "unit": "allied-italy",
+          "strength": 430000
+        },
+        {
+          "unit": "de-reich",
+          "strength": 860000
+        },
+        {
+          "unit": "bombers",
+          "strength": 190000
+        },
+        {
+          "unit": "luftwaffe",
+          "strength": 330000
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Italy, the Dnieper and Leningrad relieved",
+      "time": "September 1943 – May 1944",
+      "durationSec": 12,
+      "narration": "Italy signs an armistice on 8 September; the Allies land at Salerno the next day, and Kesselring's armies hold them on the Gustav Line at Monte Cassino until May 1944. In the east the Red Army crosses the Dnieper and frees Kiev on 6 November; in January 1944 the siege of Leningrad is lifted after about 870 days. The bombers keep up the pressure on German cities and oil.",
+      "orders": [
+        {
+          "unit": "allied-italy",
+          "action": "attack",
+          "target": "de-italy"
+        },
+        {
+          "unit": "de-italy",
+          "action": "retreat",
+          "to": [
+            19,
+            18
+          ]
+        },
+        {
+          "unit": "sov-kursk",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "retreat",
+          "to": [
+            32,
+            11
+          ]
+        },
+        {
+          "unit": "sov-stalingrad",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "sov-uranus",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "de-kursk",
+          "action": "retreat",
+          "to": [
+            32,
+            9
+          ]
+        },
+        {
+          "unit": "sov-west",
+          "action": "attack",
+          "target": "de-ag-b"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "retreat",
+          "to": [
+            32,
+            8
+          ]
+        },
+        {
+          "unit": "sov-north",
+          "action": "attack",
+          "target": "de-ag-c"
+        },
+        {
+          "unit": "de-ag-c",
+          "action": "retreat",
+          "to": [
+            30,
+            5
+          ]
+        },
+        {
+          "unit": "sov-southwest",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "bombers",
+          "action": "bombard",
+          "target": "de-reich"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-ag-a",
+          "strength": 700000,
+          "morale": 45
+        },
+        {
+          "unit": "de-ag-c",
+          "strength": 500000,
+          "morale": 50
+        },
+        {
+          "unit": "de-italy",
+          "strength": 300000
+        },
+        {
+          "unit": "de-reich",
+          "strength": 820000
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "D-Day, Bagration and the liberation of Paris",
+      "time": "June – August 1944",
+      "durationSec": 13,
+      "narration": "On 6 June, two days after the Allies enter Rome, about 160,000 men land on five Normandy beaches from over 5,000 ships. After weeks of hedgerow fighting the Americans break out in Operation Cobra, Patton's Third Army sweeps round, and some 50,000 Germans are trapped in the Falaise pocket; Paris is liberated on 25 August. On 22–23 June the Red Army opens Operation Bagration in Belorussia and destroys most of Army Group Centre, some 400,000 men.",
+      "orders": [
+        {
+          "unit": "overlord",
+          "action": "attack",
+          "target": "de-west"
+        },
+        {
+          "unit": "neptune",
+          "action": "bombard",
+          "target": "de-west"
+        },
+        {
+          "unit": "us-3rd",
+          "action": "flank",
+          "target": "de-west",
+          "to": [
+            11,
+            13
+          ]
+        },
+        {
+          "unit": "de-west",
+          "action": "retreat",
+          "to": [
+            13,
+            11
+          ]
+        },
+        {
+          "unit": "sov-west",
+          "action": "charge",
+          "target": "de-ag-b"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "retreat",
+          "to": [
+            26,
+            9
+          ]
+        },
+        {
+          "unit": "sov-uranus",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "de-kursk",
+          "action": "retreat",
+          "to": [
+            27,
+            10
+          ]
+        },
+        {
+          "unit": "sov-kursk",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "sov-stalingrad",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "retreat",
+          "to": [
+            29,
+            13
+          ]
+        },
+        {
+          "unit": "sov-north",
+          "action": "attack",
+          "target": "de-ag-c"
+        },
+        {
+          "unit": "de-ag-c",
+          "action": "retreat",
+          "to": [
+            26,
+            4
+          ]
+        },
+        {
+          "unit": "allied-italy",
+          "action": "attack",
+          "target": "de-italy"
+        },
+        {
+          "unit": "de-italy",
+          "action": "retreat",
+          "to": [
+            17,
+            15
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-west",
+          "strength": 300000,
+          "morale": 35
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 500000,
+          "morale": 30
+        },
+        {
+          "unit": "overlord",
+          "strength": 1400000,
+          "morale": 85
+        },
+        {
+          "unit": "sov-west",
+          "strength": 1100000
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Market Garden, the Bulge and the Vistula–Oder",
+      "time": "September 1944 – January 1945",
+      "durationSec": 12,
+      "narration": "Montgomery's airborne bid for the Rhine bridges at Arnhem fails in September. On 16 December Hitler throws his last reserves through the Ardennes; the Americans hold Bastogne until Patton relieves it, and by January the bulge is gone. On 12 January 1945 the Red Army bursts out of its Vistula bridgeheads and reaches the Oder, 70 km from Berlin.",
+      "orders": [
+        {
+          "unit": "de-west",
+          "action": "charge",
+          "target": "overlord"
+        },
+        {
+          "unit": "us-3rd",
+          "action": "attack",
+          "target": "de-west"
+        },
+        {
+          "unit": "overlord",
+          "action": "hold"
+        },
+        {
+          "unit": "sov-west",
+          "action": "attack",
+          "target": "de-ag-b"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "retreat",
+          "to": [
+            21,
+            9
+          ]
+        },
+        {
+          "unit": "sov-uranus",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "de-kursk",
+          "action": "retreat",
+          "to": [
+            21,
+            10
+          ]
+        },
+        {
+          "unit": "sov-kursk",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "sov-southwest",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "retreat",
+          "to": [
+            24,
+            13
+          ]
+        },
+        {
+          "unit": "allied-italy",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-west",
+          "strength": 200000,
+          "morale": 25
+        },
+        {
+          "unit": "overlord",
+          "strength": 1500000
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 350000,
+          "morale": 25
+        },
+        {
+          "unit": "de-ag-a",
+          "strength": 500000,
+          "morale": 35
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "Across the Rhine and the Battle of Berlin",
+      "time": "March – 2 May 1945",
+      "durationSec": 13,
+      "narration": "The Americans seize the Remagen bridge on 7 March and the Allies cross the Rhine in force; some 300,000 Germans are trapped in the Ruhr pocket. On 16 April Zhukov and Konev attack across the Oder; Berlin is encircled on 25 April, the day American and Soviet troops meet on the Elbe at Torgau. Hitler kills himself on 30 April, and the Berlin garrison surrenders on 2 May, the same day as the German armies in Italy.",
+      "orders": [
+        {
+          "unit": "overlord",
+          "action": "attack",
+          "target": "de-reich"
+        },
+        {
+          "unit": "de-west",
+          "action": "retreat",
+          "to": [
+            15,
+            10
+          ]
+        },
+        {
+          "unit": "us-3rd",
+          "action": "move",
+          "to": [
+            18,
+            12
+          ]
+        },
+        {
+          "unit": "sov-west",
+          "action": "attack",
+          "target": "de-ag-b"
+        },
+        {
+          "unit": "de-ag-b",
+          "action": "retreat",
+          "to": [
+            19,
+            9
+          ]
+        },
+        {
+          "unit": "sov-kursk",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "sov-uranus",
+          "action": "attack",
+          "target": "de-kursk"
+        },
+        {
+          "unit": "sov-southwest",
+          "action": "attack",
+          "target": "de-ag-a"
+        },
+        {
+          "unit": "de-ag-a",
+          "action": "retreat",
+          "to": [
+            22,
+            12
+          ]
+        },
+        {
+          "unit": "allied-italy",
+          "action": "attack",
+          "target": "de-italy"
+        },
+        {
+          "unit": "bombers",
+          "action": "bombard",
+          "target": "de-reich"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-reich",
+          "strength": 300000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-italy",
+          "strength": 250000,
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-ag-b",
+          "strength": 100000,
+          "morale": 10
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "title": "Surrender",
+      "time": "2 – 8 May 1945",
+      "durationSec": 9,
+      "narration": "The remaining German armies surrender one after another. Jodl signs the unconditional surrender at Reims on 7 May and Keitel in Berlin on 8 May, which becomes Victory in Europe Day. The war in the Pacific goes on until Japan surrenders on 2 September 1945.",
+      "orders": [
+        {
+          "unit": "sov-west",
+          "action": "hold"
+        },
+        {
+          "unit": "overlord",
+          "action": "hold"
+        },
+        {
+          "unit": "us-3rd",
+          "action": "hold"
+        }
+      ],
+      "outcomes": [
+        {
+          "unit": "de-ag-b",
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-ag-a",
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-ag-c",
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-west",
+          "status": "surrendered"
+        },
+        {
+          "unit": "de-kursk",
+          "status": "surrendered"
+        },
+        {
+          "unit": "luftwaffe",
+          "status": "surrendered"
+        },
+        {
+          "unit": "kriegsmarine",
+          "status": "surrendered"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "summary": "The Allies won. Italy changed sides in September 1943; Romania, Bulgaria and Finland left the Axis in 1944; Germany surrendered unconditionally on 7–8 May 1945 after Hitler's suicide and the fall of Berlin. Germany was occupied and divided by the four powers, and Europe was split between the Western Allies and the Soviet Union. The war in Europe cost tens of millions of lives, most of them civilians, including about six million Jews murdered in the Holocaust.",
+    "casualties": {
+      "A": "Soviet Union ~26.6 million dead (8.7 million military); Poland ~5.6–5.8 million; Yugoslavia ~1.0–1.7 million; France ~600,000; UK ~450,000; United States ~420,000 (all theatres)",
+      "B": "Germany ~5.3 million military dead (Overmans), 5.5–7.4 million in all; Italy ~0.5 million; Romania, Hungary and Finland several hundred thousand more"
+    }
+  },
+  "sources": [
+    {
+      "title": "World War II — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/World_War_II"
+    },
+    {
+      "title": "European theatre of World War II — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/European_theatre_of_World_War_II"
+    },
+    {
+      "title": "World War II casualties — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/World_War_II_casualties"
+    },
+    {
+      "title": "Battle of France — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_France"
+    },
+    {
+      "title": "Battle of Britain — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Britain"
+    },
+    {
+      "title": "Western Desert campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Western_Desert_campaign"
+    },
+    {
+      "title": "Second Battle of El Alamein — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Second_Battle_of_El_Alamein"
+    },
+    {
+      "title": "Tunisian campaign — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tunisian_campaign"
+    },
+    {
+      "title": "Operation Barbarossa — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Barbarossa"
+    },
+    {
+      "title": "Battle of Kursk — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kursk"
+    },
+    {
+      "title": "Operation Overlord — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Overlord"
+    },
+    {
+      "title": "Operation Bagration — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Bagration"
+    },
+    {
+      "title": "Battle of Berlin — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Berlin"
+    }
+  ]
+}

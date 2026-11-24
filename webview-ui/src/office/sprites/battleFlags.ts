@@ -301,6 +301,22 @@ export const FLAGS: Record<string, SpriteData> = {
   // The Kaiserreich's black-white-red, which the Central Powers' leading army
   // fought under in 1914–1918.
   'german-imperial': grid((_x, y) => (y < 3 ? '#141414' : y < 7 ? WHITE : RED)),
+  // The Big Three and Free France quartered: Union Flag, Stars and Stripes,
+  // Soviet red flag, French tricolour.
+  allies: grid((x, y) => {
+    if (y < 5 && x < 8) {
+      const cx = Math.abs(x - 3.5);
+      if (cx < 1 || y === 2) return RED;
+      if (cx < 2 || y === 1 || y === 3) return WHITE;
+      return '#1f2f6b';
+    }
+    if (y < 5) {
+      if (x < 11 && y < 3) return x === 9 && y === 1 ? WHITE : '#1f2f6b';
+      return y % 2 === 0 ? RED : WHITE;
+    }
+    if (x < 8) return (x === 1 || x === 2) && (y === 6 || y === 7) ? '#f2c12e' : '#c4161c';
+    return x < 11 ? BLUE : x < 13 ? WHITE : RED;
+  }),
   'german-cross': grid((x, y) => {
     const cx = Math.abs(x - 7.5);
     const cy = Math.abs(y - 4.5);
